@@ -21,7 +21,15 @@
     <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Intelligent production fallback for static hosting directories -->
+    <script>
+      if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        if (!window.location.pathname.includes('/dist')) {
+          var target = window.location.origin + '/dist/' + window.location.search + window.location.hash;
+          window.location.replace(target);
+        }
+      }
+    </script>
   </head>
   <body class="bg-[#fbfbf9] text-slate-800 antialiased selection:bg-urja-500 selection:text-white min-h-screen">
     <div id="root"></div>
