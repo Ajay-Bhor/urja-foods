@@ -1,15 +1,15 @@
 {
-  "name": "react-node-tailwind-platform",
+  "name": "urja-foods",
   "version": "1.0.0",
-  "description": "Full-Stack Web Application built with React, Node.js, HTML, CSS, and Tailwind CSS",
+  "description": "Urja Foods & Agro - Advanced Feed Pellet & Agri-Tech Platform",
   "scripts": {
     "server": "node server/index.js",
-    "client": "npm.cmd --prefix client run dev",
-    "build": "npm.cmd --prefix client run build",
-    "build:client": "npm.cmd --prefix client run build",
+    "client": "npm --prefix client run dev",
+    "build": "node scripts/build.js",
+    "build:client": "npm --prefix client run build",
     "test": "node server/test_suite.mjs",
     "test:api": "node -e \"fetch('http://localhost:5000/api/test/run').then(r=>r.json()).then(d=>console.log(JSON.stringify(d,null,2)))\"",
-    "install:all": "npm.cmd install && npm.cmd --prefix client install && npm.cmd --prefix server install"
+    "install:all": "npm install && npm --prefix client install && npm --prefix server install"
   },
   "keywords": [
     "react",
