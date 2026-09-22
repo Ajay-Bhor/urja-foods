@@ -1,0 +1,579 @@
+/* ==========================================================================
+   URJA FOODS - LUXURY ANIMATED COMPANY LOGO PRELOADER
+   First-Time Website Loading Experience
+   ========================================================================== */
+
+/* Fullscreen Backdrop Overlay */
+.urja-company-preloader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  background: radial-gradient(ellipse at 50% 40%, #ffffff 0%, #f4fbf4 45%, #ebf7ec 75%, #e1f1e3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0px);
+  transition: 
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.7s ease;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cinematic Exit Dissolve */
+.urja-company-preloader-overlay.is-fading-out {
+  opacity: 0;
+  transform: scale(1.08);
+  filter: blur(6px);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   1. AMBIENT BACKGROUND GLOWS & FLOATING PARTICLES
+   -------------------------------------------------------------------------- */
+.urja-preloader-ambient-glow {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.28) 0%, rgba(34, 197, 94, 0.12) 40%, rgba(255, 255, 255, 0) 70%);
+  animation: preloaderAuraPulse 3.8s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(20px);
+}
+
+.urja-preloader-ambient-glow.secondary {
+  top: 62%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200, 157, 83, 0.18) 0%, rgba(74, 222, 128, 0.08) 45%, rgba(255, 255, 255, 0) 70%);
+  animation-delay: -1.9s;
+}
+
+@keyframes preloaderAuraPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+/* Floating Ambient Golden-Green Particles */
+.urja-preloader-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 0 10px currentColor;
+  animation: particleFloat 4.5s ease-in-out infinite alternate;
+}
+
+.urja-preloader-particle.p1 {
+  width: 8px;
+  height: 8px;
+  top: 22%;
+  left: 24%;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.6);
+  animation-duration: 3.6s;
+}
+
+.urja-preloader-particle.p2 {
+  width: 6px;
+  height: 6px;
+  top: 70%;
+  left: 28%;
+  color: #c89d53;
+  background: rgba(200, 157, 83, 0.6);
+  animation-duration: 5s;
+  animation-delay: -1.2s;
+}
+
+.urja-preloader-particle.p3 {
+  width: 9px;
+  height: 9px;
+  top: 26%;
+  right: 22%;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.6);
+  animation-duration: 4.2s;
+  animation-delay: -2.4s;
+}
+
+.urja-preloader-particle.p4 {
+  width: 7px;
+  height: 7px;
+  top: 68%;
+  right: 25%;
+  color: #e5b86f;
+  background: rgba(229, 184, 111, 0.6);
+  animation-duration: 4.8s;
+  animation-delay: -0.7s;
+}
+
+.urja-preloader-particle.p5 {
+  width: 5px;
+  height: 5px;
+  top: 48%;
+  left: 15%;
+  color: #86efac;
+  background: rgba(134, 239, 172, 0.5);
+  animation-duration: 5.5s;
+  animation-delay: -3.1s;
+}
+
+.urja-preloader-particle.p6 {
+  width: 6px;
+  height: 6px;
+  top: 52%;
+  right: 16%;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.5);
+  animation-duration: 5.2s;
+  animation-delay: -1.8s;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.85);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-16px) translateX(6px) scale(1.15);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-32px) translateX(-6px) scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. CENTRAL CONTENT CONTAINER & LOGO PEDESTAL
+   -------------------------------------------------------------------------- */
+.urja-preloader-content-box {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 28px 24px;
+  max-width: 480px;
+  width: 100%;
+  animation: preloaderCardEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes preloaderCardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Logo Hero Visual Stage */
+.urja-preloader-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 180px;
+  margin-bottom: 24px;
+}
+
+/* Orbiting Agro-Cycle Concentric Rings */
+.urja-orbit-concentric-ring {
+  position: absolute;
+  border-radius: 46px;
+  pointer-events: none;
+}
+
+.urja-orbit-concentric-ring.outer-orbit {
+  width: 330px;
+  height: 170px;
+  border: 1.5px dashed rgba(46, 125, 50, 0.22);
+  animation: orbitRingSpin 24s linear infinite;
+}
+
+.urja-orbit-concentric-ring.inner-pulse {
+  width: 290px;
+  height: 140px;
+  border: 1.5px solid rgba(74, 222, 128, 0.35);
+  animation: auraRingBreathe 3s ease-in-out infinite alternate;
+}
+
+@keyframes orbitRingSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes auraRingBreathe {
+  0% {
+    transform: scale(0.96);
+    border-color: rgba(74, 222, 128, 0.25);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.05);
+  }
+  100% {
+    transform: scale(1.08);
+    border-color: rgba(34, 197, 94, 0.6);
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.25);
+  }
+}
+
+/* Expanding Radar Waves */
+.urja-radar-wave {
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  border-radius: 40px;
+  border: 1.5px solid rgba(34, 197, 94, 0.5);
+  pointer-events: none;
+  animation: radarWaveExpand 2.6s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+}
+
+.urja-radar-wave.w2 {
+  animation-delay: 1.3s;
+}
+
+@keyframes radarWaveExpand {
+  0% {
+    transform: scale(0.94);
+    opacity: 0.8;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.28);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. LUXURY EMBOSSED LOGO PEDESTAL BADGE
+   -------------------------------------------------------------------------- */
+.urja-preloader-logo-ring {
+  position: relative;
+  background: #ffffff;
+  padding: 24px 38px;
+  border-radius: 24px;
+  border: 1.5px solid #d4ebd6;
+  box-shadow: 
+    0 20px 50px rgba(20, 83, 45, 0.12),
+    0 8px 20px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  z-index: 3;
+  animation: logoPedestalFloat 3s ease-in-out infinite alternate;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+@keyframes logoPedestalFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 
+      0 18px 45px rgba(20, 83, 45, 0.1),
+      0 4px 14px rgba(0, 0, 0, 0.03);
+  }
+  100% {
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 
+      0 26px 60px rgba(20, 83, 45, 0.18),
+      0 8px 24px rgba(34, 197, 94, 0.12);
+  }
+}
+
+.urja-logo-inner-wrap {
+  position: relative;
+  display: block;
+}
+
+/* The Animated Logo Image */
+.urja-preloader-logo-img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 3px 8px rgba(20, 83, 45, 0.08));
+  animation: logoSubtlePulse 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes logoSubtlePulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 2px 6px rgba(20, 83, 45, 0.08));
+  }
+  100% {
+    transform: scale(1.03);
+    filter: drop-shadow(0 8px 20px rgba(34, 197, 94, 0.28));
+  }
+}
+
+/* Brilliant Specular Light Beam Gliding Across the Logo */
+.urja-logo-gloss-sweep {
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 70px;
+  height: 220%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(26deg);
+  animation: specularGlossSweep 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes specularGlossSweep {
+  0% {
+    left: -120%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.95;
+  }
+  55% {
+    left: 220%;
+    opacity: 0.95;
+  }
+  100% {
+    left: 220%;
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. BRAND TYPOGRAPHY & DYNAMIC MILESTONE STATUS
+   -------------------------------------------------------------------------- */
+.urja-preloader-brand-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+/* Shimmering Metallic Heading */
+.urja-preloader-overline {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  background: linear-gradient(
+    90deg, 
+    #14532D 0%, 
+    #2E7D32 25%, 
+    #c89d53 45%, 
+    #4ade80 65%, 
+    #2E7D32 85%, 
+    #14532D 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: metallicTextFlow 3s linear infinite;
+  margin-bottom: 6px;
+}
+
+@keyframes metallicTextFlow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 250% center;
+  }
+}
+
+.urja-preloader-tagline {
+  margin: 0 0 10px 0;
+  font-size: 13.5px;
+  color: #3b5a43;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Dynamic Live Status Caption */
+.urja-preloader-status-caption {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #2e7d32;
+  font-weight: 600;
+  background: rgba(220, 243, 222, 0.7);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  padding: 4px 14px;
+  border-radius: 9999px;
+  transition: all 0.35s ease;
+  min-height: 28px;
+}
+
+.urja-preloader-status-caption span {
+  animation: fadeInCaption 0.3s ease-out;
+}
+
+@keyframes fadeInCaption {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. GLOWING PROGRESS BAR & LIVE PERCENTAGE BADGE
+   -------------------------------------------------------------------------- */
+.urja-preloader-progress-track {
+  width: 260px;
+  height: 6px;
+  background: #deecdf;
+  border-radius: 9999px;
+  overflow: visible;
+  position: relative;
+  margin-bottom: 12px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.urja-preloader-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #14532D 0%, #2E7D32 35%, #4ade80 75%, #c89d53 100%);
+  border-radius: 9999px;
+  transition: width 0.08s linear;
+  position: relative;
+  box-shadow: 0 0 12px rgba(74, 222, 128, 0.8);
+}
+
+/* Leading radiant spark at edge of progress */
+.urja-progress-leading-bead {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 
+    0 0 12px 3px #4ade80,
+    0 0 4px #ffffff,
+    0 0 18px 5px rgba(200, 157, 83, 0.6);
+  animation: sparkPulse 0.9s infinite alternate;
+}
+
+@keyframes sparkPulse {
+  0% {
+    transform: translate(50%, -50%) scale(0.9);
+  }
+  100% {
+    transform: translate(50%, -50%) scale(1.25);
+  }
+}
+
+/* Percentage Row & Online Status */
+.urja-preloader-counter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.urja-preloader-percent-badge {
+  font-size: 13px;
+  font-weight: 800;
+  color: #14532D;
+  letter-spacing: 0.5px;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.urja-preloader-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: preloaderLiveDot 1.2s infinite ease-in-out;
+}
+
+@keyframes preloaderLiveDot {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPONSIVE MOBILE OPTIMIZATIONS
+   -------------------------------------------------------------------------- */
+@media (max-width: 520px) {
+  .urja-preloader-hero-visual {
+    width: 270px;
+    height: 150px;
+  }
+  .urja-orbit-concentric-ring.outer-orbit {
+    width: 275px;
+    height: 145px;
+  }
+  .urja-orbit-concentric-ring.inner-pulse {
+    width: 250px;
+    height: 125px;
+  }
+  .urja-preloader-logo-ring {
+    padding: 18px 28px;
+    border-radius: 20px;
+  }
+  .urja-preloader-logo-img {
+    max-width: 180px;
+  }
+  .urja-preloader-progress-track {
+    width: 210px;
+  }
+  .urja-preloader-overline {
+    font-size: 10.5px;
+    letter-spacing: 2.5px;
+  }
+  .urja-preloader-tagline {
+    font-size: 12px;
+  }
+  .urja-preloader-status-caption {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "year": "2004",
+    "title": "Foundation",
+    "description": "Urja Foods was established with a foundational vision for healthier tomorrows, focusing on sustainable agro-practices, grain processing, and empowering rural farming communities.",
+    "image": "/images/timeline/2004.jpg",
+    "displayOrder": 1
+  },
+  {
+    "year": "2005",
+    "title": "First Facility",
+    "description": "Set up our first manufacturing unit to ensure quality and consistency. This facility marked the beginning of our journey towards delivering healthier food products.",
+    "image": "/images/timeline/2005.jpg",
+    "displayOrder": 2
+  },
+  {
+    "year": "2007",
+    "title": "Growing Team",
+    "description": "Built a strong team of passionate individuals committed to our shared mission of nutritional excellence, farmer welfare, and sustainable growth.",
+    "image": "/images/timeline/2007.jpg",
+    "displayOrder": 3
+  },
+  {
+    "year": "2010",
+    "title": "Market Expansion",
+    "description": "Expanded to new regions and distribution networks, reaching more customers and agricultural partners with dependable, quality agro-nutrition products.",
+    "image": "/images/timeline/2010.jpg",
+    "displayOrder": 4
+  },
+  {
+    "year": "2014",
+    "title": "Strategic Partnerships",
+    "description": "Collaborated with trusted industry partners and contract farming networks to enhance our capabilities and integrate the supply chain.",
+    "image": "/images/timeline/2014.jpg",
+    "displayOrder": 5
+  },
+  {
+    "year": "2020",
+    "title": "Sustainability Focus",
+    "description": "Led eco-friendly initiatives including 1.2 MW captive solar power across operations, closed-loop water management, and an ambitious tree plantation pledge.",
+    "image": "/images/timeline/2020.jpg",
+    "displayOrder": 6
+  },
+  {
+    "year": "2024",
+    "title": "Recognition",
+    "description": "Received industry recognition and prestigious bio-security certifications for uncompromising standards in feed manufacturing, hygiene, and product safety.",
+    "image": "/images/timeline/2024.jpg",
+    "displayOrder": 7
+  },
+  {
+    "year": "2025",
+    "title": "A Healthier Tomorrow",
+    "description": "Continuing our forward journey towards a healthier and stronger world through modern, sustainable farm-to-fork agribusiness and nutritional innovations.",
+    "image": "/images/timeline/2025.jpg",
+    "displayOrder": 8
+  }
+]

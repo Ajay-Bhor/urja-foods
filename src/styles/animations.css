@@ -1,0 +1,338 @@
+/* ==========================================================================
+   URJA FOODS MODERN ANIMATION SYSTEM
+   ========================================================================== */
+
+/* --- 1. Keyframes --- */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes ambientPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.15) translate(15px, -15px);
+  }
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shineSweep {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    left: 200%;
+    opacity: 0;
+  }
+}
+
+@keyframes ringPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes fanRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+@keyframes gradientBgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- 2. Scroll Reveal Utility Classes --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.animate-left {
+  transform: translateX(-40px);
+}
+
+.animate-on-scroll.animate-right {
+  transform: translateX(40px);
+}
+
+.animate-on-scroll.animate-zoom {
+  transform: scale(0.92);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Stagger Delays */
+.stagger-1 { transition-delay: 0.1s !important; }
+.stagger-2 { transition-delay: 0.2s !important; }
+.stagger-3 { transition-delay: 0.3s !important; }
+.stagger-4 { transition-delay: 0.4s !important; }
+.stagger-5 { transition-delay: 0.5s !important; }
+.stagger-6 { transition-delay: 0.6s !important; }
+
+/* --- 3. Ambient Background Light Orbs for Hero --- */
+.hero-ambient-orb-1 {
+  position: absolute;
+  top: -100px;
+  right: -50px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(116, 173, 41, 0.26) 0%, rgba(116, 173, 41, 0) 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  animation: ambientPulse 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+.hero-ambient-orb-2 {
+  position: absolute;
+  bottom: -80px;
+  left: -60px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.22) 0%, rgba(245, 130, 32, 0) 70%);
+  filter: blur(45px);
+  pointer-events: none;
+  animation: ambientPulse 10s ease-in-out infinite reverse;
+  z-index: 1;
+}
+
+/* --- 4. Floating Elements --- */
+.floating-element-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.floating-element-gentle {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+/* WhatsApp Pulse */
+.float-whatsapp {
+  animation: ringPulse 2.2s infinite;
+}
+
+/* Rotating Fans in EC Tech section */
+.rotating-fan {
+  animation: fanRotate 4s linear infinite;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* --- 5. Interactive Card Shine & Hover Transitions --- */
+.sector-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+}
+
+.sector-card:hover .sector-icon-wrap {
+  transform: scale(1.12) rotate(4deg);
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+}
+
+/* Card Light Sweep on Hover */
+.product-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.product-card:hover::after {
+  animation: shineSweep 0.85s ease forwards;
+}
+
+/* Button Shimmer / Glow Hover */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+.btn:hover::after {
+  animation: shineSweep 0.75s ease;
+}
+
+/* Animated Shimmer Text on Key Titles */
+.hero-title .highlight-green,
+.hero-title .highlight-gold {
+  background-size: 200% auto;
+  animation: textShimmer 4s linear infinite;
+}
+
+/* Live Status Dot Indicator */
+.live-status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulseDot 1.6s ease-in-out infinite;
+}
+
+/* --- Page Route Change Progress Bar & Transition Loader --- */
+.page-loader-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  z-index: 99999;
+  pointer-events: none;
+  background: linear-gradient(90deg, #74ad29 0%, #8ecc33 50%, #f58220 100%);
+  box-shadow: 0 0 12px rgba(116, 173, 41, 0.8), 0 0 6px rgba(245, 130, 32, 0.6);
+  transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+}
+
+.page-loader-spinner-wrap {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 99999;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 4px 11px;
+  border-radius: var(--radius-full, 9999px);
+  box-shadow: 0 4px 16px rgba(51, 65, 85, 0.12);
+  border: 1px solid rgba(116, 173, 41, 0.25);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.page-loader-spinner {
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(116, 173, 41, 0.25);
+  border-top-color: #74ad29;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+}
+
+.page-loader-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #456f12;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Page Entry Fade & Slide Animation */
+.page-transition-container {
+  animation: pageFadeSlide 0.36s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes pageFadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

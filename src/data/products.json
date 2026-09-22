@@ -1,0 +1,263 @@
+[
+  {
+    "id": "supreme-gold-5000",
+    "name": "Urja Supreme Gold (5000)",
+    "category": "Cattle Feed",
+    "tag": "Bestseller",
+    "price": "₹1,480",
+    "originalPrice": "₹1,650",
+    "discount": "10% OFF",
+    "rating": 4.9,
+    "reviewsCount": 142,
+    "sizes": ["50 kg Bag", "25 kg Bag"],
+    "shortDescription": "High-bypass protein pellet feed engineered to maximize milk fat % and overall lactation yield.",
+    "description": "Premium high-energy bypass protein pellet feed engineered for high-yielding dairy cows. Maximizes SNF, fat percentage, and overall lactation cycle yield.",
+    "specs": {
+      "crudeProtein": "22% Min",
+      "fat": "4.5% Min",
+      "fiber": "9.0% Max",
+      "form": "4mm Pellet"
+    },
+    "benefits": ["Enhances Milk Fat & SNF", "Improves Rumen Digestion", "Maintains Body Condition"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2025/08/Supreme-Gold-Front-300x300.webp"
+  },
+  {
+    "id": "malai-plus-8000",
+    "name": "Urja Malai Plus (8000)",
+    "category": "Cattle Feed",
+    "tag": "High Fat Formula",
+    "price": "₹1,540",
+    "originalPrice": "₹1,720",
+    "discount": "10% OFF",
+    "rating": 4.8,
+    "reviewsCount": 118,
+    "sizes": ["50 kg Bag"],
+    "shortDescription": "Enriched with bypass fats and chelated minerals to rapidly elevate butterfat content.",
+    "description": "Specialized dairy feed designed specifically to improve butterfat content and creamy milk texture. Enriched with essential chelated minerals and rumen-protected fats.",
+    "specs": {
+      "crudeProtein": "20% Min",
+      "fat": "5.5% Min",
+      "fiber": "8.5% Max",
+      "form": "4mm Pellet"
+    },
+    "benefits": ["Rapid Fat Percentage Boost", "Higher Cream & Butter Output", "Boosts Immunity"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2025/08/Malai-Plus-Front-300x300.webp"
+  },
+  {
+    "id": "milk-o-milk",
+    "name": "Urja Milk O Milk",
+    "category": "Cattle Feed",
+    "tag": "Peak Lactation",
+    "price": "₹1,390",
+    "originalPrice": "₹1,500",
+    "discount": "7% OFF",
+    "rating": 4.7,
+    "reviewsCount": 94,
+    "sizes": ["50 kg Bag", "25 kg Bag"],
+    "shortDescription": "Sustains high daily milk volume over peak lactation stages with balanced calcium & phosphorus.",
+    "description": "Comprehensive balanced ration for medium to high milk producing cows and buffaloes, sustaining peak milk yield over long lactation stages.",
+    "specs": {
+      "crudeProtein": "21% Min",
+      "fat": "4.0% Min",
+      "fiber": "10.0% Max",
+      "form": "Pellet"
+    },
+    "benefits": ["Prolongs Peak Lactation", "Prevents Post-Calving Weight Loss", "Balanced Calcium & Phosphorus"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2025/08/Milk-O-Milk-Front-300x300.webp"
+  },
+  {
+    "id": "max-magic",
+    "name": "Urja Max Magic",
+    "category": "Cattle Feed",
+    "tag": "Energy Boost",
+    "price": "₹1,420",
+    "originalPrice": "₹1,550",
+    "discount": "8% OFF",
+    "rating": 4.8,
+    "reviewsCount": 76,
+    "sizes": ["50 kg Bag"],
+    "shortDescription": "Probiotic and multivitamin enriched pellet feed for fast recovery and reproductive health.",
+    "description": "Fortified multi-vitamin and probiotic enriched cattle pellet feed for fast recovery, reproductive health, and healthy reproductive cycles in dairy livestock.",
+    "specs": {
+      "crudeProtein": "20% Min",
+      "fat": "4.0% Min",
+      "fiber": "9.5% Max",
+      "form": "Pellet"
+    },
+    "benefits": ["Enhanced Reproductive Health", "Faster Conception Rates", "Strong Hoof & Bone Structure"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2025/08/Max-Magic-Front-300x300.webp"
+  },
+  {
+    "id": "calf-starter-gold",
+    "name": "Calf Starter Gold",
+    "category": "Cattle Feed",
+    "tag": "Growth Formula",
+    "price": "₹1,650",
+    "originalPrice": "₹1,800",
+    "discount": "8% OFF",
+    "rating": 4.9,
+    "reviewsCount": 62,
+    "sizes": ["25 kg Bag", "10 kg Bag"],
+    "shortDescription": "Micro-pellet weaning ration that accelerates rumen development and early calf weight gain.",
+    "description": "Specially formulated early weaning feed for young calves. Accelerates rumen papillae development, ensuring rapid daily weight gain and robust early immunity.",
+    "specs": {
+      "crudeProtein": "24% Min",
+      "fat": "4.0% Min",
+      "fiber": "6.0% Max",
+      "form": "Micro-Pellet / Crumble"
+    },
+    "benefits": ["Accelerates Early Rumen Growth", "Prevents Calf Scours & Diarrhea", "Faster Weaning Age"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2021/07/New-Project-2021-07-06T104000.163-300x194.jpg"
+  },
+  {
+    "id": "broiler-finisher-1",
+    "name": "Urja Broiler Finisher-1",
+    "category": "Poultry Feed",
+    "tag": "High FCR",
+    "price": "₹2,150",
+    "originalPrice": "₹2,350",
+    "discount": "9% OFF",
+    "rating": 4.9,
+    "reviewsCount": 165,
+    "sizes": ["50 kg Bag"],
+    "shortDescription": "High-density pellet feed formulated for commercial broilers ensuring optimal Feed Conversion Ratio.",
+    "description": "High-density pellet feed formulated for commercial broilers from 25 days up to market weight. Assures superior Feed Conversion Ratio (FCR) and uniform flock weight.",
+    "specs": {
+      "crudeProtein": "19% Min",
+      "energy": "3150 Kcal/kg",
+      "fat": "5.0% Min",
+      "form": "3mm Pellet"
+    },
+    "benefits": ["Industry-Leading FCR", "Uniform Bird Muscle Development", "Low Mortality & High Market Weight"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2021/07/New-Project-2021-07-02T142544.691-300x194.jpg"
+  },
+  {
+    "id": "gavran-breeder",
+    "name": "Gavran & Deshi Breeder Feed",
+    "category": "Poultry Feed",
+    "tag": "Indigenous Birds",
+    "price": "₹1,850",
+    "originalPrice": "₹2,050",
+    "discount": "10% OFF",
+    "rating": 4.7,
+    "reviewsCount": 54,
+    "sizes": ["50 kg Bag"],
+    "shortDescription": "Tailored for indigenous Gavran and Deshi birds to boost egg clutch sizes and fertility.",
+    "description": "Nutritionally balanced formula tailored for indigenous (Deshi / Gavran) poultry breeds. Stimulates robust egg clutch sizes and high chick fertility rates.",
+    "specs": {
+      "crudeProtein": "18.5% Min",
+      "calcium": "3.8% Min",
+      "fiber": "7.0% Max",
+      "form": "Pellet / Mash"
+    },
+    "benefits": ["High Egg Production Clutch", "Superior Hatchability Percentage", "Natural Feather Luster"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2021/07/New-Project-2021-07-06T103404.226-300x194.jpg"
+  },
+  {
+    "id": "gavran-feed-starter",
+    "name": "Gavran Feed Starter",
+    "category": "Poultry Feed",
+    "tag": "Early Phase",
+    "price": "₹1,950",
+    "originalPrice": "₹2,150",
+    "discount": "9% OFF",
+    "rating": 4.8,
+    "reviewsCount": 47,
+    "sizes": ["50 kg Bag", "25 kg Bag"],
+    "shortDescription": "Complete nutrition crumble starter feed for young Deshi chicks to build strong immunity.",
+    "description": "Complete nutrition crumble starter feed for young Deshi and Gavran chicks to build solid skeletal frames and strong internal resistance.",
+    "specs": {
+      "crudeProtein": "21% Min",
+      "fat": "3.5% Min",
+      "fiber": "5.5% Max",
+      "form": "Fine Crumble"
+    },
+    "benefits": ["Early Immunity Development", "Minimizes Early Chick Mortality", "Optimal Bone Mineralization"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2021/07/gavrnstrtr-300x194.jpg"
+  },
+  {
+    "id": "layer-concentrate-35",
+    "name": "Layer Concentrate 35% / 50%",
+    "category": "Poultry Concentrates",
+    "tag": "Commercial Layer",
+    "price": "₹2,450",
+    "originalPrice": "₹2,700",
+    "discount": "9% OFF",
+    "rating": 4.9,
+    "reviewsCount": 83,
+    "sizes": ["50 kg Bag"],
+    "shortDescription": "Concentrated amino acid & mineral blend for farm-level mixing with corn and bran.",
+    "description": "Concentrated protein, amino acid, and vitamin-mineral blend for commercial layer farms. Mix with farm-level corn and bran for maximum feed cost optimization.",
+    "specs": {
+      "crudeProtein": "35% / 50%",
+      "methionine": "1.2% Min",
+      "calcium": "Fortified",
+      "form": "Concentrate Mash"
+    },
+    "benefits": ["Significant Feed Cost Savings", "Prevents Cage Layer Fatigue", "Thick Eggshell Quality"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2021/07/prt-300x194.jpg"
+  },
+  {
+    "id": "layer-premix-5",
+    "name": "Layer Pre-Mix 5% & 35%",
+    "category": "Poultry Concentrates",
+    "tag": "Specialty Blend",
+    "price": "₹2,600",
+    "originalPrice": "₹2,850",
+    "discount": "8% OFF",
+    "rating": 4.8,
+    "reviewsCount": 39,
+    "sizes": ["25 kg Bag"],
+    "shortDescription": "High potency vitamin-mineral-enzyme premix to sustain 90%+ egg laying peaks.",
+    "description": "High potency vitamin-mineral-enzyme premix to eliminate dietary deficiencies, maintain continuous lay peaks, and optimize gastrointestinal health.",
+    "specs": {
+      "vitamins": "Complete A, D3, E, B-Complex",
+      "traceMinerals": "Zinc, Iron, Manganese, Copper, Selenium",
+      "enzymes": "Phytase & NSPase included"
+    },
+    "benefits": ["Sustained 90%+ Laying Peak", "Strong Immunity Against Stress", "Optimized Phosphorus Absorption"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2021/07/New-Project-2021-07-06T103702.703-300x194.jpg"
+  },
+  {
+    "id": "broiler-chicks-hatchery",
+    "name": "Urja Day-Old Broiler Chicks",
+    "category": "Broiler & Hatchery",
+    "tag": "European EC Standard",
+    "price": "₹38 / chick",
+    "originalPrice": "₹42 / chick",
+    "discount": "Bulk Rates",
+    "rating": 4.9,
+    "reviewsCount": 210,
+    "sizes": ["Flock Batches 1,000+"],
+    "shortDescription": "Automated in-ovo vaccinated chicks with exceptional livability and fast-feathering genetics.",
+    "description": "Produced in Urja's state-of-the-art automated hatchery with in-ovo auto-vaccination. Exceptionally vigorous, disease-resistant, and primed for rapid growth.",
+    "specs": {
+      "vaccination": "Automated In-Ovo Vaccinated",
+      "hatchMortality": "< 1% target",
+      "genetics": "Vigorous Fast-Feathering Broiler Line"
+    },
+    "benefits": ["Auto-Vaccinated at Hatching", "Zero Antibiotic Residue Protocol", "Exceptional Livability & Growth"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2021/06/New-Project-30-300x203.jpg"
+  },
+  {
+    "id": "chicken-feast-cuts",
+    "name": "Chicken Feast Antibiotic-Free Chicken",
+    "category": "Broiler & Hatchery",
+    "tag": "Farm Fresh QSR",
+    "price": "₹220 / kg",
+    "originalPrice": "₹260 / kg",
+    "discount": "15% OFF",
+    "rating": 5.0,
+    "reviewsCount": 320,
+    "sizes": ["Whole Bird", "Curry Cut 1kg", "Breast Fillet"],
+    "shortDescription": "Raised in 100% European EC climate-controlled sheds, free from routine antibiotics.",
+    "description": "Raised in 100% European Environment Controlled (EC) sheds with automated bio-security. Delivered fresh, tender, juicy, and completely antibiotic residue-free.",
+    "specs": {
+      "rearing": "100% Climate Controlled EC Sheds",
+      "standards": "Zero Hormones, Zero Routine Antibiotics",
+      "packaging": "Hygienic Temperature-Controlled Delivery"
+    },
+    "benefits": ["100% Antibiotic Residue-Free", "European Farm Bio-security", "Juicy, Tender, and Hygienic"],
+    "image": "https://www.urjafoods.net/wp-content/uploads/2021/06/New-Project-31-300x203.jpg"
+  }
+]

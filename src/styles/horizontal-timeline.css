@@ -1,0 +1,440 @@
+/* ==========================================================================
+   URJA FOODS - EXACT CORPORATE TIMELINE ("OUR JOURNEY")
+   Exact match to the visual mockup provided by user
+   ========================================================================== */
+
+:root {
+  --ht-dark-green: #14532D;
+  --ht-med-green: #2E7D32;
+  --ht-accent-green: #22c55e;
+  --ht-soft-green: #E8F5E9;
+  --ht-soft-green-hover: #d7edd9;
+  --ht-border-subtle: #dbe8dc;
+  --ht-text-charcoal: #111827;
+  --ht-text-muted: #6b7280;
+  --ht-font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.ht-exact-timeline-section {
+  position: relative;
+  width: 100%;
+  padding: 65px 0 75px;
+  background-color: #ffffff;
+  overflow: hidden;
+  font-family: var(--ht-font-family);
+}
+
+.ht-exact-container {
+  width: min(1380px, calc(100% - 48px));
+  margin: 0 auto;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   1. HEADER: — OUR JOURNEY —
+   -------------------------------------------------------------------------- */
+.ht-exact-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 42px;
+}
+
+.ht-exact-kicker-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ht-exact-kicker-line {
+  display: block;
+  width: 36px;
+  height: 1.5px;
+  background: var(--ht-med-green);
+}
+
+.ht-exact-kicker-text {
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  color: var(--ht-dark-green);
+}
+
+.ht-exact-heading {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  color: var(--ht-text-charcoal);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.ht-exact-subtitle {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ht-text-muted);
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   2. TIMELINE MASTER ROW: 8 Circles
+   -------------------------------------------------------------------------- */
+.ht-exact-track-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 15px 0 25px;
+}
+
+/* Center Horizontal Track Container */
+.ht-exact-circles-track {
+  position: relative;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+  padding: 10px 4px;
+  min-width: 980px;
+}
+
+/* Continuous Dotted Dark-Green Line connecting all circles */
+.ht-exact-dotted-line {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 46px;
+  right: 46px;
+  height: 0;
+  border-top: 2px dotted var(--ht-dark-green);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Milestone Column */
+.ht-exact-column {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* 92px Circular Milestone Node */
+.ht-circle-node {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f4f6f4;
+  border: 2.5px solid var(--ht-dark-green);
+  box-shadow: 
+    0 4px 12px rgba(20, 83, 45, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+  outline: none;
+}
+
+.ht-circle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+/* Year Text directly overlaid on bottom portion */
+.ht-circle-year-overlay {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 20px 4px 5px;
+  background: linear-gradient(
+    to top, 
+    rgba(0, 0, 0, 0.88) 0%, 
+    rgba(0, 0, 0, 0.5) 60%, 
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ht-circle-year-text {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Hover & Active Glowing Halo Effect */
+.ht-circle-node:hover {
+  transform: scale(1.06);
+}
+
+.ht-circle-node.is-active {
+  transform: scale(1.08);
+  border-color: var(--ht-accent-green);
+  box-shadow: 
+    0 0 28px 7px rgba(74, 222, 128, 0.5),
+    0 0 0 3px var(--ht-accent-green);
+}
+
+.ht-circle-node.is-active .ht-circle-image {
+  transform: scale(1.08);
+}
+
+/* Connector Ring with Center Dot midway between milestones */
+.ht-exact-connector-point {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ht-connector-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid var(--ht-dark-green);
+}
+
+.ht-connector-inner-dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ht-dark-green);
+}
+
+/* --------------------------------------------------------------------------
+   3. CONNECTED POPUP CARD DIRECTLY UNDER THE SELECTED MILESTONE
+   -------------------------------------------------------------------------- */
+.ht-exact-popup-anchor-area {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  min-height: 230px;
+}
+
+.ht-exact-popup-card {
+  position: absolute;
+  top: 0;
+  max-width: 480px;
+  width: calc(100% - 24px);
+  background: #ffffff;
+  border: 1px solid var(--ht-border-subtle);
+  border-radius: 16px;
+  box-shadow: 
+    0 18px 40px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+  padding: 18px 20px;
+  z-index: 10;
+  transition: 
+    opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    left 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.25s ease;
+}
+
+.ht-exact-popup-card.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.ht-exact-popup-card.is-closed {
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Invisible hover bridge linking circle track to popup card */
+.ht-hover-bridge {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: transparent;
+  z-index: 4;
+}
+
+/* Upward pointer caret pointing directly to the circle above */
+.ht-exact-popup-caret {
+  position: absolute;
+  top: -8px;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border-left: 1px solid var(--ht-border-subtle);
+  border-top: 1px solid var(--ht-border-subtle);
+  transform: translateX(-50%) rotate(45deg);
+  border-top-left-radius: 2px;
+  z-index: 3;
+  transition: left 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Close "✕" Button */
+.ht-exact-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: var(--ht-dark-green);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.ht-exact-close-btn:hover {
+  background: var(--ht-soft-green);
+  transform: rotate(90deg);
+}
+
+/* Grid Layout: Left Image, Right Content */
+.ht-exact-card-grid {
+  display: grid;
+  grid-template-columns: 185px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* Left: Large Milestone Image */
+.ht-exact-card-img-wrap {
+  width: 100%;
+  height: 155px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  background: #eef2ee;
+}
+
+.ht-exact-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right: Content */
+.ht-exact-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 18px;
+}
+
+/* Year Pill */
+.ht-exact-year-pill {
+  display: inline-block;
+  padding: 3px 14px;
+  background: var(--ht-soft-green);
+  color: var(--ht-dark-green);
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* Milestone Title */
+.ht-exact-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ht-dark-green);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+/* Milestone Description */
+.ht-exact-desc {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #4b5563;
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   4. BOTTOM SIGNATURE: — Good Food • Brighter Futures —
+   -------------------------------------------------------------------------- */
+.ht-exact-footer-tagline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 36px;
+  padding-top: 10px;
+}
+
+.ht-footer-line {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: #9ebb9e;
+}
+
+.ht-footer-text {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: #2e6236;
+  letter-spacing: 0.5px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .ht-exact-circles-track {
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ht-exact-timeline-section {
+    padding: 50px 0 60px;
+  }
+  .ht-exact-heading {
+    font-size: 26px;
+  }
+  .ht-exact-card-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .ht-exact-card-img-wrap {
+    height: 160px;
+  }
+  .ht-exact-popup-card {
+    max-width: 100%;
+    position: relative;
+    left: 0 !important;
+  }
+  .ht-exact-popup-caret {
+    display: none;
+  }
+}

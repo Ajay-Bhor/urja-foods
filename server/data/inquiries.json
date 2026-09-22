@@ -1,0 +1,54 @@
+[
+  {
+    "id": "INQ-1790055517288",
+    "name": "MySQL Integration Test",
+    "phone": "9822114455",
+    "email": "mysqltest@urjafoods.net",
+    "interest": "Urja Supreme Gold",
+    "district": "Pune",
+    "farmType": "Dairy / Poultry",
+    "animalCount": null,
+    "message": "Testing database integration.",
+    "createdAt": "2026-09-22T05:38:37.288Z",
+    "status": "Pending Contact"
+  },
+  {
+    "id": "INQ-1789809455105",
+    "name": "Automated Test Farmer",
+    "phone": "9822001122",
+    "email": "test.farmer@example.com",
+    "interest": "Contract Broiler Farming",
+    "district": "Pune",
+    "farmType": "Broiler Shed",
+    "animalCount": "5000",
+    "message": "Automated testing of inquiry flow.",
+    "createdAt": "2026-09-19T09:17:35.105Z",
+    "status": "Pending Contact"
+  },
+  {
+    "id": "INQ-1788765647663",
+    "name": "Verification Test",
+    "phone": "9876543210",
+    "email": "test@example.com",
+    "interest": "Urja Malai Plus 8000",
+    "district": "Pune",
+    "farmType": "Dairy Farm",
+    "animalCount": "25",
+    "message": "Testing multi-page inquiry routing",
+    "createdAt": "2026-09-07T07:20:47.663Z",
+    "status": "Pending Contact"
+  },
+  {
+    "id": "INQ-1788755941059",
+    "name": "Sachin Kulkarni",
+    "phone": "9876543210",
+    "email": null,
+    "interest": "Contract Broiler Farming",
+    "district": "Pune",
+    "farmType": "Dairy / Poultry",
+    "animalCount": null,
+    "message": "Looking to set up a 10,000 bird EC house.",
+    "createdAt": "2026-09-07T04:39:01.059Z",
+    "status": "Pending Contact"
+  }
+]

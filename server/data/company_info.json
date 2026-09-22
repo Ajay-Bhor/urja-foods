@@ -1,0 +1,96 @@
+[
+  {
+    "infoKey": "core_values",
+    "category": "corporate",
+    "title": "Corporate Core Values",
+    "infoValue": [
+      {
+        "num": "01",
+        "title": "Innovation",
+        "desc": "We continuously look for better ways to improve our products, processes and the way we work."
+      },
+      {
+        "num": "02",
+        "title": "Integrity",
+        "desc": "We believe in being honest, transparent and accountable in everything we do."
+      },
+      {
+        "num": "03",
+        "title": "We Before Me",
+        "desc": "We value teamwork over individual achievement and believe that stronger results come from working together."
+      },
+      {
+        "num": "04",
+        "title": "Be Real",
+        "desc": "We stay genuine, grounded and true to who we are."
+      },
+      {
+        "num": "05",
+        "title": "Find a Way",
+        "desc": "We don't stop at problems. We look for solutions, adapt and keep moving forward."
+      }
+    ]
+  },
+  {
+    "infoKey": "chairman_message",
+    "category": "leadership",
+    "title": "Message from the Chairman",
+    "infoValue": {
+      "name": "Ajay Bhor",
+      "role": "Founder & Chairman",
+      "company": "Urja Foods & Agro",
+      "quote": "When I look back at Urja's journey, I see more than the growth of a business. I see the evolution of an idea—to build an organisation that can contribute meaningfully to the people who form the foundation of our food and agricultural system.",
+      "fullMessage": "My journey began with a simple understanding: farmers need more than products. They need reliable knowledge, dependable partnerships and solutions that genuinely improve their productivity and income. That belief took us from animal nutrition into poultry, and eventually towards an integrated model encompassing feed manufacturing, breeding, hatcheries, farming and live bird supply. Every stage of this journey has taught us that sustainable growth comes from understanding the entire ecosystem rather than focusing on a single part of it. Today, Urja is entering its next phase. We are building on this foundation through animal nutrition, processed chicken, soya processing, sustainable agriculture and consumer-focused food products. Our ambition is not simply to become bigger. It is to become better equipped, more capable and more responsible as we grow. We will continue to invest in technology, infrastructure and people, while remaining grounded in the values that brought us here—honesty, teamwork, continuous learning and the courage to find a way forward. To our farmers, employees, customers, partners and everyone who has been part of the Urja journey—thank you for your trust."
+    }
+  },
+  {
+    "infoKey": "contact_locations",
+    "category": "contact",
+    "title": "Headquarters and Facility Locations",
+    "infoValue": {
+      "headquarters": {
+        "name": "Urja Agro Foods Private Limited",
+        "address": "At Post Nirgudsar, Taluka Ambegaon, District Pune - 412406, Maharashtra, India.",
+        "googleMapsUrl": "https://maps.google.com/?q=Nirgudsar,+Pune,+Maharashtra"
+      },
+      "hotlines": {
+        "corporate": "+91-7028939900",
+        "farmerAdvisory": "+91-7028939901",
+        "whatsapp": "+91-7028939900"
+      },
+      "emails": {
+        "general": "info@urjafoods.net",
+        "sales": "sales@urjafoods.net",
+        "careers": "careers@urjafoods.net"
+      },
+      "schedule": {
+        "workingDays": "Monday – Saturday: 8:30 AM – 7:00 PM",
+        "sunday": "Plant Operations / Emergency Only",
+        "emergencyVeterinarySupport": "24/7 Support for Partner Farmers"
+      }
+    }
+  },
+  {
+    "infoKey": "employee_perks",
+    "category": "careers",
+    "title": "Employee Benefits & Culture",
+    "infoValue": [
+      {
+        "title": "Comprehensive Health & Care",
+        "desc": "Group medical insurance, personal accident cover, and annual health checkups for employees and immediate family."
+      },
+      {
+        "title": "Performance Incentives",
+        "desc": "Quarterly achievement bonuses, festival bonuses, and annual increments based on objective performance benchmarks."
+      },
+      {
+        "title": "Continuous Skill Training",
+        "desc": "Industry workshops, poultry veterinary symposiums, and fully sponsored certifications in feed safety and leadership."
+      },
+      {
+        "title": "Wholesome Work Environment",
+        "desc": "Clean subsidized cafeteria meals, modern air-conditioned workstations, staff recreation club, and annual sports days."
+      }
+    ]
+  }
+]

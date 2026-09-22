@@ -1,0 +1,140 @@
+[
+  {
+    "id": "job-1",
+    "title": "Technical Farm Supervisor (Broiler Integration)",
+    "dept": "Poultry Operations",
+    "location": "Ambegaon / Junnar / Khed, Pune",
+    "experience": "1 – 3 Years",
+    "type": "Full Time (Field)",
+    "vacancies": "3 Openings",
+    "summary": "Oversee contract broiler farmer cohorts, monitor day-to-day flock feed conversion ratio (FCR), bird weights, and ensure strict biosecurity protocols.",
+    "responsibilities": [
+      "Conduct daily scheduled supervisory visits across 10–12 assigned partner farms.",
+      "Monitor feed intake, bird body weights, flock uniformity, and mortality rates.",
+      "Coordinate timely delivery of chick feed bags and essential medicines with Nirgudsar plant dispatch.",
+      "Ensure biosecurity compliance including footbaths, water sanitization, and litter management.",
+      "Assist farmers with seasonal temperature regulation, ventilation, and flock brooding."
+    ],
+    "requirements": [
+      "Diploma / Degree in Agriculture, Animal Husbandry, Poultry Science, or related field.",
+      "Prior experience in contract broiler or commercial poultry farming preferred.",
+      "Valid two-wheeler driving license and willingness for regional field travel in Pune rural.",
+      "Fluent in Marathi and conversational Hindi."
+    ],
+    "status": "Active"
+  },
+  {
+    "id": "job-2",
+    "title": "Quality Control & Lab Chemist (Feed Plant)",
+    "dept": "Manufacturing & QA",
+    "location": "Nirgudsar Complex, Pune",
+    "experience": "2 – 4 Years",
+    "type": "Full Time (Plant)",
+    "vacancies": "2 Openings",
+    "summary": "Perform physical and chemical analytical testing on raw feed materials (maize, soy meal, DORB, minerals) and finished pelleted feed.",
+    "responsibilities": [
+      "Execute proximate analysis testing: Crude Protein (CP), Moisture, Crude Fiber, Total Ash, and Acid Insoluble Ash.",
+      "Conduct rapid testing for Mycotoxins/Aflatoxins using modern test kits and ELISA methods.",
+      "Perform Pellet Durability Index (PDI) and hardness tests on daily production batches.",
+      "Maintain detailed batch inspection registers in compliance with ISO 22000 / HACCP standards.",
+      "Reject substandard grain/soy shipments and prepare non-conformance reports for procurement."
+    ],
+    "requirements": [
+      "B.Sc / M.Sc in Chemistry, Analytical Chemistry, Feed Technology, or Biochemistry.",
+      "2+ years lab experience in cattle feed, poultry feed, or grain processing laboratory.",
+      "Sound hands-on expertise with spectrophotometers, moisture analyzers, and Soxhlet apparatus."
+    ],
+    "status": "Active"
+  },
+  {
+    "id": "job-3",
+    "title": "Veterinary Field Officer (Livestock & Poultry)",
+    "dept": "Animal Health & Veterinary",
+    "location": "Western Maharashtra (Pune / Ahmednagar)",
+    "experience": "0 – 3 Years (Freshers Welcome)",
+    "type": "Full Time (On-Field)",
+    "vacancies": "2 Openings",
+    "summary": "Deliver expert veterinary medical care, disease prevention protocols, post-mortem inspections, and clinical advisory to contracted broiler and dairy farmers.",
+    "responsibilities": [
+      "Design and supervise vaccination schedules for Day 1 to Day 35 broiler batches.",
+      "Perform clinical necropsy / post-mortem examinations on mortality cases to rapidly diagnose gut health or respiratory issues.",
+      "Advise farmers on biosecurity disinfection, gut acidification, and optimal electrolyte administration during summer heatwaves.",
+      "Organize farmer medical camps and educational seminars on dairy cattle lactation nutrition.",
+      "Collaborate with the formulation team on gut health booster supplements."
+    ],
+    "requirements": [
+      "Bachelor of Veterinary Science & Animal Husbandry (B.V.Sc & A.H.) with active Veterinary Council registration.",
+      "Keen diagnostic skills in avian pathology and cattle herd health.",
+      "Passionate about grassroots rural farmer empowerment."
+    ],
+    "status": "Active"
+  },
+  {
+    "id": "job-4",
+    "title": "Area Sales Manager (Urja Pashu Aahar - Cattle Feed)",
+    "dept": "Sales & Marketing",
+    "location": "Pune Rural, Shirur & Sangamner",
+    "experience": "3 – 5 Years",
+    "type": "Full Time",
+    "vacancies": "2 Openings",
+    "summary": "Spearhead Urja Pashu Aahar dealer distribution networks, forge partnerships with local dairy cooperatives, and achieve regional sales targets.",
+    "responsibilities": [
+      "Appoint new authorized cattle feed dealerships and distributors across assigned rural talukas.",
+      "Conduct cattle nutrition demonstration meets for dairy farmers highlighting SNF and FAT yield improvements.",
+      "Build long-term supply agreements with private dairies, milk collection centers, and dairy federations.",
+      "Manage dealer credit terms, order pipelines, and coordinate dispatches with logistics teams.",
+      "Track competitor pricing, market share, and regional monsoon feeding trends."
+    ],
+    "requirements": [
+      "Bachelor’s degree in Business, Agriculture, Marketing, or relevant field (MBA Agri-Business preferred).",
+      "Proven track record in cattle feed, agrochemicals, or veterinary pharma distribution.",
+      "Strong network of agro-dealers across Maharashtra dairy belts."
+    ],
+    "status": "Active"
+  },
+  {
+    "id": "job-5",
+    "title": "Plant Maintenance Engineer (Mechanical / Electrical)",
+    "dept": "Finance & Engineering",
+    "location": "Nirgudsar Plant, Pune",
+    "experience": "3+ Years",
+    "type": "Full Time (Plant)",
+    "vacancies": "1 Opening",
+    "summary": "Ensure uninterrupted operations of our 150 TPD feed milling machinery, pellet mills, bucket elevators, automated batching systems, and industrial steam boilers.",
+    "responsibilities": [
+      "Execute preventive, predictive, and breakdown maintenance across pellet presses, conditioners, hammer mills, and batch mixers.",
+      "Oversee boiler feed water treatment, steam distribution lines, and compressed air pneumatic lines.",
+      "Monitor PLC/SCADA automated batching panels and electrical control panels.",
+      "Maintain critical spare parts inventory to minimize plant downtime.",
+      "Enforce industrial occupational safety and lockout-tagout (LOTO) protocols."
+    ],
+    "requirements": [
+      "Diploma or B.E. / B.Tech in Mechanical or Electrical Engineering.",
+      "3+ years experience in automated continuous feed plants, flour mills, or bulk material handling plants.",
+      "Hands-on expertise with pellet dies, rollers, bearings, gearboxes, and industrial motors."
+    ],
+    "status": "Active"
+  },
+  {
+    "id": "job-6",
+    "title": "Accounts & Farmer Billing Executive",
+    "dept": "Finance & Engineering",
+    "location": "Corporate Office, Nirgudsar Complex",
+    "experience": "2+ Years",
+    "type": "Full Time",
+    "vacancies": "1 Opening",
+    "summary": "Manage contract broiler farmer rearing batch reconciliations, dealer billing, GST invoicing, and vendor ledger management.",
+    "responsibilities": [
+      "Compute batch-wise farmer growing charges based on FCR benchmark formulas and bird lifting weights.",
+      "Generate GST-compliant tax invoices for cattle feed dealerships and institutional buyers.",
+      "Process daily raw material inward payment vouchers and vendor account reconciliations.",
+      "Handle bank reconciliation statements and support quarterly internal audit documentation."
+    ],
+    "requirements": [
+      "B.Com / M.Com / Inter CA with strong command over Tally Prime / ERP software.",
+      "High analytical accuracy with Microsoft Excel (VLOOKUP, Pivot Tables).",
+      "Previous experience in agro-processing, livestock, or FMCG manufacturing sector is an advantage."
+    ],
+    "status": "Active"
+  }
+]

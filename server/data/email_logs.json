@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2026-09-19T09:17:35.113Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-455111",
+    "to": "vikram.joshi@example.com",
+    "subject": "Application Acknowledgment: Technical Farm Supervisor (Broiler Integration) (Ref: URJA-CAREER-455111) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-19T09:17:35.112Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-455111",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Technical Farm Supervisor (Broiler Integration) - Vikram Joshi (Ref: URJA-CAREER-455111)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-19T07:22:02.064Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-522063",
+    "to": "pooja.kulkarni@gmail.com",
+    "subject": "Application Acknowledgment: Quality Control & Lab Chemist (Feed Plant) (Ref: URJA-CAREER-522063) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-19T07:22:02.064Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-522063",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Quality Control & Lab Chemist (Feed Plant) - Pooja Kulkarni (Ref: URJA-CAREER-522063)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-19T07:20:00.442Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-400440",
+    "to": "aniket.deshmukh@gmail.com",
+    "subject": "Application Acknowledgment: Technical Farm Supervisor (Broiler Integration) (Ref: URJA-CAREER-400440) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-19T07:20:00.441Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-400440",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Technical Farm Supervisor (Broiler Integration) - Aniket Deshmukh (Ref: URJA-CAREER-400440)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  }
+]

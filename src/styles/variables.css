@@ -1,0 +1,98 @@
+:root {
+  /* ==========================================================================
+     Authentic Urja Foods & Agro Corporate Color System
+     Precisely Matched to https://urjafoods.sttourstravels.co.in/
+     - Deep Military / Forest Green: #071F12 / #173B24
+     - Urja Brand Foliage Green: #315B38
+     - Soft Sage Accent: #A8C58F
+     - Cream & Soft Warm White: #F5F7F2 / #EEF5E9
+     ========================================================================== */
+
+  /* 1. Brand Core Greens */
+  --primary: #173b24;
+  --primary-dark: #0e2919;
+  --primary-deep: #081d11;
+  --primary-light: #315b38;
+  --primary-gradient: linear-gradient(135deg, #0e2919 0%, #173b24 100%);
+  --primary-glow: rgba(23, 59, 36, 0.25);
+
+  /* 2. Soft Sage & Warm Accents */
+  --accent-green: #a8c58f;
+  --accent-light: #a8c58f;
+  --accent-pale: #dcebd3;
+  --accent-gold: #c89d53;
+  --accent-gold-light: #e5b86f;
+
+  /* 3. Background & Surface System */
+  --bg-main: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-cream: #f5f7f2;
+  --bg-pale-green: #eef5e9;
+  --bg-subtle: #f7faf4;
+  --bg-dark: #0e2919;
+  --bg-dark-surface: #143722;
+  --bg-dark-card: rgba(20, 55, 34, 0.94);
+
+  /* 4. Refined Corporate Typography */
+  --text-heading: #0e2919;
+  --text-main: #173b24;
+  --text-muted: #56635a;
+  --text-light: #7b897d;
+  --text-white: #ffffff;
+  --text-on-dark: #e8f0e5;
+
+  /* 5. Borders & Dividers */
+  --border-subtle: #dce3d8;
+  --border-line: #d2dfcb;
+  --border-light: rgba(255, 255, 255, 0.15);
+  --border-focus: #315b38;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(220, 227, 216, 0.8);
+  --glass-shadow: 0 10px 30px 0 rgba(23, 59, 36, 0.08);
+  --glass-dark-bg: rgba(7, 31, 18, 0.88);
+  --glass-dark-border: rgba(168, 197, 143, 0.2);
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 2px 4px rgba(23, 59, 36, 0.04);
+  --shadow-md: 0 6px 16px rgba(23, 59, 36, 0.06);
+  --shadow-lg: 0 15px 35px rgba(23, 59, 36, 0.09);
+  --shadow-xl: 0 25px 60px rgba(23, 59, 36, 0.12);
+  --shadow-card-hover: 0 20px 45px -10px rgba(23, 59, 36, 0.18);
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  /* Typography Fonts */
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+  --font-handwritten: 'Caveat', cursive, sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Multi-Screen Container Breakpoints */
+  --container-max-mobile: 100%;
+  --container-max-tablet: 960px;
+  --container-max-desktop: 1200px;
+  --container-max-wide: 1400px;
+
+  /* Header & Navigation Ergonomics */
+  --touch-target-min: 44px;
+  --nav-height-desktop: 88px;
+  --nav-height-mobile: 72px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+ 

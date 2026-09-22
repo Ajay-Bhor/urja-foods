@@ -1,0 +1,44 @@
+[
+  {
+    "id": "URJA-CAREER-455111",
+    "name": "Vikram Joshi",
+    "phone": "9822334455",
+    "email": "vikram.joshi@example.com",
+    "position": "Technical Farm Supervisor (Broiler Integration)",
+    "experience": "3 - 5 years",
+    "qualification": "B.Sc Agriculture",
+    "city": "Ambegaon, Pune",
+    "resumeUrl": "https://linkedin.com/in/vikram-joshi-example",
+    "message": "Automated verification candidate dossier.",
+    "submittedAt": "2026-09-19T09:17:35.111Z",
+    "status": "Delivered to HR Desk"
+  },
+  {
+    "id": "URJA-CAREER-522063",
+    "name": "Pooja Kulkarni",
+    "phone": "9822112233",
+    "email": "pooja.kulkarni@gmail.com",
+    "position": "Quality Control & Lab Chemist (Feed Plant)",
+    "experience": "2 - 4 years",
+    "qualification": "M.Sc Analytical Chemistry",
+    "city": "Pune",
+    "resumeUrl": "https://linkedin.com/in/pooja-kulkarni",
+    "message": "Experienced in NIR testing, moisture, and crude protein analysis in animal feed.",
+    "submittedAt": "2026-09-19T07:22:02.063Z",
+    "status": "Delivered to HR Desk"
+  },
+  {
+    "id": "URJA-CAREER-400440",
+    "name": "Aniket Deshmukh",
+    "phone": "9822987654",
+    "email": "aniket.deshmukh@gmail.com",
+    "position": "Technical Farm Supervisor (Broiler Integration)",
+    "experience": "1 - 3 years",
+    "qualification": "B.Sc Agriculture",
+    "city": "Manchar, Pune",
+    "resumeUrl": "https://linkedin.com/in/example",
+    "message": "Passionate about broiler farming and poultry health.",
+    "submittedAt": "2026-09-19T07:20:00.440Z",
+    "status": "Delivered to HR Desk"
+  }
+]
