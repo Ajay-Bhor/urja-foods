@@ -1,5 +1,5 @@
 import React from 'react';
-import { Factory, Bird, ShieldCheck, Truck, Users, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Factory, Bird, ShieldCheck, Truck, Users, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../hooks/LanguageContext';
 

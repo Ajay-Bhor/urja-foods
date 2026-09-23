@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Eye, Compass, ArrowRight } from 'lucide-react';
 import AboutHero from '../components/AboutHero';
-import UrjaJourney from '../components/UrjaJourney';
+import HorizontalTimeline from '../components/HorizontalTimeline';
 import ChairmanMessage from '../components/ChairmanMessage';
 import OperationsSection from '../components/OperationsSection';
 import CertificationsSection from '../components/CertificationsSection';
@@ -54,7 +54,7 @@ export default function AboutPage() {
       <AboutHero />
 
       {/* 2. Interactive Historical Milestone Journey */}
-      <UrjaJourney />
+      <HorizontalTimeline />
 
       {/* 3. Chairman's Message & Leadership */}
       <ChairmanMessage />

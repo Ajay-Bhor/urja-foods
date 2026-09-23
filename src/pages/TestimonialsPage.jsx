@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Star, MapPin, Quote, TrendingUp, CheckCircle2, ArrowRight, Award, ShieldCheck, HeartPulse } from 'lucide-react';
+import { MapPin, Quote, ArrowRight } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
 import Testimonials from '../components/Testimonials';
 

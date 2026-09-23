@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, MessageSquare, ExternalLink, ShieldCheck, Factory, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ExternalLink, CheckCircle2 } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
 import InquiryForm from '../components/InquiryForm';
 

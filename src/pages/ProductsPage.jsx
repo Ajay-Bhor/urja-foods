@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Award, ShieldCheck, Sparkles, ArrowRight, CheckCircle2, Factory, PhoneCall } from 'lucide-react';
+import { ArrowRight, CheckCircle2, PhoneCall } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
 import ProductCatalog from '../components/ProductCatalog';
 

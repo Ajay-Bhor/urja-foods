@@ -7,7 +7,7 @@ import ManufacturingExcellence from '../components/ManufacturingExcellence';
 import WhyChooseUrja from '../components/WhyChooseUrja';
 import SustainabilitySection from '../components/SustainabilitySection';
 import Testimonials from '../components/Testimonials';
-import UrjaJourney from '../components/UrjaJourney';
+import HorizontalTimeline from '../components/HorizontalTimeline';
 import { useLanguage } from '../hooks/LanguageContext';
 
 export default function HomePage({ onSelectProduct, onQuickInquire }) {
@@ -28,7 +28,7 @@ export default function HomePage({ onSelectProduct, onQuickInquire }) {
       <ManufacturingExcellence />
 
       {/* 5. Our Journey Horizontal Milestones Timeline */}
-      <UrjaJourney />
+      <HorizontalTimeline />
 
       {/* 6. Partnership Callout: "Be a part of the Urja journey" */}
       <section className="urja-contact-cta" style={{ background: '#0e2919' }}>
