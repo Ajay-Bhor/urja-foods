@@ -4,22 +4,26 @@ import '../styles/preloader.css';
 export default function CompanyPreloader() {
   const [progress, setProgress] = useState(0);
   const [isFadingOut, setIsFadingOut] = useState(false);
-  const [isMounted, setIsMounted] = useState(true);
+  const [isMounted, setIsMounted] = useState(() => {
+    try {
+      // Only show preloader on initial homepage load, never on subpages
+      if (window.location.pathname !== '/') {
+        return false;
+      }
+      return !sessionStorage.getItem('urja_preloader_seen');
+    } catch (e) {
+      return false;
+    }
+  });
   const animFrameRef = useRef(null);
 
   useEffect(() => {
-    // 1. Immediately absorb & dismiss inline HTML fallback to avoid double-pop
-    const inlinePreloader = document.getElementById('initial-preloader');
-    if (inlinePreloader) {
-      inlinePreloader.style.opacity = '0';
-      setTimeout(() => {
-        if (inlinePreloader.parentNode) {
-          inlinePreloader.parentNode.removeChild(inlinePreloader);
-        }
-      }, 150);
+    if (!isMounted) {
+      document.body.style.overflow = '';
+      return;
     }
 
-    // 2. Lock body scroll during the cinematic presentation
+    // Lock body scroll during the cinematic presentation
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 

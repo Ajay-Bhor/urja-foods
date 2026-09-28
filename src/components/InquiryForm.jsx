@@ -125,8 +125,26 @@ export default function InquiryForm({ preFillData }) {
                 <div className="contact-text-meta">
                   <h5>Plant & Regd. Office</h5>
                   <p>
-                    Urja Foods, At Post Nirgudsar, Taluka Ambegaon, District Pune - 412406, Maharashtra, India.
+                    Urja Foods, HP HOUSE, 35/1A, Jarkarwadi Phata, Nirgudsar, Manchar, Maharashtra 410503, India.
                   </p>
+                  <a
+                    href="https://maps.app.goo.gl/HCsm2Bz2evDqz1JK9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      fontSize: '12.5px',
+                      fontWeight: 700,
+                      color: 'var(--primary)',
+                      marginTop: '6px',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    <span>View on Google Maps</span>
+                    <span style={{ fontSize: '14px' }}>↗</span>
+                  </a>
                 </div>
               </div>
 

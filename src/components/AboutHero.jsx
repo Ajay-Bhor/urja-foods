@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 export default function AboutHero() {
+  const navigate = useNavigate();
+
   return (
     <section className="about-hero-compact" id="about-hero">
       {/* Decorative Circles */}
@@ -9,8 +12,19 @@ export default function AboutHero() {
       <div className="ahc-circle ahc-circle-2" aria-hidden="true"></div>
 
       <div className="ahc-container">
-        {/* Breadcrumb Navigation */}
+        {/* Breadcrumb Navigation with Back Button */}
         <nav className="ahc-breadcrumb" aria-label="Breadcrumb">
+          <button
+            type="button"
+            onClick={() => (window.history.length > 1 ? navigate(-1) : navigate('/'))}
+            className="page-back-btn"
+            aria-label="Go back to previous page"
+            id="about-hero-back-btn"
+            style={{ marginRight: '8px' }}
+          >
+            <ArrowLeft size={14} />
+            <span>Back</span>
+          </button>
           <Link to="/">HOME</Link>
           <span aria-hidden="true">›</span>
           <strong>ABOUT US</strong>

@@ -21,6 +21,9 @@ import VisionPage from './pages/VisionPage';
 import ValuesPage from './pages/ValuesPage';
 import MissionVisionValuesPage from './pages/MissionVisionValuesPage';
 import CareersPage from './pages/CareersPage';
+import CareerApplyPage from './pages/CareerApplyPage';
+import CandidateLoginPage from './pages/CandidateLoginPage';
+import OAuthCallbackPage from './pages/OAuthCallbackPage';
 
 import useScrollReveal from './hooks/useScrollReveal';
 
@@ -43,10 +46,16 @@ export default function App() {
     navigate('/contact');
   };
 
+  // Dedicated full-page ATS experience for Workday Job Portal & OAuth screens
+  const isWorkdayPortal =
+    location.pathname.startsWith('/careers/apply') ||
+    location.pathname.startsWith('/careers/login') ||
+    location.pathname.startsWith('/careers/auth/callback');
+
   return (
-    <div className="app-layout">
+    <div className={`app-layout ${isWorkdayPortal ? 'workday-portal-mode' : ''}`}>
       {/* First-Time Company Logo Preloader Splash Screen */}
-      <CompanyPreloader />
+      {!isWorkdayPortal && <CompanyPreloader />}
 
       {/* Top Progress Bar on Every Page Load */}
       <PageProgressBar />
@@ -55,14 +64,14 @@ export default function App() {
       <ScrollToTop />
 
       {/* Top Header Contact Bar */}
-      <Topbar />
+      {!isWorkdayPortal && <Topbar />}
 
       {/* Main Glassmorphic Sticky Navbar with Multi-Page Routing */}
-      <Navbar />
+      {!isWorkdayPortal && <Navbar />}
 
       {/* Main Multi-Page Route Outlet with Smooth Page Load Transition */}
-      <main key={location.pathname} className="page-transition-container">
-        <Routes location={location}>
+      <main key={location.pathname} className={isWorkdayPortal ? 'workday-main-outlet' : 'page-transition-container'}>
+        <Routes>
           <Route
             path="/"
             element={
@@ -110,13 +119,17 @@ export default function App() {
           />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/career" element={<CareersPage />} />
+          <Route path="/careers/apply" element={<CareerApplyPage />} />
+          <Route path="/careers/apply/:jobId" element={<CareerApplyPage />} />
+          <Route path="/careers/login" element={<CandidateLoginPage />} />
+          <Route path="/careers/auth/callback" element={<OAuthCallbackPage />} />
           {/* Wildcard Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
 
       {/* Comprehensive Multi-Page Footer */}
-      <Footer />
+      {!isWorkdayPortal && <Footer />}
 
       {/* Global Product Detail Modal */}
       <ProductModal

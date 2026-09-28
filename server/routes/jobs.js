@@ -18,6 +18,24 @@ const getFallbackData = () => {
   }
 };
 
+const safeParseArray = (val) => {
+  if (!val) return [];
+  if (Array.isArray(val)) return val;
+  if (typeof val === 'string') {
+    try {
+      const parsed = JSON.parse(val);
+      if (Array.isArray(parsed)) return parsed;
+    } catch {
+      // If it's a plain string, split by sentence or newline
+      if (val.includes('\n')) {
+        return val.split('\n').map(s => s.trim().replace(/^[-*•]\s*/, '')).filter(Boolean);
+      }
+      return val.split(/(?<=[.!?])\s+/).map(s => s.trim().replace(/^[-*•]\s*/, '')).filter(Boolean);
+    }
+  }
+  return [];
+};
+
 const formatJob = (row) => {
   if (!row) return null;
   return {
@@ -29,8 +47,8 @@ const formatJob = (row) => {
     type: row.type,
     vacancies: row.vacancies,
     summary: row.summary,
-    responsibilities: typeof row.responsibilities === 'string' ? JSON.parse(row.responsibilities) : (row.responsibilities || []),
-    requirements: typeof row.requirements === 'string' ? JSON.parse(row.requirements) : (row.requirements || []),
+    responsibilities: safeParseArray(row.responsibilities),
+    requirements: safeParseArray(row.requirements),
     status: row.status,
   };
 };

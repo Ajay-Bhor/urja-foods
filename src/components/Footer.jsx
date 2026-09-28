@@ -26,7 +26,18 @@ export default function Footer() {
 
           <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.55)', lineHeight: 1.6 }}>
             <div>CIN: U01409PN2019PTC186419</div>
-            <div>Headquartered in Nirgudsar, Ambegaon, Pune, Maharashtra</div>
+            <div>
+              Headquarters:{' '}
+              <a
+                href="https://maps.app.goo.gl/HCsm2Bz2evDqz1JK9"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'rgba(255, 255, 255, 0.85)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+                title="View on Google Maps"
+              >
+                HP HOUSE, 35/1A, Jarkarwadi Phata, Nirgudsar, Manchar, Maharashtra 410503
+              </a>
+            </div>
           </div>
         </div>
 

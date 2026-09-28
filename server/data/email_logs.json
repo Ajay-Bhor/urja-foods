@@ -1,5 +1,134 @@
 [
   {
+    "timestamp": "2026-09-28T11:04:35.502Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-475494",
+    "to": "ramesh.patil@gmail.com",
+    "subject": "Application Acknowledgment: Bank Loans - Senior Associate (R-798533) (Ref: URJA-CAREER-475494) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-28T11:04:35.501Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-475494",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Bank Loans - Senior Associate (R-798533) - Ramesh Patil (Ref: URJA-CAREER-475494)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-28T11:04:26.183Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-466174",
+    "to": "ramesh.patil@gmail.com",
+    "subject": "Application Acknowledgment: Bank Loans - Senior Associate (R-798533) (Ref: URJA-CAREER-466174) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-28T11:04:26.181Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-466174",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Bank Loans - Senior Associate (R-798533) - Ramesh Patil (Ref: URJA-CAREER-466174)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-28T11:04:11.219Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-451210",
+    "to": "ramesh.patil@gmail.com",
+    "subject": "Application Acknowledgment: Bank Loans - Senior Associate (R-798533) (Ref: URJA-CAREER-451210) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-28T11:04:11.218Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-451210",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Bank Loans - Senior Associate (R-798533) - Ramesh Patil (Ref: URJA-CAREER-451210)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-28T11:03:36.274Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-416264",
+    "to": "ramesh.patil@gmail.com",
+    "subject": "Application Acknowledgment: Bank Loans - Senior Associate (R-798533) (Ref: URJA-CAREER-416264) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-28T11:03:36.273Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-416264",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Bank Loans - Senior Associate (R-798533) - Ramesh Patil (Ref: URJA-CAREER-416264)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "candidate.1790591224202@example.com",
+    "subject": "Urja Foods Careers: Password Reset Code (944891)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-09-28T10:27:04.365Z"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "candidate.1790591224202@example.com",
+    "subject": "Urja Foods Careers: Your 6-Digit Email Verification Code (563354)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-09-28T10:27:04.316Z"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "candidate.1790591175399@example.com",
+    "subject": "Urja Foods Careers: Password Reset Code (792802)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-09-28T10:26:15.510Z"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "candidate.1790591175399@example.com",
+    "subject": "Urja Foods Careers: Your 6-Digit Email Verification Code (712146)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-09-28T10:26:15.473Z"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "candidate.1790591079311@example.com",
+    "subject": "Urja Foods Careers: Your 6-Digit Email Verification Code (515060)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-09-28T10:24:39.386Z"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "sunil.jadhav@gmail.com",
+    "subject": "Urja Foods Careers: Password Reset Code (566641)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-09-28T10:14:11.279Z"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "sunil.jadhav@gmail.com",
+    "subject": "Urja Foods Careers: Your 6-Digit Email Verification Code (520418)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-09-28T10:13:51.678Z"
+  },
+  {
+    "timestamp": "2026-09-28T05:53:42.487Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-822463",
+    "to": "candidate@test.com",
+    "subject": "Application Acknowledgment: Technical Farm Supervisor (Ref: URJA-CAREER-822463) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-28T05:53:42.486Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-822463",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Technical Farm Supervisor - Test Candidate (Ref: URJA-CAREER-822463)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
     "timestamp": "2026-09-19T09:17:35.113Z",
     "type": "CANDIDATE_AUTO_REPLY",
     "applicationId": "URJA-CAREER-455111",

@@ -10,12 +10,12 @@ export default function ContactPage({ preFillInquiry }) {
       title: 'Manufacturing Plant & HQ',
       lines: [
         'Urja Agro Foods Private Limited',
-        'At Post Nirgudsar, Taluka Ambegaon,',
-        'District Pune - 412406, Maharashtra, India.',
+        'HP HOUSE, 35/1A, Jarkarwadi Phata, Nirgudsar,',
+        'Manchar, Nirgudsar, Maharashtra 410503, India.',
       ],
       action: {
         text: 'Open Google Maps Navigation',
-        href: 'https://maps.google.com/?q=Nirgudsar,+Pune,+Maharashtra',
+        href: 'https://maps.app.goo.gl/HCsm2Bz2evDqz1JK9',
       },
     },
     {
@@ -125,7 +125,7 @@ export default function ContactPage({ preFillInquiry }) {
               <div className="badge badge-green">Visit Our Facility</div>
               <h2>How to Reach Our Nirgudsar Complex</h2>
               <p>
-                Our 150 TPD feed manufacturing plant and contract broiler monitoring division are situated in Nirgudsar, Ambegaon Taluka, conveniently accessible via the Pune-Nashik National Highway (NH 60).
+                Our 150 TPD feed manufacturing plant and corporate headquarters are situated at HP HOUSE, 35/1A, Jarkarwadi Phata, Nirgudsar, Manchar, Maharashtra 410503, conveniently accessible via the Pune-Nashik National Highway (NH 60).
               </p>
               <ul className="directions-list">
                 <li>
@@ -143,10 +143,11 @@ export default function ContactPage({ preFillInquiry }) {
               </ul>
               <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a
-                  href="https://maps.google.com/?q=Nirgudsar,+Pune,+Maharashtra"
+                  href="https://maps.app.goo.gl/HCsm2Bz2evDqz1JK9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
+                  id="btn-google-maps-directions"
                 >
                   <MapPin size={18} />
                   <span>Get Directions on Google Maps</span>
@@ -161,12 +162,21 @@ export default function ContactPage({ preFillInquiry }) {
               </div>
             </div>
 
-            <div className="plant-directions-visual">
-              <img
-                src="/company-plant.jpg"
-                alt="Urja Foods Plant Location"
-                style={{ width: '100%', height: '100%', minHeight: '300px', objectFit: 'cover', borderRadius: 'var(--radius-lg)' }}
+            <div className="plant-directions-visual" style={{ position: 'relative', overflow: 'hidden', borderRadius: 'var(--radius-lg)', boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }}>
+              <iframe
+                title="Urja Foods and Agro Pvt Ltd Google Map Pin"
+                src="https://maps.google.com/maps?q=18.9624171,74.0509281&hl=en&z=15&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: '340px', width: '100%', display: 'block' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
+              <div style={{ position: 'absolute', bottom: '12px', left: '12px', background: 'rgba(14, 41, 25, 0.92)', color: '#ffffff', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '6px', backdropFilter: 'blur(4px)' }}>
+                <MapPin size={13} color="#a8c58f" />
+                <span>HP House, Nirgudsar Complex Pinpoint</span>
+              </div>
             </div>
           </div>
         </div>

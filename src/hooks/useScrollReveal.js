@@ -26,14 +26,23 @@ export default function useScrollReveal(dependency) {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     const elements = document.querySelectorAll('.animate-on-scroll:not(.is-visible)');
 
-    elements.forEach((el) => observer.observe(el));
+    // Immediately reveal elements that are already in/near the viewport
+    const viewportHeight = window.innerHeight || 800;
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= viewportHeight + 100 && rect.bottom >= -50) {
+        el.classList.add('is-visible');
+      } else {
+        observer.observe(el);
+      }
+    });
 
-    // Safety timeout: ensure all content becomes visible even if observer fails or doesn't intersect
+    // Safety timeout: ensure all content becomes visible quickly
     const timer = setTimeout(() => {
       document.querySelectorAll('.animate-on-scroll:not(.is-visible)').forEach((el) => {
         el.classList.add('is-visible');
       });
-    }, 1200);
+    }, 250);
 
     return () => {
       clearTimeout(timer);

@@ -17,7 +17,7 @@ export const TRANSLATIONS = {
     navOperations: 'Operations',
 
     // Topbar
-    topbarLocation: 'Nirgudsar, Pune, Maharashtra',
+    topbarLocation: 'HP House, Nirgudsar, Manchar - 410503',
     topbarHours: 'Mon – Sat: 9:00 AM – 6:30 PM',
     topbarCert: 'ISO & Bio-Security Assured',
 
@@ -117,7 +117,7 @@ export const TRANSLATIONS = {
     navOperations: 'ऑपरेशन्स',
 
     // Topbar
-    topbarLocation: 'निरगुडसर, पुणे, महाराष्ट्र',
+    topbarLocation: 'एचपी हाउस, निरगुडसर, मंचर - 410503',
     topbarHours: 'सोम – शनि: सुबह 9:00 – शाम 6:30',
     topbarCert: 'आईएसओ एवं बायो-सिक्योरिटी प्रमाणित',
 
@@ -217,7 +217,7 @@ export const TRANSLATIONS = {
     navOperations: 'ऑपरेशन्स',
 
     // Topbar
-    topbarLocation: 'निरगुडसर, पुणे, महाराष्ट्र',
+    topbarLocation: 'एचपी हाउस, निरगुडसर, मंचर - 410503',
     topbarHours: 'सोम – शनि: स. 9:00 – सं. 6:30',
     topbarCert: 'आयएसओ आणि बायो-सिक्युरिटी प्रमाणित',
 

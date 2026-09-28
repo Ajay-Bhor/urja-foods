@@ -47,10 +47,18 @@ export default function Topbar() {
             <Mail size={14} />
             <span>info@urjafoods.net</span>
           </a>
-          <div className="topbar-item" id="topbar-location">
+          <a
+            href="https://maps.app.goo.gl/HCsm2Bz2evDqz1JK9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="topbar-item"
+            id="topbar-location"
+            title="Open Urja Foods in Google Maps"
+            style={{ textDecoration: 'none' }}
+          >
             <MapPin size={14} />
             <span>{t('topbarLocation')}</span>
-          </div>
+          </a>
         </div>
 
         {/* Right: Operational Hours, Certification Badge & Language Switcher */}

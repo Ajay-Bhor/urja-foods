@@ -71,12 +71,14 @@ export default function BusinessDetailPage({ onQuickInquire }) {
 
   return (
     <div className="business-detail-page">
-      {/* 1. Header Banner */}
+      {/* 1. Header Banner with Back to Businesses support */}
       <PageBanner
         badge={business.badge}
         title={business.title}
         subtitle={business.tagline}
         breadcrumb={business.shortTitle}
+        parentLink="/businesses"
+        parentLabel="Our Businesses"
       />
 
       {/* 2. Main Narrative & Quick Stats */}

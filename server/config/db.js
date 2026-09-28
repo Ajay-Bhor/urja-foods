@@ -221,6 +221,54 @@ async function createTables() {
       updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
   `);
+
+  // 9. Candidate Users Table (Candidate Portal Authentication)
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS candidate_users (
+      id VARCHAR(64) PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
+      email VARCHAR(255) NOT NULL,
+      phone VARCHAR(32) DEFAULT NULL,
+      password VARCHAR(255) DEFAULT NULL,
+      picture TEXT DEFAULT NULL,
+      auth_provider VARCHAR(32) DEFAULT 'email',
+      provider_id VARCHAR(128) DEFAULT NULL,
+      email_verified BOOLEAN DEFAULT FALSE,
+      verification_code VARCHAR(16) DEFAULT NULL,
+      verification_code_expires TIMESTAMP NULL DEFAULT NULL,
+      reset_code VARCHAR(16) DEFAULT NULL,
+      reset_code_expires TIMESTAMP NULL DEFAULT NULL,
+      city VARCHAR(100) DEFAULT NULL,
+      qualification VARCHAR(255) DEFAULT NULL,
+      experience VARCHAR(100) DEFAULT NULL,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+      UNIQUE INDEX idx_email (email),
+      INDEX idx_phone (phone),
+      INDEX idx_auth_provider (auth_provider)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `);
+
+  // Ensure all columns exist in candidate_users even if table was created in earlier versions
+  const requiredCandidateCols = [
+    ['password', 'VARCHAR(255) DEFAULT NULL'],
+    ['provider_id', 'VARCHAR(128) DEFAULT NULL'],
+    ['email_verified', 'BOOLEAN DEFAULT FALSE'],
+    ['verification_code', 'VARCHAR(16) DEFAULT NULL'],
+    ['verification_code_expires', 'TIMESTAMP NULL DEFAULT NULL'],
+    ['reset_code', 'VARCHAR(16) DEFAULT NULL'],
+    ['reset_code_expires', 'TIMESTAMP NULL DEFAULT NULL'],
+    ['city', 'VARCHAR(100) DEFAULT NULL'],
+    ['qualification', 'VARCHAR(255) DEFAULT NULL'],
+    ['experience', 'VARCHAR(100) DEFAULT NULL'],
+  ];
+  for (const [colName, colType] of requiredCandidateCols) {
+    try {
+      await pool.query(`ALTER TABLE candidate_users ADD COLUMN ${colName} ${colType}`);
+    } catch {
+      // Ignore if column already exists
+    }
+  }
 }
 
 /**
@@ -431,6 +479,39 @@ async function seedInitialData() {
       console.log(`🌱 [MySQL] Seeded ${infoList.length} corporate profile entries`);
     }
   }
+
+  // 8. Seed Candidate Users
+  const [candRows] = await pool.query('SELECT COUNT(*) as count FROM candidate_users');
+  if (candRows[0].count === 0) {
+    const candidates = readJson('candidate_users.json');
+    if (candidates && candidates.length > 0) {
+      for (const c of candidates) {
+        await pool.query(
+          `INSERT INTO candidate_users (
+            id, name, email, phone, password, picture, auth_provider, provider_id,
+            email_verified, city, qualification, experience, created_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          ON DUPLICATE KEY UPDATE name = VALUES(name)`,
+          [
+            c.id,
+            c.name,
+            c.email,
+            c.phone || null,
+            c.password || null,
+            c.picture || null,
+            c.authProvider || 'email',
+            c.googleId || c.appleId || c.linkedInId || null,
+            c.emailVerified ? 1 : 0,
+            c.city || null,
+            c.qualification || null,
+            c.experience || null,
+            c.createdAt ? new Date(c.createdAt) : new Date(),
+          ]
+        );
+      }
+      console.log(`🌱 [MySQL] Seeded ${candidates.length} candidate user accounts`);
+    }
+  }
 }
 
 /**
@@ -482,6 +563,7 @@ export async function getDbHealth() {
     const [[milestonesCount]] = await pool.query('SELECT COUNT(*) as count FROM milestones');
     const [[jobsCount]] = await pool.query('SELECT COUNT(*) as count FROM job_postings');
     const [[infoCount]] = await pool.query('SELECT COUNT(*) as count FROM company_info');
+    const [[candCount]] = await pool.query('SELECT COUNT(*) as count FROM candidate_users');
 
     return {
       connected: true,
@@ -498,6 +580,7 @@ export async function getDbHealth() {
         milestones: milestonesCount.count,
         job_postings: jobsCount.count,
         company_info: infoCount.count,
+        candidate_users: candCount.count,
       },
     };
   } catch (err) {
