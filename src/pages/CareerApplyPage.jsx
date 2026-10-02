@@ -61,9 +61,12 @@ export default function CareerApplyPage() {
   const [source, setSource] = useState('Urja Foods Company Website');
 
   // Step 2: MY EXPERIENCE
-  // Document Upload
+  // Document Upload & Websites
   const [resumeFile, setResumeFile] = useState(null);
   const [linkedinUrl, setLinkedinUrl] = useState('');
+  const [githubUrl, setGithubUrl] = useState('');
+  const [portfolioUrl, setPortfolioUrl] = useState('');
+  const [customWebsites, setCustomWebsites] = useState([]);
   const [isDragOver, setIsDragOver] = useState(false);
 
   // Work Experience Entries
@@ -206,6 +209,10 @@ export default function CareerApplyPage() {
           if (prev.city) setCity(prev.city);
           if (prev.state) setState(prev.state);
           if (prev.postalCode) setPostalCode(prev.postalCode);
+          if (prev.linkedinUrl) setLinkedinUrl(prev.linkedinUrl);
+          if (prev.githubUrl) setGithubUrl(prev.githubUrl);
+          if (prev.portfolioUrl) setPortfolioUrl(prev.portfolioUrl);
+          if (prev.customWebsites) setCustomWebsites(prev.customWebsites);
         } catch {
           // ignore
         }
@@ -422,6 +429,22 @@ export default function CareerApplyPage() {
     setCertifications((prev) => prev.filter((item) => item.id !== id));
   };
 
+  // Dynamic Add / Remove Websites
+  const addWebsite = () => {
+    setCustomWebsites((prev) => [
+      ...prev,
+      {
+        id: Date.now(),
+        label: 'Other Website',
+        url: '',
+      },
+    ]);
+  };
+
+  const removeWebsite = (id) => {
+    setCustomWebsites((prev) => prev.filter((item) => item.id !== id));
+  };
+
   // ==========================================
   // FINAL SUBMISSION HANDLER
   // ==========================================
@@ -459,6 +482,10 @@ export default function CareerApplyPage() {
           city,
           state,
           postalCode,
+          linkedinUrl,
+          githubUrl,
+          portfolioUrl,
+          customWebsites,
         })
       );
 
@@ -1082,19 +1109,6 @@ export default function CareerApplyPage() {
                   </button>
                 </div>
               )}
-
-              <div style={{ marginTop: '1.25rem' }}>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#475569', marginBottom: '0.35rem' }}>
-                  LinkedIn / Digital Portfolio URL (Optional)
-                </label>
-                <input
-                  type="url"
-                  className="career-input-field"
-                  placeholder="https://linkedin.com/in/your-profile"
-                  value={linkedinUrl}
-                  onChange={(e) => setLinkedinUrl(e.target.value)}
-                />
-              </div>
             </div>
 
             {/* 2. Work Experience */}
@@ -1684,6 +1698,121 @@ export default function CareerApplyPage() {
               )}
             </div>
 
+            {/* 5. Websites */}
+            <div className="career-form-card">
+              <div className="career-section-header-row">
+                <div className="career-section-title" style={{ margin: 0 }}>
+                  <span className="step-number">2.5</span>
+                  <span>Websites</span>
+                </div>
+                <button
+                  type="button"
+                  className="career-add-btn-primary"
+                  onClick={addWebsite}
+                  title="Add website"
+                >
+                  <Plus size={16} />
+                  <span>+ Add Website</span>
+                </button>
+              </div>
+
+              {/* LinkedIn */}
+              <div className="career-form-group">
+                <label>LinkedIn</label>
+                <input
+                  type="url"
+                  className="career-input-field"
+                  placeholder="https://www.linkedin.com/in/your-profile"
+                  value={linkedinUrl}
+                  onChange={(e) => setLinkedinUrl(e.target.value)}
+                />
+              </div>
+
+              {/* GitHub */}
+              <div className="career-form-group">
+                <label>GitHub</label>
+                <input
+                  type="url"
+                  className="career-input-field"
+                  placeholder="https://github.com/your-username"
+                  value={githubUrl}
+                  onChange={(e) => setGithubUrl(e.target.value)}
+                />
+              </div>
+
+              {/* Portfolio */}
+              <div className="career-form-group">
+                <label>Portfolio</label>
+                <input
+                  type="url"
+                  className="career-input-field"
+                  placeholder="https://yourportfolio.com or project link"
+                  value={portfolioUrl}
+                  onChange={(e) => setPortfolioUrl(e.target.value)}
+                />
+              </div>
+
+              {/* Additional Custom Websites */}
+              {customWebsites.map((site, index) => (
+                <div className="career-repeatable-block" key={site.id} style={{ marginTop: '1rem', padding: '1.25rem' }}>
+                  <div className="career-repeatable-header" style={{ marginBottom: '0.75rem' }}>
+                    <h4 style={{ fontSize: '0.92rem' }}>Additional Website #{index + 1}</h4>
+                    <button
+                      type="button"
+                      className="career-remove-entry-btn"
+                      onClick={() => removeWebsite(site.id)}
+                    >
+                      <Trash2 size={13} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
+                      <span>Remove</span>
+                    </button>
+                  </div>
+                  <div className="career-form-row">
+                    <div className="career-form-group">
+                      <label>Website Name / Type</label>
+                      <input
+                        type="text"
+                        className="career-input-field"
+                        placeholder="e.g. Personal Blog, ResearchGate, Twitter / X"
+                        value={site.label}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setCustomWebsites((prev) =>
+                            prev.map((item) => (item.id === site.id ? { ...item, label: val } : item))
+                          );
+                        }}
+                      />
+                    </div>
+                    <div className="career-form-group">
+                      <label>URL</label>
+                      <input
+                        type="url"
+                        className="career-input-field"
+                        placeholder="https://..."
+                        value={site.url}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setCustomWebsites((prev) =>
+                            prev.map((item) => (item.id === site.id ? { ...item, url: val } : item))
+                          );
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              <div style={{ marginTop: '0.75rem' }}>
+                <button
+                  type="button"
+                  className="career-add-more-btn"
+                  onClick={addWebsite}
+                >
+                  <Plus size={16} />
+                  <span>+ Add Website</span>
+                </button>
+              </div>
+            </div>
+
             <div className="career-wizard-footer">
               <button
                 type="button"
@@ -2073,6 +2202,17 @@ export default function CareerApplyPage() {
                     ))
                   )}
                 </div>
+              </div>
+              <div className="career-review-row">
+                <span className="label">Websites &amp; Profiles:</span>
+                <span className="val">
+                  {[
+                    linkedinUrl ? `LinkedIn: ${linkedinUrl}` : null,
+                    githubUrl ? `GitHub: ${githubUrl}` : null,
+                    portfolioUrl ? `Portfolio: ${portfolioUrl}` : null,
+                    ...customWebsites.filter((s) => s.url).map((s) => `${s.label || 'Website'}: ${s.url}`),
+                  ].filter(Boolean).join(' • ') || 'None Listed'}
+                </span>
               </div>
             </div>
 
