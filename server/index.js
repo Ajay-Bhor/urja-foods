@@ -8,10 +8,8 @@ import { initDB, getDbHealth, isDbConnected } from './config/db.js';
 import productsRouter from './routes/products.js';
 import inquiryRouter from './routes/inquiry.js';
 import calculatorRouter from './routes/calculator.js';
-import careersRouter from './routes/careers.js';
 import businessesRouter from './routes/businesses.js';
 import milestonesRouter from './routes/milestones.js';
-import jobsRouter from './routes/jobs.js';
 import companyInfoRouter from './routes/companyInfo.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -35,10 +33,8 @@ app.use((req, res, next) => {
 app.use('/api/products', productsRouter);
 app.use('/api/inquiries', inquiryRouter);
 app.use('/api/calculate', calculatorRouter);
-app.use('/api/careers', careersRouter);
 app.use('/api/businesses', businessesRouter);
 app.use('/api/milestones', milestonesRouter);
-app.use('/api/jobs', jobsRouter);
 app.use('/api/company-info', companyInfoRouter);
 
 // Enhanced Health check endpoint with Database status
@@ -83,7 +79,6 @@ async function startServer() {
     console.log(`🌾 Products API: http://localhost:${PORT}/api/products`);
     console.log(`🌾 Businesses API: http://localhost:${PORT}/api/businesses`);
     console.log(`🌾 Milestones API: http://localhost:${PORT}/api/milestones`);
-    console.log(`🌾 Jobs API: http://localhost:${PORT}/api/jobs`);
     console.log(`🌾 Company Info API: http://localhost:${PORT}/api/company-info`);
     console.log(`🌾 Database status: ${isDbConnected() ? '✅ MySQL Connected' : '⚠️ Fallback JSON Mode'}`);
     console.log(`=========================================`);

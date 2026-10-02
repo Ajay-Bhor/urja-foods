@@ -1,31 +1,24 @@
-# 🌾 Urja Foods & Agro - Advanced Feed Pellet & Agri-Tech Platform
+# 🌾 Urja Foods & Agro - Advanced Agribusiness & Feed Milling Platform
 
-[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.x-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com/)
 
-> **Urja Foods & Agro Industries Pvt. Ltd.** is a state-of-the-art cattle and poultry feed manufacturing platform powered by cutting-edge European EC-certified 150 TPD (Tonnes Per Day) automated pellet technology.
+> **Urja Foods & Agro Industries Pvt. Ltd.** is a modern full-stack agribusiness platform showcasing automated feed pellet manufacturing, livestock nutrition, contract farming, and farm-to-fork value chain integration.
 
 ---
 
-## 🚀 Key Highlights & Features
+## 🚀 Key Features
 
-- ⚙️ **European Engineering Showcase**: Interactive telemetry display featuring 4-stage conditioning, continuous double-pass cooling, and automated robotic bagging line.
-- 📊 **Farmer Profit & Milk Yield ROI Calculator**: Interactive real-time calculator that computes projected milk yield increase and net monthly profit boost from Urja Feed rations.
-- 🎨 **Modern High-Impact Animations**:
-  - Continuous gradient flow buttons & border glows
-  - Dynamic card shine & reflective light sweeps
-  - Staggered floating badges with parallax micro-animations
-  - Particle & twinkle effects on achievement milestones
-- ⚡ **Full Data Loading Animation Suite**:
-  - Skeleton catalog placeholders with realistic light beams
-  - Telemetry HUD spinners for portal & asynchronous API fetches
-  - Brand preloader splash animation on first boot
-- 📦 **Multi-Brand Product Catalog**: Filtering across Cattle Feeds (Urja Gold, Urja Doodh Vardhak, Bypass Fat Pellets) and Poultry Feeds with nutritional profiles.
-- 🤝 **Dealer & Partner Inquiries**: Integrated application forms with real-time feedback and validation.
-- 💼 **HR & Careers Portal**: Job listings, department filters, and resume application workflow.
+- ⚙️ **Manufacturing & Operations Showcase**: Highlights 150 TPD automated steam-conditioned pelleting, 4-stage conditioning, double-pass cooling, and robotic bagging.
+- 📦 **Interactive Product Range**: Multi-category cattle feed, broiler feed, and nutrition supplement catalog with detailed nutrient specs, bypass fat formulation details, and direct rate inquiries.
+- 🌾 **Five Core Agribusiness Sectors**: Dedicated portfolio pages and deep-dives for Urja Foods, Urja Pashu Aahar, Poushtik Chicken, Urja Organic, and Urja Soya.
+- 📜 **Historical Journey & Milestones**: Interactive horizontal milestone journey from 2004 foundation to modern expansion.
+- 🤝 **Dealer & Farmer Inquiries**: Real-time validated inquiry forms backed by MySQL and resilient JSON backup storage.
+- 🌐 **Multi-Language Support**: Seamless Marathi, Hindi, and English localization across corporate information and navigation.
+- 💾 **Dual Data Architecture**: Seamless auto-fallback to local JSON storage if MySQL database is not connected.
 
 ---
 
@@ -33,45 +26,15 @@
 
 ### Frontend
 - **Framework**: React 18 with Vite
-- **Styling**: Tailwind CSS & Custom CSS Keyframe Animations
+- **Styling**: Tailwind CSS & Modern Vanilla CSS Design System
 - **Icons**: Lucide React
-- **Client Port**: `http://localhost:5173`
+- **Routing**: React Router v7
+- **Port**: `http://localhost:3000`
 
 ### Backend
-- **Server**: Node.js & Express.js
-- **Database**: MySQL (`urja_foods`)
-- **API Port**: `http://localhost:5000`
-
----
-
-## 💻 Local Development Setup
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/Ajay-Bhor/urja-foods.git
-cd urja-foods
-```
-
-### 2. Backend Setup
-```bash
-# Install backend dependencies
-npm install
-
-# Start backend server
-node server/index.js
-```
-*Backend runs on `http://localhost:5000`.*
-
-### 3. Frontend Setup
-```bash
-# Install frontend dependencies
-cd client
-npm install
-
-# Start Vite dev server
-npm run dev
-```
-*Frontend runs on `http://localhost:5173`.*
+- **Server**: Node.js & Express
+- **Database**: MySQL (`mysql2` connection pool) with auto-fallback to JSON
+- **Port**: `http://localhost:5000`
 
 ---
 
@@ -79,31 +42,82 @@ npm run dev
 
 ```text
 urja-foods/
-├── client/
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── urja/
-│   │   │       ├── UrjaNavbar.jsx
-│   │   │       ├── UrjaHero.jsx
-│   │   │       ├── UrjaHomeHighlights.jsx
-│   │   │       ├── UrjaEuropeanTech.jsx
-│   │   │       ├── UrjaFarmerCalculator.jsx
-│   │   │       ├── UrjaFarmerTestimonials.jsx
-│   │   │       ├── UrjaDataLoader.jsx
-│   │   │       ├── UrjaProductsCatalog.jsx
-│   │   │       ├── UrjaHrPortal.jsx
-│   │   │       ├── UrjaContactSection.jsx
-│   │   │       └── UrjaFooter.jsx
-│   │   ├── App.jsx
-│   │   └── index.css
-│   ├── tailwind.config.js
-│   └── vite.config.js
+├── public/
+│   ├── images/
+│   │   ├── timeline/           # Milestone journey imagery (2004–2025)
+│   │   └── *.jpg               # Business sector & banner assets
+│   ├── company-plant.jpg       # Manufacturing plant imagery
+│   ├── company.jpg             # Facility aerial photography
+│   └── logo.png                # Official Urja Foods logo
 ├── server/
 │   ├── config/
-│   ├── controllers/
+│   │   └── db.js               # MySQL pool, table creation & seeding
+│   ├── data/
+│   │   ├── businesses.json     # Business vertical fallback data
+│   │   ├── company_info.json   # Corporate leadership & profile
+│   │   ├── inquiries.json      # Stored inquiry leads
+│   │   ├── milestones.json     # Historical timeline records
+│   │   └── products.json       # Product formulations & specs
 │   ├── routes/
-│   └── index.js
+│   │   ├── businesses.js       # /api/businesses endpoints
+│   │   ├── calculator.js       # /api/calculate feed estimation
+│   │   ├── companyInfo.js      # /api/company-info endpoints
+│   │   ├── inquiry.js          # /api/inquiries lead dispatch
+│   │   ├── milestones.js       # /api/milestones endpoints
+│   │   └── products.js         # /api/products catalog endpoints
+│   ├── scripts/
+│   │   └── test-db.js          # MySQL connection diagnostic test
+│   ├── index.js                # Express API & static server entry
+│   └── schema.sql              # MySQL enterprise database schema
+├── src/
+│   ├── components/             # Reusable UI components & sections
+│   ├── data/                   # Client-side data & translations
+│   ├── hooks/                  # Custom hooks & LanguageContext
+│   ├── pages/                  # Top-level view routes
+│   ├── styles/                 # Modern styling tokens & CSS modules
+│   ├── App.jsx                 # Route definitions & global layout
+│   └── main.jsx                # React root mount
+├── .env.example                # Environment variables template
+├── .gitignore                  # Git ignore rules
+├── index.html                  # HTML entry point
+├── package.json                # Project dependencies & scripts
+├── vite.config.js              # Vite configuration & API proxy
 └── README.md
+```
+
+---
+
+## 💻 Getting Started
+
+### 1. Clone & Install
+
+```bash
+git clone https://github.com/Ajay-Bhor/urja-foods.git
+cd urja-foods
+npm install
+```
+
+### 2. Configure Environment
+
+Copy the example environment file:
+```bash
+cp .env.example .env
+```
+*(Optional) Adjust MySQL credentials in `.env` if connecting to a local or remote MySQL server.*
+
+### 3. Run Development Server
+
+```bash
+npm run dev
+```
+This runs both:
+- **Frontend**: `http://localhost:3000`
+- **Backend API**: `http://localhost:5000`
+
+### 4. Build for Production
+
+```bash
+npm run build
 ```
 
 ---

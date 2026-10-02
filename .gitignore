@@ -28,6 +28,3 @@ dist-ssr/
 .env
 .env.*
 !.env.example
-
-# Candidate local runtime data
-server/data/candidate_users.json

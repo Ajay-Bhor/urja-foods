@@ -58,43 +58,6 @@ CREATE TABLE IF NOT EXISTS `inquiries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------------------------------------
--- Table: career_applications
--- Description: Stores job applications and candidate profiles
--- ----------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `career_applications` (
-  `id` VARCHAR(64) NOT NULL,
-  `name` VARCHAR(255) NOT NULL,
-  `phone` VARCHAR(50) NOT NULL,
-  `email` VARCHAR(255) DEFAULT NULL,
-  `position` VARCHAR(255) DEFAULT NULL,
-  `experience` VARCHAR(100) DEFAULT NULL,
-  `qualification` VARCHAR(255) DEFAULT NULL,
-  `city` VARCHAR(100) DEFAULT NULL,
-  `resume_url` VARCHAR(500) DEFAULT NULL,
-  `message` TEXT DEFAULT NULL,
-  `status` VARCHAR(100) DEFAULT 'Delivered to HR Desk',
-  `submitted_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  INDEX `idx_submitted_at` (`submitted_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ----------------------------------------------------------
--- Table: email_logs
--- Description: Audit trail for outbound HR notifications and applicant acknowledgments
--- ----------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `email_logs` (
-  `id` INT AUTO_INCREMENT NOT NULL,
-  `type` VARCHAR(100) DEFAULT NULL,
-  `application_id` VARCHAR(64) DEFAULT NULL,
-  `recipient` VARCHAR(255) DEFAULT NULL,
-  `subject` VARCHAR(255) DEFAULT NULL,
-  `status` VARCHAR(100) DEFAULT NULL,
-  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  INDEX `idx_application_id` (`application_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ----------------------------------------------------------
 -- Table: businesses
 -- Description: Stores corporate agribusiness divisions, metrics, and processes
 -- ----------------------------------------------------------
@@ -131,28 +94,6 @@ CREATE TABLE IF NOT EXISTS `milestones` (
   `display_order` INT DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `idx_year` (`year`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ----------------------------------------------------------
--- Table: job_postings
--- Description: Stores active career vacancies and job profiles
--- ----------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `job_postings` (
-  `id` VARCHAR(64) NOT NULL,
-  `title` VARCHAR(255) NOT NULL,
-  `dept` VARCHAR(100) NOT NULL,
-  `location` VARCHAR(255) NOT NULL,
-  `experience` VARCHAR(100) DEFAULT NULL,
-  `type` VARCHAR(100) DEFAULT NULL,
-  `vacancies` VARCHAR(50) DEFAULT NULL,
-  `summary` TEXT DEFAULT NULL,
-  `responsibilities` JSON DEFAULT NULL,
-  `requirements` JSON DEFAULT NULL,
-  `status` VARCHAR(50) DEFAULT 'Active',
-  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  INDEX `idx_dept` (`dept`),
-  INDEX `idx_status` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------------------------------------

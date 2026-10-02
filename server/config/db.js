@@ -123,40 +123,7 @@ async function createTables() {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
   `);
 
-  // 3. Career Applications Table
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS career_applications (
-      id VARCHAR(64) PRIMARY KEY,
-      name VARCHAR(255) NOT NULL,
-      phone VARCHAR(50) NOT NULL,
-      email VARCHAR(255) DEFAULT NULL,
-      position VARCHAR(255) DEFAULT NULL,
-      experience VARCHAR(100) DEFAULT NULL,
-      qualification VARCHAR(255) DEFAULT NULL,
-      city VARCHAR(100) DEFAULT NULL,
-      resume_url VARCHAR(500) DEFAULT NULL,
-      message TEXT DEFAULT NULL,
-      status VARCHAR(100) DEFAULT 'Delivered to HR Desk',
-      submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-      INDEX idx_submitted_at (submitted_at)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-  `);
-
-  // 4. Email Logs Table
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS email_logs (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      type VARCHAR(100) DEFAULT NULL,
-      application_id VARCHAR(64) DEFAULT NULL,
-      recipient VARCHAR(255) DEFAULT NULL,
-      subject VARCHAR(255) DEFAULT NULL,
-      status VARCHAR(100) DEFAULT NULL,
-      timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-      INDEX idx_application_id (application_id)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-  `);
-
-  // 5. Businesses Table (All 5 agribusiness sectors)
+  // 3. Businesses Table (All 5 agribusiness sectors)
   await pool.query(`
     CREATE TABLE IF NOT EXISTS businesses (
       id VARCHAR(64) PRIMARY KEY,
@@ -178,7 +145,7 @@ async function createTables() {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
   `);
 
-  // 6. Milestones Table (Historical milestones)
+  // 4. Milestones Table (Historical milestones)
   await pool.query(`
     CREATE TABLE IF NOT EXISTS milestones (
       id INT AUTO_INCREMENT PRIMARY KEY,
@@ -191,27 +158,7 @@ async function createTables() {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
   `);
 
-  // 7. Job Postings Table (Active company vacancies)
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS job_postings (
-      id VARCHAR(64) PRIMARY KEY,
-      title VARCHAR(255) NOT NULL,
-      dept VARCHAR(100) NOT NULL,
-      location VARCHAR(255) NOT NULL,
-      experience VARCHAR(100) DEFAULT NULL,
-      type VARCHAR(100) DEFAULT NULL,
-      vacancies VARCHAR(50) DEFAULT NULL,
-      summary TEXT DEFAULT NULL,
-      responsibilities JSON DEFAULT NULL,
-      requirements JSON DEFAULT NULL,
-      status VARCHAR(50) DEFAULT 'Active',
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-      INDEX idx_dept (dept),
-      INDEX idx_status (status)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-  `);
-
-  // 8. Company Info Table (Values, Chairman Message, Contacts, Perks)
+  // 5. Company Info Table (Values, Chairman Message, Contacts, Perks)
   await pool.query(`
     CREATE TABLE IF NOT EXISTS company_info (
       info_key VARCHAR(100) PRIMARY KEY,
@@ -221,54 +168,6 @@ async function createTables() {
       updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
   `);
-
-  // 9. Candidate Users Table (Candidate Portal Authentication)
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS candidate_users (
-      id VARCHAR(64) PRIMARY KEY,
-      name VARCHAR(255) NOT NULL,
-      email VARCHAR(255) NOT NULL,
-      phone VARCHAR(32) DEFAULT NULL,
-      password VARCHAR(255) DEFAULT NULL,
-      picture TEXT DEFAULT NULL,
-      auth_provider VARCHAR(32) DEFAULT 'email',
-      provider_id VARCHAR(128) DEFAULT NULL,
-      email_verified BOOLEAN DEFAULT FALSE,
-      verification_code VARCHAR(16) DEFAULT NULL,
-      verification_code_expires TIMESTAMP NULL DEFAULT NULL,
-      reset_code VARCHAR(16) DEFAULT NULL,
-      reset_code_expires TIMESTAMP NULL DEFAULT NULL,
-      city VARCHAR(100) DEFAULT NULL,
-      qualification VARCHAR(255) DEFAULT NULL,
-      experience VARCHAR(100) DEFAULT NULL,
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-      UNIQUE INDEX idx_email (email),
-      INDEX idx_phone (phone),
-      INDEX idx_auth_provider (auth_provider)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-  `);
-
-  // Ensure all columns exist in candidate_users even if table was created in earlier versions
-  const requiredCandidateCols = [
-    ['password', 'VARCHAR(255) DEFAULT NULL'],
-    ['provider_id', 'VARCHAR(128) DEFAULT NULL'],
-    ['email_verified', 'BOOLEAN DEFAULT FALSE'],
-    ['verification_code', 'VARCHAR(16) DEFAULT NULL'],
-    ['verification_code_expires', 'TIMESTAMP NULL DEFAULT NULL'],
-    ['reset_code', 'VARCHAR(16) DEFAULT NULL'],
-    ['reset_code_expires', 'TIMESTAMP NULL DEFAULT NULL'],
-    ['city', 'VARCHAR(100) DEFAULT NULL'],
-    ['qualification', 'VARCHAR(255) DEFAULT NULL'],
-    ['experience', 'VARCHAR(100) DEFAULT NULL'],
-  ];
-  for (const [colName, colType] of requiredCandidateCols) {
-    try {
-      await pool.query(`ALTER TABLE candidate_users ADD COLUMN ${colName} ${colType}`);
-    } catch {
-      // Ignore if column already exists
-    }
-  }
 }
 
 /**
@@ -434,37 +333,7 @@ async function seedInitialData() {
     }
   }
 
-  // 6. Seed Job Postings
-  const [jobRows] = await pool.query('SELECT COUNT(*) as count FROM job_postings');
-  if (jobRows[0].count === 0) {
-    const jobs = readJson('jobs.json');
-    if (jobs) {
-      for (const j of jobs) {
-        await pool.query(
-          `INSERT INTO job_postings (
-            id, title, dept, location, experience, type, vacancies, summary,
-            responsibilities, requirements, status
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-          [
-            j.id,
-            j.title,
-            j.dept,
-            j.location,
-            j.experience,
-            j.type,
-            j.vacancies,
-            j.summary,
-            JSON.stringify(j.responsibilities || []),
-            JSON.stringify(j.requirements || []),
-            j.status || 'Active',
-          ]
-        );
-      }
-      console.log(`🌱 [MySQL] Seeded ${jobs.length} job postings`);
-    }
-  }
-
-  // 7. Seed Company Info
+  // 5. Seed Company Info
   const [infoRows] = await pool.query('SELECT COUNT(*) as count FROM company_info');
   if (infoRows[0].count === 0) {
     const infoList = readJson('company_info.json');
