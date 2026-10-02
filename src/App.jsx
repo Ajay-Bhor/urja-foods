@@ -23,6 +23,7 @@ import MissionVisionValuesPage from './pages/MissionVisionValuesPage';
 import CareersPage from './pages/CareersPage';
 import CareerApplyPage from './pages/CareerApplyPage';
 import CandidateLoginPage from './pages/CandidateLoginPage';
+import CandidateDashboardPage from './pages/CandidateDashboardPage';
 
 import useScrollReveal from './hooks/useScrollReveal';
 
@@ -113,6 +114,9 @@ export default function App() {
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/career" element={<CareersPage />} />
           <Route path="/careers/login" element={<CandidateLoginPage />} />
+          <Route path="/careers/dashboard" element={<CandidateDashboardPage />} />
+          <Route path="/career/dashboard" element={<CandidateDashboardPage />} />
+          <Route path="/candidate/dashboard" element={<CandidateDashboardPage />} />
           <Route path="/careers/apply" element={<CareerApplyPage />} />
           <Route path="/careers/apply/:jobId" element={<CareerApplyPage />} />
           <Route path="/careers/apply/:jobId/:routeMode" element={<CareerApplyPage />} />

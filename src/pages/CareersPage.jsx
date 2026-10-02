@@ -99,6 +99,32 @@ export default function CareersPage() {
               <span>Find Roles</span>
             </button>
           </div>
+
+          {/* Candidate Dashboard Direct Link */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.25rem' }}>
+            <Link
+              to="/careers/dashboard"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.45rem',
+                background: 'rgba(255, 255, 255, 0.15)',
+                color: '#ffffff',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                padding: '0.45rem 1.15rem',
+                borderRadius: '30px',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                textDecoration: 'none',
+                backdropFilter: 'blur(8px)',
+                transition: 'all 0.2s ease',
+              }}
+            >
+              <Users size={15} />
+              <span>Applied already? Candidate Dashboard &amp; Status Tracker</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -493,8 +493,62 @@ export default function CareerApplyPage() {
         phone: `${countryCode} ${phone.trim()}`,
         location: `${city}, ${state}, ${country}`.trim(),
         resume: resumeFile ? resumeFile.name : (linkedinUrl || 'Submitted via ATS Profile'),
-        submittedAt: new Date().toLocaleString(),
+        submittedAt: new Date().toLocaleDateString(),
+        status: 'Application Submitted',
+        stage: 1,
+        details: {
+          firstName,
+          middleName,
+          lastName,
+          email,
+          phone,
+          countryCode,
+          country,
+          addressLine,
+          city,
+          state,
+          postalCode,
+          workExperiences,
+          educationList,
+          certifications,
+          skills,
+          linkedinUrl,
+          githubUrl,
+          portfolioUrl,
+          customWebsites,
+          workAuth,
+          currentlyWorkingForUrja,
+          previouslyWorkedForUrja,
+          willingToRelocate,
+          gender,
+          veteranStatus,
+          disabilityStatus,
+          agreeDeclaration,
+        },
       };
+
+      // Ensure candidate user profile exists in localStorage
+      const existingUser = localStorage.getItem('urja_candidate_user');
+      if (!existingUser) {
+        localStorage.setItem(
+          'urja_candidate_user',
+          JSON.stringify({
+            name: fullName || 'Candidate',
+            email: email.trim() || 'candidate@urjafoods.com',
+            authMethod: 'External Applicant',
+            loggedInAt: new Date().toISOString(),
+          })
+        );
+      }
+
+      // Save to urja_submitted_applications array for Candidate Dashboard
+      try {
+        const storedApps = JSON.parse(localStorage.getItem('urja_submitted_applications') || '[]');
+        const updatedApps = [receipt, ...storedApps.filter((a) => a.applicationId !== receipt.applicationId)];
+        localStorage.setItem('urja_submitted_applications', JSON.stringify(updatedApps));
+      } catch (e) {
+        console.error('Failed to update urja_submitted_applications', e);
+      }
 
       // Save for future "Use My Last Application"
       localStorage.setItem(
@@ -578,19 +632,35 @@ export default function CareerApplyPage() {
           </div>
 
           {/* Action Buttons */}
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '0.85rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button
               type="button"
               className="careers-btn-secondary"
               onClick={() => setShowViewModal(true)}
-              style={{ padding: '0.85rem 2rem', fontSize: '0.95rem', fontWeight: 700 }}
+              style={{ padding: '0.85rem 1.65rem', fontSize: '0.95rem', fontWeight: 700 }}
             >
               View Application
             </button>
             <Link
-              to="/careers"
+              to="/careers/dashboard"
               className="careers-btn-primary"
-              style={{ padding: '0.85rem 2rem', fontSize: '0.95rem', fontWeight: 700, textDecoration: 'none' }}
+              style={{
+                padding: '0.85rem 1.65rem',
+                fontSize: '0.95rem',
+                fontWeight: 700,
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.45rem',
+              }}
+            >
+              <span>Candidate Dashboard</span>
+              <ArrowRight size={16} />
+            </Link>
+            <Link
+              to="/careers"
+              className="careers-btn-secondary"
+              style={{ padding: '0.85rem 1.65rem', fontSize: '0.95rem', fontWeight: 700, textDecoration: 'none' }}
             >
               Back to Careers
             </Link>
