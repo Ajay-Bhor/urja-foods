@@ -21,6 +21,8 @@ import {
   Edit3,
 } from 'lucide-react';
 import { JOB_OPENINGS } from '../data/careersData';
+import CountryPhoneInput from '../components/CountryPhoneInput';
+import { COUNTRIES } from '../utils/countries.js';
 
 export default function CareerApplyPage() {
   const { jobId, routeMode } = useParams();
@@ -43,11 +45,15 @@ export default function CareerApplyPage() {
   // FORM DATA STATES
   // ==========================================
 
-  // Step 1: MY INFORMATION
+  // Step 1: PERSONAL INFORMATION
   const [firstName, setFirstName] = useState('');
+  const [middleName, setMiddleName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [countryCode, setCountryCode] = useState('+91');
+  const [countryIso, setCountryIso] = useState('IN');
+  const [country, setCountry] = useState('India');
   const [addressLine, setAddressLine] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('Maharashtra');
@@ -129,9 +135,17 @@ export default function CareerApplyPage() {
 
       // Pre-fill name and email from candidate profile
       if (user.name) {
-        const parts = user.name.trim().split(' ');
-        setFirstName(parts[0] || '');
-        setLastName(parts.slice(1).join(' ') || '');
+        const parts = user.name.trim().split(/\s+/);
+        if (parts.length === 1) {
+          setFirstName(parts[0]);
+        } else if (parts.length === 2) {
+          setFirstName(parts[0]);
+          setLastName(parts[1]);
+        } else if (parts.length >= 3) {
+          setFirstName(parts[0]);
+          setMiddleName(parts.slice(1, -1).join(' '));
+          setLastName(parts[parts.length - 1]);
+        }
         setSignatureName(user.name);
       }
       if (user.email) {
@@ -178,9 +192,17 @@ export default function CareerApplyPage() {
         try {
           const prev = JSON.parse(saved);
           if (prev.firstName) setFirstName(prev.firstName);
+          if (prev.middleName) setMiddleName(prev.middleName);
           if (prev.lastName) setLastName(prev.lastName);
+          if (prev.email) setEmail(prev.email);
           if (prev.phone) setPhone(prev.phone);
+          if (prev.countryCode) setCountryCode(prev.countryCode);
+          if (prev.countryIso) setCountryIso(prev.countryIso);
+          if (prev.country) setCountry(prev.country);
+          if (prev.addressLine) setAddressLine(prev.addressLine);
           if (prev.city) setCity(prev.city);
+          if (prev.state) setState(prev.state);
+          if (prev.postalCode) setPostalCode(prev.postalCode);
         } catch {
           // ignore
         }
@@ -220,18 +242,42 @@ export default function CareerApplyPage() {
   const goToNextStep = (nextStep) => {
     setValidationError('');
 
-    // Validate Step 1
+    // Validate Step 1: Personal Information
     if (currentStep === 1) {
-      if (!firstName.trim() || !lastName.trim()) {
-        setValidationError('Please enter both your Legal First Name and Last Name.');
+      if (!firstName.trim()) {
+        setValidationError('Please enter your First Name.');
+        return;
+      }
+      if (!lastName.trim()) {
+        setValidationError('Please enter your Last Name.');
         return;
       }
       if (!email.trim() || !email.includes('@')) {
         setValidationError('Please enter a valid candidate email address.');
         return;
       }
-      if (!phone.trim() || phone.length < 10) {
-        setValidationError('Please provide a valid 10-digit mobile contact number.');
+      if (!phone.trim()) {
+        setValidationError('Please provide your Phone Number.');
+        return;
+      }
+      if (!addressLine.trim()) {
+        setValidationError('Please enter your Address.');
+        return;
+      }
+      if (!city.trim()) {
+        setValidationError('Please enter your City.');
+        return;
+      }
+      if (!state.trim()) {
+        setValidationError('Please enter your State.');
+        return;
+      }
+      if (!postalCode.trim()) {
+        setValidationError('Please enter your Postal Code.');
+        return;
+      }
+      if (!country.trim()) {
+        setValidationError('Please select your Country.');
         return;
       }
     }
@@ -328,15 +374,15 @@ export default function CareerApplyPage() {
     setValidationError('');
 
     setTimeout(() => {
-      const applicationId = `URJA-CAREER-${Math.floor(100000 + Math.random() * 900000)}`;
+      const fullName = [firstName, middleName, lastName].filter(Boolean).join(' ');
       const receipt = {
         applicationId,
         jobTitle: selectedJob ? selectedJob.title : 'General Position',
         jobDept: selectedJob ? selectedJob.dept : 'General Operations',
-        fullName: `${firstName} ${lastName}`.trim(),
+        fullName: fullName || 'Candidate',
         email: email.trim(),
-        phone: phone.trim(),
-        location: `${city}, ${state}`.trim(),
+        phone: `${countryCode} ${phone.trim()}`,
+        location: `${city}, ${state}, ${country}`.trim(),
         resume: resumeFile ? resumeFile.name : (linkedinUrl || 'Submitted via ATS Profile'),
         submittedAt: new Date().toLocaleString(),
       };
@@ -344,7 +390,20 @@ export default function CareerApplyPage() {
       // Save for future "Use My Last Application"
       localStorage.setItem(
         'urja_last_application',
-        JSON.stringify({ firstName, lastName, email, phone, city, state, postalCode })
+        JSON.stringify({
+          firstName,
+          middleName,
+          lastName,
+          email,
+          phone,
+          countryCode,
+          countryIso,
+          country,
+          addressLine,
+          city,
+          state,
+          postalCode,
+        })
       );
 
       setSubmittedReceipt(receipt);
@@ -579,7 +638,7 @@ export default function CareerApplyPage() {
   // RENDER: WORKDAY-STYLE 5-STEP APPLICATION WIZARD
   // ==========================================================================
   const stepTitles = [
-    { num: 1, label: 'My Information' },
+    { num: 1, label: 'Personal Information' },
     { num: 2, label: 'My Experience' },
     { num: 3, label: 'Application Questions' },
     { num: 4, label: 'Voluntary Disclosures' },
@@ -690,18 +749,22 @@ export default function CareerApplyPage() {
         )}
 
         {/* ==================================================================
-            STEP 1: MY INFORMATION
+            STEP 1: PERSONAL INFORMATION
             ================================================================== */}
         {currentStep === 1 && (
           <div className="career-form-card">
             <div className="career-section-title">
               <span className="step-number">1</span>
-              <span>My Information</span>
+              <span>Personal Information</span>
             </div>
+            <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '1.5rem', marginTop: '-0.5rem' }}>
+              Please enter your legal name and contact details as they appear on official identification documents.
+            </p>
 
-            <div className="career-form-row">
+            {/* Names row: First Name, Middle Name, Last Name */}
+            <div className="career-form-row career-form-row-3">
               <div className="career-form-group">
-                <label>Legal First Name *</label>
+                <label>First Name <span style={{ color: '#dc2626' }}>*</span></label>
                 <input
                   type="text"
                   className="career-input-field"
@@ -713,7 +776,18 @@ export default function CareerApplyPage() {
               </div>
 
               <div className="career-form-group">
-                <label>Legal Last Name *</label>
+                <label>Middle Name</label>
+                <input
+                  type="text"
+                  className="career-input-field"
+                  placeholder="e.g. Dnyaneshwar (Optional)"
+                  value={middleName}
+                  onChange={(e) => setMiddleName(e.target.value)}
+                />
+              </div>
+
+              <div className="career-form-group">
+                <label>Last Name <span style={{ color: '#dc2626' }}>*</span></label>
                 <input
                   type="text"
                   className="career-input-field"
@@ -725,13 +799,14 @@ export default function CareerApplyPage() {
               </div>
             </div>
 
+            {/* Contact row: Email & Phone Number with Country Code + Flag */}
             <div className="career-form-row">
               <div className="career-form-group">
-                <label>Email Address *</label>
+                <label>Email <span style={{ color: '#dc2626' }}>*</span></label>
                 <input
                   type="email"
                   className="career-input-field"
-                  placeholder="ramesh.patil@gmail.com"
+                  placeholder="ramesh.patil@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -739,60 +814,94 @@ export default function CareerApplyPage() {
               </div>
 
               <div className="career-form-group">
-                <label>Phone / WhatsApp Number *</label>
-                <input
-                  type="tel"
-                  className="career-input-field"
-                  placeholder="+91 9822114455"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  required
+                <CountryPhoneInput
+                  countryCode={countryCode}
+                  countryIso={countryIso}
+                  phoneNumber={phone}
+                  onCountryChange={(selected) => {
+                    setCountryCode(selected.dial);
+                    setCountryIso(selected.iso);
+                    setCountry(selected.name);
+                  }}
+                  onPhoneChange={(val) => setPhone(val)}
+                  required={true}
                 />
               </div>
             </div>
 
+            {/* Address row */}
             <div className="career-form-group">
-              <label>Street Address / Apartment / Village</label>
+              <label>Address <span style={{ color: '#dc2626' }}>*</span></label>
               <input
                 type="text"
                 className="career-input-field"
-                placeholder="e.g. House No. 45, Near Gram Panchayat, Nirgudsar"
+                placeholder="Street address, building name, flat / house number, village or landmark"
                 value={addressLine}
                 onChange={(e) => setAddressLine(e.target.value)}
+                required
               />
             </div>
 
-            <div className="career-form-row">
+            {/* Location row: City, State, Postal Code, Country */}
+            <div className="career-form-row career-form-row-4">
               <div className="career-form-group">
-                <label>City / Town</label>
+                <label>City <span style={{ color: '#dc2626' }}>*</span></label>
                 <input
                   type="text"
                   className="career-input-field"
-                  placeholder="e.g. Pune / Manchar"
+                  placeholder="e.g. Pune"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
+                  required
                 />
               </div>
 
               <div className="career-form-group">
-                <label>State / Province</label>
+                <label>State <span style={{ color: '#dc2626' }}>*</span></label>
                 <input
                   type="text"
                   className="career-input-field"
+                  placeholder="e.g. Maharashtra"
                   value={state}
                   onChange={(e) => setState(e.target.value)}
+                  required
                 />
               </div>
 
               <div className="career-form-group">
-                <label>Postal / Pin Code</label>
+                <label>Postal Code <span style={{ color: '#dc2626' }}>*</span></label>
                 <input
                   type="text"
                   className="career-input-field"
-                  placeholder="e.g. 410503"
+                  placeholder="e.g. 411004"
                   value={postalCode}
                   onChange={(e) => setPostalCode(e.target.value)}
+                  required
                 />
+              </div>
+
+              <div className="career-form-group">
+                <label>Country <span style={{ color: '#dc2626' }}>*</span></label>
+                <select
+                  className="career-input-field"
+                  value={country}
+                  onChange={(e) => {
+                    const selectedName = e.target.value;
+                    setCountry(selectedName);
+                    const matched = COUNTRIES.find((c) => c.name === selectedName);
+                    if (matched) {
+                      setCountryCode(matched.dial);
+                      setCountryIso(matched.iso);
+                    }
+                  }}
+                  required
+                >
+                  {COUNTRIES.map((c) => (
+                    <option key={c.iso} value={c.name}>
+                      {c.name} ({c.dial})
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
 
@@ -1518,10 +1627,10 @@ export default function CareerApplyPage() {
               if you need to make changes.
             </p>
 
-            {/* 1. Review My Information */}
+            {/* 1. Review Personal Information */}
             <div className="career-review-section">
               <div className="career-review-header">
-                <h4>1. My Information</h4>
+                <h4>1. Personal Information</h4>
                 <button
                   type="button"
                   className="career-edit-jump-btn"
@@ -1532,19 +1641,27 @@ export default function CareerApplyPage() {
               </div>
               <div className="career-review-row">
                 <span className="label">Full Legal Name:</span>
-                <span className="val">{firstName} {lastName}</span>
+                <span className="val">{[firstName, middleName, lastName].filter(Boolean).join(' ')}</span>
               </div>
               <div className="career-review-row">
                 <span className="label">Email Address:</span>
                 <span className="val">{email}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Contact Phone:</span>
-                <span className="val">{phone}</span>
+                <span className="label">Phone Number:</span>
+                <span className="val">{countryCode} {phone}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Address / Location:</span>
-                <span className="val">{addressLine ? `${addressLine}, ` : ''}{city}, {state} {postalCode}</span>
+                <span className="label">Address:</span>
+                <span className="val">{addressLine}</span>
+              </div>
+              <div className="career-review-row">
+                <span className="label">City, State &amp; Postal Code:</span>
+                <span className="val">{city}, {state} - {postalCode}</span>
+              </div>
+              <div className="career-review-row">
+                <span className="label">Country:</span>
+                <span className="val">{country}</span>
               </div>
               <div className="career-review-row">
                 <span className="label">Application Source:</span>
