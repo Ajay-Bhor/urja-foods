@@ -239,6 +239,29 @@ export default function CareerApplyPage() {
     }
   };
 
+  // Resume File Selection & 5 MB Limit Validation
+  const handleResumeFileSelect = (file) => {
+    setValidationError('');
+    if (!file) return;
+
+    const allowedExtensions = ['.pdf', '.doc', '.docx'];
+    const fileName = file.name.toLowerCase();
+    const isAllowed = allowedExtensions.some((ext) => fileName.endsWith(ext));
+
+    if (!isAllowed) {
+      setValidationError('Invalid file format. Please upload a PDF, DOC, or DOCX document.');
+      return;
+    }
+
+    const maxSizeBytes = 5 * 1024 * 1024; // 5 MB
+    if (file.size > maxSizeBytes) {
+      setValidationError('File exceeds the maximum file size limit of 5 MB. Please upload a smaller file.');
+      return;
+    }
+
+    setResumeFile(file);
+  };
+
   // ==========================================
   // STEP VALIDATION & NAVIGATION
   // ==========================================
@@ -287,6 +310,10 @@ export default function CareerApplyPage() {
 
     // Validate Step 2: My Experience
     if (currentStep === 2) {
+      if (!resumeFile) {
+        setValidationError('Please upload your Resume / CV (PDF, DOC, DOCX up to 5 MB) before proceeding.');
+        return;
+      }
       if (workExperiences.length > 0) {
         for (let i = 0; i < workExperiences.length; i++) {
           const exp = workExperiences[i];
@@ -979,7 +1006,7 @@ export default function CareerApplyPage() {
             <div className="career-form-card">
               <div className="career-section-title">
                 <span className="step-number">2.1</span>
-                <span>Resume / Curriculum Vitae</span>
+                <span>Resume / CV <span style={{ color: '#dc2626' }}>*</span></span>
               </div>
 
               <div
@@ -993,37 +1020,62 @@ export default function CareerApplyPage() {
                   e.preventDefault();
                   setIsDragOver(false);
                   if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-                    setResumeFile(e.dataTransfer.files[0]);
+                    handleResumeFileSelect(e.dataTransfer.files[0]);
                   }
                 }}
               >
                 <input
                   type="file"
+                  id="resume-file-input"
                   accept=".pdf,.doc,.docx"
                   onChange={(e) => {
                     if (e.target.files && e.target.files[0]) {
-                      setResumeFile(e.target.files[0]);
+                      handleResumeFileSelect(e.target.files[0]);
                     }
                   }}
                 />
-                <UploadCloud size={36} color="#173b24" style={{ margin: '0 auto 0.5rem' }} />
-                <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.2rem' }}>
-                  {resumeFile ? 'Click or drop to replace resume' : 'Drop your Resume here, or Click to Browse'}
-                </h4>
-                <p style={{ color: '#64748b', fontSize: '0.85rem' }}>
-                  Supports PDF, DOC, DOCX up to 10MB
+                <UploadCloud size={42} color="#173b24" style={{ margin: '0 auto 0.75rem' }} />
+                <div style={{ marginBottom: '0.85rem' }}>
+                  <button
+                    type="button"
+                    className="career-upload-btn-styled"
+                    onClick={() => document.getElementById('resume-file-input')?.click()}
+                  >
+                    <UploadCloud size={16} />
+                    <span>Upload Resume</span>
+                  </button>
+                </div>
+                <p style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.92rem', marginBottom: '0.25rem' }}>
+                  PDF, DOC, DOCX
+                </p>
+                <p style={{ color: '#64748b', fontSize: '0.85rem', margin: 0 }}>
+                  Maximum file size: 5 MB
                 </p>
               </div>
 
               {resumeFile && (
                 <div className="career-uploaded-file-chip">
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <FileText size={20} color="#173b24" />
-                    <span>{resumeFile.name}</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <FileText size={22} color="#173b24" />
+                    <div>
+                      <span style={{ display: 'block', fontWeight: 700, color: '#173b24', fontSize: '0.92rem' }}>
+                        {resumeFile.name}
+                      </span>
+                      <span style={{ fontSize: '0.78rem', color: '#64748b' }}>
+                        {(resumeFile.size / (1024 * 1024)).toFixed(2)} MB • Uploaded &amp; Verified
+                      </span>
+                    </div>
                   </div>
                   <button
                     type="button"
-                    style={{ background: 'transparent', border: 'none', color: '#dc2626', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      color: '#dc2626',
+                      cursor: 'pointer',
+                      fontWeight: 600,
+                      fontSize: '0.85rem',
+                    }}
                     onClick={() => setResumeFile(null)}
                   >
                     Remove
@@ -1045,7 +1097,6 @@ export default function CareerApplyPage() {
               </div>
             </div>
 
-            {/* 2. Work Experience */}
             {/* 2. Work Experience */}
             <div className="career-form-card">
               <div className="career-section-header-row">

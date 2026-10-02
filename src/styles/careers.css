@@ -1375,6 +1375,28 @@
   font-size: 0.9rem;
 }
 
+.career-upload-btn-styled {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #173b24;
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(23, 59, 36, 0.2);
+}
+
+.career-upload-btn-styled:hover {
+  background: #235836;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(23, 59, 36, 0.28);
+}
+
 /* Repeatable Dynamic Blocks (Work Experience, Education, Certifications) */
 .career-section-header-row {
   display: flex;
