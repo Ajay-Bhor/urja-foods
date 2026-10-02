@@ -109,12 +109,9 @@ export default function CareerApplyPage() {
 
   // Step 3: APPLICATION QUESTIONS
   const [workAuth, setWorkAuth] = useState('Yes');
-  const [drivingLicense, setDrivingLicense] = useState('Yes');
-  const [noticePeriod, setNoticePeriod] = useState('15 Days');
-  const [currentCtc, setCurrentCtc] = useState('₹3.5 Lakhs / year');
-  const [expectedCtc, setExpectedCtc] = useState('₹4.5 Lakhs / year');
+  const [currentlyWorkingForUrja, setCurrentlyWorkingForUrja] = useState('No');
+  const [previouslyWorkedForUrja, setPreviouslyWorkedForUrja] = useState('No');
   const [willingToRelocate, setWillingToRelocate] = useState('Yes');
-  const [hasAgriExp, setHasAgriExp] = useState('Yes');
 
   // Step 4: VOLUNTARY DISCLOSURES
   const [gender, setGender] = useState('Male');
@@ -213,6 +210,10 @@ export default function CareerApplyPage() {
           if (prev.githubUrl) setGithubUrl(prev.githubUrl);
           if (prev.portfolioUrl) setPortfolioUrl(prev.portfolioUrl);
           if (prev.customWebsites) setCustomWebsites(prev.customWebsites);
+          if (prev.workAuth) setWorkAuth(prev.workAuth);
+          if (prev.currentlyWorkingForUrja) setCurrentlyWorkingForUrja(prev.currentlyWorkingForUrja);
+          if (prev.previouslyWorkedForUrja) setPreviouslyWorkedForUrja(prev.previouslyWorkedForUrja);
+          if (prev.willingToRelocate) setWillingToRelocate(prev.willingToRelocate);
         } catch {
           // ignore
         }
@@ -486,6 +487,10 @@ export default function CareerApplyPage() {
           githubUrl,
           portfolioUrl,
           customWebsites,
+          workAuth,
+          currentlyWorkingForUrja,
+          previouslyWorkedForUrja,
+          willingToRelocate,
         })
       );
 
@@ -1844,113 +1849,88 @@ export default function CareerApplyPage() {
               <span>Application Questions</span>
             </div>
 
+            {/* Question 1: Are you legally authorized to work in this country? */}
             <div className="career-form-group" style={{ marginBottom: '1.75rem' }}>
-              <label style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0f172a' }}>
-                1. Are you legally authorized to work in India? *
+              <label style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem', display: 'block' }}>
+                Are you legally authorized to work in this country? *
               </label>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '0.5rem' }}>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer' }}>
-                  <input
-                    type="radio"
-                    name="workAuth"
-                    value="Yes"
-                    checked={workAuth === 'Yes'}
-                    onChange={(e) => setWorkAuth(e.target.value)}
-                  />
-                  <span>Yes</span>
-                </label>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer' }}>
-                  <input
-                    type="radio"
-                    name="workAuth"
-                    value="No"
-                    checked={workAuth === 'No'}
-                    onChange={(e) => setWorkAuth(e.target.value)}
-                  />
-                  <span>No</span>
-                </label>
-              </div>
+              <select
+                className="career-input-field"
+                value={workAuth}
+                onChange={(e) => setWorkAuth(e.target.value)}
+                style={{ maxWidth: '380px' }}
+              >
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
             </div>
 
+            {/* Question 2: Are you currently working for Urja Foods? */}
             <div className="career-form-group" style={{ marginBottom: '1.75rem' }}>
-              <label style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0f172a' }}>
-                2. Do you possess a valid driving license for regional travel in Maharashtra? *
+              <label style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem', display: 'block' }}>
+                Are you currently working for Urja Foods? *
               </label>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '0.5rem' }}>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer' }}>
-                  <input
-                    type="radio"
-                    name="drivingLicense"
-                    value="Yes"
-                    checked={drivingLicense === 'Yes'}
-                    onChange={(e) => setDrivingLicense(e.target.value)}
-                  />
-                  <span>Yes, Two-Wheeler / Four-Wheeler</span>
-                </label>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer' }}>
-                  <input
-                    type="radio"
-                    name="drivingLicense"
-                    value="No"
-                    checked={drivingLicense === 'No'}
-                    onChange={(e) => setDrivingLicense(e.target.value)}
-                  />
-                  <span>No</span>
-                </label>
+              <div className="career-yesno-toggle-group" role="radiogroup" aria-label="Are you currently working for Urja Foods?">
+                <button
+                  type="button"
+                  className={`career-yesno-btn ${currentlyWorkingForUrja === 'Yes' ? 'active' : ''}`}
+                  onClick={() => setCurrentlyWorkingForUrja('Yes')}
+                >
+                  Yes
+                </button>
+                <button
+                  type="button"
+                  className={`career-yesno-btn ${currentlyWorkingForUrja === 'No' ? 'active' : ''}`}
+                  onClick={() => setCurrentlyWorkingForUrja('No')}
+                >
+                  No
+                </button>
               </div>
             </div>
 
-            <div className="career-form-row">
-              <div className="career-form-group">
-                <label>3. Notice period or earliest available joining date? *</label>
-                <select
-                  className="career-input-field"
-                  value={noticePeriod}
-                  onChange={(e) => setNoticePeriod(e.target.value)}
+            {/* Question 3: Have you previously worked for Urja Foods? */}
+            <div className="career-form-group" style={{ marginBottom: '1.75rem' }}>
+              <label style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem', display: 'block' }}>
+                Have you previously worked for Urja Foods? *
+              </label>
+              <div className="career-yesno-toggle-group" role="radiogroup" aria-label="Have you previously worked for Urja Foods?">
+                <button
+                  type="button"
+                  className={`career-yesno-btn ${previouslyWorkedForUrja === 'Yes' ? 'active' : ''}`}
+                  onClick={() => setPreviouslyWorkedForUrja('Yes')}
                 >
-                  <option value="Immediate">Immediate</option>
-                  <option value="15 Days">15 Days</option>
-                  <option value="30 Days">30 Days</option>
-                  <option value="45 Days">45 Days</option>
-                  <option value="60 Days">60 Days</option>
-                </select>
-              </div>
-
-              <div className="career-form-group">
-                <label>4. Willingness to travel regionally across Western Maharashtra?</label>
-                <select
-                  className="career-input-field"
-                  value={willingToRelocate}
-                  onChange={(e) => setWillingToRelocate(e.target.value)}
+                  Yes
+                </button>
+                <button
+                  type="button"
+                  className={`career-yesno-btn ${previouslyWorkedForUrja === 'No' ? 'active' : ''}`}
+                  onClick={() => setPreviouslyWorkedForUrja('No')}
                 >
-                  <option value="Yes">Yes, willing to travel</option>
-                  <option value="Open to discussion">Open to discussion</option>
-                  <option value="Only Plant / Office based">Only Plant / Office based</option>
-                </select>
+                  No
+                </button>
               </div>
             </div>
 
-            <div className="career-form-row">
-              <div className="career-form-group">
-                <label>5. Current Annual CTC (₹ Lakhs)</label>
-                <input
-                  type="text"
-                  className="career-input-field"
-                  placeholder="e.g. ₹3.5 Lakhs"
-                  value={currentCtc}
-                  onChange={(e) => setCurrentCtc(e.target.value)}
-                />
-              </div>
-
-              <div className="career-form-group">
-                <label>6. Expected Annual CTC (₹ Lakhs)</label>
-                <input
-                  type="text"
-                  className="career-input-field"
-                  placeholder="e.g. ₹4.5 Lakhs"
-                  value={expectedCtc}
-                  onChange={(e) => setExpectedCtc(e.target.value)}
-                />
+            {/* Question 4: Are you willing to relocate? */}
+            <div className="career-form-group" style={{ marginBottom: '2rem' }}>
+              <label style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem', display: 'block' }}>
+                Are you willing to relocate? *
+              </label>
+              <div className="career-yesno-toggle-group" role="radiogroup" aria-label="Are you willing to relocate?">
+                <button
+                  type="button"
+                  className={`career-yesno-btn ${willingToRelocate === 'Yes' ? 'active' : ''}`}
+                  onClick={() => setWillingToRelocate('Yes')}
+                >
+                  Yes
+                </button>
+                <button
+                  type="button"
+                  className={`career-yesno-btn ${willingToRelocate === 'No' ? 'active' : ''}`}
+                  onClick={() => setWillingToRelocate('No')}
+                >
+                  No
+                </button>
               </div>
             </div>
 
@@ -1968,7 +1948,7 @@ export default function CareerApplyPage() {
                 className="career-nav-btn btn-next"
                 onClick={() => goToNextStep(4)}
               >
-                <span>Save &amp; Continue to Voluntary Disclosures</span>
+                <span>Save &amp; Continue</span>
                 <ArrowRight size={16} />
               </button>
             </div>
@@ -2229,23 +2209,19 @@ export default function CareerApplyPage() {
                 </button>
               </div>
               <div className="career-review-row">
-                <span className="label">Work Authorization:</span>
+                <span className="label">Legally Authorized to Work:</span>
                 <span className="val">{workAuth}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Driving License:</span>
-                <span className="val">{drivingLicense}</span>
+                <span className="label">Currently Working for Urja Foods:</span>
+                <span className="val">{currentlyWorkingForUrja}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Notice Period:</span>
-                <span className="val">{noticePeriod}</span>
+                <span className="label">Previously Worked for Urja Foods:</span>
+                <span className="val">{previouslyWorkedForUrja}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Current / Expected CTC:</span>
-                <span className="val">{currentCtc} / {expectedCtc}</span>
-              </div>
-              <div className="career-review-row">
-                <span className="label">Regional Travel:</span>
+                <span className="label">Willing to Relocate:</span>
                 <span className="val">{willingToRelocate}</span>
               </div>
             </div>
