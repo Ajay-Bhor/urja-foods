@@ -107,6 +107,15 @@ export default function CareerApplyPage() {
     },
   ]);
 
+  // Skills Entries
+  const [skills, setSkills] = useState([
+    'Agricultural Operations',
+    'Food Quality Assurance & HACCP',
+    'Supply Chain & Distribution',
+    'Inventory Management',
+  ]);
+  const [skillInput, setSkillInput] = useState('');
+
   // Step 3: APPLICATION QUESTIONS
   const [workAuth, setWorkAuth] = useState('Yes');
   const [currentlyWorkingForUrja, setCurrentlyWorkingForUrja] = useState('No');
@@ -218,6 +227,7 @@ export default function CareerApplyPage() {
           if (prev.veteranStatus) setVeteranStatus(prev.veteranStatus);
           if (prev.disabilityStatus) setDisabilityStatus(prev.disabilityStatus);
           if (prev.agreeDeclaration) setAgreeDeclaration(prev.agreeDeclaration);
+          if (prev.skills && Array.isArray(prev.skills)) setSkills(prev.skills);
         } catch {
           // ignore
         }
@@ -450,6 +460,19 @@ export default function CareerApplyPage() {
     setCustomWebsites((prev) => prev.filter((item) => item.id !== id));
   };
 
+  // Dynamic Add / Remove Skills
+  const addSkill = (name) => {
+    const s = (name || skillInput).trim();
+    if (s && !skills.includes(s)) {
+      setSkills((prev) => [...prev, s]);
+      setSkillInput('');
+    }
+  };
+
+  const removeSkill = (name) => {
+    setSkills((prev) => prev.filter((s) => s !== name));
+  };
+
   // ==========================================
   // FINAL SUBMISSION HANDLER
   // ==========================================
@@ -499,6 +522,7 @@ export default function CareerApplyPage() {
           veteranStatus,
           disabilityStatus,
           agreeDeclaration,
+          skills,
         })
       );
 
@@ -1711,7 +1735,59 @@ export default function CareerApplyPage() {
               )}
             </div>
 
-            {/* 5. Websites */}
+            {/* Skills */}
+            <div className="career-form-card">
+              <div className="career-section-header-row">
+                <div className="career-section-title" style={{ margin: 0 }}>
+                  <span className="step-number">2.5</span>
+                  <span>Skills</span>
+                </div>
+              </div>
+              <p style={{ color: '#64748b', fontSize: '0.88rem', margin: '0.4rem 0 1rem' }}>
+                Add technical skills, agribusiness competencies, and certifications relevant to your experience.
+              </p>
+              <div className="career-skills-container">
+                {skills.map((skill) => (
+                  <span key={skill} className="career-skill-chip">
+                    <span>{skill}</span>
+                    <button
+                      type="button"
+                      className="career-skill-remove-btn"
+                      onClick={() => removeSkill(skill)}
+                      title={`Remove ${skill}`}
+                    >
+                      ×
+                    </button>
+                  </span>
+                ))}
+              </div>
+              <div className="career-skill-add-row">
+                <input
+                  type="text"
+                  className="career-input-field"
+                  placeholder="Enter a skill (e.g. Agronomy, Cold Storage, HACCP)"
+                  value={skillInput}
+                  onChange={(e) => setSkillInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                      addSkill();
+                    }
+                  }}
+                  style={{ maxWidth: '360px' }}
+                />
+                <button
+                  type="button"
+                  className="career-add-btn-primary"
+                  onClick={() => addSkill()}
+                >
+                  <Plus size={16} />
+                  <span>+ Add</span>
+                </button>
+              </div>
+            </div>
+
+            {/* 6. Websites */}
             <div className="career-form-card">
               <div className="career-section-header-row">
                 <div className="career-section-title" style={{ margin: 0 }}>
@@ -2107,13 +2183,13 @@ export default function CareerApplyPage() {
         )}
 
         {/* ==================================================================
-            STEP 5: REVIEW
+            STEP 5: REVIEW APPLICATION
             ================================================================== */}
         {currentStep === 5 && (
           <div className="career-form-card">
             <div className="career-section-title">
               <span className="step-number">5</span>
-              <span>Review Your Application</span>
+              <span>Review Application</span>
             </div>
 
             <p style={{ color: '#64748b', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
@@ -2121,155 +2197,285 @@ export default function CareerApplyPage() {
               if you need to make changes.
             </p>
 
-            {/* 1. Review Personal Information */}
+            {/* 1. Personal Information */}
             <div className="career-review-section">
               <div className="career-review-header">
-                <h4>1. Personal Information</h4>
+                <h4>Personal Information</h4>
                 <button
                   type="button"
                   className="career-edit-jump-btn"
-                  onClick={() => setCurrentStep(1)}
+                  onClick={() => {
+                    setCurrentStep(1);
+                    window.scrollTo(0, 0);
+                  }}
                 >
-                  Edit Information
+                  <Edit3 size={13} />
+                  <span>Edit</span>
                 </button>
               </div>
               <div className="career-review-row">
                 <span className="label">Full Legal Name:</span>
-                <span className="val">{[firstName, middleName, lastName].filter(Boolean).join(' ')}</span>
+                <span className="val">{[firstName, middleName, lastName].filter(Boolean).join(' ') || 'Not Provided'}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Email Address:</span>
-                <span className="val">{email}</span>
+                <span className="label">Email:</span>
+                <span className="val">{email || 'Not Provided'}</span>
               </div>
               <div className="career-review-row">
                 <span className="label">Phone Number:</span>
-                <span className="val">{countryCode} {phone}</span>
+                <span className="val">{countryCode} {phone || 'Not Provided'}</span>
               </div>
               <div className="career-review-row">
                 <span className="label">Address:</span>
-                <span className="val">{addressLine}</span>
+                <span className="val">{addressLine || 'Not Provided'}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">City, State &amp; Postal Code:</span>
-                <span className="val">{city}, {state} - {postalCode}</span>
+                <span className="label">City, State &amp; Postal:</span>
+                <span className="val">{[city, state, postalCode].filter(Boolean).join(', ') || 'Not Provided'}</span>
               </div>
               <div className="career-review-row">
                 <span className="label">Country:</span>
-                <span className="val">{country}</span>
-              </div>
-              <div className="career-review-row">
-                <span className="label">Application Source:</span>
-                <span className="val">{source}</span>
+                <span className="val">{country || 'Not Provided'}</span>
               </div>
             </div>
 
-            {/* 2. Review My Experience */}
+            {/* 2. Experience */}
             <div className="career-review-section">
               <div className="career-review-header">
-                <h4>2. My Experience &amp; Documents</h4>
+                <h4>Experience</h4>
                 <button
                   type="button"
                   className="career-edit-jump-btn"
-                  onClick={() => setCurrentStep(2)}
+                  onClick={() => {
+                    setCurrentStep(2);
+                    window.scrollTo(0, 0);
+                  }}
                 >
-                  Edit Experience
+                  <Edit3 size={13} />
+                  <span>Edit</span>
                 </button>
               </div>
-              <div className="career-review-row">
-                <span className="label">Resume / CV:</span>
-                <span className="val">{resumeFile ? resumeFile.name : (linkedinUrl || 'Not Attached')}</span>
-              </div>
-              <div className="career-review-row">
-                <span className="label">Work Experiences:</span>
-                <span className="val">
-                  {workExperiences.map((w) => `${w.title} at ${w.company} (${w.startDate} - ${w.endDate})`).join('; ')}
-                </span>
-              </div>
-              <div className="career-review-row">
-                <span className="label">Education:</span>
-                <span className="val">
-                  {educationList.map((e) => `${e.degree} - ${e.institution}${e.fieldOfStudy ? ` (${e.fieldOfStudy})` : ''}`).join('; ')}
-                </span>
-              </div>
-              <div className="career-review-row">
-                <span className="label">Certifications:</span>
-                <div style={{ flex: 1 }}>
-                  {certifications.length === 0 ? (
-                    <span className="val" style={{ color: '#94a3b8' }}>None Listed</span>
-                  ) : (
-                    certifications.map((c, idx) => (
-                      <div key={c.id || idx} style={{ marginBottom: idx < certifications.length - 1 ? '0.75rem' : 0, paddingBottom: idx < certifications.length - 1 ? '0.75rem' : 0, borderBottom: idx < certifications.length - 1 ? '1px dashed #e2e8f0' : 'none' }}>
-                        <div style={{ fontWeight: 700, color: '#0f172a' }}>
-                          {c.name || 'Untitled Certification'} {c.certificationNumber ? `(#${c.certificationNumber})` : ''}
-                        </div>
-                        <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
-                          {c.issuedDate ? `Issued: ${c.issuedDate}` : ''}{c.expirationDate ? ` • Expires: ${c.expirationDate}` : ''}
-                          {c.specialties ? ` • Specialties: ${c.specialties}` : ''}
-                        </div>
-                        {c.attachment && (
-                          <div style={{ fontSize: '0.82rem', color: '#173b24', marginTop: '0.2rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                            <FileText size={14} />
-                            <span>Attachment: {c.attachment.name}</span>
-                          </div>
-                        )}
+              {workExperiences.length === 0 ? (
+                <span className="val" style={{ color: '#94a3b8' }}>None Listed</span>
+              ) : (
+                workExperiences.map((w, idx) => (
+                  <div
+                    key={w.id || idx}
+                    style={{
+                      marginBottom: idx < workExperiences.length - 1 ? '0.75rem' : 0,
+                      paddingBottom: idx < workExperiences.length - 1 ? '0.75rem' : 0,
+                      borderBottom: idx < workExperiences.length - 1 ? '1px dashed #e2e8f0' : 'none',
+                    }}
+                  >
+                    <div style={{ fontWeight: 700, color: '#0f172a' }}>
+                      {w.title || 'Untitled Role'} at {w.company || 'Company'}
+                    </div>
+                    <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                      {w.location ? `${w.location} • ` : ''}{w.startDate} - {w.currentlyWorking ? 'Present' : (w.endDate || 'Present')}
+                    </div>
+                    {w.description && (
+                      <div style={{ fontSize: '0.85rem', color: '#334155', marginTop: '0.25rem' }}>
+                        {w.description}
                       </div>
-                    ))
-                  )}
-                </div>
-              </div>
-              <div className="career-review-row">
-                <span className="label">Websites &amp; Profiles:</span>
-                <span className="val">
-                  {[
-                    linkedinUrl ? `LinkedIn: ${linkedinUrl}` : null,
-                    githubUrl ? `GitHub: ${githubUrl}` : null,
-                    portfolioUrl ? `Portfolio: ${portfolioUrl}` : null,
-                    ...customWebsites.filter((s) => s.url).map((s) => `${s.label || 'Website'}: ${s.url}`),
-                  ].filter(Boolean).join(' • ') || 'None Listed'}
-                </span>
-              </div>
+                    )}
+                  </div>
+                ))
+              )}
             </div>
 
-            {/* 3. Review Application Questions */}
+            {/* 3. Education */}
             <div className="career-review-section">
               <div className="career-review-header">
-                <h4>3. Application Questions</h4>
+                <h4>Education</h4>
                 <button
                   type="button"
                   className="career-edit-jump-btn"
-                  onClick={() => setCurrentStep(3)}
+                  onClick={() => {
+                    setCurrentStep(2);
+                    window.scrollTo(0, 0);
+                  }}
                 >
-                  Edit Answers
+                  <Edit3 size={13} />
+                  <span>Edit</span>
+                </button>
+              </div>
+              {educationList.length === 0 ? (
+                <span className="val" style={{ color: '#94a3b8' }}>None Listed</span>
+              ) : (
+                educationList.map((e, idx) => (
+                  <div
+                    key={e.id || idx}
+                    style={{
+                      marginBottom: idx < educationList.length - 1 ? '0.75rem' : 0,
+                      paddingBottom: idx < educationList.length - 1 ? '0.75rem' : 0,
+                      borderBottom: idx < educationList.length - 1 ? '1px dashed #e2e8f0' : 'none',
+                    }}
+                  >
+                    <div style={{ fontWeight: 700, color: '#0f172a' }}>
+                      {e.degree || 'Degree'} — {e.institution || 'School / University'}
+                    </div>
+                    {e.fieldOfStudy && (
+                      <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                        Field of Study: {e.fieldOfStudy}
+                      </div>
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
+
+            {/* 4. Certifications */}
+            <div className="career-review-section">
+              <div className="career-review-header">
+                <h4>Certifications</h4>
+                <button
+                  type="button"
+                  className="career-edit-jump-btn"
+                  onClick={() => {
+                    setCurrentStep(2);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  <Edit3 size={13} />
+                  <span>Edit</span>
+                </button>
+              </div>
+              {certifications.length === 0 ? (
+                <span className="val" style={{ color: '#94a3b8' }}>None Listed</span>
+              ) : (
+                certifications.map((c, idx) => (
+                  <div
+                    key={c.id || idx}
+                    style={{
+                      marginBottom: idx < certifications.length - 1 ? '0.75rem' : 0,
+                      paddingBottom: idx < certifications.length - 1 ? '0.75rem' : 0,
+                      borderBottom: idx < certifications.length - 1 ? '1px dashed #e2e8f0' : 'none',
+                    }}
+                  >
+                    <div style={{ fontWeight: 700, color: '#0f172a' }}>
+                      {c.name || 'Untitled Certification'} {c.certificationNumber ? `(#${c.certificationNumber})` : ''}
+                    </div>
+                    <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                      {c.issuedDate ? `Issued: ${c.issuedDate}` : ''}{c.expirationDate ? ` • Expires: ${c.expirationDate}` : ''}
+                      {c.specialties ? ` • Specialties: ${c.specialties}` : ''}
+                    </div>
+                    {c.attachment && (
+                      <div style={{ fontSize: '0.82rem', color: '#173b24', marginTop: '0.2rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                        <FileText size={14} />
+                        <span>Attachment: {c.attachment.name}</span>
+                      </div>
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
+
+            {/* 5. Skills */}
+            <div className="career-review-section">
+              <div className="career-review-header">
+                <h4>Skills</h4>
+                <button
+                  type="button"
+                  className="career-edit-jump-btn"
+                  onClick={() => {
+                    setCurrentStep(2);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  <Edit3 size={13} />
+                  <span>Edit</span>
+                </button>
+              </div>
+              {skills.length === 0 ? (
+                <span className="val" style={{ color: '#94a3b8' }}>None Listed</span>
+              ) : (
+                <div className="career-skills-container">
+                  {skills.map((s) => (
+                    <span key={s} className="career-skill-chip career-skill-chip-review">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* 6. Resume */}
+            <div className="career-review-section">
+              <div className="career-review-header">
+                <h4>Resume</h4>
+                <button
+                  type="button"
+                  className="career-edit-jump-btn"
+                  onClick={() => {
+                    setCurrentStep(2);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  <Edit3 size={13} />
+                  <span>Edit</span>
+                </button>
+              </div>
+              {resumeFile ? (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                  <FileText size={20} color="#173b24" />
+                  <span style={{ fontWeight: 600, color: '#0f172a' }}>{resumeFile.name}</span>
+                  <span style={{ fontSize: '0.82rem', color: '#64748b' }}>
+                    ({(resumeFile.size / (1024 * 1024)).toFixed(2)} MB)
+                  </span>
+                </div>
+              ) : (
+                <span className="val" style={{ color: '#94a3b8' }}>No file uploaded</span>
+              )}
+            </div>
+
+            {/* 7. Application Questions */}
+            <div className="career-review-section">
+              <div className="career-review-header">
+                <h4>Application Questions</h4>
+                <button
+                  type="button"
+                  className="career-edit-jump-btn"
+                  onClick={() => {
+                    setCurrentStep(3);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  <Edit3 size={13} />
+                  <span>Edit</span>
                 </button>
               </div>
               <div className="career-review-row">
-                <span className="label">Legally Authorized to Work:</span>
+                <span className="label">Are you legally authorized to work in this country?:</span>
                 <span className="val">{workAuth}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Currently Working for Urja Foods:</span>
+                <span className="label">Are you currently working for Urja Foods?:</span>
                 <span className="val">{currentlyWorkingForUrja}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Previously Worked for Urja Foods:</span>
+                <span className="label">Have you previously worked for Urja Foods?:</span>
                 <span className="val">{previouslyWorkedForUrja}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Willing to Relocate:</span>
+                <span className="label">Are you willing to relocate?:</span>
                 <span className="val">{willingToRelocate}</span>
               </div>
             </div>
 
-            {/* 4. Review Disclosures */}
+            {/* 8. Voluntary Disclosures */}
             <div className="career-review-section">
               <div className="career-review-header">
-                <h4>4. Voluntary Disclosures</h4>
+                <h4>Voluntary Disclosures</h4>
                 <button
                   type="button"
                   className="career-edit-jump-btn"
-                  onClick={() => setCurrentStep(4)}
+                  onClick={() => {
+                    setCurrentStep(4);
+                    window.scrollTo(0, 0);
+                  }}
                 >
-                  Edit Disclosures
+                  <Edit3 size={13} />
+                  <span>Edit</span>
                 </button>
               </div>
               <div className="career-review-row">

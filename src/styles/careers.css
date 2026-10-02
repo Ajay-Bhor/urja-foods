@@ -1570,13 +1570,26 @@
 }
 
 .career-edit-jump-btn {
-  background: transparent;
-  border: none;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
   color: #173b24;
   font-size: 0.85rem;
   font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 7px;
   cursor: pointer;
-  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.career-edit-jump-btn:hover {
+  background: #173b24;
+  color: #ffffff;
+  border-color: #173b24;
+  box-shadow: 0 2px 6px rgba(23, 59, 36, 0.2);
 }
 
 .career-review-row {
@@ -1766,4 +1779,56 @@
   color: #ffffff;
   box-shadow: 0 2px 6px rgba(23, 59, 36, 0.25);
   font-weight: 700;
+}
+
+/* Skills Chip Styling */
+.career-skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.career-skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #e8f5e9;
+  color: #173b24;
+  border: 1px solid #c8e6c9;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.career-skill-chip-review {
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.career-skill-remove-btn {
+  background: transparent;
+  border: none;
+  color: #173b24;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.career-skill-remove-btn:hover {
+  opacity: 1;
+  color: #dc2626;
+}
+
+.career-skill-add-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
