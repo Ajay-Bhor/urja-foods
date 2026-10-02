@@ -282,15 +282,39 @@ export default function CareerApplyPage() {
       }
     }
 
-    // Validate Step 2
+    // Validate Step 2: My Experience
     if (currentStep === 2) {
-      if (workExperiences.length === 0) {
-        setValidationError('Please record at least one work experience entry or add "Fresher / None".');
-        return;
+      if (workExperiences.length > 0) {
+        for (let i = 0; i < workExperiences.length; i++) {
+          const exp = workExperiences[i];
+          if (!exp.title.trim()) {
+            setValidationError(`Please enter the Job Title for Experience #${i + 1}.`);
+            return;
+          }
+          if (!exp.company.trim()) {
+            setValidationError(`Please enter the Company for Experience #${i + 1}.`);
+            return;
+          }
+          if (!exp.startDate.trim()) {
+            setValidationError(`Please enter the 'From' date for Experience #${i + 1}.`);
+            return;
+          }
+        }
       }
       if (educationList.length === 0) {
-        setValidationError('Please record at least one educational qualification.');
+        setValidationError('Please record at least one educational qualification (click "+ Add").');
         return;
+      }
+      for (let i = 0; i < educationList.length; i++) {
+        const edu = educationList[i];
+        if (!edu.institution.trim()) {
+          setValidationError(`Please enter the School / University for Education #${i + 1}.`);
+          return;
+        }
+        if (!edu.degree.trim()) {
+          setValidationError(`Please enter the Degree for Education #${i + 1}.`);
+          return;
+        }
       }
     }
 
@@ -340,7 +364,6 @@ export default function CareerApplyPage() {
         institution: '',
         degree: '',
         fieldOfStudy: '',
-        gradYear: '',
       },
     ]);
   };
@@ -1231,33 +1254,73 @@ export default function CareerApplyPage() {
 
             {/* 3. Education */}
             <div className="career-form-card">
-              <div className="career-section-title">
-                <span className="step-number">2.3</span>
-                <span>Education</span>
+              <div className="career-section-header-row">
+                <div className="career-section-title" style={{ margin: 0 }}>
+                  <span className="step-number">2.3</span>
+                  <span>Education</span>
+                </div>
+                <button
+                  type="button"
+                  className="career-add-btn-primary"
+                  onClick={addEducation}
+                  title="Add education qualification"
+                >
+                  <Plus size={16} />
+                  <span>+ Add</span>
+                </button>
               </div>
 
-              {educationList.map((edu, index) => (
-                <div className="career-repeatable-block" key={edu.id}>
-                  <div className="career-repeatable-header">
-                    <h4>Education #{index + 1}</h4>
-                    {educationList.length > 1 && (
-                      <button
-                        type="button"
-                        className="career-remove-entry-btn"
-                        onClick={() => removeEducation(edu.id)}
-                      >
-                        Remove Education
-                      </button>
-                    )}
-                  </div>
+              {educationList.length === 0 ? (
+                <div
+                  style={{
+                    textAlign: 'center',
+                    padding: '2.5rem 1rem',
+                    background: '#f8fafc',
+                    borderRadius: '14px',
+                    border: '1.5px dashed #cbd5e1',
+                    marginBottom: '1rem',
+                  }}
+                >
+                  <GraduationCap size={36} color="#94a3b8" style={{ margin: '0 auto 0.75rem' }} />
+                  <h4 style={{ color: '#334155', fontWeight: 700, marginBottom: '0.35rem' }}>
+                    No Education Added Yet
+                  </h4>
+                  <p style={{ color: '#64748b', fontSize: '0.88rem', marginBottom: '1.25rem' }}>
+                    Click "+ Add" to record your school, college, or university qualifications.
+                  </p>
+                  <button
+                    type="button"
+                    className="career-add-btn-primary"
+                    onClick={addEducation}
+                  >
+                    <Plus size={16} />
+                    <span>+ Add</span>
+                  </button>
+                </div>
+              ) : (
+                educationList.map((edu, index) => (
+                  <div className="career-repeatable-block" key={edu.id}>
+                    <div className="career-repeatable-header">
+                      <h4>Education #{index + 1}</h4>
+                      {educationList.length > 1 && (
+                        <button
+                          type="button"
+                          className="career-remove-entry-btn"
+                          onClick={() => removeEducation(edu.id)}
+                        >
+                          <Trash2 size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
+                          <span>Remove</span>
+                        </button>
+                      )}
+                    </div>
 
-                  <div className="career-form-row">
+                    {/* School / University */}
                     <div className="career-form-group">
-                      <label>College / University / School</label>
+                      <label>School / University <span style={{ color: '#dc2626' }}>*</span></label>
                       <input
                         type="text"
                         className="career-input-field"
-                        placeholder="e.g. Pune University / MPKV Rahuri"
+                        placeholder="e.g. Mahatma Phule Krishi Vidyapeeth (MPKV) / Savitribai Phule Pune University"
                         value={edu.institution}
                         onChange={(e) => {
                           const val = e.target.value;
@@ -1265,70 +1328,60 @@ export default function CareerApplyPage() {
                             prev.map((item) => (item.id === edu.id ? { ...item, institution: val } : item))
                           );
                         }}
+                        required
                       />
                     </div>
 
-                    <div className="career-form-group">
-                      <label>Degree / Qualification</label>
-                      <input
-                        type="text"
-                        className="career-input-field"
-                        placeholder="e.g. B.Sc Agriculture / B.Sc Chemistry / Diploma"
-                        value={edu.degree}
-                        onChange={(e) => {
-                          const val = e.target.value;
-                          setEducationList((prev) =>
-                            prev.map((item) => (item.id === edu.id ? { ...item, degree: val } : item))
-                          );
-                        }}
-                      />
-                    </div>
-                  </div>
+                    <div className="career-form-row">
+                      {/* Degree */}
+                      <div className="career-form-group">
+                        <label>Degree <span style={{ color: '#dc2626' }}>*</span></label>
+                        <input
+                          type="text"
+                          className="career-input-field"
+                          placeholder="e.g. B.Sc Agriculture / Diploma in Veterinary Science / Higher Secondary"
+                          value={edu.degree}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            setEducationList((prev) =>
+                              prev.map((item) => (item.id === edu.id ? { ...item, degree: val } : item))
+                            );
+                          }}
+                          required
+                        />
+                      </div>
 
-                  <div className="career-form-row">
-                    <div className="career-form-group">
-                      <label>Field of Study</label>
-                      <input
-                        type="text"
-                        className="career-input-field"
-                        placeholder="e.g. Agronomy, Poultry Science, Organic Chemistry"
-                        value={edu.fieldOfStudy}
-                        onChange={(e) => {
-                          const val = e.target.value;
-                          setEducationList((prev) =>
-                            prev.map((item) => (item.id === edu.id ? { ...item, fieldOfStudy: val } : item))
-                          );
-                        }}
-                      />
-                    </div>
-
-                    <div className="career-form-group">
-                      <label>Graduation Year</label>
-                      <input
-                        type="text"
-                        className="career-input-field"
-                        placeholder="e.g. 2022"
-                        value={edu.gradYear}
-                        onChange={(e) => {
-                          const val = e.target.value;
-                          setEducationList((prev) =>
-                            prev.map((item) => (item.id === edu.id ? { ...item, gradYear: val } : item))
-                          );
-                        }}
-                      />
+                      {/* Field of Study */}
+                      <div className="career-form-group">
+                        <label>Field of Study</label>
+                        <input
+                          type="text"
+                          className="career-input-field"
+                          placeholder="e.g. Agricultural Sciences, Animal Husbandry, Chemistry, Feed Tech"
+                          value={edu.fieldOfStudy}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            setEducationList((prev) =>
+                              prev.map((item) => (item.id === edu.id ? { ...item, fieldOfStudy: val } : item))
+                            );
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+              )}
 
-              <button
-                type="button"
-                className="career-add-more-btn"
-                onClick={addEducation}
-              >
-                <Plus size={16} />
-                <span>+ Add Another Education</span>
-              </button>
+              {educationList.length > 0 && (
+                <button
+                  type="button"
+                  className="career-add-more-btn"
+                  onClick={addEducation}
+                >
+                  <Plus size={16} />
+                  <span>+ Add</span>
+                </button>
+              )}
             </div>
 
             {/* 4. Certifications */}
@@ -1775,7 +1828,7 @@ export default function CareerApplyPage() {
               <div className="career-review-row">
                 <span className="label">Education:</span>
                 <span className="val">
-                  {educationList.map((e) => `${e.degree} - ${e.institution} (${e.gradYear})`).join('; ')}
+                  {educationList.map((e) => `${e.degree} - ${e.institution}${e.fieldOfStudy ? ` (${e.fieldOfStudy})` : ''}`).join('; ')}
                 </span>
               </div>
               <div className="career-review-row">
