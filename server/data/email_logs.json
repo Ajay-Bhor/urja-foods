@@ -1,5 +1,120 @@
 [
   {
+    "timestamp": "2026-10-02T07:22:56.835Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-776829",
+    "to": "anjali.sharma@example.com",
+    "subject": "Application Acknowledgment: Quality Control & Lab Chemist (Feed Plant) (Ref: URJA-CAREER-776829) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-10-02T07:22:56.834Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-776829",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Quality Control & Lab Chemist (Feed Plant) - Anjali Sharma (Ref: URJA-CAREER-776829)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-10-02T07:21:55.079Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-715070",
+    "to": "testcandidate@example.com",
+    "subject": "Application Acknowledgment: Quality Control & Lab Chemist (Feed Plant) (Ref: URJA-CAREER-715070) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-10-02T07:21:55.078Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-715070",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Quality Control & Lab Chemist (Feed Plant) - Test Candidate (Ref: URJA-CAREER-715070)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-10-02T07:05:40.649Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-740643",
+    "to": "applicant_1790924740406@urja-test.com",
+    "subject": "Application Acknowledgment: Veterinary Field Officer (Livestock & Poultry) (Ref: URJA-CAREER-740643) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-10-02T07:05:40.647Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-740643",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Veterinary Field Officer (Livestock & Poultry) - Priya Deshmukh (Ref: URJA-CAREER-740643)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "applicant_1790924740406@urja-test.com",
+    "subject": "Urja Foods Careers: Your 6-Digit Email Verification Code (407809)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-10-02T07:05:40.514Z"
+  },
+  {
+    "timestamp": "2026-10-02T07:02:08.820Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-528814",
+    "to": "applicant_1790924528561@urja-test.com",
+    "subject": "Application Acknowledgment: Veterinary Field Officer (Livestock & Poultry) (Ref: URJA-CAREER-528814) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-10-02T07:02:08.819Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-528814",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Veterinary Field Officer (Livestock & Poultry) - Priya Deshmukh (Ref: URJA-CAREER-528814)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "applicant_1790924528561@urja-test.com",
+    "subject": "Urja Foods Careers: Your 6-Digit Email Verification Code (442416)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-10-02T07:02:08.672Z"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "applicant_1790924488580@urja-test.com",
+    "subject": "Urja Foods Careers: Your 6-Digit Email Verification Code (935532)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-10-02T07:01:28.689Z"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "jwt_test_1790923009952@test.com",
+    "subject": "Urja Foods Careers: Your 6-Digit Email Verification Code (836475)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-10-02T06:36:50.160Z"
+  },
+  {
+    "timestamp": "2026-10-02T06:32:07.120Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-727110",
+    "to": "ramesh.patil@gmail.com",
+    "subject": "Application Acknowledgment: Quality Control Specialist (Ref: URJA-CAREER-727110) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-10-02T06:32:07.119Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-727110",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Quality Control Specialist - Ramesh Patil (Ref: URJA-CAREER-727110)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "candidate_1790921994222@test.com",
+    "subject": "Urja Foods Careers: Your 6-Digit Email Verification Code (998015)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-10-02T06:19:54.423Z"
+  },
+  {
     "timestamp": "2026-10-01T06:35:33.860Z",
     "type": "CANDIDATE_AUTO_REPLY",
     "applicationId": "URJA-CAREER-533825",

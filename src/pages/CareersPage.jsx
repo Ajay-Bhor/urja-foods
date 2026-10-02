@@ -27,6 +27,7 @@ import {
   ChevronRight,
   FileCheck,
 } from 'lucide-react';
+import { isTokenValid } from '../utils/auth.js';
 
 export default function CareersPage() {
   const navigate = useNavigate();
@@ -405,6 +406,22 @@ export default function CareersPage() {
     }
   };
 
+  const handleApplyClick = (e, job) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (!job) return;
+    const applyPath = `/careers/apply?jobId=${encodeURIComponent(job.id)}&title=${encodeURIComponent(job.title)}`;
+    if (isTokenValid()) {
+      navigate(applyPath);
+    } else {
+      navigate(
+        `/careers/login?redirect=${encodeURIComponent(applyPath)}&jobId=${encodeURIComponent(job.id)}&title=${encodeURIComponent(job.title)}&reason=apply`
+      );
+    }
+  };
+
   return (
     <div className="careers-redesign">
       {/* 1. HERO SECTION WITH LIVE HIRING INDICATOR */}
@@ -725,16 +742,14 @@ export default function CareersPage() {
                           <span>{isSelected ? 'Currently Viewing' : 'Click to Inspect Details'}</span>
                           <ArrowRight size={13} />
                         </span>
-                        <a
-                          href={`/careers/apply?jobId=${job.id}&title=${encodeURIComponent(job.title)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <button
+                          type="button"
                           className="cr-btn-primary"
-                          style={{ padding: '0.45rem 1rem', fontSize: '0.82rem', textDecoration: 'none' }}
-                          onClick={(e) => e.stopPropagation()}
+                          style={{ padding: '0.45rem 1rem', fontSize: '0.82rem', border: 'none', cursor: 'pointer' }}
+                          onClick={(e) => handleApplyClick(e, job)}
                         >
                           Apply Now
-                        </a>
+                        </button>
                       </div>
                     </div>
                   );
@@ -830,16 +845,15 @@ export default function CareersPage() {
                   </div>
 
                   <div className="cr-inspector-footer">
-                    <a
-                      href={`/careers/apply?jobId=${selectedJob.id}&title=${encodeURIComponent(selectedJob.title)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      type="button"
                       className="cr-inspector-cta-btn"
-                      style={{ textDecoration: 'none' }}
+                      style={{ border: 'none', cursor: 'pointer' }}
+                      onClick={(e) => handleApplyClick(e, selectedJob)}
                     >
                       <span>Apply for this Role</span>
                       <ArrowRight size={15} />
-                    </a>
+                    </button>
 
                     <button
                       type="button"

@@ -1,0 +1,909 @@
+/* ==========================================================================
+   URJA FOODS - CAREER AUTHENTICATION (WORKDAY ATS MINIMALIST STYLE)
+   ========================================================================== */
+
+.wd-auth-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #111827;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 60px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Minimalist Top Bar */
+.wd-auth-topbar {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.wd-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.wd-back-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.wd-auth-brand-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #15803d;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Center Card Container */
+.wd-auth-card {
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+
+/* Title & Subtitle Matching Image */
+.wd-auth-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.4px;
+}
+
+.wd-auth-subtitle {
+  font-size: 13.5px;
+  color: #374151;
+  line-height: 1.55;
+  margin: 0 auto 28px;
+  max-width: 380px;
+}
+
+.wd-auth-privacy-link {
+  color: #0875e1;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.wd-auth-privacy-link:hover {
+  color: #0056b3;
+}
+
+/* Action Buttons Stack */
+.wd-auth-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* Pill Button Base */
+.wd-pill-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 48px;
+  border-radius: 9999px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+/* Black Outline Pill (Apple, Google, LinkedIn) */
+.wd-pill-outline-black {
+  border: 2px solid #000000;
+  color: #000000;
+}
+
+.wd-pill-outline-black:hover {
+  background: #f9fafb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.wd-pill-outline-black:active {
+  transform: translateY(0);
+}
+
+/* Blue Outline Pill (Sign in with email) */
+.wd-pill-outline-blue {
+  border: 2px solid #0875e1;
+  color: #0875e1;
+  background: #ffffff;
+}
+
+.wd-pill-outline-blue:hover {
+  background: #f0f7ff;
+  border-color: #0062d2;
+  color: #0062d2;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(8, 117, 225, 0.15);
+}
+
+/* Solid Blue Primary Button for Submit */
+.wd-pill-solid-blue {
+  background: #0875e1;
+  border: 2px solid #0875e1;
+  color: #ffffff;
+}
+
+.wd-pill-solid-blue:hover:not(:disabled) {
+  background: #0062d2;
+  border-color: #0062d2;
+  box-shadow: 0 4px 14px rgba(8, 117, 225, 0.25);
+  transform: translateY(-1px);
+}
+
+.wd-pill-solid-blue:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* OR Divider Exactly like screenshot */
+.wd-auth-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  position: relative;
+  width: 100%;
+}
+
+.wd-auth-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e7eb;
+  z-index: 1;
+}
+
+.wd-auth-divider span {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  padding: 0 16px;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Toggle Link at Bottom */
+.wd-auth-switch-prompt {
+  margin-top: 26px;
+  font-size: 13.5px;
+  color: #4b5563;
+}
+
+.wd-auth-switch-link {
+  color: #0875e1;
+  font-weight: 700;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0 4px;
+  text-decoration: underline;
+  font-size: inherit;
+}
+
+.wd-auth-switch-link:hover {
+  color: #0056b3;
+}
+
+/* Email Form Mode Container */
+.wd-email-form-wrap {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  text-align: left;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wd-form-group {
+  margin-bottom: 16px;
+}
+
+.wd-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.wd-form-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.wd-form-input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1.5px solid #d1d5db;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  background: #ffffff;
+}
+
+.wd-form-input:focus {
+  border-color: #0875e1;
+  box-shadow: 0 0 0 3px rgba(8, 117, 225, 0.12);
+}
+
+.wd-form-select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1.5px solid #d1d5db;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  box-sizing: border-box;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.wd-form-select:focus {
+  border-color: #0875e1;
+  box-shadow: 0 0 0 3px rgba(8, 117, 225, 0.12);
+}
+
+.wd-form-eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.wd-form-eye-btn:hover {
+  color: #111827;
+}
+
+.wd-form-extras {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.wd-form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.wd-form-checkbox input {
+  accent-color: #0875e1;
+  width: 16px;
+  height: 16px;
+}
+
+.wd-forgot-link {
+  color: #0875e1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.wd-back-options-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.wd-back-options-btn:hover {
+  color: #111827;
+  text-decoration: underline;
+}
+
+/* Alert Notification */
+.wd-alert-box {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+.wd-alert-box.error {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #b91c1c;
+}
+
+.wd-alert-box.success {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  color: #15803d;
+}
+
+/* Quick Demo Box */
+.wd-demo-helper {
+  margin-top: 24px;
+  padding: 10px 14px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  text-align: left;
+}
+
+.wd-demo-helper strong {
+  display: block;
+  color: #1e293b;
+}
+
+.wd-demo-helper span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.wd-demo-fill-btn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #0875e1;
+  background: #ffffff;
+  color: #0875e1;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.wd-demo-fill-btn:hover {
+  background: #0875e1;
+  color: #ffffff;
+}
+
+/* Modal Popup (Google & LinkedIn) */
+.wd-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.wd-modal-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: wdPop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #e5e7eb;
+}
+
+@keyframes wdPop {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.wd-modal-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wd-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.wd-modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #9ca3af;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.wd-modal-close-btn:hover {
+  color: #111827;
+}
+
+.wd-modal-body {
+  padding: 20px;
+  text-align: left;
+}
+
+.wd-account-choice-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.wd-account-choice-btn:hover {
+  background: #f9fafb;
+  border-color: #0875e1;
+}
+
+.wd-account-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.wd-account-meta strong {
+  display: block;
+  font-size: 13px;
+  color: #111827;
+}
+
+.wd-account-meta span {
+  display: block;
+  font-size: 11.5px;
+  color: #6b7280;
+}
+
+/* Active Candidate Session View */
+.wd-session-view {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.wd-session-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  background: #f3f4f6;
+  border: 3px solid #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wd-session-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wd-session-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px;
+}
+
+.wd-session-email {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   OFFICIAL GOOGLE SIGN-IN PAGE (MATCHING USER SCREENSHOT EXACTLY)
+   ========================================================================== */
+
+.google-auth-page-root {
+  min-height: 100vh;
+  background-color: #e9eef6;
+  font-family: 'Google Sans', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+  box-sizing: border-box;
+}
+
+.google-auth-card {
+  width: 100%;
+  max-width: 880px;
+  min-height: 400px;
+  background: #ffffff;
+  border-radius: 28px;
+  box-sizing: border-box;
+  padding: 36px 40px;
+  box-shadow: 0 1px 3px rgba(60,64,67,0.1), 0 2px 6px rgba(60,64,67,0.06);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .google-auth-card {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+}
+
+/* Header with Google Logo */
+.google-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.google-card-header span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f1f1f;
+  letter-spacing: -0.1px;
+}
+
+/* 2-Column Layout */
+.google-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .google-card-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Left Column */
+.google-left-col {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.google-heading {
+  font-size: 36px;
+  font-weight: 400;
+  color: #1f1f1f;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.google-subheading {
+  font-size: 16px;
+  color: #1f1f1f;
+  margin: 0;
+  font-weight: 400;
+}
+
+.google-target-domain {
+  color: #0b57d0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.google-target-domain:hover {
+  text-decoration: underline;
+}
+
+/* Active Candidate Pill on Step 2 */
+.google-active-user-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px 4px 6px;
+  border-radius: 9999px;
+  border: 1px solid #747775;
+  background: #ffffff;
+  color: #1f1f1f;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 14px;
+  width: fit-content;
+}
+
+.google-active-user-pill img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Right Column */
+.google-right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  min-height: 220px;
+}
+
+/* Material 3 Outlined Input */
+.google-m3-field {
+  position: relative;
+  margin-top: 10px;
+}
+
+.google-m3-input {
+  width: 100%;
+  height: 56px;
+  border: 2px solid #0b57d0;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-size: 16px;
+  color: #1f1f1f;
+  outline: none;
+  background: #ffffff;
+  box-sizing: border-box;
+  font-family: inherit;
+  caret-color: #0b57d0;
+}
+
+.google-m3-label {
+  position: absolute;
+  top: -9px;
+  left: 12px;
+  background: #ffffff;
+  padding: 0 6px;
+  font-size: 12px;
+  color: #0b57d0;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.google-link-blue {
+  color: #0b57d0;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.google-link-blue:hover {
+  text-decoration: underline;
+}
+
+/* Bottom Actions in Right Column */
+.google-bottom-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.google-btn-text {
+  background: none;
+  border: none;
+  color: #0b57d0;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.google-btn-text:hover {
+  background: #f0f4f9;
+}
+
+.google-btn-next {
+  background: #0b57d0;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  height: 40px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.google-btn-next:hover {
+  background: #0842a0;
+  box-shadow: 0 1px 3px 1px rgba(0,0,0,0.15);
+}
+
+
+/* Footer below card */
+.google-auth-footer {
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #444746;
+  box-sizing: border-box;
+}
+
+.google-footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.google-footer-links a,
+.google-footer-links button {
+  color: #444746;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+}
+
+.google-footer-links a:hover,
+.google-footer-links button:hover {
+  color: #1f1f1f;
+}
+
+/* ==========================================================================
+   OFFICIAL LINKEDIN SIGN-IN PAGE
+   ========================================================================== */
+
+.linkedin-auth-page-root {
+  min-height: 100vh;
+  background-color: #f3f2ef;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+  box-sizing: border-box;
+}
+
+.linkedin-auth-card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.linkedin-logo-wrap {
+  margin-bottom: 20px;
+}
+
+.linkedin-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+
+.linkedin-sub {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 0 24px;
+}
+
+.linkedin-btn-primary {
+  width: 100%;
+  height: 48px;
+  border-radius: 28px;
+  background: #0a66c2;
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.linkedin-btn-primary:hover {
+  background: #004182;
+}
+

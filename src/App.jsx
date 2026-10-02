@@ -23,6 +23,7 @@ import ValuesPage from './pages/ValuesPage';
 import MissionVisionValuesPage from './pages/MissionVisionValuesPage';
 import CareersPage from './pages/CareersPage';
 import CareerApplyPage from './pages/CareerApplyPage';
+import CareerAuthPage from './pages/CareerAuthPage';
 import AdminTranslationsPage from './pages/AdminTranslationsPage';
 
 import useScrollReveal from './hooks/useScrollReveal';
@@ -129,6 +130,11 @@ export default function App() {
           <Route path="/career" element={<CareersPage />} />
           <Route path="/careers/apply" element={<CareerApplyPage />} />
           <Route path="/careers/apply/:jobId" element={<CareerApplyPage />} />
+          <Route path="/careers/login" element={<CareerAuthPage initialMode="login" />} />
+          <Route path="/careers/signup" element={<CareerAuthPage initialMode="signup" />} />
+          <Route path="/careers/auth" element={<CareerAuthPage initialMode="login" />} />
+          <Route path="/careers/auth/google" element={<CareerAuthPage initialMode="google" />} />
+          <Route path="/careers/auth/linkedin" element={<CareerAuthPage initialMode="linkedin" />} />
           <Route path="/admin/translations" element={<AdminTranslationsPage />} />
           <Route path="/admin/multilingual" element={<AdminTranslationsPage />} />
           {/* Wildcard Fallback */}

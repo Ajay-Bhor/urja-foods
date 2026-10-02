@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import {
   UploadCloud,
   FileText,
@@ -26,7 +26,12 @@ import {
   X,
   Paperclip,
   Printer,
+  ShieldCheck,
 } from 'lucide-react';
+import { getAuthUser, authFetch, isTokenValid, clearAuthSession } from '../utils/auth.js';
+import CountryPhoneInput from '../components/CountryPhoneInput.jsx';
+import { validateCountryPhone, getCountryByIso } from '../utils/countries.js';
+
 
 // Format MM/DD/YYYY for certification dates
 const formatFullDate = (raw) => {
@@ -215,9 +220,19 @@ function MonthYearInput({ label, required, value, onChange, placeholder = 'MM/YY
 
 export default function CareerApplicationPortal() {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const urlJobId = searchParams.get('jobId') || '';
   const urlTitle = searchParams.get('title') || '';
+
+  // Auth Protection Guard
+  useEffect(() => {
+    if (!isTokenValid()) {
+      const redirectPath = location.pathname + location.search;
+      navigate(`/careers/login?redirect=${encodeURIComponent(redirectPath)}&reason=auth_required`, { replace: true });
+    }
+  }, [location, navigate]);
 
   // Current Step: 1 = Personal Details, 2 = Additional Details (My Experience), 3 = Review & Submit, 4 = Success
   const [currentStep, setCurrentStep] = useState(1);
@@ -267,8 +282,9 @@ export default function CareerApplicationPortal() {
     fullName: '',
     email: '',
     phoneDeviceType: 'Mobile',
+    phoneCountryCode: '+91',
+    phoneCountryIso: 'IN',
     phoneNumber: '',
-    phoneExtension: '',
     dateOfBirth: '',
     // Step 1: Address
     addressLine1: '',
@@ -285,7 +301,7 @@ export default function CareerApplicationPortal() {
     certifications: [],
 
     // Step 2: Skills
-    skills: ['Animal Nutrition', 'Quality Control', 'Team Collaboration'],
+    skills: [],
     skillInput: '',
 
     // Step 2: Additional Attachment
@@ -303,6 +319,19 @@ export default function CareerApplicationPortal() {
   const cardTopRef = useRef(null);
   const resumeInputRef = useRef(null);
   const additionalFileInputRef = useRef(null);
+
+  const candidateUser = getAuthUser();
+
+  // Pre-fill candidate account identity (name/email) only; do NOT provide default values for form fields like city or phone
+  useEffect(() => {
+    if (candidateUser) {
+      setFormData((prev) => ({
+        ...prev,
+        fullName: prev.fullName || candidateUser.name || '',
+        email: prev.email || candidateUser.email || '',
+      }));
+    }
+  }, []);
 
   // Scroll to card header when step changes
   useEffect(() => {
@@ -392,10 +421,9 @@ export default function CareerApplicationPortal() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Enter a valid email address';
     }
-    if (!formData.phoneNumber.trim()) {
-      newErrors.phoneNumber = 'Phone Number is required';
-    } else if (formData.phoneNumber.replace(/\D/g, '').length < 10) {
-      newErrors.phoneNumber = 'Enter a valid 10-digit phone number';
+    const phoneCheck = validateCountryPhone(formData.phoneNumber, formData.phoneCountryIso);
+    if (!phoneCheck.valid) {
+      newErrors.phoneNumber = phoneCheck.error;
     }
     if (!formData.addressLine1.trim()) newErrors.addressLine1 = 'Address is required';
     if (!formData.city.trim()) newErrors.city = 'City is required';
@@ -596,7 +624,9 @@ export default function CareerApplicationPortal() {
       // Prepare payload for backend
       const payload = {
         name: formData.fullName,
-        phone: formData.phoneNumber,
+        phoneCountryCode: formData.phoneCountryCode,
+        phoneNumber: formData.phoneNumber,
+        phone: `${formData.phoneCountryCode} ${formData.phoneNumber}`.trim(),
         email: formData.email,
         position: formData.position,
         experience:
@@ -613,11 +643,18 @@ export default function CareerApplicationPortal() {
         message: `Reference: ${formData.previouslyWorked === 'Yes' ? 'Worked previously: ' + formData.referenceName : 'No prior tenure'}; Skills: ${formData.skills.join(', ')}`,
       };
 
-      const res = await fetch('/api/careers/apply', {
+      const res = await authFetch('/api/careers/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
+
+      if (res.status === 401) {
+        clearAuthSession();
+        const redirectPath = location.pathname + location.search;
+        navigate(`/careers/login?redirect=${encodeURIComponent(redirectPath)}&reason=auth_required`, { replace: true });
+        return;
+      }
 
       const data = await res.json();
       const refCode = data.applicationId || `URJA-APP-${Date.now().toString().slice(-6)}`;
@@ -712,6 +749,7 @@ export default function CareerApplicationPortal() {
       {/* 2. MAIN APPLICATION CONTAINER */}
       <div className="cr-portal-container" ref={cardTopRef}>
         <div className="cr-main-card">
+
           {/* STEPPER PROGRESS TRACKER (1 Personal Details -> 2 Additional Details -> 3 Review & Submit) */}
           {currentStep <= 3 && (
             <div className="cr-stepper-tracker">
@@ -723,7 +761,7 @@ export default function CareerApplicationPortal() {
                 <div className="cr-step-circle">
                   {currentStep > 1 ? <Check size={18} strokeWidth={3} /> : '1'}
                 </div>
-                <div className="cr-step-label">Personal Details</div>
+                <div className="cr-step-label">Application Form</div>
               </div>
 
               {/* Connector 1-2 */}
@@ -741,7 +779,7 @@ export default function CareerApplicationPortal() {
                 <div className="cr-step-circle">
                   {currentStep > 2 ? <Check size={18} strokeWidth={3} /> : '2'}
                 </div>
-                <div className="cr-step-label">Additional Details</div>
+                <div className="cr-step-label">My Experience</div>
               </div>
 
               {/* Connector 2-3 */}
@@ -754,7 +792,7 @@ export default function CareerApplicationPortal() {
                 className={`cr-step-node ${currentStep === 3 ? 'active' : 'upcoming'}`}
               >
                 <div className="cr-step-circle">3</div>
-                <div className="cr-step-label">Review &amp; Submit</div>
+                <div className="cr-step-label">Review Application</div>
               </div>
             </div>
           )}
@@ -861,6 +899,102 @@ export default function CareerApplicationPortal() {
               </div>
               {errors.resume && <div className="cr-error-text" style={{ marginTop: '0.4rem' }}>{errors.resume}</div>}
 
+              {/* 2. Personal Details */}
+              <div className="cr-section-banner">
+                <div className="cr-section-title-wrap">
+                  <User size={18} />
+                  <span>2. Personal Details</span>
+                </div>
+              </div>
+
+              <div className="cr-form-grid-2">
+                <div className="cr-field-group">
+                  <label className="cr-field-label">
+                    Full Name <span className="cr-req-star">*</span>
+                  </label>
+                  <div className="cr-input-wrapper">
+                    <User size={16} className="cr-input-icon" />
+                    <input
+                      type="text"
+                      className={`cr-input ${errors.fullName ? 'cr-error' : ''}`}
+                      placeholder="Enter your full name"
+                      value={formData.fullName}
+                      onChange={(e) => handleChange('fullName', e.target.value)}
+                    />
+                  </div>
+                  {errors.fullName && <span className="cr-error-text">{errors.fullName}</span>}
+                </div>
+
+                <div className="cr-field-group">
+                  <label className="cr-field-label">
+                    Email Address <span className="cr-req-star">*</span>
+                  </label>
+                  <div className="cr-input-wrapper">
+                    <Mail size={16} className="cr-input-icon" />
+                    <input
+                      type="email"
+                      className={`cr-input ${errors.email ? 'cr-error' : ''}`}
+                      placeholder="Enter your email address"
+                      value={formData.email}
+                      onChange={(e) => handleChange('email', e.target.value)}
+                    />
+                  </div>
+                  {errors.email && <span className="cr-error-text">{errors.email}</span>}
+                </div>
+              </div>
+
+              <div className="cr-form-grid-2">
+                <div className="cr-field-group">
+                  <label className="cr-field-label">
+                    Phone Device Type <span className="cr-req-star">*</span>
+                  </label>
+                  <select
+                    className="cr-select"
+                    value={formData.phoneDeviceType}
+                    onChange={(e) => handleChange('phoneDeviceType', e.target.value)}
+                  >
+                    <option value="Mobile">Mobile</option>
+                    <option value="Home">Home</option>
+                    <option value="Work">Work</option>
+                    <option value="WhatsApp">WhatsApp</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <CountryPhoneInput
+                  countryCode={formData.phoneCountryCode}
+                  countryIso={formData.phoneCountryIso}
+                  phoneNumber={formData.phoneNumber}
+                  onCountryChange={(c) => {
+                    setFormData((prev) => ({
+                      ...prev,
+                      phoneCountryCode: c.dial,
+                      phoneCountryIso: c.iso,
+                    }));
+                    if (errors.phoneNumber) {
+                      setErrors((prev) => ({ ...prev, phoneNumber: null }));
+                    }
+                  }}
+                  onPhoneChange={(val) => handleChange('phoneNumber', val)}
+                  error={errors.phoneNumber}
+                  required
+                />
+              </div>
+
+              <div className="cr-form-grid-2">
+                <div className="cr-field-group">
+                  <label className="cr-field-label">Date of Birth</label>
+                  <div className="cr-input-wrapper">
+                    <input
+                      type="date"
+                      className="cr-input cr-input-date-right"
+                      value={formData.dateOfBirth}
+                      onChange={(e) => handleChange('dateOfBirth', e.target.value)}
+                    />
+                  </div>
+                </div>
+              </div>
+
               {/* 3. Reference Details (If applicable) */}
               <div className="cr-section-banner">
                 <div className="cr-section-title-wrap">
@@ -928,119 +1062,11 @@ export default function CareerApplicationPortal() {
                 </div>
               </div>
 
-              {/* 2. Personal Details */}
-              <div className="cr-section-banner">
-                <div className="cr-section-title-wrap">
-                  <User size={18} />
-                  <span>2. Personal Details</span>
-                </div>
-              </div>
-
-              <div className="cr-form-grid-2">
-                <div className="cr-field-group">
-                  <label className="cr-field-label">
-                    Full Name <span className="cr-req-star">*</span>
-                  </label>
-                  <div className="cr-input-wrapper">
-                    <User size={16} className="cr-input-icon" />
-                    <input
-                      type="text"
-                      className={`cr-input ${errors.fullName ? 'cr-error' : ''}`}
-                      placeholder="Enter your full name"
-                      value={formData.fullName}
-                      onChange={(e) => handleChange('fullName', e.target.value)}
-                    />
-                  </div>
-                  {errors.fullName && <span className="cr-error-text">{errors.fullName}</span>}
-                </div>
-
-                <div className="cr-field-group">
-                  <label className="cr-field-label">
-                    Email Address <span className="cr-req-star">*</span>
-                  </label>
-                  <div className="cr-input-wrapper">
-                    <Mail size={16} className="cr-input-icon" />
-                    <input
-                      type="email"
-                      className={`cr-input ${errors.email ? 'cr-error' : ''}`}
-                      placeholder="Enter your email address"
-                      value={formData.email}
-                      onChange={(e) => handleChange('email', e.target.value)}
-                    />
-                  </div>
-                  {errors.email && <span className="cr-error-text">{errors.email}</span>}
-                </div>
-              </div>
-
-              <div className="cr-form-grid-2">
-                <div className="cr-field-group">
-                  <label className="cr-field-label">
-                    Phone Device Type <span className="cr-req-star">*</span>
-                  </label>
-                  <select
-                    className="cr-select"
-                    value={formData.phoneDeviceType}
-                    onChange={(e) => handleChange('phoneDeviceType', e.target.value)}
-                  >
-                    <option value="Mobile">Mobile</option>
-                    <option value="Home">Home</option>
-                    <option value="Work">Work</option>
-                    <option value="WhatsApp">WhatsApp</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-
-                <div className="cr-field-group">
-                  <label className="cr-field-label">
-                    Phone Number <span className="cr-req-star">*</span>
-                  </label>
-                  <div className="cr-input-wrapper">
-                    <Phone size={16} className="cr-input-icon" />
-                    <input
-                      type="tel"
-                      className={`cr-input ${errors.phoneNumber ? 'cr-error' : ''}`}
-                      placeholder="Enter your phone number"
-                      value={formData.phoneNumber}
-                      onChange={(e) => handleChange('phoneNumber', e.target.value)}
-                    />
-                  </div>
-                  {errors.phoneNumber && <span className="cr-error-text">{errors.phoneNumber}</span>}
-                </div>
-              </div>
-
-              <div className="cr-form-grid-2">
-                <div className="cr-field-group">
-                  <label className="cr-field-label">Phone Extension</label>
-                  <div className="cr-input-wrapper">
-                    <Phone size={16} className="cr-input-icon" />
-                    <input
-                      type="text"
-                      className="cr-input"
-                      placeholder="Enter phone extension (if any)"
-                      value={formData.phoneExtension}
-                      onChange={(e) => handleChange('phoneExtension', e.target.value)}
-                    />
-                  </div>
-                </div>
-
-                <div className="cr-field-group">
-                  <label className="cr-field-label">Date of Birth</label>
-                  <div className="cr-input-wrapper">
-                    <input
-                      type="date"
-                      className="cr-input cr-input-date-right"
-                      value={formData.dateOfBirth}
-                      onChange={(e) => handleChange('dateOfBirth', e.target.value)}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* 4. Address */}
+              {/* 4. Address Details */}
               <div className="cr-section-banner">
                 <div className="cr-section-title-wrap">
                   <MapPin size={18} />
-                  <span>4. Address</span>
+                  <span>4. Address Details</span>
                 </div>
               </div>
 
@@ -1742,7 +1768,7 @@ export default function CareerApplicationPortal() {
           {currentStep === 3 && (
             <form onSubmit={handleFinalSubmit}>
               <div className="cr-card-header">
-                <h2 className="cr-card-title">Review &amp; Submit</h2>
+                <h2 className="cr-card-title">Review Application</h2>
                 <p className="cr-card-subtitle">
                   Please review your complete application details before final submission.
                 </p>
@@ -1798,7 +1824,8 @@ export default function CareerApplicationPortal() {
                   <div>
                     <div className="cr-review-item-label">Phone</div>
                     <div className="cr-review-item-value">
-                      {formData.phoneNumber} ({formData.phoneDeviceType})
+                      <span style={{ marginRight: '6px' }}>{getCountryByIso(formData.phoneCountryIso)?.flag || '🇮🇳'}</span>
+                      <strong>{formData.phoneCountryCode}</strong> {formData.phoneNumber} ({formData.phoneDeviceType})
                     </div>
                   </div>
                   <div>

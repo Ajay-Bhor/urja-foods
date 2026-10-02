@@ -6002,3 +6002,321 @@
   letter-spacing: 0.08em;
 }
 
+/* =========================================================================
+   COUNTRY SELECTOR & INTEGRATED INTERNATIONAL PHONE NUMBER INPUT
+   Country flag + calling code integrated inside the left of the single input box
+   ========================================================================= */
+.cr-unified-phone-box,
+.cr-phone-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 42px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.cr-unified-phone-box:hover,
+.cr-phone-input-group:hover {
+  border-color: #cbd5e1;
+}
+
+.cr-unified-phone-box:focus-within,
+.cr-unified-phone-box.focused,
+.cr-unified-phone-box.open,
+.cr-phone-input-group:focus-within {
+  border-color: #156b37;
+  box-shadow: 0 0 0 3px rgba(21, 107, 55, 0.12);
+  outline: none;
+}
+
+.cr-unified-phone-box.cr-error,
+.cr-phone-input-group.cr-error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
+  background: #fffdfd;
+}
+
+.cr-unified-phone-box.disabled,
+.cr-phone-input-group.disabled {
+  background: #f8fafc;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+/* Integrated Country Selector Button inside the left edge of the input */
+.cr-country-selector-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #f8fafc;
+  border: none;
+  height: 100%;
+  padding: 0 0.75rem 0 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  border-radius: 6.5px 0 0 6.5px;
+  transition: background 0.15s ease, color 0.15s ease;
+  user-select: none;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.cr-country-selector-btn:hover {
+  background: #edf5ea;
+  color: #156b37;
+}
+
+.cr-country-selector-btn:focus-visible {
+  outline: 2px solid #156b37;
+  outline-offset: -2px;
+}
+
+.cr-country-flag {
+  font-size: 1.25rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.cr-country-code {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.cr-country-code.cr-country-unselected {
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.cr-country-flag-img {
+  width: 22px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  display: block;
+}
+
+.cr-country-globe-icon {
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.cr-country-chevron {
+  color: #64748b;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.cr-country-chevron.open {
+  transform: rotate(180deg);
+  color: #156b37;
+}
+
+/* Vertical divider between country calling code and phone number inside the input */
+.cr-phone-divider {
+  width: 1px;
+  height: 22px;
+  background: #cbd5e1;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* Phone number input filling the rest of the same input box */
+.cr-phone-number-input {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 0.85rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #1e293b;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.cr-phone-number-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Floating Searchable Country Popover */
+.cr-country-dropdown-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  overflow: hidden;
+
+  animation: cr-fade-in-down 0.18s ease-out;
+}
+
+@keyframes cr-fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cr-country-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  background: #f8fafc;
+}
+
+.cr-country-search-icon {
+  position: absolute;
+  left: 1.1rem;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.cr-country-search-input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.45rem 1.8rem 0.45rem 2.1rem;
+  font-family: inherit;
+  font-size: 0.84rem;
+  outline: none;
+  background: #ffffff;
+  color: #0f172a;
+  transition: all 0.15s ease;
+}
+
+.cr-country-search-input:focus {
+  border-color: #1b6535;
+  box-shadow: 0 0 0 2px rgba(27, 101, 53, 0.12);
+}
+
+.cr-country-search-clear {
+  position: absolute;
+  right: 1.1rem;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 2px 4px;
+}
+
+.cr-country-list-scroll {
+  max-height: 240px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.cr-country-option-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.85rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.86rem;
+  color: #1e293b;
+  transition: background 0.12s ease;
+}
+
+.cr-country-option-item:hover {
+  background: #f1f5f9;
+}
+
+.cr-country-option-item.active {
+  background: #eef7f2;
+  color: #156b37;
+  font-weight: 600;
+}
+
+.cr-country-opt-flag {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.cr-country-opt-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cr-country-opt-dial {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.cr-country-option-item.active .cr-country-opt-dial {
+  background: #d8ebd9;
+  color: #156b37;
+}
+
+.cr-country-opt-check {
+  color: #156b37;
+  flex-shrink: 0;
+}
+
+.cr-country-empty {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.84rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.cr-country-dropdown-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  background: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.74rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.cr-phone-hint-text {
+  display: block;
+  font-size: 0.76rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+

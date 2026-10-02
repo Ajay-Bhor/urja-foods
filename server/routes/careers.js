@@ -4,6 +4,15 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import nodemailer from 'nodemailer';
 import { query, isDbConnected } from '../config/db.js';
+import {
+  verifyGoogleIdToken,
+  verifyAppleIdToken,
+  hashPassword,
+  verifyPassword,
+  createCandidateSessionToken,
+  verifyCandidateSessionToken,
+} from '../services/authService.js';
+import { requireAuth, optionalAuth } from '../middleware/authMiddleware.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -37,7 +46,7 @@ if (!fs.existsSync(candidateUsersFile)) {
       password: 'password123',
       qualification: 'B.Sc Agriculture / Animal Science',
       experience: '1 – 3 Years',
-      city: 'Manchar, Pune',
+      city: '',
       createdAt: new Date().toISOString(),
     }
   ], null, 2), 'utf8');
@@ -105,8 +114,8 @@ const createTransporter = () => {
   return null;
 };
 
-// POST /api/careers/apply
-router.post('/apply', async (req, res) => {
+// POST /api/careers/apply (Supports optional JWT authenticated candidate linking)
+router.post('/apply', optionalAuth, async (req, res) => {
   const {
     name,
     phone,
@@ -126,12 +135,12 @@ router.post('/apply', async (req, res) => {
     });
   }
 
-  // Validate phone
+  // Validate phone (E.164 international standard: 7 to 15 digits)
   const cleanPhone = String(phone).replace(/\D/g, '');
-  if (cleanPhone.length < 10) {
+  if (cleanPhone.length < 7) {
     return res.status(400).json({
       success: false,
-      message: 'Please provide a valid 10-digit mobile number.',
+      message: 'Please provide a valid phone number (minimum 7 digits).',
     });
   }
 
@@ -150,8 +159,12 @@ router.post('/apply', async (req, res) => {
 
   const newApplication = {
     id: applicationId,
+    candidateId: req.candidate?.sub || null,
+    isJwtAuthenticated: !!req.candidate,
     name: name.trim(),
     phone: phone.trim(),
+    phoneCountryCode: req.body.phoneCountryCode ? String(req.body.phoneCountryCode).trim() : '+91',
+    phoneNumber: req.body.phoneNumber ? String(req.body.phoneNumber).trim() : cleanPhone,
     email: email.trim(),
     position: position.trim(),
     experience: experience || 'Not specified',
@@ -778,11 +791,14 @@ router.post('/auth/callback', async (req, res) => {
       (a) => a.email && a.email.toLowerCase() === candidate.email.toLowerCase()
     );
 
+    const sessionToken = createCandidateSessionToken(candidate);
+
     return res.json({
       success: true,
       message: isNewUser
         ? `Account successfully created via ${provider}! Welcome to Urja Foods, ${candidate.name}.`
         : `Welcome back, ${candidate.name}!`,
+      token: sessionToken,
       user: sanitizeUser(candidate),
       applications: candidateApps,
       isNewUser,
@@ -794,60 +810,84 @@ router.post('/auth/callback', async (req, res) => {
 });
 
 // -------------------------------------------------------------------------
-// 1. SIGN IN WITH APPLE
+// 1. OFFICIAL SIGN IN WITH APPLE (CRYPTOGRAPHIC IDENTITY TOKEN VERIFICATION)
 // -------------------------------------------------------------------------
 router.post('/apple-auth', async (req, res) => {
   try {
-    const {
-      email,
-      name,
-      appleId,
-      relayEmail,
-      isPrivateRelay,
-      city,
-      qualification,
-      experience,
-    } = req.body;
+    const { id_token, idToken, credential, user: appleUserPayload, nonce } = req.body;
+    const tokenToVerify = id_token || idToken || credential;
 
-    if (!email && !appleId) {
+    if (!tokenToVerify) {
       return res.status(400).json({
         success: false,
-        message: 'Apple ID credentials or email address is required.',
+        message: 'Apple identity token (id_token) is required. Please sign in using your Apple Account.',
       });
     }
 
-    const targetEmail = (email || relayEmail || `${appleId}@privaterelay.appleid.com`).trim().toLowerCase();
-    const existing = await findCandidate(targetEmail);
+    // Cryptographic verification against Apple's official JWKS
+    const verification = await verifyAppleIdToken(tokenToVerify, nonce);
+
+    if (!verification.verified) {
+      return res.status(401).json({
+        success: false,
+        message: verification.error || 'Apple identity token verification failed. Access denied.',
+      });
+    }
+
+    const appleSub = verification.sub;
+    let targetEmail = verification.email;
+
+    // If Apple did not include email in subsequent token, find by Apple sub ID
+    if (!targetEmail) {
+      const users = getCandidateUsers();
+      const existingBySub = users.find((u) => u.providerId === appleSub && u.authProvider === 'apple');
+      if (existingBySub) {
+        targetEmail = existingBySub.email;
+      } else {
+        targetEmail = `${appleSub}@privaterelay.appleid.com`;
+      }
+    }
+
+    const cleanEmail = targetEmail.trim().toLowerCase();
+    const existing = await findCandidate(cleanEmail);
+
+    let displayName = 'Apple Candidate';
+    if (appleUserPayload?.name) {
+      const { firstName, lastName } = appleUserPayload.name;
+      displayName = `${firstName || ''} ${lastName || ''}`.trim() || displayName;
+    } else if (cleanEmail && !cleanEmail.includes('privaterelay')) {
+      displayName = cleanEmail.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    }
 
     let candidate;
     if (existing) {
-      // Existing user: log them in directly, link Apple ID
       candidate = await saveOrUpdateCandidate({
         ...existing,
-        providerId: appleId || existing.providerId,
-        authProvider: existing.authProvider === 'email' ? 'apple' : existing.authProvider,
+        name: existing.name && !existing.name.includes('Candidate') ? existing.name : displayName,
+        providerId: appleSub,
+        authProvider: 'apple',
         emailVerified: true,
+        lastLoginAt: new Date().toISOString(),
       });
     } else {
-      // New user: automatically create candidate account
-      const displayName = name
-        ? name.trim()
-        : targetEmail.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-
       candidate = await saveOrUpdateCandidate({
         id: `cand-apple-${Date.now().toString().slice(-6)}`,
         name: displayName,
-        email: targetEmail,
+        email: cleanEmail,
         phone: '',
         picture: `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(displayName)}`,
         authProvider: 'apple',
-        providerId: appleId || `apple_${Date.now()}`,
+        providerId: appleSub,
         emailVerified: true,
-        city: city || 'Pune, Maharashtra',
-        qualification: qualification || 'Graduate / Professional',
-        experience: experience || '1 – 3 Years',
+        city: '',
+        qualification: 'Graduate / Professional',
+        experience: '1 – 3 Years',
+        createdAt: new Date().toISOString(),
+        lastLoginAt: new Date().toISOString(),
       });
     }
+
+    const sessionToken = createCandidateSessionToken(candidate);
 
     const allApps = getApplications();
     const candidateApps = allApps.filter(
@@ -856,9 +896,8 @@ router.post('/apple-auth', async (req, res) => {
 
     return res.json({
       success: true,
-      message: existing
-        ? `Welcome back, ${candidate.name}!`
-        : `Apple account connected! Welcome to Urja Foods, ${candidate.name}.`,
+      message: `Apple authentication verified! Welcome, ${candidate.name}.`,
+      token: sessionToken,
       user: sanitizeUser(candidate),
       applications: candidateApps,
     });
@@ -869,66 +908,68 @@ router.post('/apple-auth', async (req, res) => {
 });
 
 // -------------------------------------------------------------------------
-// 2. SIGN IN WITH GOOGLE
+// 2. OFFICIAL SIGN IN WITH GOOGLE (ID TOKEN VERIFICATION)
 // -------------------------------------------------------------------------
 router.post('/google-auth', async (req, res) => {
   try {
-    let { email, name, picture, googleId, credential, qualification, city, experience } = req.body;
+    const { idToken, credential } = req.body;
+    const tokenToVerify = idToken || credential;
 
-    // Verify real Google JWT token if passed
-    if (credential) {
-      try {
-        const gRes = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${credential}`);
-        if (gRes.ok) {
-          const gData = await gRes.json();
-          email = gData.email || email;
-          name = gData.name || name;
-          picture = gData.picture || picture;
-          googleId = gData.sub || googleId;
-        }
-      } catch (gErr) {
-        console.warn('Google tokeninfo check note:', gErr.message);
-      }
+    if (!tokenToVerify) {
+      return res.status(400).json({
+        success: false,
+        message: 'Google ID token (credential) is required. Please sign in via the official Google prompt.',
+      });
     }
 
-    if (!email) {
-      return res.status(400).json({ success: false, message: 'Google email address is required.' });
+    // Cryptographic server-side verification using Google's tokeninfo
+    const verification = await verifyGoogleIdToken(tokenToVerify);
+
+    if (!verification.verified) {
+      return res.status(401).json({
+        success: false,
+        message: verification.error || 'Google identity verification failed. Invalid or expired token.',
+      });
     }
 
-    const cleanEmail = email.trim().toLowerCase();
+    // Strict security: extract ONLY verified email, sub, name, and picture
+    const cleanEmail = verification.email;
+    const googleSub = verification.sub;
+    const verifiedName = verification.name || cleanEmail.split('@')[0];
+    const verifiedPicture = verification.picture;
+
     const existing = await findCandidate(cleanEmail);
 
     let candidate;
     if (existing) {
-      // Existing user: log in directly
       candidate = await saveOrUpdateCandidate({
         ...existing,
-        name: existing.name && existing.name !== 'Candidate' ? existing.name : (name || existing.name),
-        picture: picture || existing.picture,
-        providerId: googleId || existing.providerId,
+        name: existing.name && !existing.name.includes('Candidate') ? existing.name : verifiedName,
+        picture: verifiedPicture || existing.picture,
+        providerId: googleSub,
         authProvider: 'google',
         emailVerified: true,
+        lastLoginAt: new Date().toISOString(),
       });
     } else {
-      // New user: automatically create candidate account
-      const displayName = name
-        ? name.trim()
-        : cleanEmail.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-
       candidate = await saveOrUpdateCandidate({
         id: `cand-g-${Date.now().toString().slice(-6)}`,
-        name: displayName,
+        name: verifiedName,
         email: cleanEmail,
         phone: '',
-        picture: picture || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(displayName)}`,
+        picture: verifiedPicture || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(verifiedName)}`,
         authProvider: 'google',
-        providerId: googleId || `gid_${Date.now()}`,
+        providerId: googleSub,
         emailVerified: true,
-        qualification: qualification || 'Graduate / Professional',
-        experience: experience || 'Fresher (0 - 1 year)',
-        city: city || 'Pune, Maharashtra',
+        qualification: 'Graduate / Professional',
+        experience: 'Fresher (0 - 1 year)',
+        city: '',
+        createdAt: new Date().toISOString(),
+        lastLoginAt: new Date().toISOString(),
       });
     }
+
+    const sessionToken = createCandidateSessionToken(candidate);
 
     const allApps = getApplications();
     const candidateApps = allApps.filter(
@@ -937,9 +978,8 @@ router.post('/google-auth', async (req, res) => {
 
     return res.json({
       success: true,
-      message: existing
-        ? `Welcome back, ${candidate.name}!`
-        : `Google account linked! Welcome to Urja Foods, ${candidate.name}.`,
+      message: `Google authentication verified! Welcome, ${candidate.name}.`,
+      token: sessionToken,
       user: sanitizeUser(candidate),
       applications: candidateApps,
     });
@@ -990,7 +1030,7 @@ router.post('/linkedin-auth', async (req, res) => {
         emailVerified: true,
         qualification: qualification || headline || 'Graduate / Professional Degree',
         experience: experience || '2 – 5 Years',
-        city: city || 'Pune, Maharashtra',
+        city: city || '',
       });
     }
 
@@ -1047,6 +1087,9 @@ router.post('/register', async (req, res) => {
       });
     }
 
+    // Hash password with bcrypt before storing
+    const hashedPassword = await hashPassword(password);
+
     // Generate 6-digit verification code
     const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
     const verificationExpires = new Date(Date.now() + 15 * 60 * 1000).toISOString();
@@ -1056,7 +1099,7 @@ router.post('/register', async (req, res) => {
       name: name.trim(),
       email: cleanEmail,
       phone: phone ? String(phone).replace(/\D/g, '') : (existing?.phone || ''),
-      password,
+      password: hashedPassword,
       qualification: qualification || existing?.qualification || 'Graduate / Diploma',
       city: city || existing?.city || 'Pune, Maharashtra',
       experience: experience || existing?.experience || 'Fresher (0 - 1 year)',
@@ -1153,9 +1196,12 @@ router.post('/verify-email', async (req, res) => {
       (a) => a.email && a.email.toLowerCase() === verifiedUser.email.toLowerCase()
     );
 
+    const sessionToken = createCandidateSessionToken(verifiedUser);
+
     return res.json({
       success: true,
       message: 'Email address successfully verified! Your candidate profile is now active.',
+      token: sessionToken,
       user: sanitizeUser(verifiedUser),
       applications: candidateApps,
     });
@@ -1223,8 +1269,11 @@ router.post('/login', async (req, res) => {
     const emailOrPhone = req.body.emailOrPhone || req.body.email;
     const { password } = req.body;
 
-    if (!emailOrPhone) {
-      return res.status(400).json({ success: false, message: 'Please provide Email Address or Mobile Number.' });
+    if (!emailOrPhone || !password) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide both Email Address/Mobile Number and Password.',
+      });
     }
 
     const user = await findCandidate(emailOrPhone);
@@ -1232,21 +1281,28 @@ router.post('/login', async (req, res) => {
     if (!user) {
       return res.status(401).json({
         success: false,
-        message: 'No candidate profile found with this email or mobile. Please click Create Account to register.',
+        message: 'Invalid email address or password. Please verify your credentials.',
       });
     }
 
-    // Verify Password if user has a password set
-    if (user.password && password && user.password !== password) {
+    // Cryptographic verification of password against stored bcrypt hash
+    const isPasswordValid = await verifyPassword(password, user.password);
+
+    if (!isPasswordValid) {
       return res.status(401).json({
         success: false,
-        message: 'Incorrect password. Please verify and try again, or use Forgot Password to reset it.',
+        message: 'Invalid email address or password. Please verify your credentials and try again.',
       });
+    }
+
+    // If legacy plain-text password matched, upgrade it to bcrypt hash immediately
+    if (user.password && !user.password.startsWith('$2')) {
+      user.password = await hashPassword(password);
+      await saveOrUpdateCandidate(user);
     }
 
     // If candidate has not verified email yet and signed up via email
     if (user.authProvider === 'email' && user.emailVerified === false) {
-      // Refresh code and ask for verification
       const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
       const verificationExpires = new Date(Date.now() + 15 * 60 * 1000).toISOString();
       await saveOrUpdateCandidate({
@@ -1270,6 +1326,8 @@ router.post('/login', async (req, res) => {
       lastLoginAt: new Date().toISOString(),
     });
 
+    const sessionToken = createCandidateSessionToken(updated);
+
     const allApps = getApplications();
     const candidateApps = allApps.filter(
       (a) =>
@@ -1280,6 +1338,7 @@ router.post('/login', async (req, res) => {
     return res.json({
       success: true,
       message: `Welcome back, ${updated.name}!`,
+      token: sessionToken,
       user: sanitizeUser(updated),
       applications: candidateApps,
     });
@@ -1384,23 +1443,140 @@ router.post('/reset-password', async (req, res) => {
       });
     }
 
-    // Save updated password, clear resetCode, and mark email verified
+    // Hash new password securely
+    const hashedPassword = await hashPassword(newPassword);
+
     const updated = await saveOrUpdateCandidate({
       ...user,
-      password: newPassword,
+      password: hashedPassword,
       resetCode: null,
       resetExpires: null,
       emailVerified: true,
     });
 
+    const sessionToken = createCandidateSessionToken(updated);
+
     return res.json({
       success: true,
       message: 'Password has been reset successfully! You can now sign in with your new credentials.',
+      token: sessionToken,
       user: sanitizeUser(updated),
     });
   } catch (err) {
     console.error('Reset Password Error:', err);
     return res.status(500).json({ success: false, message: 'Server error during password reset.' });
+  }
+});
+
+// -------------------------------------------------------------------------
+// JWT PROTECTED CANDIDATE ENDPOINTS
+// -------------------------------------------------------------------------
+
+// Candidate Session Verification (Bearer JWT)
+router.get('/session', requireAuth, async (req, res) => {
+  try {
+    const user = await findCandidate(req.candidate.sub);
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'Candidate account not found.' });
+    }
+
+    const allApps = getApplications();
+    const candidateApps = allApps.filter(
+      (a) =>
+        (a.candidateId && a.candidateId === user.id) ||
+        (user.email && a.email && a.email.toLowerCase() === user.email.toLowerCase()) ||
+        (user.phone && a.phone && a.phone.replace(/\D/g, '') === user.phone.replace(/\D/g, ''))
+    );
+
+    return res.json({
+      success: true,
+      user: sanitizeUser(user),
+      jwtClaims: req.candidate,
+      applications: candidateApps,
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Server error verifying session.' });
+  }
+});
+
+// Candidate Profile (Bearer JWT)
+router.get('/me', requireAuth, async (req, res) => {
+  try {
+    const user = await findCandidate(req.candidate.sub);
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'Candidate profile not found.' });
+    }
+
+    const allApps = getApplications();
+    const candidateApps = allApps.filter(
+      (a) =>
+        (a.candidateId && a.candidateId === user.id) ||
+        (user.email && a.email && a.email.toLowerCase() === user.email.toLowerCase())
+    );
+
+    return res.json({
+      success: true,
+      user: sanitizeUser(user),
+      jwtClaims: req.candidate,
+      applications: candidateApps,
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Error retrieving profile.' });
+  }
+});
+
+// My Submitted Applications (Bearer JWT)
+router.get('/my-applications', requireAuth, async (req, res) => {
+  try {
+    const user = await findCandidate(req.candidate.sub);
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'Candidate not found.' });
+    }
+
+    const allApps = getApplications();
+    const myApps = allApps.filter(
+      (a) =>
+        (a.candidateId && a.candidateId === user.id) ||
+        (user.email && a.email && a.email.toLowerCase() === user.email.toLowerCase()) ||
+        (user.phone && a.phone && a.phone.replace(/\D/g, '') === user.phone.replace(/\D/g, ''))
+    );
+
+    return res.json({
+      success: true,
+      count: myApps.length,
+      applications: myApps,
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Error fetching applications.' });
+  }
+});
+
+// Update Profile (Bearer JWT)
+router.put('/profile', requireAuth, async (req, res) => {
+  try {
+    const user = await findCandidate(req.candidate.sub);
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'Candidate not found.' });
+    }
+
+    const { name, phone, city, qualification, experience } = req.body;
+    const updated = await saveOrUpdateCandidate({
+      ...user,
+      name: name ? name.trim() : user.name,
+      phone: phone ? String(phone).replace(/\D/g, '') : user.phone,
+      city: city || user.city,
+      qualification: qualification || user.qualification,
+      experience: experience || user.experience,
+      updatedAt: new Date().toISOString(),
+    });
+
+    return res.json({
+      success: true,
+      message: 'Candidate profile updated successfully.',
+      user: sanitizeUser(updated),
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Error updating profile.' });
   }
 });
 
