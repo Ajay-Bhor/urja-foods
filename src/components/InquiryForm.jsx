@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle2, AlertCircle, Clock } from 'lucide-react';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function InquiryForm({ preFillData }) {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -178,7 +180,7 @@ export default function InquiryForm({ preFillData }) {
               <div className="form-grid-2">
                 <div className="form-group">
                   <label className="form-label" htmlFor="inq-name">
-                    Full Name *
+                    {t('inquiryFormName') || 'Full Name'} *
                   </label>
                   <input
                     type="text"
@@ -194,7 +196,7 @@ export default function InquiryForm({ preFillData }) {
 
                 <div className="form-group">
                   <label className="form-label" htmlFor="inq-phone">
-                    Mobile Number (10 digits) *
+                    {t('inquiryFormPhone') || 'Mobile Number (10 digits)'} *
                   </label>
                   <input
                     type="tel"
@@ -212,7 +214,7 @@ export default function InquiryForm({ preFillData }) {
               <div className="form-grid-2">
                 <div className="form-group">
                   <label className="form-label" htmlFor="inq-interest">
-                    Area of Interest
+                    {t('inquiryFormInterest') || 'Area of Interest'}
                   </label>
                   <select
                     id="inq-interest"
@@ -234,7 +236,7 @@ export default function InquiryForm({ preFillData }) {
 
                 <div className="form-group">
                   <label className="form-label" htmlFor="inq-district">
-                    District / Region
+                    {t('inquiryFormDistrict') || 'District / Region'}
                   </label>
                   <select
                     id="inq-district"
@@ -290,7 +292,7 @@ export default function InquiryForm({ preFillData }) {
 
               <div className="form-group">
                 <label className="form-label" htmlFor="inq-message">
-                  Message / Specific Questions
+                  {t('inquiryFormMsg') || 'Message / Specific Questions'}
                 </label>
                 <textarea
                   id="inq-message"
@@ -311,7 +313,7 @@ export default function InquiryForm({ preFillData }) {
                 id="inquiry-submit-btn"
               >
                 <Send size={16} />
-                <span>{submitting ? 'Submitting Inquiry...' : 'Submit Partnership Inquiry'}</span>
+                <span>{submitting ? 'Submitting Inquiry...' : (t('inquiryFormSubmit') || 'Submit Partnership Inquiry')}</span>
               </button>
             </form>
           </div>

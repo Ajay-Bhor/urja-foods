@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, PhoneCall } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
 import ProductCatalog from '../components/ProductCatalog';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function ProductsPage({ onSelectProduct, onQuickInquire }) {
+  const { t } = useLanguage();
+
   const qualityPillars = [
     {
       title: 'Bypass Protein & Fat (UDP/RDP)',
@@ -28,10 +31,10 @@ export default function ProductsPage({ onSelectProduct, onQuickInquire }) {
     <div className="products-page-view">
       {/* 1. Header Banner */}
       <PageBanner
-        badge="Laboratory-Certified Nutrition"
-        title="Scientific Feeds & Livestock Products"
-        subtitle="Explore our proven range of high-fat cattle feeds, high-FCR broiler crumbles, and layer concentrates formulated at our 150 TPD automated plant in Nirgudsar, Pune."
-        breadcrumb="Products & Feed"
+        badge={t('productsBannerBadge') || "Laboratory-Certified Nutrition"}
+        title={t('productsBannerTitle') || "Scientific Feeds & Livestock Products"}
+        subtitle={t('productsBannerSub') || "Explore our proven range of high-fat cattle feeds, high-FCR broiler crumbles, and layer concentrates formulated at our 150 TPD automated plant in Nirgudsar, Pune."}
+        breadcrumb={t('navProducts') || "Products & Feed"}
       />
 
       {/* 2. Interactive Product Catalog */}

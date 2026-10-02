@@ -601,6 +601,10 @@ router.post('/auth/callback', async (req, res) => {
       const googleSecret = process.env.GOOGLE_CLIENT_SECRET;
       const googleClientId = process.env.GOOGLE_CLIENT_ID || process.env.VITE_GOOGLE_CLIENT_ID;
 
+      if (!googleSecret) {
+        console.warn('Google Auth notice: GOOGLE_CLIENT_SECRET is not configured in .env. Token exchange requires GOOGLE_CLIENT_SECRET from Google Cloud Console.');
+      }
+
       if (code && googleSecret && googleClientId) {
         try {
           const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
@@ -610,11 +614,14 @@ router.post('/auth/callback', async (req, res) => {
               code,
               client_id: googleClientId,
               client_secret: googleSecret,
-              redirect_uri: redirectUri || 'http://localhost:3000/careers/auth/callback?provider=google',
+              redirect_uri: redirectUri || 'http://localhost:3000/careers/auth/callback',
               grant_type: 'authorization_code',
             }),
           });
           const tokenData = await tokenRes.json();
+          if (tokenData.error) {
+            console.warn('Google Token Exchange API returned error:', tokenData.error, tokenData.error_description);
+          }
           if (tokenData.access_token) {
             const userRes = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
               headers: { Authorization: `Bearer ${tokenData.access_token}` },
@@ -651,7 +658,7 @@ router.post('/auth/callback', async (req, res) => {
             body: new URLSearchParams({
               grant_type: 'authorization_code',
               code,
-              redirect_uri: redirectUri || 'http://localhost:3000/careers/auth/callback?provider=linkedin',
+              redirect_uri: redirectUri || 'http://localhost:3000/careers/auth/callback',
               client_id: liClientId,
               client_secret: liSecret,
             }),
@@ -695,7 +702,7 @@ router.post('/auth/callback', async (req, res) => {
               code,
               client_id: appleClientId,
               client_secret: appleSecret,
-              redirect_uri: redirectUri || 'http://localhost:3000/careers/auth/callback?provider=apple',
+              redirect_uri: redirectUri || 'http://localhost:3000/careers/auth/callback',
             }),
           });
           const tokenData = await tokenRes.json();

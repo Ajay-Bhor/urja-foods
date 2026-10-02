@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function PageProgressBar() {
   const location = useLocation();
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(false);
-  const isFirstRender = useRef(true);
 
   useEffect(() => {
     // Skip animation on initial page render if desired, or animate it too
@@ -35,7 +34,7 @@ export default function PageProgressBar() {
       clearTimeout(timer3);
       clearTimeout(timer4);
     };
-  }, [location.pathname, location.search]);
+  }, [location.pathname, location.search, location.key]);
 
   if (!visible && progress === 0) return null;
 

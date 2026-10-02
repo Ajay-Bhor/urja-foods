@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function BusinessesHero() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   return (
     <section className="ob-hero">
@@ -36,41 +38,37 @@ export default function BusinessesHero() {
               id="businesses-hero-back-btn"
             >
               <ArrowLeft size={15} />
-              <span>Back</span>
+              <span>{t('back') || 'Back'}</span>
             </button>
 
             <nav className="ob-breadcrumb" aria-label="Breadcrumb" style={{ marginBottom: 0 }}>
-              <Link to="/">Home</Link>
+              <Link to="/">{t('navHome') || 'Home'}</Link>
               <span aria-hidden="true">›</span>
-              <strong>Our Businesses</strong>
+              <strong>{t('navBusinesses') || 'Our Businesses'}</strong>
             </nav>
           </div>
 
           {/* Eyebrow Label */}
           <div className="ob-eyebrow">
             <span aria-hidden="true"></span>
-            <span>OUR BUSINESSES</span>
+            <span>{t('bizOverline') || 'OUR BUSINESSES'}</span>
           </div>
 
           {/* Main Heading */}
           <h1>
-            One Group.
+            <strong>{t('bizHeroTitle1') || 'Integrated Agribusiness'}</strong>
             <br />
-            <span>Many Strengths.</span>
-            <br />
-            <strong>One Shared Purpose.</strong>
+            <span>{t('bizHeroTitle2') || 'At Scale.'}</span>
           </h1>
 
           {/* Subtitle Description */}
           <p>
-            Five integrated businesses working across agriculture,
-            nutrition, food processing and sustainable solutions —
-            creating value from farm to consumer.
+            {t('bizHeroSubtitle') || 'Five interconnected companies powering animal nutrition, poultry integration, clean protein, organic farm inputs and sustainable agro-processing.'}
           </p>
 
           {/* Anchor Call-to-Action */}
           <a href="#businesses" className="ob-hero-btn">
-            <span>EXPLORE OUR BUSINESSES</span>
+            <span>{t('bizExplore') || 'EXPLORE OUR BUSINESSES'}</span>
             <b aria-hidden="true">→</b>
           </a>
         </div>

@@ -1,32 +1,34 @@
 import React from 'react';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function ManufacturingExcellence() {
+  const { t } = useLanguage();
   const points = [
     {
       num: '01',
       strong: '800 TPD & 140 TPD',
-      desc: 'Automated & Conventional Feed Manufacturing',
+      desc: t('mfgPoint1Desc') || 'Automated & Conventional Feed Manufacturing',
       spanFull: true,
     },
     {
       num: '02',
-      strong: 'PLC CONTROLLED',
-      desc: 'Automated Production',
+      strong: t('mfgPoint2Title') || 'PLC CONTROLLED',
+      desc: t('mfgPoint2Desc') || 'Automated Production',
     },
     {
       num: '03',
-      strong: 'EC HOUSES',
-      desc: 'Automated Feeding & Drinking',
+      strong: t('mfgPoint3Title') || 'EC HOUSES',
+      desc: t('mfgPoint3Desc') || 'Automated Feeding & Drinking',
     },
     {
       num: '04',
-      strong: 'IN-HOUSE',
-      desc: 'Premix & Soya Processing',
+      strong: t('mfgPoint4Title') || 'IN-HOUSE',
+      desc: t('mfgPoint4Desc') || 'Premix & Soya Processing',
     },
     {
       num: '05',
-      strong: 'PRECISION',
-      desc: 'Batching & Micro-Dosing',
+      strong: t('mfgPoint5Title') || 'PRECISION',
+      desc: t('mfgPoint5Desc') || 'Batching & Micro-Dosing',
     },
   ];
 
@@ -36,16 +38,16 @@ export default function ManufacturingExcellence() {
         {/* Top Header */}
         <div className="urja-mfg-top">
           <div className="urja-mfg-title">
-            <span className="urja-mfg-label">MANUFACTURING EXCELLENCE</span>
+            <span className="urja-mfg-label">{t('mfgLabel') || 'MANUFACTURING EXCELLENCE'}</span>
             <h2>
-              Where Technology<br />
-              <em>Meets Integration</em>
+              {t('mfgTitle1') || 'Where Technology'}<br />
+              <em>{t('mfgTitle2') || 'Meets Integration'}</em>
             </h2>
           </div>
 
           <div className="urja-mfg-intro">
             <p>
-              Advanced technology, automation and integrated manufacturing capabilities built for precision, consistency and scale.
+              {t('mfgIntro') || 'Advanced technology, automation and integrated manufacturing capabilities built for precision, consistency and scale.'}
             </p>
           </div>
         </div>

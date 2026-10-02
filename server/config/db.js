@@ -249,26 +249,21 @@ async function createTables() {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
   `);
 
-  // Ensure all columns exist in candidate_users even if table was created in earlier versions
-  const requiredCandidateCols = [
-    ['password', 'VARCHAR(255) DEFAULT NULL'],
-    ['provider_id', 'VARCHAR(128) DEFAULT NULL'],
-    ['email_verified', 'BOOLEAN DEFAULT FALSE'],
-    ['verification_code', 'VARCHAR(16) DEFAULT NULL'],
-    ['verification_code_expires', 'TIMESTAMP NULL DEFAULT NULL'],
-    ['reset_code', 'VARCHAR(16) DEFAULT NULL'],
-    ['reset_code_expires', 'TIMESTAMP NULL DEFAULT NULL'],
-    ['city', 'VARCHAR(100) DEFAULT NULL'],
-    ['qualification', 'VARCHAR(255) DEFAULT NULL'],
-    ['experience', 'VARCHAR(100) DEFAULT NULL'],
-  ];
-  for (const [colName, colType] of requiredCandidateCols) {
-    try {
-      await pool.query(`ALTER TABLE candidate_users ADD COLUMN ${colName} ${colType}`);
-    } catch {
-      // Ignore if column already exists
-    }
-  }
+  // 10. Translations Table (Multilingual Native Dictionary)
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS translations (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      lang_code VARCHAR(10) NOT NULL,
+      trans_key VARCHAR(100) NOT NULL,
+      trans_value LONGTEXT NOT NULL,
+      category VARCHAR(50) DEFAULT 'general',
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+      UNIQUE KEY uq_lang_trans_key (lang_code, trans_key),
+      INDEX idx_lang_code (lang_code),
+      INDEX idx_category (category)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `);
 }
 
 /**
@@ -510,6 +505,23 @@ async function seedInitialData() {
         );
       }
       console.log(`🌱 [MySQL] Seeded ${candidates.length} candidate user accounts`);
+    }
+  }
+
+  // 9. Seed Translations
+  const [transRows] = await pool.query('SELECT COUNT(*) as count FROM translations');
+  if (transRows[0].count === 0) {
+    const data = readJson('translations.json');
+    if (data && data.items && data.items.length > 0) {
+      for (const item of data.items) {
+        await pool.query(
+          `INSERT INTO translations (lang_code, trans_key, trans_value, category)
+           VALUES (?, ?, ?, ?)
+           ON DUPLICATE KEY UPDATE trans_value = VALUES(trans_value), category = VALUES(category)`,
+          [item.lang_code, item.trans_key, item.trans_value, item.category || 'general']
+        );
+      }
+      console.log(`🌱 [MySQL] Seeded ${data.items.length} translation records`);
     }
   }
 }

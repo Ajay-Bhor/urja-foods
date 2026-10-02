@@ -2,8 +2,11 @@ import React from 'react';
 import { MapPin, Phone, Mail, Clock, ExternalLink, CheckCircle2 } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
 import InquiryForm from '../components/InquiryForm';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function ContactPage({ preFillInquiry }) {
+  const { t } = useLanguage();
+
   const contactCards = [
     {
       icon: <MapPin size={26} color="var(--primary)" />,
@@ -63,10 +66,10 @@ export default function ContactPage({ preFillInquiry }) {
     <div className="contact-page-view">
       {/* 1. Header Banner */}
       <PageBanner
-        badge="Direct Advisory & Support"
-        title="Connect With Urja Foods"
-        subtitle="Reach out to our headquarters and manufacturing facility in Nirgudsar, Pune. Whether you seek contract broiler farming, cattle feed dealership, bulk orders, or technical farm visits, our team is at your service."
-        breadcrumb="Contact & Inquiry"
+        badge={t('contactBannerBadge') || "Direct Advisory & Support"}
+        title={t('contactBannerTitle') || "Connect With Urja Foods"}
+        subtitle={t('contactBannerSub') || "Reach out to our headquarters and manufacturing facility in Nirgudsar, Pune. Whether you seek contract broiler farming, cattle feed dealership, bulk orders, or technical farm visits, our team is at your service."}
+        breadcrumb={t('navContact') || "Contact & Inquiry"}
       />
 
       {/* 2. Direct Contact Cards */}

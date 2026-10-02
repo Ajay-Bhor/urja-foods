@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { X, Package } from 'lucide-react';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function ProductModal({ product, onClose, onInquire }) {
+  const { t } = useLanguage();
   // Close modal on Escape key press
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -64,7 +66,7 @@ export default function ProductModal({ product, onClose, onInquire }) {
             <div className="popup-sizes-wrap" style={{ marginBottom: '1.4rem' }}>
               <div className="popup-sizes-label">
                 <Package size={12} />
-                <span>Available Packaging:</span>
+                <span>{t('packaging') || 'Available Packaging:'}</span>
               </div>
               <div className="popup-sizes-chips">
                 {product.sizes.map((size, idx) => (
@@ -84,7 +86,7 @@ export default function ProductModal({ product, onClose, onInquire }) {
               onClick={onClose}
               id="modal-cancel-btn"
             >
-              <span>Close</span>
+              <span>{t('close') || 'Close'}</span>
             </button>
           </div>
         </div>

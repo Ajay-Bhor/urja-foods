@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function Testimonials() {
+  const { t } = useLanguage();
   const [activeSlide, setActiveSlide] = useState(0);
 
   const testimonials = [
@@ -33,15 +35,15 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="urja-testimonials-header">
           <div>
-            <span className="urja-testimonials-label">TESTIMONIALS</span>
+            <span className="urja-testimonials-label">{t('testimonialsLabel') || 'TESTIMONIALS'}</span>
             <h2>
-              What our partners<br />
-              <span>say about Urja.</span>
+              {t('testimonialsTitle1') || 'What our partners'}<br />
+              <span>{t('testimonialsTitle2') || 'say about Urja.'}</span>
             </h2>
           </div>
 
           <p>
-            Strong relationships are at the heart of our business. We work closely with farmers, customers and partners to create long-term value across the agricultural ecosystem.
+            {t('testimonialsDesc') || 'Strong relationships are at the heart of our business. We work closely with farmers, customers and partners to create long-term value across the agricultural ecosystem.'}
           </p>
         </div>
 

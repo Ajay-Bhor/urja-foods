@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BUSINESSES_DATA } from '../data/businessesData';
+import { useLanguage } from '../hooks/LanguageContext';
 
 const DEFAULT_BUSINESS = {
   id: 'default',
@@ -23,6 +24,7 @@ const FALLBACK_IMAGES = {
 };
 
 export default function BusinessSectors() {
+  const { t } = useLanguage();
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const activeBusiness =
@@ -34,15 +36,15 @@ export default function BusinessSectors() {
         {/* Section Header */}
         <div className="urja-business-top">
           <div className="urja-business-heading">
-            <span className="urja-business-overline">OUR BUSINESSES</span>
+            <span className="urja-business-overline">{t('bizOverline')}</span>
             <h2>
-              Diverse businesses.<br />
-              <span>One connected vision.</span>
+              {t('bizTitle1')}<br />
+              <span>{t('bizTitle2')}</span>
             </h2>
           </div>
 
           <p className="urja-business-description">
-            From feed and farming to animal nutrition, protein and value-added food products, our businesses work together across the agricultural value chain.
+            {t('bizDesc')}
           </p>
         </div>
 
@@ -51,8 +53,12 @@ export default function BusinessSectors() {
           className="urja-business-showcase"
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          {/* Left Feature Panel */}
-          <div className="urja-business-feature">
+          {/* Left Feature Panel - Fully Clickable */}
+          <Link
+            to={activeBusiness.id === 'default' ? '/businesses' : (activeBusiness.link || `/businesses/${activeBusiness.id}`)}
+            className="urja-business-feature"
+            aria-label={`Explore ${activeBusiness.title}`}
+          >
             <div className="urja-feature-image">
               <img
                 key={activeBusiness.id}
@@ -76,22 +82,19 @@ export default function BusinessSectors() {
               key={`content-${activeBusiness.id}`}
             >
               <div className="urja-feature-category">
-                {activeBusiness.category}
+                {t(activeBusiness.id + '_category') || activeBusiness.category}
               </div>
 
-              <h3>{activeBusiness.title}</h3>
+              <h3>{t(activeBusiness.id + '_title') || activeBusiness.title}</h3>
 
-              <p>{activeBusiness.tagline}</p>
+              <p>{t(activeBusiness.id + '_tagline') || activeBusiness.tagline}</p>
 
-              <Link
-                to={activeBusiness.link || `/businesses/${activeBusiness.id}`}
-                className="urja-feature-button"
-              >
-                <span>{activeBusiness.buttonText || 'EXPLORE'}</span>
+              <div className="urja-feature-button">
+                <span>{activeBusiness.buttonText || 'EXPLORE VERTICAL'}</span>
                 <i>→</i>
-              </Link>
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/* Right Business Selection List */}
           <div
@@ -112,9 +115,9 @@ export default function BusinessSectors() {
                   <span className="business-item-number">{item.number}</span>
 
                   <div className="business-item-main">
-                    <h3>{item.title}</h3>
+                    <h3>{t(item.id + '_title') || item.title}</h3>
                     <span className="business-item-category">
-                      {item.category}
+                      {t(item.id + '_category') || item.category}
                     </span>
 
                     <div className="business-item-products">
@@ -134,7 +137,7 @@ export default function BusinessSectors() {
         {/* Bottom CTA to All Businesses */}
         <div className="urja-business-cta">
           <Link to="/businesses">
-            <span>VIEW ALL BUSINESSES</span>
+            <span>{t('bizExplore') || 'VIEW ALL BUSINESSES'}</span>
             <b>→</b>
           </Link>
         </div>

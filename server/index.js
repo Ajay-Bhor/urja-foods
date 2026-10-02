@@ -13,6 +13,7 @@ import businessesRouter from './routes/businesses.js';
 import milestonesRouter from './routes/milestones.js';
 import jobsRouter from './routes/jobs.js';
 import companyInfoRouter from './routes/companyInfo.js';
+import translationsRouter from './routes/translations.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,6 +41,7 @@ app.use('/api/businesses', businessesRouter);
 app.use('/api/milestones', milestonesRouter);
 app.use('/api/jobs', jobsRouter);
 app.use('/api/company-info', companyInfoRouter);
+app.use('/api/translations', translationsRouter);
 
 // Enhanced Health check endpoint with Database status
 app.get('/api/health', async (req, res) => {

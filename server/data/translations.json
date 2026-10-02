@@ -1,0 +1,3771 @@
+{
+  "translations": {
+    "en": {
+      "navHome": "Home",
+      "navAbout": "About Us",
+      "navMissionVisionValues": "Mission, Vision & Values",
+      "navAboutOverview": "About Urja",
+      "navOurMission": "Our Mission",
+      "navOurVision": "Our Vision",
+      "navCoreValues": "Core Values",
+      "navLeadership": "Chairman's Message",
+      "navBusinesses": "Our Businesses",
+      "navProducts": "Products",
+      "navSustainability": "Sustainability & CSR",
+      "navContact": "Contact Us",
+      "navCareers": "Careers",
+      "navOperations": "Operations",
+      "topbarLocation": "HP House, Nirgudsar, Manchar - 410503",
+      "topbarHours": "Mon – Sat: 9:00 AM – 6:30 PM",
+      "topbarCert": "ISO & Bio-Security Assured",
+      "heroOverline": "URJA FOODS & AGRO",
+      "heroTitle1": "From Feed",
+      "heroTitle2": "to Food.",
+      "heroSubtitle": "Building an integrated agribusiness ecosystem across agriculture, nutrition and food.",
+      "heroBtnDiscover": "DISCOVER URJA",
+      "heroBtnBusinesses": "OUR BUSINESSES",
+      "heroScroll": "SCROLL TO EXPLORE",
+      "welcomeAboutUs": "ABOUT US",
+      "welcomeHeading": "Welcome to Urja Foods & Agro Pvt. Ltd.",
+      "welcomeBadge": "INTEGRATED AGRIBUSINESS",
+      "welcomeFrom": "FROM",
+      "welcomeFeed": "FEED",
+      "welcomeFood": "FOOD",
+      "welcomeIntro": "is an integrated agribusiness company with operations across poultry, animal nutrition, feed manufacturing, farming and food processing.",
+      "welcomeP1": "Our integrated poultry business brings together feed manufacturing, breeder farming, hatcheries, brooding and growing farms, contract broiler farming and live bird supply into a connected operating ecosystem.",
+      "welcomeP2": "With modern production facilities, European environment-controlled poultry housing, high-capacity feed mills and strong partnerships with farmers, we are committed to building a dependable agribusiness ecosystem.",
+      "welcomeBtnStory": "DISCOVER OUR STORY",
+      "bizOverline": "OUR BUSINESSES",
+      "bizTitle1": "Diverse businesses.",
+      "bizTitle2": "One connected vision.",
+      "bizDesc": "From feed and farming to animal nutrition, protein and value-added food products, our businesses work together across the agricultural value chain.",
+      "bizExplore": "EXPLORE ALL BUSINESSES",
+      "whyOverline": "WHY CHOOSE URJA",
+      "whyTitle1": "Because What We",
+      "whyTitle2": "Build Matters.",
+      "whyIntro": "For us, agriculture has never been just a business. It is the foundation of millions of livelihoods and the source of the food that reaches every Indian home.",
+      "whyBullet1Title": "Capabilities Over Shortcuts:",
+      "whyBullet1Desc": "We invest directly in our own feed plants, hatcheries, breeder farms, and automated milling to ensure complete quality control from day one.",
+      "whyBullet2Title": "Farm-Level Agribusiness Expertise:",
+      "whyBullet2Desc": "Over two decades of ground-level mastery across animal genetics, feed formulation, veterinary support, and bio-secure farming.",
+      "whyBullet3Title": "Farmer Partnership & Prosperity:",
+      "whyBullet3Desc": "Working shoulder-to-shoulder with 900+ farm families as trusted partners with transparent pricing, technical advisory, and reliable buybacks.",
+      "whyBullet4Title": "End-to-End Farm-to-Fork Integrity:",
+      "whyBullet4Desc": "Total vertical integration ensuring clean, traceable, and nutritious food safely reaches Indian households.",
+      "whyQuote1": "We don't just want to be part of India's food system.",
+      "whyQuoteHighlight": "We want to build it better.",
+      "whyQuote2": "Because the best products don't begin on a shelf.",
+      "whyQuoteBadge": "They begin at the source.",
+      "csrOverline": "SUSTAINABILITY & CSR",
+      "csrHeading1": "Empowering Rural Communities",
+      "csrHeading2": "Through Conscious Growth",
+      "csrDesc": "Our social responsibility efforts prioritize environmental replenishment, inclusive employment, clean water stewardship, and rural empowerment.",
+      "csrFarmers": "Farmers Supported in Network",
+      "csrIncome": "Average Increase in Partner Farm Income",
+      "csrEmployment": "Direct Community Employment Opportunities",
+      "csrWater": "Litres Water Recycled & Recharged Annually",
+      "csrWomen": "Direct Employment Created for Rural Women",
+      "csrTreesBadge": "100,000 TREES COMMITMENT",
+      "csrTreesTitle": "Active Afforestation Initiative",
+      "csrTreesDesc": "Planting indigenous timber, fruit, and shade trees across rural Pune and Nashik districts to create biodiversity corridors.",
+      "csrTreesCta": "EXPLORE INITIATIVE",
+      "csrTagline": "FOR A HEALTHIER PLANET. STRONGER COMMUNITIES.",
+      "csrScriptText": "A greener tomorrow, together.",
+      "csrSolarTitle": "SOLAR POWER CAPACITY",
+      "csrSolarDesc": "Investing in renewable energy across our operations.",
+      "csrTreesPlantedTitle": "TREES PLANTED & SURVIVED",
+      "csrTreesPlantedDesc": "Building a greener future, one plantation at a time.",
+      "csrFarmersConnectedTitle": "FARMERS CONNECTED",
+      "csrFarmersConnectedDesc": "Livelihoods supported through our agricultural ecosystem.",
+      "csrEmployeesTitle": "EMPLOYEES",
+      "csrEmployeesDesc": "Supporting 600+ families through employment.",
+      "csrCommitmentSub": "OUR COMMITMENT",
+      "csrCommitmentHeading": "1,00,000 Trees by 2032",
+      "csrCommitmentNarrative": "From renewable energy to tree plantation and farmer development, we continue to build sustainability into the way we grow.",
+      "csrCompanyTag": "URJA FOODS & AGRO PVT LTD",
+      "csrPillarPeople": "PEOPLE",
+      "csrPillarPlanet": "PLANET",
+      "csrPillarProgress": "PROGRESS",
+      "journeyCalloutLabel": "LET'S BUILD TOGETHER",
+      "journeyCalloutTitle1": "Be a part of",
+      "journeyCalloutTitle2": "the Urja journey.",
+      "journeyCalloutDesc": "Whether you are a farmer, dealer, business partner, supplier or customer, connect with us and explore opportunities with Urja.",
+      "journeyCalloutBtn": "GET IN TOUCH",
+      "ctaLabel": "GET IN TOUCH",
+      "ctaTitle1": "Let’s build",
+      "ctaTitle2": "something meaningful.",
+      "ctaDesc": "Whether you are looking to partner with us, explore our businesses, work with our team, or simply know more about Urja, we would be glad to hear from you.",
+      "ctaBtn": "CONTACT US",
+      "language": "Language",
+      "back": "Back",
+      "close": "Close",
+      "packaging": "Available Packaging:",
+      "aboutHeroTitle1": "Building with Purpose.",
+      "aboutHeroTitle2": "Growing with Responsibility.",
+      "aboutHeroDesc": "From animal nutrition to an integrated agriculture, nutrition and food ecosystem.",
+      "ourJourney": "OUR JOURNEY",
+      "purposePhilosophy": "OUR PURPOSE & PHILOSOPHY",
+      "purposeSub": "Explore the core foundations that define why Urja Foods exists, where we are heading, and how we operate every day on separate dedicated pages.",
+      "exploreMission": "Explore Our Mission",
+      "exploreVision": "Explore Our Vision",
+      "exploreValues": "Explore Values That Move Us",
+      "missionStatement": "“To provide stable financial income to Indian farmers through continuous innovation, honesty and teamwork.”",
+      "visionStatement": "“To be a part of every Indian kitchen — directly or indirectly.”",
+      "valuesStatement": "“Innovation, Integrity, We Before Me, Be Real, and Find a Way.”",
+      "bizHeroBadge": "PORTFOLIO OF 5 VERTICALS",
+      "bizHeroTitle1": "Integrated Agribusiness",
+      "bizHeroTitle2": "At Scale.",
+      "bizHeroSubtitle": "Five interconnected companies powering animal nutrition, poultry integration, clean protein, organic farm inputs and sustainable agro-processing.",
+      "productsBannerBadge": "Laboratory-Certified Nutrition",
+      "productsBannerTitle": "Scientific Feeds & Livestock Products",
+      "productsBannerSub": "Explore our proven range of high-fat cattle feeds, high-FCR broiler crumbles, and layer concentrates formulated at our automated plant in Nirgudsar, Pune.",
+      "contactBannerBadge": "Prompt Communication",
+      "contactBannerTitle": "Connect with Urja Agribusiness Desk",
+      "contactBannerSub": "Have questions about cattle feed dealerships, broiler contract farming, live bird supply, bulk soya delivery, or technical advisory? Our Pune headquarters and veterinary teams are here to assist.",
+      "inquiryFormTitle": "Send an Inquiry / Dealership Request",
+      "inquiryFormName": "Full Name",
+      "inquiryFormPhone": "Mobile Number",
+      "inquiryFormEmail": "Email Address",
+      "inquiryFormInterest": "Subject of Interest",
+      "inquiryFormDistrict": "District",
+      "inquiryFormMsg": "Your Message / Requirement",
+      "inquiryFormSubmit": "Send Inquiry",
+      "careersBannerBadge": "Talent & Leadership",
+      "careersBannerTitle": "Careers at Urja Foods & Agro",
+      "careersBannerSub": "Join our passionate agribusiness team transforming poultry integration, animal feed formulation, and rural economic growth across Maharashtra.",
+      "mfgLabel": "MANUFACTURING EXCELLENCE",
+      "mfgTitle1": "Where Technology",
+      "mfgTitle2": "Meets Integration",
+      "mfgIntro": "Advanced technology, automation and integrated manufacturing capabilities built for precision, consistency and scale.",
+      "testimonialsLabel": "TESTIMONIALS",
+      "testimonialsTitle1": "What our partners",
+      "testimonialsTitle2": "say about Urja.",
+      "testimonialsDesc": "Strong relationships are at the heart of our business. We work closely with farmers, customers and partners to create long-term value across the agricultural ecosystem.",
+      "footerTagline": "Building an integrated platform across agriculture, nutrition and food.",
+      "footerHeadquarters": "Headquarters",
+      "footerCompanyTitle": "COMPANY",
+      "footerBizTitle": "OUR BUSINESSES",
+      "footerQuickLinksTitle": "QUICK LINKS",
+      "footerProductRange": "Product Range",
+      "footerTestimonials": "Testimonials",
+      "footerCareers": "Careers & Openings",
+      "footerJoinTeam": "Join Our Team",
+      "footerFeedFormulations": "Feed Formulations",
+      "footerInquiryDesk": "Inquiry Desk",
+      "footerRightsReserved": "All Rights Reserved.",
+      "mfgPoint1Desc": "Automated & Conventional Feed Manufacturing",
+      "mfgPoint2Title": "PLC CONTROLLED",
+      "mfgPoint2Desc": "Automated Production",
+      "mfgPoint3Title": "EC HOUSES",
+      "mfgPoint3Desc": "Automated Feeding & Drinking",
+      "mfgPoint4Title": "IN-HOUSE",
+      "mfgPoint4Desc": "Premix & Soya Processing",
+      "mfgPoint5Title": "PRECISION",
+      "mfgPoint5Desc": "Batching & Micro-Dosing",
+      "opBadge": "OPERATIONS & BUSINESS MODEL",
+      "opHeading": "An Integrated Agribusiness Operating Model",
+      "opSubtitle": "From raw ingredient sourcing and computerized feed formulation to parent breeding, partner broiler farms, and hygienic distribution, Urja controls every critical link.",
+      "urja-foods_title": "Urja Foods",
+      "urja-foods_category": "Integrated Poultry",
+      "urja-foods_tagline": "Integrated poultry operations across feed manufacturing, breeding, hatcheries, farming and live bird supply.",
+      "urja-pashu-aahar_title": "Urja Pashu Aahar",
+      "urja-pashu-aahar_category": "Animal Nutrition",
+      "urja-pashu-aahar_tagline": "Scientific cattle feed, calf starters, bypass fat and mineral mixtures engineered for dairy yield optimization.",
+      "poushtik-chicken_title": "Poushtik Chicken",
+      "poushtik-chicken_category": "Farm-Fresh Protein",
+      "poushtik-chicken_tagline": "Hygienically processed, antibiotic-residue free, fresh farm chicken delivered directly from bio-secure farms.",
+      "urja-organic_title": "Urja Organic",
+      "urja-organic_category": "Soil & Plant Health",
+      "urja-organic_tagline": "Enriched poultry manure compost and organic soil amendments replenishing microbial farm vitality.",
+      "urja-soya_title": "Urja Soya",
+      "urja-soya_category": "Agro Processing",
+      "urja-soya_tagline": "Premium non-GMO soya de-oiled cake (DOC) and crude soya oil supporting national poultry feed formulation."
+    },
+    "hi": {
+      "navHome": "होम",
+      "navAbout": "हमारे बारे में",
+      "navMissionVisionValues": "मिशन, विजन और मूल्य",
+      "navAboutOverview": "ऊर्जा के बारे में",
+      "navOurMission": "हमारा मिशन",
+      "navOurVision": "हमारा विज़न",
+      "navCoreValues": "मूल मूल्य",
+      "navLeadership": "चेयरमैन का संदेश",
+      "navBusinesses": "हमारे व्यवसाय",
+      "navProducts": "उत्पाद",
+      "navSustainability": "सस्टेनेबिलिटी एवं सीएसआर",
+      "navContact": "संपर्क करें",
+      "navCareers": "करियर",
+      "navOperations": "ऑपरेशन्स",
+      "topbarLocation": "एचपी हाउस, निरगुडसर, मंचर - 410503",
+      "topbarHours": "सोम – शनि: सुबह 9:00 – शाम 6:30",
+      "topbarCert": "आईएसओ एवं बायो-सिक्योरिटी प्रमाणित",
+      "heroOverline": "ऊर्जा फूड्स एंड एग्रो",
+      "heroTitle1": "फ़ीड से",
+      "heroTitle2": "फ़ूड तक।",
+      "heroSubtitle": "कृषि, पोषण और खाद्य प्रसंस्करण में एक एकीकृत कृषि व्यवसाय पारिस्थितिकी तंत्र का निर्माण।",
+      "heroBtnDiscover": "ऊर्जा को जानें",
+      "heroBtnBusinesses": "हमारे व्यवसाय",
+      "heroScroll": "आगे देखने के लिए स्क्रॉल करें",
+      "welcomeAboutUs": "हमारे बारे में",
+      "welcomeHeading": "ऊर्जा फूड्स एंड एग्रो प्राइवेट लिमिटेड में आपका स्वागत है",
+      "welcomeBadge": "एकीकृत कृषि व्यवसाय",
+      "welcomeFrom": "शुरुआत",
+      "welcomeFeed": "फ़ीड",
+      "welcomeFood": "फ़ूड",
+      "welcomeIntro": "एक एकीकृत कृषि व्यवसाय कंपनी है जिसका संचालन पोल्ट्री, पशु पोषण, चारा उत्पादन, कृषि और खाद्य प्रसंस्करण में विस्तृत है।",
+      "welcomeP1": "हमारा एकीकृत पोल्ट्री व्यवसाय चारा निर्माण, प्रजनक खेती, हैचरी, ब्रूडिंग व ग्रोइंग फार्म, अनुबंध ब्रॉयलर खेती और लाइव बर्ड आपूर्ति को जोड़ता है।",
+      "welcomeP2": "आधुनिक उत्पादन सुविधाओं, यूरोपीय पर्यावरण-नियंत्रित पोल्ट्री शेड, उच्च क्षमता वाली चारा मिलों और किसानों के साथ मजबूत साझेदारी के साथ हम प्रतिबद्ध हैं।",
+      "welcomeBtnStory": "हमारी यात्रा जानें",
+      "bizOverline": "हमारे व्यवसाय",
+      "bizTitle1": "विविध व्यवसाय।",
+      "bizTitle2": "एक समर्पित दृष्टिकोण।",
+      "bizDesc": "चारा और खेती से लेकर पशु पोषण, प्रोटीन और मूल्यवर्धित खाद्य उत्पादों तक, हमारे व्यवसाय कृषि मूल्य श्रृंखला में मिलकर काम करते हैं।",
+      "bizExplore": "सभी व्यवसाय देखें",
+      "whyOverline": "ऊर्जा को क्यों चुनें",
+      "whyTitle1": "क्योंकि जो हम बनाते हैं",
+      "whyTitle2": "वह मायने रखता है।",
+      "whyIntro": "हमारे लिए कृषि सिर्फ एक व्यवसाय नहीं है। यह लाखों आजीविकाओं की नींव है और हर भारतीय घर तक पहुंचने वाले भोजन का स्रोत है।",
+      "whyBullet1Title": "शॉर्टकट नहीं, वास्तविक क्षमता:",
+      "whyBullet1Desc": "हम शुरू से ही गुणवत्ता नियंत्रण सुनिश्चित करने के लिए अपने स्वयं के फ़ीड प्लांट, हैचरी, ब्रीडर फार्म और ऑटोमेशन में निवेश करते हैं।",
+      "whyBullet2Title": "जमीनी स्तर पर कृषि विशेषज्ञता:",
+      "whyBullet2Desc": "पशु आनुवंशिकी, वैज्ञानिक चारा निर्माण, पशु चिकित्सा सलाह और जैव-सुरक्षित खेती में दो दशकों से अधिक का अनुभव।",
+      "whyBullet3Title": "किसान साझेदारी और समृद्धि:",
+      "whyBullet3Desc": "900+ किसान परिवारों के साथ पारदर्शी मूल्य निर्धारण, तकनीकी सलाह और सुनिश्चित बायबैक के साथ विश्वासपात्र भागीदार के रूप में कार्य।",
+      "whyBullet4Title": "खेत से थाली तक पूर्ण शुद्धता:",
+      "whyBullet4Desc": "पूर्ण वर्टिकल एकीकरण यह सुनिश्चित करता है कि स्वच्छ, सुरक्षित और पौष्टिक आहार भारतीय घरों तक पहुंचे।",
+      "whyQuote1": "हम केवल भारत की खाद्य प्रणाली का हिस्सा नहीं बनना चाहते।",
+      "whyQuoteHighlight": "हम इसे और बेहतर बनाना चाहते हैं।",
+      "whyQuote2": "क्योंकि सर्वश्रेष्ठ उत्पाद किसी शेल्फ पर शुरू नहीं होते।",
+      "whyQuoteBadge": "वे स्रोत से शुरू होते हैं।",
+      "csrOverline": "सस्टेनेबिलिटी एवं सीएसआर",
+      "csrHeading1": "ग्रामीण समुदायों का सशक्तिकरण",
+      "csrHeading2": "जिम्मेदार विकास के माध्यम से",
+      "csrDesc": "हमारे सामाजिक उत्तरदायित्व प्रयास पर्यावरण संवर्धन, समावेशी रोजगार, जल संरक्षण और ग्रामीण विकास को प्राथमिकता देते हैं।",
+      "csrFarmers": "नेटवर्क में समर्थित किसान",
+      "csrIncome": "भागीदार किसानों की आय में औसत वृद्धि",
+      "csrEmployment": "सृजित प्रत्यक्ष सामुदायिक रोजगार",
+      "csrWater": "प्रति वर्ष पुनर्चक्रित व संचित जल (लीटर)",
+      "csrWomen": "ग्रामीण महिलाओं के लिए प्रत्यक्ष रोजगार",
+      "csrTreesBadge": "1,00,000 वृक्षारोपण संकल्प",
+      "csrTreesTitle": "सक्रिय वनीकरण पहल",
+      "csrTreesDesc": "जैव विविधता गलियारे बनाने के लिए पुणे और नासिक के ग्रामीण क्षेत्रों में स्वदेशी फलदार व छायादार पौधे लगाना।",
+      "csrTreesCta": "पहल के बारे में जानें",
+      "csrTagline": "स्वस्थ ग्रह और सशक्त समुदायों के लिए।",
+      "csrScriptText": "एक हरित कल, मिलकर।",
+      "csrSolarTitle": "सौर ऊर्जा क्षमता",
+      "csrSolarDesc": "हमारे सभी परिचालन में नवीकरणीय ऊर्जा में निरंतर निवेश।",
+      "csrTreesPlantedTitle": "लगाए गए और जीवित वृक्ष",
+      "csrTreesPlantedDesc": "हरियाली से भरे भविष्य का निर्माण, एक-एक पौधा लगाकर।",
+      "csrFarmersConnectedTitle": "जुड़े हुए किसान",
+      "csrFarmersConnectedDesc": "हमारे कृषि नेटवर्क के माध्यम से किसानों की आजीविका को सशक्त बनाना।",
+      "csrEmployeesTitle": "कर्मचारी",
+      "csrEmployeesDesc": "रोजगार के माध्यम से 600+ परिवारों को सशक्त संबल।",
+      "csrCommitmentSub": "हमारा संकल्प",
+      "csrCommitmentHeading": "2032 तक 1,00,000 वृक्ष",
+      "csrCommitmentNarrative": "नवीकरणीय ऊर्जा से लेकर वृक्षारोपण और किसान सशक्तिकरण तक, हम सतत विकास के प्रति समर्पित हैं।",
+      "csrCompanyTag": "ऊर्जा फूड्स एंड एग्रो प्रा. लि.",
+      "csrPillarPeople": "लोग",
+      "csrPillarPlanet": "पर्यावरण",
+      "csrPillarProgress": "प्रगति",
+      "journeyCalloutLabel": "आइए साथ मिलकर बनाएं",
+      "journeyCalloutTitle1": "ऊर्जा की यात्रा का",
+      "journeyCalloutTitle2": "हिस्सा बनें।",
+      "journeyCalloutDesc": "चाहे आप किसान, डीलर, व्यावसायिक भागीदार, आपूर्तिकर्ता या ग्राहक हों, ऊर्जा से जुड़ें और अवसरों की खोज करें।",
+      "journeyCalloutBtn": "संपर्क करें",
+      "ctaLabel": "संपर्क करें",
+      "ctaTitle1": "आइए कुछ",
+      "ctaTitle2": "सार्थक निर्माण करें।",
+      "ctaDesc": "चाहे आप साझेदारी करना चाहते हों, हमारे व्यवसायों को जानना चाहते हों, या हमारी टीम से जुड़ना चाहते हों, हमें आपकी बात सुनकर खुशी होगी।",
+      "ctaBtn": "हमसे संपर्क करें",
+      "language": "भाषा",
+      "back": "वापस",
+      "close": "बंद करें",
+      "packaging": "उपलब्ध पैकेजिंग:",
+      "aboutHeroTitle1": "उद्देश्य के साथ निर्माण।",
+      "aboutHeroTitle2": "जिम्मेदारी के साथ विकास।",
+      "aboutHeroDesc": "पशु पोषण से लेकर एकीकृत कृषि, पोषण और खाद्य पारिस्थितिकी तंत्र तक।",
+      "ourJourney": "हमारी यात्रा",
+      "purposePhilosophy": "हमारा उद्देश्य और दर्शन",
+      "purposeSub": "उन मूलभूत सिद्धांतों को जानें जो परिभाषित करते हैं कि ऊर्जा फूड्स क्यों अस्तित्व में है, हम कहां जा रहे हैं, और हम कैसे काम करते हैं।",
+      "exploreMission": "हमारा मिशन जानें",
+      "exploreVision": "हमारा विज़न जानें",
+      "exploreValues": "हमारे मूल्य जानें",
+      "missionStatement": "“निरंतर नवाचार, ईमानदारी और टीम वर्क के माध्यम से भारतीय किसानों को स्थिर वित्तीय आय प्रदान करना।”",
+      "visionStatement": "“प्रत्यक्ष या अप्रत्यक्ष रूप से हर भारतीय रसोई का हिस्सा बनना।”",
+      "valuesStatement": "“नवाचार, सत्यनिष्ठा, स्वयं से पहले हम, वास्तविकता, और समाधान खोजना।”",
+      "bizHeroBadge": "5 प्रमुख कार्यक्षेत्रों का पोर्टफोलियो",
+      "bizHeroTitle1": "एकीकृत कृषि व्यवसाय",
+      "bizHeroTitle2": "विशाल स्तर पर।",
+      "bizHeroSubtitle": "पशु पोषण, पोल्ट्री एकीकरण, स्वच्छ प्रोटीन, जैविक कृषि उत्पाद और टिकाऊ कृषि-प्रसंस्करण को शक्ति प्रदान करने वाली पांच परस्पर जुड़ी कंपनियां।",
+      "productsBannerBadge": "प्रयोगशाला-प्रमाणित पोषण",
+      "productsBannerTitle": "वैज्ञानिक पशुखाद्य एवं पशुधन उत्पाद",
+      "productsBannerSub": "निरगुडसर, मंचर स्थित हमारे स्वचालित संयंत्र में निर्मित उच्च वसा वाले पशु आहार, उच्च-FCR ब्रॉयलर फीड और लेयर कंसंट्रेट्स की श्रृंखला देखें।",
+      "contactBannerBadge": "त्वरित संवाद",
+      "contactBannerTitle": "ऊर्जा कृषि व्यवसाय डेस्क से जुड़ें",
+      "contactBannerSub": "पशु आहार डीलरशिप, ब्रॉयलर अनुबंध खेती, लाइव बर्ड आपूर्ति, सोया डिलीवरी या तकनीकी सलाह के बारे में प्रश्न? हमारी टीम मदद के लिए यहाँ है।",
+      "inquiryFormTitle": "पूछताछ / डीलरशिप अनुरोध भेजें",
+      "inquiryFormName": "पूरा नाम",
+      "inquiryFormPhone": "मोबाइल नंबर",
+      "inquiryFormEmail": "ईमेल पता",
+      "inquiryFormInterest": "रुचि का विषय",
+      "inquiryFormDistrict": "जिला",
+      "inquiryFormMsg": "आपका संदेश / आवश्यकता",
+      "inquiryFormSubmit": "पूछताछ भेजें",
+      "careersBannerBadge": "प्रतिभा एवं नेतृत्व",
+      "careersBannerTitle": "ऊर्जा फूड्स एंड एग्रो में करियर",
+      "careersBannerSub": "महाराष्ट्र में पोल्ट्री एकीकरण, पशु आहार निर्माण और ग्रामीण आर्थिक विकास को नई दिशा देने वाली हमारी कृषि टीम से जुड़ें।",
+      "mfgLabel": "विनिर्माण उत्कृष्टता",
+      "mfgTitle1": "जहां तकनीक",
+      "mfgTitle2": "और एकीकरण मिलते हैं",
+      "mfgIntro": "सटीकता, निरंतरता और बड़े पैमाने के लिए निर्मित उन्नत तकनीक, स्वचालन और एकीकृत विनिर्माण क्षमताएं।",
+      "testimonialsLabel": "प्रशंसापत्र",
+      "testimonialsTitle1": "हमारे भागीदार",
+      "testimonialsTitle2": "ऊर्जा के बारे में क्या कहते हैं।",
+      "testimonialsDesc": "मजबूत संबंध हमारे व्यवसाय के केंद्र में हैं। हम कृषि पारिस्थितिकी तंत्र में दीर्घकालिक मूल्य बनाने के लिए किसानों, ग्राहकों और भागीदारों के साथ मिलकर काम करते हैं।",
+      "footerTagline": "कृषि, पोषण और खाद्य प्रसंस्करण में एक एकीकृत मंच का निर्माण।",
+      "footerHeadquarters": "मुख्यालय",
+      "footerCompanyTitle": "कंपनी",
+      "footerBizTitle": "हमारे व्यवसाय",
+      "footerQuickLinksTitle": "त्वरित लिंक",
+      "footerProductRange": "उत्पाद श्रृंखला",
+      "footerTestimonials": "प्रशंसापत्र",
+      "footerCareers": "करियर एवं अवसर",
+      "footerJoinTeam": "हमारी टीम से जुड़ें",
+      "footerFeedFormulations": "पशुखाद्य फॉर्मूलेशन",
+      "footerInquiryDesk": "पूछताछ डेस्क",
+      "footerRightsReserved": "सर्वाधिकार सुरक्षित।",
+      "mfgPoint1Desc": "स्वचालित एवं पारंपरिक पशुखाद्य निर्माण",
+      "mfgPoint2Title": "पीएलसी नियंत्रित",
+      "mfgPoint2Desc": "स्वचालित उत्पादन प्रणाली",
+      "mfgPoint3Title": "पर्यावरण-नियंत्रित शेड्स",
+      "mfgPoint3Desc": "स्वचालित दाना-पानी प्रणाली",
+      "mfgPoint4Title": "इन-हाउस",
+      "mfgPoint4Desc": "प्रीमिक्स एवं सोया प्रसंस्करण",
+      "mfgPoint5Title": "सटीकता",
+      "mfgPoint5Desc": "सटीक बैचिंग व माइक्रो-डोज़िंग",
+      "opBadge": "संचालन एवं व्यापार मॉडल",
+      "opHeading": "एक एकीकृत कृषि व्यवसाय परिचालन मॉडल",
+      "opSubtitle": "कच्चे माल की खरीद और कम्प्यूटरीकृत चारा निर्माण से लेकर प्रजनक खेती, अनुबंध ब्रॉयलर फार्म और स्वच्छ वितरण तक, ऊर्जा हर कड़ी को नियंत्रित करती है।",
+      "urja-foods_title": "ऊर्जा फूड्स",
+      "urja-foods_category": "एकीकृत पोल्ट्री",
+      "urja-foods_tagline": "चारा उत्पादन, प्रजनन, हैचरी, खेती और लाइव बर्ड आपूर्ति में एकीकृत पोल्ट्री संचालन।",
+      "urja-pashu-aahar_title": "ऊर्जा पशु आहार",
+      "urja-pashu-aahar_category": "पशु पोषण",
+      "urja-pashu-aahar_tagline": "दुग्ध उत्पादन वृद्धि के लिए तैयार वैज्ञानिक पशु आहार, बछड़ा स्टार्टर और खनिज मिश्रण।",
+      "poushtik-chicken_title": "पौष्टिक चिकन",
+      "poushtik-chicken_category": "फार्म-ताज़ा प्रोटीन",
+      "poushtik-chicken_tagline": "जैव-सुरक्षित फार्मों से सीधे स्वच्छ, एंटीबायोटिक-मुक्त ताज़ा चिकन।",
+      "urja-organic_title": "ऊर्जा ऑर्गेनिक",
+      "urja-organic_category": "मृदा एवं फसल पोषण",
+      "urja-organic_tagline": "मिट्टी की उर्वरता बढ़ाने वाली समृद्ध जैविक खाद और प्राकृतिक मृदा सुधारक।",
+      "urja-soya_title": "ऊर्जा सोया",
+      "urja-soya_category": "कृषि प्रसंस्करण",
+      "urja-soya_tagline": "प्रीमियम नॉन-जीएमओ सोया डीओसी और सोया तेल, जो गुणवत्तापूर्ण पशु आहार का आधार हैं।"
+    },
+    "mr": {
+      "navHome": "मुख्यपृष्ठ",
+      "navAbout": "आमच्याबद्दल",
+      "navMissionVisionValues": "ध्येय, दृष्टी आणि मूल्ये",
+      "navAboutOverview": "ऊर्साबद्दल",
+      "navOurMission": "आमचे ध्येय (Mission)",
+      "navOurVision": "आमची दृष्टी (Vision)",
+      "navCoreValues": "मूलभूत मूल्ये",
+      "navLeadership": "अध्यक्षांचा संदेश",
+      "navBusinesses": "आमचे व्यवसाय",
+      "navProducts": "उत्पादने",
+      "navSustainability": "शाश्वतता आणि सीएसआर",
+      "navContact": "संपर्क साधा",
+      "navCareers": "करिअर",
+      "navOperations": "ऑपरेशन्स",
+      "topbarLocation": "एचपी हाउस, निरगुडसर, मंचर - 410503",
+      "topbarHours": "सोम – शनि: स. 9:00 – सं. 6:30",
+      "topbarCert": "आयएसओ आणि बायो-सिक्युरिटी प्रमाणित",
+      "heroOverline": "ऊर्जा फूड्स अँड ॲग्रो",
+      "heroTitle1": "खाद्यापासून",
+      "heroTitle2": "अन्नापर्यंत.",
+      "heroSubtitle": "शेती, पोषण आणि अन्न प्रक्रिया क्षेत्रातील एकात्मिक कृषी व्यवसाय परिसंस्थेची निर्मिती.",
+      "heroBtnDiscover": "ऊर्जाबद्दल जाणून घ्या",
+      "heroBtnBusinesses": "आमचे व्यवसाय",
+      "heroScroll": "अधिक जाणून घेण्यासाठी स्क्रोल करा",
+      "welcomeAboutUs": "आमच्याबद्दल",
+      "welcomeHeading": "ऊर्जा फूड्स अँड ॲग्रो प्रायव्हेट लिमिटेडमध्ये आपले स्वागत आहे",
+      "welcomeBadge": "एकात्मिक कृषी व्यवसाय",
+      "welcomeFrom": "सुरुवात",
+      "welcomeFeed": "खाद्य",
+      "welcomeFood": "अन्न",
+      "welcomeIntro": "ही एक एकात्मिक कृषी व्यवसाय कंपनी असून कुक्कुटपालन, पशु पोषण, पशुखाद्य निर्मिती, शेती आणि अन्न प्रक्रिया क्षेत्रात कार्यरत आहे.",
+      "welcomeP1": "आमचा एकात्मिक पोल्ट्री व्यवसाय पशुखाद्य निर्मिती, ब्रीडर फार्मिंग, हॅचरीज, ब्रूडिंग आणि ग्रोइंग फार्म्स, कॉन्ट्रॅक्ट ब्रॉयलर फार्मिंग आणि जिवंत पक्षी पुरवठा एकत्रित करतो.",
+      "welcomeP2": "आधुनिक उत्पादन सुविधा, युरोपीय पर्यावरण-नियंत्रित शेड्स, उच्च क्षमतेच्या फीड मिल्स आणि शेतकऱ्यांसोबतच्या मजबूत भागीदारीसह आम्ही कटिबद्ध आहोत.",
+      "welcomeBtnStory": "आमचा प्रवास जाणून घ्या",
+      "bizOverline": "आमचे व्यवसाय",
+      "bizTitle1": "विविध व्यवसाय.",
+      "bizTitle2": "एकच समर्पित दृष्टिकोन.",
+      "bizDesc": "पशुखाद्य आणि शेतीपासून ते पशु पोषण, प्रथिने आणि मूल्यवर्धित अन्न उत्पादनांपर्यंत आमचे व्यवसाय कृषी मूल्य साखळीत एकत्र काम करतात.",
+      "bizExplore": "सर्व व्यवसाय पहा",
+      "whyOverline": "ऊर्जा का निवडावी",
+      "whyTitle1": "कारण जे आम्ही घडवतो",
+      "whyTitle2": "ते अत्यंत महत्त्वाचे आहे.",
+      "whyIntro": "आमच्यासाठी शेती हा केवळ व्यवसाय नाही. ती लाखो शेतकरी कुटुंबांचा आधार आणि प्रत्येक भारतीय घरापर्यंत पोहोचणाऱ्या अन्नाचा स्रोत आहे.",
+      "whyBullet1Title": "शॉर्टकट नाही, खरी क्षमता:",
+      "whyBullet1Desc": "पहिल्या दिवसापासून दर्जेदार उत्पादन सुनिश्चित करण्यासाठी आम्ही स्वतःचे फीड प्लांट्स, हॅचरीज, ब्रीडर फार्म्स आणि ऑटोमेशनमध्ये गुंतवणूक करतो.",
+      "whyBullet2Title": "प्रत्यक्ष जमिनीवरील कृषी कौशल्य:",
+      "whyBullet2Desc": "पशू आनुवंशिकी, समतोल पोषण, पशुवैद्यकीय सहाय्य आणि जैव-सुरक्षित शेतीमधील दोन दशकांहून अधिक काळ प्रत्यक्ष अनुभव.",
+      "whyBullet3Title": "शेतकरी भागीदारी आणि समृद्धी:",
+      "whyBullet3Desc": "900+ शेतकरी कुटुंबांसोबत पारदर्शक दर, तांत्रिक मार्गदर्शन आणि विश्वासार्ह बायबॅक हमीसह एकत्रित काम.",
+      "whyBullet4Title": "शेतातून ताटापर्यंत पूर्ण शुद्धता:",
+      "whyBullet4Desc": "संपूर्ण व्हर्टिकल इंटिग्रेशनमुळे स्वच्छ, सुरक्षित आणि पौष्टिक अन्न भारतीय कुटुंबांपर्यंत पोहोचते.",
+      "whyQuote1": "आम्हाला केवळ भारताच्या अन्न व्यवस्थेचा भाग व्हायचे नाही.",
+      "whyQuoteHighlight": "आम्हाला ती अधिक सक्षम बनवायची आहे.",
+      "whyQuote2": "कारण सर्वोत्तम उत्पादनांची सुरुवात दुकानाच्या शेल्फवर होत नाही.",
+      "whyQuoteBadge": "ती उगमापासून सुरू होते.",
+      "csrOverline": "शाश्वतता आणि सीएसआर",
+      "csrHeading1": "ग्रामीण समुदायांचे सक्षमीकरण",
+      "csrHeading2": "जबाबदार विकासाच्या माध्यमातून",
+      "csrDesc": "आमचे सामाजिक उत्तरदायित्व पर्यावरण संवर्धन, सर्वसमावेशक रोजगार, जलसंधारण आणि ग्रामीण विकासाला प्राधान्य देते.",
+      "csrFarmers": "नेटवर्कमधील समर्थित शेतकरी",
+      "csrIncome": "भागीदार शेतकऱ्यांच्या उत्पन्नातील सरासरी वाढ",
+      "csrEmployment": "स्थानिक स्तरावर निर्माण झालेला प्रत्यक्ष रोजगार",
+      "csrWater": "दरवर्षी पुनर्वापर आणि पुनर्भरित केलेले पाणी (लिटर)",
+      "csrWomen": "ग्रामीण महिलांसाठी निर्माण झालेला प्रत्यक्ष रोजगार",
+      "csrTreesBadge": "1,00,000 वृक्ष लागवड संकल्प",
+      "csrTreesTitle": "सक्रिय वनीकरण मोहीम",
+      "csrTreesDesc": "जैवविविधता कॉरिडोअर तयार करण्यासाठी पुणे आणि नाशिक ग्रामीण भागात देशी, फळझाडे व सावली देणाऱ्या वृक्षांची लागवड.",
+      "csrTreesCta": "मोहिमेबद्दल अधिक जाणून घ्या",
+      "csrTagline": "अधिक निरोगी पृथ्वीसाठी. अधिक सक्षम समुदायांसाठी.",
+      "csrScriptText": "एक हरित उद्या, एकत्र.",
+      "csrSolarTitle": "सौर ऊर्जा क्षमता",
+      "csrSolarDesc": "आमच्या सर्व प्रकल्पांमध्ये अपारंपरिक ऊर्जेची गुंतवणूक.",
+      "csrTreesPlantedTitle": "लागवड केलेली व जतन झालेली झाडे",
+      "csrTreesPlantedDesc": "अधिक हरित भविष्याची निर्मिती, एका वेळी एका रोपाने.",
+      "csrFarmersConnectedTitle": "जोडलेले शेतकरी",
+      "csrFarmersConnectedDesc": "आमच्या कृषी परिसंस्थेद्वारे शेतकरी कुटुंबांना शाश्वत आधार.",
+      "csrEmployeesTitle": "कर्मचारी",
+      "csrEmployeesDesc": "रोजगाराच्या माध्यमातून ६००+ कुटुंबांना समर्थ आधार.",
+      "csrCommitmentSub": "आमची वचनबद्धता",
+      "csrCommitmentHeading": "२०३२ पर्यंत १,००,००० झाडे",
+      "csrCommitmentNarrative": "अपारंपरिक ऊर्जेपासून वृक्षारोपण आणि शेतकरी विकासापर्यंत, आम्ही सातत्याने शाश्वत विकासाची बांधिलकी जपत आहोत.",
+      "csrCompanyTag": "ऊर्जा फूड्स अँड ॲग्रो प्रा. लि.",
+      "csrPillarPeople": "लोक",
+      "csrPillarPlanet": "पर्यावरण",
+      "csrPillarProgress": "प्रगती",
+      "journeyCalloutLabel": "चला एकत्र घडूया",
+      "journeyCalloutTitle1": "ऊर्जाच्या या प्रवासाचा",
+      "journeyCalloutTitle2": "एक भाग व्हा.",
+      "journeyCalloutDesc": "तुम्ही शेतकरी, डीलर, व्यावसायिक भागीदार, पुरवठादार किंवा ग्राहक असाल तर ऊर्जाशी जोडून घ्या आणि नवीन संधी शोधा.",
+      "journeyCalloutBtn": "संपर्क साधा",
+      "ctaLabel": "संपर्क साधा",
+      "ctaTitle1": "चला काहीतरी",
+      "ctaTitle2": "अर्थपूर्ण निर्माण करूया.",
+      "ctaDesc": "भागीदारीसाठी, व्यवसायांची माहिती घेण्यासाठी किंवा आमच्या टीमशी जोडण्यासाठी, आम्हाला आपल्याशी संवाद साधायला आनंद होईल.",
+      "ctaBtn": "आमच्याशी संपर्क साधा",
+      "language": "भाषा",
+      "back": "मागे",
+      "close": "बंद करा",
+      "packaging": "उपलब्ध पॅकेजिंग:",
+      "aboutHeroTitle1": "उद्देशपूर्वक उभारणी.",
+      "aboutHeroTitle2": "जबाबदारीने प्रगती.",
+      "aboutHeroDesc": "पशु पोषणापासून एकात्मिक कृषी, पोषण आणि अन्न परिसंस्थेपर्यंत.",
+      "ourJourney": "आमचा प्रवास",
+      "purposePhilosophy": "आमचे उद्दिष्ट आणि तत्त्वज्ञान",
+      "purposeSub": "ऊर्जा फूड्सचे अस्तित्व का आहे, आमची दिशा कोणती आणि आम्ही कसे कार्य करतो हे स्पष्ट करणाऱ्या मूल्यांचा शोध घ्या.",
+      "exploreMission": "आमचे ध्येय जाणून घ्या",
+      "exploreVision": "आमची दृष्टी जाणून घ्या",
+      "exploreValues": "आमची मूल्ये जाणून घ्या",
+      "missionStatement": "“सतत नवनिर्मिती, प्रामाणिकपणा आणि सांघिक कार्यातून भारतीय शेतकऱ्यांना स्थिर आर्थिक उत्पन्न मिळवून देणे.”",
+      "visionStatement": "“प्रत्यक्ष किंवा अप्रत्यक्षपणे प्रत्येक भारतीय स्वयंपाकघराचा भाग होणे.”",
+      "valuesStatement": "“नवनिर्मिती, सचोटी, ‘मी’ पेक्षा ‘आम्ही’, वास्तववादी विचार आणि मार्ग शोधणे.”",
+      "bizHeroBadge": "५ प्रमुख क्षेत्रांचा पोर्टफोलिओ",
+      "bizHeroTitle1": "एकात्मिक कृषी व्यवसाय",
+      "bizHeroTitle2": "मोठ्या प्रमाणावर.",
+      "bizHeroSubtitle": "पशु पोषण, पोल्ट्री एकात्मता, शुद्ध प्रथिने, सेंद्रिय कृषी निविष्ठा आणि शाश्वत कृषी प्रक्रियेला चालना देणाऱ्या पाच एकमेकांशी जोडलेल्या कंपन्या.",
+      "productsBannerBadge": "प्रयोगशाळा-प्रमाणित पोषण",
+      "productsBannerTitle": "वैज्ञानिक पशुखाद्य आणि पशुधन उत्पादने",
+      "productsBannerSub": "निरगुडसर, मंचर येथील आमच्या स्वयंचलित प्लांटमध्ये तयार केलेल्या उच्च-फॅट पशुखाद्य, उच्च-FCR ब्रॉयलर फीड आणि लेयर कॉन्सन्ट्रेट्सची श्रेणी पहा.",
+      "contactBannerBadge": "त्वरित संवाद",
+      "contactBannerTitle": "ऊर्जा कृषी व्यवसाय कक्षाशी संपर्क साधा",
+      "contactBannerSub": "पशुखाद्य डीलरशिप, ब्रॉयलर कॉन्ट्रॅक्ट फार्मिंग, जिवंत पक्षी पुरवठा, सोया डिलिव्हरी किंवा तांत्रिक सल्ला याविषयी प्रश्न आहेत? आमची टीम मदतीसाठी सज्ज आहे.",
+      "inquiryFormTitle": "चौकशी / डीलरशिप अर्ज पाठवा",
+      "inquiryFormName": "पूर्ण नाव",
+      "inquiryFormPhone": "मोबाईल क्रमांक",
+      "inquiryFormEmail": "ईमेल पत्ता",
+      "inquiryFormInterest": "स्वारस्याचा विषय",
+      "inquiryFormDistrict": "जिल्हा",
+      "inquiryFormMsg": "तुमचा संदेश / आवश्यकता",
+      "inquiryFormSubmit": "चौकशी पाठवा",
+      "careersBannerBadge": "प्रतिभा आणि नेतृत्व",
+      "careersBannerTitle": "ऊर्जा फूड्स अँड ॲग्रोमध्ये करिअर",
+      "careersBannerSub": "महाराष्ट्रात पोल्ट्री एकात्मता, पशुखाद्य निर्मिती आणि ग्रामीण आर्थिक विकासाला नवी दिशा देणाऱ्या आमच्या कृषी संघात सामील व्हा.",
+      "mfgLabel": "उत्पादन उत्कृष्टता",
+      "mfgTitle1": "जिथे तंत्रज्ञान",
+      "mfgTitle2": "आणि एकात्मता एकत्र येतात",
+      "mfgIntro": "अचूकता, सातत्य आणि मोठ्या प्रमाणासाठी निर्मित प्रगत तंत्रज्ञान, ऑटोमेशन आणि एकात्मिक उत्पादन क्षमता.",
+      "testimonialsLabel": "ग्राहकांचे अनुभव",
+      "testimonialsTitle1": "आमचे भागीदार",
+      "testimonialsTitle2": "ऊर्जाबद्दल काय म्हणतात.",
+      "testimonialsDesc": "मजबूत नातेसंबंध हे आमच्या व्यवसायाचा पाया आहेत. कृषी परिसंस्थेत दीर्घकालीन मूल्य निर्माण करण्यासाठी आम्ही शेतकरी, ग्राहक आणि भागीदारांसोबत जवळून काम करतो.",
+      "footerTagline": "शेती, पोषण आणि अन्न प्रक्रिया क्षेत्रातील एकात्मिक व्यासपीठाची निर्मिती.",
+      "footerHeadquarters": "मुख्यालय",
+      "footerCompanyTitle": "कंपनी",
+      "footerBizTitle": "आमचे व्यवसाय",
+      "footerQuickLinksTitle": "महत्त्वाच्या लिंक्स",
+      "footerProductRange": "उत्पादनांची श्रेणी",
+      "footerTestimonials": "ग्राहकांचे अनुभव",
+      "footerCareers": "करिअर आणि संधी",
+      "footerJoinTeam": "आमच्या टीममध्ये सामील व्हा",
+      "footerFeedFormulations": "पशुखाद्य फॉर्म्युलेशन्स",
+      "footerInquiryDesk": "चौकशी कक्ष",
+      "footerRightsReserved": "सर्व हक्क राखीव.",
+      "mfgPoint1Desc": "स्वयंचलित आणि पारंपारिक पशुखाद्य निर्मिती",
+      "mfgPoint2Title": "पीएलसी नियंत्रित",
+      "mfgPoint2Desc": "स्वयंचलित उत्पादन प्रणाली",
+      "mfgPoint3Title": "पर्यावरण-नियंत्रित शेड्स",
+      "mfgPoint3Desc": "स्वयंचलित खाद्य व पाणी पुरवठा",
+      "mfgPoint4Title": "इन-हाउस",
+      "mfgPoint4Desc": "प्रीमिक्स आणि सोया प्रक्रिया",
+      "mfgPoint5Title": "अचूकता",
+      "mfgPoint5Desc": "अचूक बॅचिंग व मायक्रो-डोसिंग",
+      "opBadge": "ऑपरेशन्स आणि व्यवसाय मॉडेल",
+      "opHeading": "एकात्मिक कृषी व्यवसाय कार्यपद्धती",
+      "opSubtitle": "कच्च्या मालाच्या खरेदीपासून स्वयंचलित पशुखाद्य निर्मिती, ब्रीडर फार्मिंग, कंत्राटी ब्रॉयलर शेती आणि स्वच्छ वितरणापर्यंत ऊर्जा प्रत्येक टप्प्याचे व्यवस्थापन करते.",
+      "urja-foods_title": "ऊर्जा फूड्स",
+      "urja-foods_category": "एकात्मिक कुक्कुटपालन",
+      "urja-foods_tagline": "पशुखाद्य निर्मिती, प्रजनन, हॅचरीज, शेती आणि पक्षी पुरवठ्यामध्ये एकात्मिक पोल्ट्री संचालन.",
+      "urja-pashu-aahar_title": "ऊर्जा पशु आहार",
+      "urja-pashu-aahar_category": "पशु पोषण",
+      "urja-pashu-aahar_tagline": "दूध उत्पादन वाढीसाठी तयार केलेले वैज्ञानिक पशुखाद्य, वासरू स्टार्टर आणि खनिज मिश्रणे.",
+      "poushtik-chicken_title": "पौष्टिक चिकन",
+      "poushtik-chicken_category": "फार्म-ताजे प्रथिने",
+      "poushtik-chicken_tagline": "जैव-सुरक्षित शेतांमधून थेट स्वच्छ, अँटीबायोटिक-मुक्त ताजे चिकन.",
+      "urja-organic_title": "ऊर्जा ऑरगॅनिक",
+      "urja-organic_category": "माती व पीक पोषण",
+      "urja-organic_tagline": "मातीची सुपिकता वाढवणारे समृद्ध सेंद्रिय खत आणि नैसर्गिक भूसुधारक.",
+      "urja-soya_title": "ऊर्जा सोया",
+      "urja-soya_category": "कृषी प्रक्रिया",
+      "urja-soya_tagline": "प्रीमियम नॉन-जीएमओ सोया डीओसी आणि सोया तेल, जे उच्च दर्जाच्या पशुखाद्याचा पाया आहेत."
+    }
+  },
+  "items": [
+    {
+      "lang_code": "en",
+      "trans_key": "navHome",
+      "trans_value": "Home",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navAbout",
+      "trans_value": "About Us",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navMissionVisionValues",
+      "trans_value": "Mission, Vision & Values",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navAboutOverview",
+      "trans_value": "About Urja",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navOurMission",
+      "trans_value": "Our Mission",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navOurVision",
+      "trans_value": "Our Vision",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navCoreValues",
+      "trans_value": "Core Values",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navLeadership",
+      "trans_value": "Chairman's Message",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navBusinesses",
+      "trans_value": "Our Businesses",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navProducts",
+      "trans_value": "Products",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navSustainability",
+      "trans_value": "Sustainability & CSR",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navContact",
+      "trans_value": "Contact Us",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navCareers",
+      "trans_value": "Careers",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "navOperations",
+      "trans_value": "Operations",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "topbarLocation",
+      "trans_value": "HP House, Nirgudsar, Manchar - 410503",
+      "category": "topbar"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "topbarHours",
+      "trans_value": "Mon – Sat: 9:00 AM – 6:30 PM",
+      "category": "topbar"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "topbarCert",
+      "trans_value": "ISO & Bio-Security Assured",
+      "category": "topbar"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "heroOverline",
+      "trans_value": "URJA FOODS & AGRO",
+      "category": "hero"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "heroTitle1",
+      "trans_value": "From Feed",
+      "category": "hero"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "heroTitle2",
+      "trans_value": "to Food.",
+      "category": "hero"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "heroSubtitle",
+      "trans_value": "Building an integrated agribusiness ecosystem across agriculture, nutrition and food.",
+      "category": "hero"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "heroBtnDiscover",
+      "trans_value": "DISCOVER URJA",
+      "category": "hero"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "heroBtnBusinesses",
+      "trans_value": "OUR BUSINESSES",
+      "category": "hero"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "heroScroll",
+      "trans_value": "SCROLL TO EXPLORE",
+      "category": "hero"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "welcomeAboutUs",
+      "trans_value": "ABOUT US",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "welcomeHeading",
+      "trans_value": "Welcome to Urja Foods & Agro Pvt. Ltd.",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "welcomeBadge",
+      "trans_value": "INTEGRATED AGRIBUSINESS",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "welcomeFrom",
+      "trans_value": "FROM",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "welcomeFeed",
+      "trans_value": "FEED",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "welcomeFood",
+      "trans_value": "FOOD",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "welcomeIntro",
+      "trans_value": "is an integrated agribusiness company with operations across poultry, animal nutrition, feed manufacturing, farming and food processing.",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "welcomeP1",
+      "trans_value": "Our integrated poultry business brings together feed manufacturing, breeder farming, hatcheries, brooding and growing farms, contract broiler farming and live bird supply into a connected operating ecosystem.",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "welcomeP2",
+      "trans_value": "With modern production facilities, European environment-controlled poultry housing, high-capacity feed mills and strong partnerships with farmers, we are committed to building a dependable agribusiness ecosystem.",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "welcomeBtnStory",
+      "trans_value": "DISCOVER OUR STORY",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "bizOverline",
+      "trans_value": "OUR BUSINESSES",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "bizTitle1",
+      "trans_value": "Diverse businesses.",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "bizTitle2",
+      "trans_value": "One connected vision.",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "bizDesc",
+      "trans_value": "From feed and farming to animal nutrition, protein and value-added food products, our businesses work together across the agricultural value chain.",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "bizExplore",
+      "trans_value": "EXPLORE ALL BUSINESSES",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyOverline",
+      "trans_value": "WHY CHOOSE URJA",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyTitle1",
+      "trans_value": "Because What We",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyTitle2",
+      "trans_value": "Build Matters.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyIntro",
+      "trans_value": "For us, agriculture has never been just a business. It is the foundation of millions of livelihoods and the source of the food that reaches every Indian home.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyBullet1Title",
+      "trans_value": "Capabilities Over Shortcuts:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyBullet1Desc",
+      "trans_value": "We invest directly in our own feed plants, hatcheries, breeder farms, and automated milling to ensure complete quality control from day one.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyBullet2Title",
+      "trans_value": "Farm-Level Agribusiness Expertise:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyBullet2Desc",
+      "trans_value": "Over two decades of ground-level mastery across animal genetics, feed formulation, veterinary support, and bio-secure farming.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyBullet3Title",
+      "trans_value": "Farmer Partnership & Prosperity:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyBullet3Desc",
+      "trans_value": "Working shoulder-to-shoulder with 900+ farm families as trusted partners with transparent pricing, technical advisory, and reliable buybacks.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyBullet4Title",
+      "trans_value": "End-to-End Farm-to-Fork Integrity:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyBullet4Desc",
+      "trans_value": "Total vertical integration ensuring clean, traceable, and nutritious food safely reaches Indian households.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyQuote1",
+      "trans_value": "We don't just want to be part of India's food system.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyQuoteHighlight",
+      "trans_value": "We want to build it better.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyQuote2",
+      "trans_value": "Because the best products don't begin on a shelf.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "whyQuoteBadge",
+      "trans_value": "They begin at the source.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrOverline",
+      "trans_value": "SUSTAINABILITY & CSR",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrHeading1",
+      "trans_value": "Empowering Rural Communities",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrHeading2",
+      "trans_value": "Through Conscious Growth",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrDesc",
+      "trans_value": "Our social responsibility efforts prioritize environmental replenishment, inclusive employment, clean water stewardship, and rural empowerment.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrFarmers",
+      "trans_value": "Farmers Supported in Network",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrIncome",
+      "trans_value": "Average Increase in Partner Farm Income",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrEmployment",
+      "trans_value": "Direct Community Employment Opportunities",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrWater",
+      "trans_value": "Litres Water Recycled & Recharged Annually",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrWomen",
+      "trans_value": "Direct Employment Created for Rural Women",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrTreesBadge",
+      "trans_value": "100,000 TREES COMMITMENT",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrTreesTitle",
+      "trans_value": "Active Afforestation Initiative",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrTreesDesc",
+      "trans_value": "Planting indigenous timber, fruit, and shade trees across rural Pune and Nashik districts to create biodiversity corridors.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrTreesCta",
+      "trans_value": "EXPLORE INITIATIVE",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrTagline",
+      "trans_value": "FOR A HEALTHIER PLANET. STRONGER COMMUNITIES.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrScriptText",
+      "trans_value": "A greener tomorrow, together.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrSolarTitle",
+      "trans_value": "SOLAR POWER CAPACITY",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrSolarDesc",
+      "trans_value": "Investing in renewable energy across our operations.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrTreesPlantedTitle",
+      "trans_value": "TREES PLANTED & SURVIVED",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrTreesPlantedDesc",
+      "trans_value": "Building a greener future, one plantation at a time.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrFarmersConnectedTitle",
+      "trans_value": "FARMERS CONNECTED",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrFarmersConnectedDesc",
+      "trans_value": "Livelihoods supported through our agricultural ecosystem.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrEmployeesTitle",
+      "trans_value": "EMPLOYEES",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrEmployeesDesc",
+      "trans_value": "Supporting 600+ families through employment.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrCommitmentSub",
+      "trans_value": "OUR COMMITMENT",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrCommitmentHeading",
+      "trans_value": "1,00,000 Trees by 2032",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrCommitmentNarrative",
+      "trans_value": "From renewable energy to tree plantation and farmer development, we continue to build sustainability into the way we grow.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrCompanyTag",
+      "trans_value": "URJA FOODS & AGRO PVT LTD",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrPillarPeople",
+      "trans_value": "PEOPLE",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrPillarPlanet",
+      "trans_value": "PLANET",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "csrPillarProgress",
+      "trans_value": "PROGRESS",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "journeyCalloutLabel",
+      "trans_value": "LET'S BUILD TOGETHER",
+      "category": "journey"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "journeyCalloutTitle1",
+      "trans_value": "Be a part of",
+      "category": "journey"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "journeyCalloutTitle2",
+      "trans_value": "the Urja journey.",
+      "category": "journey"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "journeyCalloutDesc",
+      "trans_value": "Whether you are a farmer, dealer, business partner, supplier or customer, connect with us and explore opportunities with Urja.",
+      "category": "journey"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "journeyCalloutBtn",
+      "trans_value": "GET IN TOUCH",
+      "category": "journey"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "ctaLabel",
+      "trans_value": "GET IN TOUCH",
+      "category": "cta"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "ctaTitle1",
+      "trans_value": "Let’s build",
+      "category": "cta"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "ctaTitle2",
+      "trans_value": "something meaningful.",
+      "category": "cta"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "ctaDesc",
+      "trans_value": "Whether you are looking to partner with us, explore our businesses, work with our team, or simply know more about Urja, we would be glad to hear from you.",
+      "category": "cta"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "ctaBtn",
+      "trans_value": "CONTACT US",
+      "category": "cta"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "language",
+      "trans_value": "Language",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "back",
+      "trans_value": "Back",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "close",
+      "trans_value": "Close",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "packaging",
+      "trans_value": "Available Packaging:",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "aboutHeroTitle1",
+      "trans_value": "Building with Purpose.",
+      "category": "about"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "aboutHeroTitle2",
+      "trans_value": "Growing with Responsibility.",
+      "category": "about"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "aboutHeroDesc",
+      "trans_value": "From animal nutrition to an integrated agriculture, nutrition and food ecosystem.",
+      "category": "about"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "ourJourney",
+      "trans_value": "OUR JOURNEY",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "purposePhilosophy",
+      "trans_value": "OUR PURPOSE & PHILOSOPHY",
+      "category": "operations"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "purposeSub",
+      "trans_value": "Explore the core foundations that define why Urja Foods exists, where we are heading, and how we operate every day on separate dedicated pages.",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "exploreMission",
+      "trans_value": "Explore Our Mission",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "exploreVision",
+      "trans_value": "Explore Our Vision",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "exploreValues",
+      "trans_value": "Explore Values That Move Us",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "missionStatement",
+      "trans_value": "“To provide stable financial income to Indian farmers through continuous innovation, honesty and teamwork.”",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "visionStatement",
+      "trans_value": "“To be a part of every Indian kitchen — directly or indirectly.”",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "valuesStatement",
+      "trans_value": "“Innovation, Integrity, We Before Me, Be Real, and Find a Way.”",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "bizHeroBadge",
+      "trans_value": "PORTFOLIO OF 5 VERTICALS",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "bizHeroTitle1",
+      "trans_value": "Integrated Agribusiness",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "bizHeroTitle2",
+      "trans_value": "At Scale.",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "bizHeroSubtitle",
+      "trans_value": "Five interconnected companies powering animal nutrition, poultry integration, clean protein, organic farm inputs and sustainable agro-processing.",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "productsBannerBadge",
+      "trans_value": "Laboratory-Certified Nutrition",
+      "category": "products"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "productsBannerTitle",
+      "trans_value": "Scientific Feeds & Livestock Products",
+      "category": "products"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "productsBannerSub",
+      "trans_value": "Explore our proven range of high-fat cattle feeds, high-FCR broiler crumbles, and layer concentrates formulated at our automated plant in Nirgudsar, Pune.",
+      "category": "products"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "contactBannerBadge",
+      "trans_value": "Prompt Communication",
+      "category": "contact"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "contactBannerTitle",
+      "trans_value": "Connect with Urja Agribusiness Desk",
+      "category": "contact"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "contactBannerSub",
+      "trans_value": "Have questions about cattle feed dealerships, broiler contract farming, live bird supply, bulk soya delivery, or technical advisory? Our Pune headquarters and veterinary teams are here to assist.",
+      "category": "contact"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "inquiryFormTitle",
+      "trans_value": "Send an Inquiry / Dealership Request",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "inquiryFormName",
+      "trans_value": "Full Name",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "inquiryFormPhone",
+      "trans_value": "Mobile Number",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "inquiryFormEmail",
+      "trans_value": "Email Address",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "inquiryFormInterest",
+      "trans_value": "Subject of Interest",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "inquiryFormDistrict",
+      "trans_value": "District",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "inquiryFormMsg",
+      "trans_value": "Your Message / Requirement",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "inquiryFormSubmit",
+      "trans_value": "Send Inquiry",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "careersBannerBadge",
+      "trans_value": "Talent & Leadership",
+      "category": "careers"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "careersBannerTitle",
+      "trans_value": "Careers at Urja Foods & Agro",
+      "category": "careers"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "careersBannerSub",
+      "trans_value": "Join our passionate agribusiness team transforming poultry integration, animal feed formulation, and rural economic growth across Maharashtra.",
+      "category": "careers"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgLabel",
+      "trans_value": "MANUFACTURING EXCELLENCE",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgTitle1",
+      "trans_value": "Where Technology",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgTitle2",
+      "trans_value": "Meets Integration",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgIntro",
+      "trans_value": "Advanced technology, automation and integrated manufacturing capabilities built for precision, consistency and scale.",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "testimonialsLabel",
+      "trans_value": "TESTIMONIALS",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "testimonialsTitle1",
+      "trans_value": "What our partners",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "testimonialsTitle2",
+      "trans_value": "say about Urja.",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "testimonialsDesc",
+      "trans_value": "Strong relationships are at the heart of our business. We work closely with farmers, customers and partners to create long-term value across the agricultural ecosystem.",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerTagline",
+      "trans_value": "Building an integrated platform across agriculture, nutrition and food.",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerHeadquarters",
+      "trans_value": "Headquarters",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerCompanyTitle",
+      "trans_value": "COMPANY",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerBizTitle",
+      "trans_value": "OUR BUSINESSES",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerQuickLinksTitle",
+      "trans_value": "QUICK LINKS",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerProductRange",
+      "trans_value": "Product Range",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerTestimonials",
+      "trans_value": "Testimonials",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerCareers",
+      "trans_value": "Careers & Openings",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerJoinTeam",
+      "trans_value": "Join Our Team",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerFeedFormulations",
+      "trans_value": "Feed Formulations",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerInquiryDesk",
+      "trans_value": "Inquiry Desk",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "footerRightsReserved",
+      "trans_value": "All Rights Reserved.",
+      "category": "footer"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgPoint1Desc",
+      "trans_value": "Automated & Conventional Feed Manufacturing",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgPoint2Title",
+      "trans_value": "PLC CONTROLLED",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgPoint2Desc",
+      "trans_value": "Automated Production",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgPoint3Title",
+      "trans_value": "EC HOUSES",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgPoint3Desc",
+      "trans_value": "Automated Feeding & Drinking",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgPoint4Title",
+      "trans_value": "IN-HOUSE",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgPoint4Desc",
+      "trans_value": "Premix & Soya Processing",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgPoint5Title",
+      "trans_value": "PRECISION",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "mfgPoint5Desc",
+      "trans_value": "Batching & Micro-Dosing",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "opBadge",
+      "trans_value": "OPERATIONS & BUSINESS MODEL",
+      "category": "operations"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "opHeading",
+      "trans_value": "An Integrated Agribusiness Operating Model",
+      "category": "operations"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "opSubtitle",
+      "trans_value": "From raw ingredient sourcing and computerized feed formulation to parent breeding, partner broiler farms, and hygienic distribution, Urja controls every critical link.",
+      "category": "operations"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-foods_title",
+      "trans_value": "Urja Foods",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-foods_category",
+      "trans_value": "Integrated Poultry",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-foods_tagline",
+      "trans_value": "Integrated poultry operations across feed manufacturing, breeding, hatcheries, farming and live bird supply.",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-pashu-aahar_title",
+      "trans_value": "Urja Pashu Aahar",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-pashu-aahar_category",
+      "trans_value": "Animal Nutrition",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-pashu-aahar_tagline",
+      "trans_value": "Scientific cattle feed, calf starters, bypass fat and mineral mixtures engineered for dairy yield optimization.",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "poushtik-chicken_title",
+      "trans_value": "Poushtik Chicken",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "poushtik-chicken_category",
+      "trans_value": "Farm-Fresh Protein",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "poushtik-chicken_tagline",
+      "trans_value": "Hygienically processed, antibiotic-residue free, fresh farm chicken delivered directly from bio-secure farms.",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-organic_title",
+      "trans_value": "Urja Organic",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-organic_category",
+      "trans_value": "Soil & Plant Health",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-organic_tagline",
+      "trans_value": "Enriched poultry manure compost and organic soil amendments replenishing microbial farm vitality.",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-soya_title",
+      "trans_value": "Urja Soya",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-soya_category",
+      "trans_value": "Agro Processing",
+      "category": "general"
+    },
+    {
+      "lang_code": "en",
+      "trans_key": "urja-soya_tagline",
+      "trans_value": "Premium non-GMO soya de-oiled cake (DOC) and crude soya oil supporting national poultry feed formulation.",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navHome",
+      "trans_value": "होम",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navAbout",
+      "trans_value": "हमारे बारे में",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navMissionVisionValues",
+      "trans_value": "मिशन, विजन और मूल्य",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navAboutOverview",
+      "trans_value": "ऊर्जा के बारे में",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navOurMission",
+      "trans_value": "हमारा मिशन",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navOurVision",
+      "trans_value": "हमारा विज़न",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navCoreValues",
+      "trans_value": "मूल मूल्य",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navLeadership",
+      "trans_value": "चेयरमैन का संदेश",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navBusinesses",
+      "trans_value": "हमारे व्यवसाय",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navProducts",
+      "trans_value": "उत्पाद",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navSustainability",
+      "trans_value": "सस्टेनेबिलिटी एवं सीएसआर",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navContact",
+      "trans_value": "संपर्क करें",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navCareers",
+      "trans_value": "करियर",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "navOperations",
+      "trans_value": "ऑपरेशन्स",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "topbarLocation",
+      "trans_value": "एचपी हाउस, निरगुडसर, मंचर - 410503",
+      "category": "topbar"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "topbarHours",
+      "trans_value": "सोम – शनि: सुबह 9:00 – शाम 6:30",
+      "category": "topbar"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "topbarCert",
+      "trans_value": "आईएसओ एवं बायो-सिक्योरिटी प्रमाणित",
+      "category": "topbar"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "heroOverline",
+      "trans_value": "ऊर्जा फूड्स एंड एग्रो",
+      "category": "hero"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "heroTitle1",
+      "trans_value": "फ़ीड से",
+      "category": "hero"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "heroTitle2",
+      "trans_value": "फ़ूड तक।",
+      "category": "hero"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "heroSubtitle",
+      "trans_value": "कृषि, पोषण और खाद्य प्रसंस्करण में एक एकीकृत कृषि व्यवसाय पारिस्थितिकी तंत्र का निर्माण।",
+      "category": "hero"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "heroBtnDiscover",
+      "trans_value": "ऊर्जा को जानें",
+      "category": "hero"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "heroBtnBusinesses",
+      "trans_value": "हमारे व्यवसाय",
+      "category": "hero"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "heroScroll",
+      "trans_value": "आगे देखने के लिए स्क्रॉल करें",
+      "category": "hero"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "welcomeAboutUs",
+      "trans_value": "हमारे बारे में",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "welcomeHeading",
+      "trans_value": "ऊर्जा फूड्स एंड एग्रो प्राइवेट लिमिटेड में आपका स्वागत है",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "welcomeBadge",
+      "trans_value": "एकीकृत कृषि व्यवसाय",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "welcomeFrom",
+      "trans_value": "शुरुआत",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "welcomeFeed",
+      "trans_value": "फ़ीड",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "welcomeFood",
+      "trans_value": "फ़ूड",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "welcomeIntro",
+      "trans_value": "एक एकीकृत कृषि व्यवसाय कंपनी है जिसका संचालन पोल्ट्री, पशु पोषण, चारा उत्पादन, कृषि और खाद्य प्रसंस्करण में विस्तृत है।",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "welcomeP1",
+      "trans_value": "हमारा एकीकृत पोल्ट्री व्यवसाय चारा निर्माण, प्रजनक खेती, हैचरी, ब्रूडिंग व ग्रोइंग फार्म, अनुबंध ब्रॉयलर खेती और लाइव बर्ड आपूर्ति को जोड़ता है।",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "welcomeP2",
+      "trans_value": "आधुनिक उत्पादन सुविधाओं, यूरोपीय पर्यावरण-नियंत्रित पोल्ट्री शेड, उच्च क्षमता वाली चारा मिलों और किसानों के साथ मजबूत साझेदारी के साथ हम प्रतिबद्ध हैं।",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "welcomeBtnStory",
+      "trans_value": "हमारी यात्रा जानें",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "bizOverline",
+      "trans_value": "हमारे व्यवसाय",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "bizTitle1",
+      "trans_value": "विविध व्यवसाय।",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "bizTitle2",
+      "trans_value": "एक समर्पित दृष्टिकोण।",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "bizDesc",
+      "trans_value": "चारा और खेती से लेकर पशु पोषण, प्रोटीन और मूल्यवर्धित खाद्य उत्पादों तक, हमारे व्यवसाय कृषि मूल्य श्रृंखला में मिलकर काम करते हैं।",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "bizExplore",
+      "trans_value": "सभी व्यवसाय देखें",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyOverline",
+      "trans_value": "ऊर्जा को क्यों चुनें",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyTitle1",
+      "trans_value": "क्योंकि जो हम बनाते हैं",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyTitle2",
+      "trans_value": "वह मायने रखता है।",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyIntro",
+      "trans_value": "हमारे लिए कृषि सिर्फ एक व्यवसाय नहीं है। यह लाखों आजीविकाओं की नींव है और हर भारतीय घर तक पहुंचने वाले भोजन का स्रोत है।",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyBullet1Title",
+      "trans_value": "शॉर्टकट नहीं, वास्तविक क्षमता:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyBullet1Desc",
+      "trans_value": "हम शुरू से ही गुणवत्ता नियंत्रण सुनिश्चित करने के लिए अपने स्वयं के फ़ीड प्लांट, हैचरी, ब्रीडर फार्म और ऑटोमेशन में निवेश करते हैं।",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyBullet2Title",
+      "trans_value": "जमीनी स्तर पर कृषि विशेषज्ञता:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyBullet2Desc",
+      "trans_value": "पशु आनुवंशिकी, वैज्ञानिक चारा निर्माण, पशु चिकित्सा सलाह और जैव-सुरक्षित खेती में दो दशकों से अधिक का अनुभव।",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyBullet3Title",
+      "trans_value": "किसान साझेदारी और समृद्धि:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyBullet3Desc",
+      "trans_value": "900+ किसान परिवारों के साथ पारदर्शी मूल्य निर्धारण, तकनीकी सलाह और सुनिश्चित बायबैक के साथ विश्वासपात्र भागीदार के रूप में कार्य।",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyBullet4Title",
+      "trans_value": "खेत से थाली तक पूर्ण शुद्धता:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyBullet4Desc",
+      "trans_value": "पूर्ण वर्टिकल एकीकरण यह सुनिश्चित करता है कि स्वच्छ, सुरक्षित और पौष्टिक आहार भारतीय घरों तक पहुंचे।",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyQuote1",
+      "trans_value": "हम केवल भारत की खाद्य प्रणाली का हिस्सा नहीं बनना चाहते।",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyQuoteHighlight",
+      "trans_value": "हम इसे और बेहतर बनाना चाहते हैं।",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyQuote2",
+      "trans_value": "क्योंकि सर्वश्रेष्ठ उत्पाद किसी शेल्फ पर शुरू नहीं होते।",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "whyQuoteBadge",
+      "trans_value": "वे स्रोत से शुरू होते हैं।",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrOverline",
+      "trans_value": "सस्टेनेबिलिटी एवं सीएसआर",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrHeading1",
+      "trans_value": "ग्रामीण समुदायों का सशक्तिकरण",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrHeading2",
+      "trans_value": "जिम्मेदार विकास के माध्यम से",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrDesc",
+      "trans_value": "हमारे सामाजिक उत्तरदायित्व प्रयास पर्यावरण संवर्धन, समावेशी रोजगार, जल संरक्षण और ग्रामीण विकास को प्राथमिकता देते हैं।",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrFarmers",
+      "trans_value": "नेटवर्क में समर्थित किसान",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrIncome",
+      "trans_value": "भागीदार किसानों की आय में औसत वृद्धि",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrEmployment",
+      "trans_value": "सृजित प्रत्यक्ष सामुदायिक रोजगार",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrWater",
+      "trans_value": "प्रति वर्ष पुनर्चक्रित व संचित जल (लीटर)",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrWomen",
+      "trans_value": "ग्रामीण महिलाओं के लिए प्रत्यक्ष रोजगार",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrTreesBadge",
+      "trans_value": "1,00,000 वृक्षारोपण संकल्प",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrTreesTitle",
+      "trans_value": "सक्रिय वनीकरण पहल",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrTreesDesc",
+      "trans_value": "जैव विविधता गलियारे बनाने के लिए पुणे और नासिक के ग्रामीण क्षेत्रों में स्वदेशी फलदार व छायादार पौधे लगाना।",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrTreesCta",
+      "trans_value": "पहल के बारे में जानें",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrTagline",
+      "trans_value": "स्वस्थ ग्रह और सशक्त समुदायों के लिए।",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrScriptText",
+      "trans_value": "एक हरित कल, मिलकर।",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrSolarTitle",
+      "trans_value": "सौर ऊर्जा क्षमता",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrSolarDesc",
+      "trans_value": "हमारे सभी परिचालन में नवीकरणीय ऊर्जा में निरंतर निवेश।",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrTreesPlantedTitle",
+      "trans_value": "लगाए गए और जीवित वृक्ष",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrTreesPlantedDesc",
+      "trans_value": "हरियाली से भरे भविष्य का निर्माण, एक-एक पौधा लगाकर।",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrFarmersConnectedTitle",
+      "trans_value": "जुड़े हुए किसान",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrFarmersConnectedDesc",
+      "trans_value": "हमारे कृषि नेटवर्क के माध्यम से किसानों की आजीविका को सशक्त बनाना।",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrEmployeesTitle",
+      "trans_value": "कर्मचारी",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrEmployeesDesc",
+      "trans_value": "रोजगार के माध्यम से 600+ परिवारों को सशक्त संबल।",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrCommitmentSub",
+      "trans_value": "हमारा संकल्प",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrCommitmentHeading",
+      "trans_value": "2032 तक 1,00,000 वृक्ष",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrCommitmentNarrative",
+      "trans_value": "नवीकरणीय ऊर्जा से लेकर वृक्षारोपण और किसान सशक्तिकरण तक, हम सतत विकास के प्रति समर्पित हैं।",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrCompanyTag",
+      "trans_value": "ऊर्जा फूड्स एंड एग्रो प्रा. लि.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrPillarPeople",
+      "trans_value": "लोग",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrPillarPlanet",
+      "trans_value": "पर्यावरण",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "csrPillarProgress",
+      "trans_value": "प्रगति",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "journeyCalloutLabel",
+      "trans_value": "आइए साथ मिलकर बनाएं",
+      "category": "journey"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "journeyCalloutTitle1",
+      "trans_value": "ऊर्जा की यात्रा का",
+      "category": "journey"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "journeyCalloutTitle2",
+      "trans_value": "हिस्सा बनें।",
+      "category": "journey"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "journeyCalloutDesc",
+      "trans_value": "चाहे आप किसान, डीलर, व्यावसायिक भागीदार, आपूर्तिकर्ता या ग्राहक हों, ऊर्जा से जुड़ें और अवसरों की खोज करें।",
+      "category": "journey"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "journeyCalloutBtn",
+      "trans_value": "संपर्क करें",
+      "category": "journey"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "ctaLabel",
+      "trans_value": "संपर्क करें",
+      "category": "cta"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "ctaTitle1",
+      "trans_value": "आइए कुछ",
+      "category": "cta"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "ctaTitle2",
+      "trans_value": "सार्थक निर्माण करें।",
+      "category": "cta"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "ctaDesc",
+      "trans_value": "चाहे आप साझेदारी करना चाहते हों, हमारे व्यवसायों को जानना चाहते हों, या हमारी टीम से जुड़ना चाहते हों, हमें आपकी बात सुनकर खुशी होगी।",
+      "category": "cta"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "ctaBtn",
+      "trans_value": "हमसे संपर्क करें",
+      "category": "cta"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "language",
+      "trans_value": "भाषा",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "back",
+      "trans_value": "वापस",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "close",
+      "trans_value": "बंद करें",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "packaging",
+      "trans_value": "उपलब्ध पैकेजिंग:",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "aboutHeroTitle1",
+      "trans_value": "उद्देश्य के साथ निर्माण।",
+      "category": "about"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "aboutHeroTitle2",
+      "trans_value": "जिम्मेदारी के साथ विकास।",
+      "category": "about"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "aboutHeroDesc",
+      "trans_value": "पशु पोषण से लेकर एकीकृत कृषि, पोषण और खाद्य पारिस्थितिकी तंत्र तक।",
+      "category": "about"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "ourJourney",
+      "trans_value": "हमारी यात्रा",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "purposePhilosophy",
+      "trans_value": "हमारा उद्देश्य और दर्शन",
+      "category": "operations"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "purposeSub",
+      "trans_value": "उन मूलभूत सिद्धांतों को जानें जो परिभाषित करते हैं कि ऊर्जा फूड्स क्यों अस्तित्व में है, हम कहां जा रहे हैं, और हम कैसे काम करते हैं।",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "exploreMission",
+      "trans_value": "हमारा मिशन जानें",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "exploreVision",
+      "trans_value": "हमारा विज़न जानें",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "exploreValues",
+      "trans_value": "हमारे मूल्य जानें",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "missionStatement",
+      "trans_value": "“निरंतर नवाचार, ईमानदारी और टीम वर्क के माध्यम से भारतीय किसानों को स्थिर वित्तीय आय प्रदान करना।”",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "visionStatement",
+      "trans_value": "“प्रत्यक्ष या अप्रत्यक्ष रूप से हर भारतीय रसोई का हिस्सा बनना।”",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "valuesStatement",
+      "trans_value": "“नवाचार, सत्यनिष्ठा, स्वयं से पहले हम, वास्तविकता, और समाधान खोजना।”",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "bizHeroBadge",
+      "trans_value": "5 प्रमुख कार्यक्षेत्रों का पोर्टफोलियो",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "bizHeroTitle1",
+      "trans_value": "एकीकृत कृषि व्यवसाय",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "bizHeroTitle2",
+      "trans_value": "विशाल स्तर पर।",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "bizHeroSubtitle",
+      "trans_value": "पशु पोषण, पोल्ट्री एकीकरण, स्वच्छ प्रोटीन, जैविक कृषि उत्पाद और टिकाऊ कृषि-प्रसंस्करण को शक्ति प्रदान करने वाली पांच परस्पर जुड़ी कंपनियां।",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "productsBannerBadge",
+      "trans_value": "प्रयोगशाला-प्रमाणित पोषण",
+      "category": "products"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "productsBannerTitle",
+      "trans_value": "वैज्ञानिक पशुखाद्य एवं पशुधन उत्पाद",
+      "category": "products"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "productsBannerSub",
+      "trans_value": "निरगुडसर, मंचर स्थित हमारे स्वचालित संयंत्र में निर्मित उच्च वसा वाले पशु आहार, उच्च-FCR ब्रॉयलर फीड और लेयर कंसंट्रेट्स की श्रृंखला देखें।",
+      "category": "products"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "contactBannerBadge",
+      "trans_value": "त्वरित संवाद",
+      "category": "contact"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "contactBannerTitle",
+      "trans_value": "ऊर्जा कृषि व्यवसाय डेस्क से जुड़ें",
+      "category": "contact"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "contactBannerSub",
+      "trans_value": "पशु आहार डीलरशिप, ब्रॉयलर अनुबंध खेती, लाइव बर्ड आपूर्ति, सोया डिलीवरी या तकनीकी सलाह के बारे में प्रश्न? हमारी टीम मदद के लिए यहाँ है।",
+      "category": "contact"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "inquiryFormTitle",
+      "trans_value": "पूछताछ / डीलरशिप अनुरोध भेजें",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "inquiryFormName",
+      "trans_value": "पूरा नाम",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "inquiryFormPhone",
+      "trans_value": "मोबाइल नंबर",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "inquiryFormEmail",
+      "trans_value": "ईमेल पता",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "inquiryFormInterest",
+      "trans_value": "रुचि का विषय",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "inquiryFormDistrict",
+      "trans_value": "जिला",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "inquiryFormMsg",
+      "trans_value": "आपका संदेश / आवश्यकता",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "inquiryFormSubmit",
+      "trans_value": "पूछताछ भेजें",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "careersBannerBadge",
+      "trans_value": "प्रतिभा एवं नेतृत्व",
+      "category": "careers"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "careersBannerTitle",
+      "trans_value": "ऊर्जा फूड्स एंड एग्रो में करियर",
+      "category": "careers"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "careersBannerSub",
+      "trans_value": "महाराष्ट्र में पोल्ट्री एकीकरण, पशु आहार निर्माण और ग्रामीण आर्थिक विकास को नई दिशा देने वाली हमारी कृषि टीम से जुड़ें।",
+      "category": "careers"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgLabel",
+      "trans_value": "विनिर्माण उत्कृष्टता",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgTitle1",
+      "trans_value": "जहां तकनीक",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgTitle2",
+      "trans_value": "और एकीकरण मिलते हैं",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgIntro",
+      "trans_value": "सटीकता, निरंतरता और बड़े पैमाने के लिए निर्मित उन्नत तकनीक, स्वचालन और एकीकृत विनिर्माण क्षमताएं।",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "testimonialsLabel",
+      "trans_value": "प्रशंसापत्र",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "testimonialsTitle1",
+      "trans_value": "हमारे भागीदार",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "testimonialsTitle2",
+      "trans_value": "ऊर्जा के बारे में क्या कहते हैं।",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "testimonialsDesc",
+      "trans_value": "मजबूत संबंध हमारे व्यवसाय के केंद्र में हैं। हम कृषि पारिस्थितिकी तंत्र में दीर्घकालिक मूल्य बनाने के लिए किसानों, ग्राहकों और भागीदारों के साथ मिलकर काम करते हैं।",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerTagline",
+      "trans_value": "कृषि, पोषण और खाद्य प्रसंस्करण में एक एकीकृत मंच का निर्माण।",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerHeadquarters",
+      "trans_value": "मुख्यालय",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerCompanyTitle",
+      "trans_value": "कंपनी",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerBizTitle",
+      "trans_value": "हमारे व्यवसाय",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerQuickLinksTitle",
+      "trans_value": "त्वरित लिंक",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerProductRange",
+      "trans_value": "उत्पाद श्रृंखला",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerTestimonials",
+      "trans_value": "प्रशंसापत्र",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerCareers",
+      "trans_value": "करियर एवं अवसर",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerJoinTeam",
+      "trans_value": "हमारी टीम से जुड़ें",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerFeedFormulations",
+      "trans_value": "पशुखाद्य फॉर्मूलेशन",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerInquiryDesk",
+      "trans_value": "पूछताछ डेस्क",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "footerRightsReserved",
+      "trans_value": "सर्वाधिकार सुरक्षित।",
+      "category": "footer"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgPoint1Desc",
+      "trans_value": "स्वचालित एवं पारंपरिक पशुखाद्य निर्माण",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgPoint2Title",
+      "trans_value": "पीएलसी नियंत्रित",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgPoint2Desc",
+      "trans_value": "स्वचालित उत्पादन प्रणाली",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgPoint3Title",
+      "trans_value": "पर्यावरण-नियंत्रित शेड्स",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgPoint3Desc",
+      "trans_value": "स्वचालित दाना-पानी प्रणाली",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgPoint4Title",
+      "trans_value": "इन-हाउस",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgPoint4Desc",
+      "trans_value": "प्रीमिक्स एवं सोया प्रसंस्करण",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgPoint5Title",
+      "trans_value": "सटीकता",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "mfgPoint5Desc",
+      "trans_value": "सटीक बैचिंग व माइक्रो-डोज़िंग",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "opBadge",
+      "trans_value": "संचालन एवं व्यापार मॉडल",
+      "category": "operations"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "opHeading",
+      "trans_value": "एक एकीकृत कृषि व्यवसाय परिचालन मॉडल",
+      "category": "operations"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "opSubtitle",
+      "trans_value": "कच्चे माल की खरीद और कम्प्यूटरीकृत चारा निर्माण से लेकर प्रजनक खेती, अनुबंध ब्रॉयलर फार्म और स्वच्छ वितरण तक, ऊर्जा हर कड़ी को नियंत्रित करती है।",
+      "category": "operations"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-foods_title",
+      "trans_value": "ऊर्जा फूड्स",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-foods_category",
+      "trans_value": "एकीकृत पोल्ट्री",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-foods_tagline",
+      "trans_value": "चारा उत्पादन, प्रजनन, हैचरी, खेती और लाइव बर्ड आपूर्ति में एकीकृत पोल्ट्री संचालन।",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-pashu-aahar_title",
+      "trans_value": "ऊर्जा पशु आहार",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-pashu-aahar_category",
+      "trans_value": "पशु पोषण",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-pashu-aahar_tagline",
+      "trans_value": "दुग्ध उत्पादन वृद्धि के लिए तैयार वैज्ञानिक पशु आहार, बछड़ा स्टार्टर और खनिज मिश्रण।",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "poushtik-chicken_title",
+      "trans_value": "पौष्टिक चिकन",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "poushtik-chicken_category",
+      "trans_value": "फार्म-ताज़ा प्रोटीन",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "poushtik-chicken_tagline",
+      "trans_value": "जैव-सुरक्षित फार्मों से सीधे स्वच्छ, एंटीबायोटिक-मुक्त ताज़ा चिकन।",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-organic_title",
+      "trans_value": "ऊर्जा ऑर्गेनिक",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-organic_category",
+      "trans_value": "मृदा एवं फसल पोषण",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-organic_tagline",
+      "trans_value": "मिट्टी की उर्वरता बढ़ाने वाली समृद्ध जैविक खाद और प्राकृतिक मृदा सुधारक।",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-soya_title",
+      "trans_value": "ऊर्जा सोया",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-soya_category",
+      "trans_value": "कृषि प्रसंस्करण",
+      "category": "general"
+    },
+    {
+      "lang_code": "hi",
+      "trans_key": "urja-soya_tagline",
+      "trans_value": "प्रीमियम नॉन-जीएमओ सोया डीओसी और सोया तेल, जो गुणवत्तापूर्ण पशु आहार का आधार हैं।",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navHome",
+      "trans_value": "मुख्यपृष्ठ",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navAbout",
+      "trans_value": "आमच्याबद्दल",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navMissionVisionValues",
+      "trans_value": "ध्येय, दृष्टी आणि मूल्ये",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navAboutOverview",
+      "trans_value": "ऊर्साबद्दल",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navOurMission",
+      "trans_value": "आमचे ध्येय (Mission)",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navOurVision",
+      "trans_value": "आमची दृष्टी (Vision)",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navCoreValues",
+      "trans_value": "मूलभूत मूल्ये",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navLeadership",
+      "trans_value": "अध्यक्षांचा संदेश",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navBusinesses",
+      "trans_value": "आमचे व्यवसाय",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navProducts",
+      "trans_value": "उत्पादने",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navSustainability",
+      "trans_value": "शाश्वतता आणि सीएसआर",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navContact",
+      "trans_value": "संपर्क साधा",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navCareers",
+      "trans_value": "करिअर",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "navOperations",
+      "trans_value": "ऑपरेशन्स",
+      "category": "navigation"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "topbarLocation",
+      "trans_value": "एचपी हाउस, निरगुडसर, मंचर - 410503",
+      "category": "topbar"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "topbarHours",
+      "trans_value": "सोम – शनि: स. 9:00 – सं. 6:30",
+      "category": "topbar"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "topbarCert",
+      "trans_value": "आयएसओ आणि बायो-सिक्युरिटी प्रमाणित",
+      "category": "topbar"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "heroOverline",
+      "trans_value": "ऊर्जा फूड्स अँड ॲग्रो",
+      "category": "hero"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "heroTitle1",
+      "trans_value": "खाद्यापासून",
+      "category": "hero"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "heroTitle2",
+      "trans_value": "अन्नापर्यंत.",
+      "category": "hero"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "heroSubtitle",
+      "trans_value": "शेती, पोषण आणि अन्न प्रक्रिया क्षेत्रातील एकात्मिक कृषी व्यवसाय परिसंस्थेची निर्मिती.",
+      "category": "hero"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "heroBtnDiscover",
+      "trans_value": "ऊर्जाबद्दल जाणून घ्या",
+      "category": "hero"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "heroBtnBusinesses",
+      "trans_value": "आमचे व्यवसाय",
+      "category": "hero"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "heroScroll",
+      "trans_value": "अधिक जाणून घेण्यासाठी स्क्रोल करा",
+      "category": "hero"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "welcomeAboutUs",
+      "trans_value": "आमच्याबद्दल",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "welcomeHeading",
+      "trans_value": "ऊर्जा फूड्स अँड ॲग्रो प्रायव्हेट लिमिटेडमध्ये आपले स्वागत आहे",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "welcomeBadge",
+      "trans_value": "एकात्मिक कृषी व्यवसाय",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "welcomeFrom",
+      "trans_value": "सुरुवात",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "welcomeFeed",
+      "trans_value": "खाद्य",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "welcomeFood",
+      "trans_value": "अन्न",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "welcomeIntro",
+      "trans_value": "ही एक एकात्मिक कृषी व्यवसाय कंपनी असून कुक्कुटपालन, पशु पोषण, पशुखाद्य निर्मिती, शेती आणि अन्न प्रक्रिया क्षेत्रात कार्यरत आहे.",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "welcomeP1",
+      "trans_value": "आमचा एकात्मिक पोल्ट्री व्यवसाय पशुखाद्य निर्मिती, ब्रीडर फार्मिंग, हॅचरीज, ब्रूडिंग आणि ग्रोइंग फार्म्स, कॉन्ट्रॅक्ट ब्रॉयलर फार्मिंग आणि जिवंत पक्षी पुरवठा एकत्रित करतो.",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "welcomeP2",
+      "trans_value": "आधुनिक उत्पादन सुविधा, युरोपीय पर्यावरण-नियंत्रित शेड्स, उच्च क्षमतेच्या फीड मिल्स आणि शेतकऱ्यांसोबतच्या मजबूत भागीदारीसह आम्ही कटिबद्ध आहोत.",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "welcomeBtnStory",
+      "trans_value": "आमचा प्रवास जाणून घ्या",
+      "category": "welcome"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "bizOverline",
+      "trans_value": "आमचे व्यवसाय",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "bizTitle1",
+      "trans_value": "विविध व्यवसाय.",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "bizTitle2",
+      "trans_value": "एकच समर्पित दृष्टिकोन.",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "bizDesc",
+      "trans_value": "पशुखाद्य आणि शेतीपासून ते पशु पोषण, प्रथिने आणि मूल्यवर्धित अन्न उत्पादनांपर्यंत आमचे व्यवसाय कृषी मूल्य साखळीत एकत्र काम करतात.",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "bizExplore",
+      "trans_value": "सर्व व्यवसाय पहा",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyOverline",
+      "trans_value": "ऊर्जा का निवडावी",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyTitle1",
+      "trans_value": "कारण जे आम्ही घडवतो",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyTitle2",
+      "trans_value": "ते अत्यंत महत्त्वाचे आहे.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyIntro",
+      "trans_value": "आमच्यासाठी शेती हा केवळ व्यवसाय नाही. ती लाखो शेतकरी कुटुंबांचा आधार आणि प्रत्येक भारतीय घरापर्यंत पोहोचणाऱ्या अन्नाचा स्रोत आहे.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyBullet1Title",
+      "trans_value": "शॉर्टकट नाही, खरी क्षमता:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyBullet1Desc",
+      "trans_value": "पहिल्या दिवसापासून दर्जेदार उत्पादन सुनिश्चित करण्यासाठी आम्ही स्वतःचे फीड प्लांट्स, हॅचरीज, ब्रीडर फार्म्स आणि ऑटोमेशनमध्ये गुंतवणूक करतो.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyBullet2Title",
+      "trans_value": "प्रत्यक्ष जमिनीवरील कृषी कौशल्य:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyBullet2Desc",
+      "trans_value": "पशू आनुवंशिकी, समतोल पोषण, पशुवैद्यकीय सहाय्य आणि जैव-सुरक्षित शेतीमधील दोन दशकांहून अधिक काळ प्रत्यक्ष अनुभव.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyBullet3Title",
+      "trans_value": "शेतकरी भागीदारी आणि समृद्धी:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyBullet3Desc",
+      "trans_value": "900+ शेतकरी कुटुंबांसोबत पारदर्शक दर, तांत्रिक मार्गदर्शन आणि विश्वासार्ह बायबॅक हमीसह एकत्रित काम.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyBullet4Title",
+      "trans_value": "शेतातून ताटापर्यंत पूर्ण शुद्धता:",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyBullet4Desc",
+      "trans_value": "संपूर्ण व्हर्टिकल इंटिग्रेशनमुळे स्वच्छ, सुरक्षित आणि पौष्टिक अन्न भारतीय कुटुंबांपर्यंत पोहोचते.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyQuote1",
+      "trans_value": "आम्हाला केवळ भारताच्या अन्न व्यवस्थेचा भाग व्हायचे नाही.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyQuoteHighlight",
+      "trans_value": "आम्हाला ती अधिक सक्षम बनवायची आहे.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyQuote2",
+      "trans_value": "कारण सर्वोत्तम उत्पादनांची सुरुवात दुकानाच्या शेल्फवर होत नाही.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "whyQuoteBadge",
+      "trans_value": "ती उगमापासून सुरू होते.",
+      "category": "why_choose_urja"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrOverline",
+      "trans_value": "शाश्वतता आणि सीएसआर",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrHeading1",
+      "trans_value": "ग्रामीण समुदायांचे सक्षमीकरण",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrHeading2",
+      "trans_value": "जबाबदार विकासाच्या माध्यमातून",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrDesc",
+      "trans_value": "आमचे सामाजिक उत्तरदायित्व पर्यावरण संवर्धन, सर्वसमावेशक रोजगार, जलसंधारण आणि ग्रामीण विकासाला प्राधान्य देते.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrFarmers",
+      "trans_value": "नेटवर्कमधील समर्थित शेतकरी",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrIncome",
+      "trans_value": "भागीदार शेतकऱ्यांच्या उत्पन्नातील सरासरी वाढ",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrEmployment",
+      "trans_value": "स्थानिक स्तरावर निर्माण झालेला प्रत्यक्ष रोजगार",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrWater",
+      "trans_value": "दरवर्षी पुनर्वापर आणि पुनर्भरित केलेले पाणी (लिटर)",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrWomen",
+      "trans_value": "ग्रामीण महिलांसाठी निर्माण झालेला प्रत्यक्ष रोजगार",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrTreesBadge",
+      "trans_value": "1,00,000 वृक्ष लागवड संकल्प",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrTreesTitle",
+      "trans_value": "सक्रिय वनीकरण मोहीम",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrTreesDesc",
+      "trans_value": "जैवविविधता कॉरिडोअर तयार करण्यासाठी पुणे आणि नाशिक ग्रामीण भागात देशी, फळझाडे व सावली देणाऱ्या वृक्षांची लागवड.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrTreesCta",
+      "trans_value": "मोहिमेबद्दल अधिक जाणून घ्या",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrTagline",
+      "trans_value": "अधिक निरोगी पृथ्वीसाठी. अधिक सक्षम समुदायांसाठी.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrScriptText",
+      "trans_value": "एक हरित उद्या, एकत्र.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrSolarTitle",
+      "trans_value": "सौर ऊर्जा क्षमता",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrSolarDesc",
+      "trans_value": "आमच्या सर्व प्रकल्पांमध्ये अपारंपरिक ऊर्जेची गुंतवणूक.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrTreesPlantedTitle",
+      "trans_value": "लागवड केलेली व जतन झालेली झाडे",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrTreesPlantedDesc",
+      "trans_value": "अधिक हरित भविष्याची निर्मिती, एका वेळी एका रोपाने.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrFarmersConnectedTitle",
+      "trans_value": "जोडलेले शेतकरी",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrFarmersConnectedDesc",
+      "trans_value": "आमच्या कृषी परिसंस्थेद्वारे शेतकरी कुटुंबांना शाश्वत आधार.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrEmployeesTitle",
+      "trans_value": "कर्मचारी",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrEmployeesDesc",
+      "trans_value": "रोजगाराच्या माध्यमातून ६००+ कुटुंबांना समर्थ आधार.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrCommitmentSub",
+      "trans_value": "आमची वचनबद्धता",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrCommitmentHeading",
+      "trans_value": "२०३२ पर्यंत १,००,००० झाडे",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrCommitmentNarrative",
+      "trans_value": "अपारंपरिक ऊर्जेपासून वृक्षारोपण आणि शेतकरी विकासापर्यंत, आम्ही सातत्याने शाश्वत विकासाची बांधिलकी जपत आहोत.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrCompanyTag",
+      "trans_value": "ऊर्जा फूड्स अँड ॲग्रो प्रा. लि.",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrPillarPeople",
+      "trans_value": "लोक",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrPillarPlanet",
+      "trans_value": "पर्यावरण",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "csrPillarProgress",
+      "trans_value": "प्रगती",
+      "category": "sustainability"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "journeyCalloutLabel",
+      "trans_value": "चला एकत्र घडूया",
+      "category": "journey"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "journeyCalloutTitle1",
+      "trans_value": "ऊर्जाच्या या प्रवासाचा",
+      "category": "journey"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "journeyCalloutTitle2",
+      "trans_value": "एक भाग व्हा.",
+      "category": "journey"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "journeyCalloutDesc",
+      "trans_value": "तुम्ही शेतकरी, डीलर, व्यावसायिक भागीदार, पुरवठादार किंवा ग्राहक असाल तर ऊर्जाशी जोडून घ्या आणि नवीन संधी शोधा.",
+      "category": "journey"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "journeyCalloutBtn",
+      "trans_value": "संपर्क साधा",
+      "category": "journey"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "ctaLabel",
+      "trans_value": "संपर्क साधा",
+      "category": "cta"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "ctaTitle1",
+      "trans_value": "चला काहीतरी",
+      "category": "cta"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "ctaTitle2",
+      "trans_value": "अर्थपूर्ण निर्माण करूया.",
+      "category": "cta"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "ctaDesc",
+      "trans_value": "भागीदारीसाठी, व्यवसायांची माहिती घेण्यासाठी किंवा आमच्या टीमशी जोडण्यासाठी, आम्हाला आपल्याशी संवाद साधायला आनंद होईल.",
+      "category": "cta"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "ctaBtn",
+      "trans_value": "आमच्याशी संपर्क साधा",
+      "category": "cta"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "language",
+      "trans_value": "भाषा",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "back",
+      "trans_value": "मागे",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "close",
+      "trans_value": "बंद करा",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "packaging",
+      "trans_value": "उपलब्ध पॅकेजिंग:",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "aboutHeroTitle1",
+      "trans_value": "उद्देशपूर्वक उभारणी.",
+      "category": "about"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "aboutHeroTitle2",
+      "trans_value": "जबाबदारीने प्रगती.",
+      "category": "about"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "aboutHeroDesc",
+      "trans_value": "पशु पोषणापासून एकात्मिक कृषी, पोषण आणि अन्न परिसंस्थेपर्यंत.",
+      "category": "about"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "ourJourney",
+      "trans_value": "आमचा प्रवास",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "purposePhilosophy",
+      "trans_value": "आमचे उद्दिष्ट आणि तत्त्वज्ञान",
+      "category": "operations"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "purposeSub",
+      "trans_value": "ऊर्जा फूड्सचे अस्तित्व का आहे, आमची दिशा कोणती आणि आम्ही कसे कार्य करतो हे स्पष्ट करणाऱ्या मूल्यांचा शोध घ्या.",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "exploreMission",
+      "trans_value": "आमचे ध्येय जाणून घ्या",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "exploreVision",
+      "trans_value": "आमची दृष्टी जाणून घ्या",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "exploreValues",
+      "trans_value": "आमची मूल्ये जाणून घ्या",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "missionStatement",
+      "trans_value": "“सतत नवनिर्मिती, प्रामाणिकपणा आणि सांघिक कार्यातून भारतीय शेतकऱ्यांना स्थिर आर्थिक उत्पन्न मिळवून देणे.”",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "visionStatement",
+      "trans_value": "“प्रत्यक्ष किंवा अप्रत्यक्षपणे प्रत्येक भारतीय स्वयंपाकघराचा भाग होणे.”",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "valuesStatement",
+      "trans_value": "“नवनिर्मिती, सचोटी, ‘मी’ पेक्षा ‘आम्ही’, वास्तववादी विचार आणि मार्ग शोधणे.”",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "bizHeroBadge",
+      "trans_value": "५ प्रमुख क्षेत्रांचा पोर्टफोलिओ",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "bizHeroTitle1",
+      "trans_value": "एकात्मिक कृषी व्यवसाय",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "bizHeroTitle2",
+      "trans_value": "मोठ्या प्रमाणावर.",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "bizHeroSubtitle",
+      "trans_value": "पशु पोषण, पोल्ट्री एकात्मता, शुद्ध प्रथिने, सेंद्रिय कृषी निविष्ठा आणि शाश्वत कृषी प्रक्रियेला चालना देणाऱ्या पाच एकमेकांशी जोडलेल्या कंपन्या.",
+      "category": "businesses"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "productsBannerBadge",
+      "trans_value": "प्रयोगशाळा-प्रमाणित पोषण",
+      "category": "products"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "productsBannerTitle",
+      "trans_value": "वैज्ञानिक पशुखाद्य आणि पशुधन उत्पादने",
+      "category": "products"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "productsBannerSub",
+      "trans_value": "निरगुडसर, मंचर येथील आमच्या स्वयंचलित प्लांटमध्ये तयार केलेल्या उच्च-फॅट पशुखाद्य, उच्च-FCR ब्रॉयलर फीड आणि लेयर कॉन्सन्ट्रेट्सची श्रेणी पहा.",
+      "category": "products"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "contactBannerBadge",
+      "trans_value": "त्वरित संवाद",
+      "category": "contact"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "contactBannerTitle",
+      "trans_value": "ऊर्जा कृषी व्यवसाय कक्षाशी संपर्क साधा",
+      "category": "contact"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "contactBannerSub",
+      "trans_value": "पशुखाद्य डीलरशिप, ब्रॉयलर कॉन्ट्रॅक्ट फार्मिंग, जिवंत पक्षी पुरवठा, सोया डिलिव्हरी किंवा तांत्रिक सल्ला याविषयी प्रश्न आहेत? आमची टीम मदतीसाठी सज्ज आहे.",
+      "category": "contact"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "inquiryFormTitle",
+      "trans_value": "चौकशी / डीलरशिप अर्ज पाठवा",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "inquiryFormName",
+      "trans_value": "पूर्ण नाव",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "inquiryFormPhone",
+      "trans_value": "मोबाईल क्रमांक",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "inquiryFormEmail",
+      "trans_value": "ईमेल पत्ता",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "inquiryFormInterest",
+      "trans_value": "स्वारस्याचा विषय",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "inquiryFormDistrict",
+      "trans_value": "जिल्हा",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "inquiryFormMsg",
+      "trans_value": "तुमचा संदेश / आवश्यकता",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "inquiryFormSubmit",
+      "trans_value": "चौकशी पाठवा",
+      "category": "inquiry"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "careersBannerBadge",
+      "trans_value": "प्रतिभा आणि नेतृत्व",
+      "category": "careers"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "careersBannerTitle",
+      "trans_value": "ऊर्जा फूड्स अँड ॲग्रोमध्ये करिअर",
+      "category": "careers"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "careersBannerSub",
+      "trans_value": "महाराष्ट्रात पोल्ट्री एकात्मता, पशुखाद्य निर्मिती आणि ग्रामीण आर्थिक विकासाला नवी दिशा देणाऱ्या आमच्या कृषी संघात सामील व्हा.",
+      "category": "careers"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgLabel",
+      "trans_value": "उत्पादन उत्कृष्टता",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgTitle1",
+      "trans_value": "जिथे तंत्रज्ञान",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgTitle2",
+      "trans_value": "आणि एकात्मता एकत्र येतात",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgIntro",
+      "trans_value": "अचूकता, सातत्य आणि मोठ्या प्रमाणासाठी निर्मित प्रगत तंत्रज्ञान, ऑटोमेशन आणि एकात्मिक उत्पादन क्षमता.",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "testimonialsLabel",
+      "trans_value": "ग्राहकांचे अनुभव",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "testimonialsTitle1",
+      "trans_value": "आमचे भागीदार",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "testimonialsTitle2",
+      "trans_value": "ऊर्जाबद्दल काय म्हणतात.",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "testimonialsDesc",
+      "trans_value": "मजबूत नातेसंबंध हे आमच्या व्यवसायाचा पाया आहेत. कृषी परिसंस्थेत दीर्घकालीन मूल्य निर्माण करण्यासाठी आम्ही शेतकरी, ग्राहक आणि भागीदारांसोबत जवळून काम करतो.",
+      "category": "testimonials"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerTagline",
+      "trans_value": "शेती, पोषण आणि अन्न प्रक्रिया क्षेत्रातील एकात्मिक व्यासपीठाची निर्मिती.",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerHeadquarters",
+      "trans_value": "मुख्यालय",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerCompanyTitle",
+      "trans_value": "कंपनी",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerBizTitle",
+      "trans_value": "आमचे व्यवसाय",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerQuickLinksTitle",
+      "trans_value": "महत्त्वाच्या लिंक्स",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerProductRange",
+      "trans_value": "उत्पादनांची श्रेणी",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerTestimonials",
+      "trans_value": "ग्राहकांचे अनुभव",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerCareers",
+      "trans_value": "करिअर आणि संधी",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerJoinTeam",
+      "trans_value": "आमच्या टीममध्ये सामील व्हा",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerFeedFormulations",
+      "trans_value": "पशुखाद्य फॉर्म्युलेशन्स",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerInquiryDesk",
+      "trans_value": "चौकशी कक्ष",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "footerRightsReserved",
+      "trans_value": "सर्व हक्क राखीव.",
+      "category": "footer"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgPoint1Desc",
+      "trans_value": "स्वयंचलित आणि पारंपारिक पशुखाद्य निर्मिती",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgPoint2Title",
+      "trans_value": "पीएलसी नियंत्रित",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgPoint2Desc",
+      "trans_value": "स्वयंचलित उत्पादन प्रणाली",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgPoint3Title",
+      "trans_value": "पर्यावरण-नियंत्रित शेड्स",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgPoint3Desc",
+      "trans_value": "स्वयंचलित खाद्य व पाणी पुरवठा",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgPoint4Title",
+      "trans_value": "इन-हाउस",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgPoint4Desc",
+      "trans_value": "प्रीमिक्स आणि सोया प्रक्रिया",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgPoint5Title",
+      "trans_value": "अचूकता",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "mfgPoint5Desc",
+      "trans_value": "अचूक बॅचिंग व मायक्रो-डोसिंग",
+      "category": "manufacturing"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "opBadge",
+      "trans_value": "ऑपरेशन्स आणि व्यवसाय मॉडेल",
+      "category": "operations"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "opHeading",
+      "trans_value": "एकात्मिक कृषी व्यवसाय कार्यपद्धती",
+      "category": "operations"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "opSubtitle",
+      "trans_value": "कच्च्या मालाच्या खरेदीपासून स्वयंचलित पशुखाद्य निर्मिती, ब्रीडर फार्मिंग, कंत्राटी ब्रॉयलर शेती आणि स्वच्छ वितरणापर्यंत ऊर्जा प्रत्येक टप्प्याचे व्यवस्थापन करते.",
+      "category": "operations"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-foods_title",
+      "trans_value": "ऊर्जा फूड्स",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-foods_category",
+      "trans_value": "एकात्मिक कुक्कुटपालन",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-foods_tagline",
+      "trans_value": "पशुखाद्य निर्मिती, प्रजनन, हॅचरीज, शेती आणि पक्षी पुरवठ्यामध्ये एकात्मिक पोल्ट्री संचालन.",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-pashu-aahar_title",
+      "trans_value": "ऊर्जा पशु आहार",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-pashu-aahar_category",
+      "trans_value": "पशु पोषण",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-pashu-aahar_tagline",
+      "trans_value": "दूध उत्पादन वाढीसाठी तयार केलेले वैज्ञानिक पशुखाद्य, वासरू स्टार्टर आणि खनिज मिश्रणे.",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "poushtik-chicken_title",
+      "trans_value": "पौष्टिक चिकन",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "poushtik-chicken_category",
+      "trans_value": "फार्म-ताजे प्रथिने",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "poushtik-chicken_tagline",
+      "trans_value": "जैव-सुरक्षित शेतांमधून थेट स्वच्छ, अँटीबायोटिक-मुक्त ताजे चिकन.",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-organic_title",
+      "trans_value": "ऊर्जा ऑरगॅनिक",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-organic_category",
+      "trans_value": "माती व पीक पोषण",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-organic_tagline",
+      "trans_value": "मातीची सुपिकता वाढवणारे समृद्ध सेंद्रिय खत आणि नैसर्गिक भूसुधारक.",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-soya_title",
+      "trans_value": "ऊर्जा सोया",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-soya_category",
+      "trans_value": "कृषी प्रक्रिया",
+      "category": "general"
+    },
+    {
+      "lang_code": "mr",
+      "trans_key": "urja-soya_tagline",
+      "trans_value": "प्रीमियम नॉन-जीएमओ सोया डीओसी आणि सोया तेल, जे उच्च दर्जाच्या पशुखाद्याचा पाया आहेत.",
+      "category": "general"
+    }
+  ]
+}

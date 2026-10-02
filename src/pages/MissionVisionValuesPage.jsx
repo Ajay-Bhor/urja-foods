@@ -18,8 +18,10 @@ import {
   Award,
 } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function MissionVisionValuesPage() {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('mission');
 
   useEffect(() => {
@@ -30,12 +32,12 @@ export default function MissionVisionValuesPage() {
     {
       id: 'mission',
       kicker: 'WHAT DRIVES US',
-      title: 'Our Mission',
-      statement:
+      title: t('navOurMission') || 'Our Mission',
+      statement: t('missionStatement') ||
         '“To provide stable financial income to Indian farmers through continuous innovation, honesty and teamwork.”',
       desc: 'Discover our grassroots farmer empowerment initiatives, guaranteed buyback models, and scientific rations.',
       link: '/our-mission',
-      btnText: 'Explore Our Mission',
+      btnText: t('exploreMission') || 'Explore Our Mission',
       icon: <Target size={28} color="#173b24" />,
       accentBg: '#eaf5eb',
       accentBorder: '#cce5ce',
@@ -43,12 +45,12 @@ export default function MissionVisionValuesPage() {
     {
       id: 'vision',
       kicker: 'WHERE WE ARE GOING',
-      title: 'Our Vision',
-      statement:
+      title: t('navOurVision') || 'Our Vision',
+      statement: t('visionStatement') ||
         '“To be a part of every Indian kitchen — directly or indirectly.”',
       desc: 'Explore our feed-to-fork integrated ecosystem that connects animal nutrition, bio-secure farms, and household dining tables.',
       link: '/our-vision',
-      btnText: 'Explore Our Vision',
+      btnText: t('exploreVision') || 'Explore Our Vision',
       icon: <Eye size={28} color="#173b24" />,
       accentBg: '#e8f4fa',
       accentBorder: '#c8e2f2',
@@ -56,12 +58,12 @@ export default function MissionVisionValuesPage() {
     {
       id: 'values',
       kicker: 'WHAT GUIDES US',
-      title: 'Values That Move Us',
-      statement:
+      title: t('navCoreValues') || 'Values That Move Us',
+      statement: t('valuesStatement') ||
         '“Innovation, Integrity, We Before Me, Be Real, and Find a Way.”',
       desc: 'The five foundational principles that define our work culture, farmer partnerships, and long-term business decisions.',
       link: '/values',
-      btnText: 'Explore Values That Move Us',
+      btnText: t('exploreValues') || 'Explore Values That Move Us',
       icon: <Compass size={28} color="#173b24" />,
       accentBg: '#fef7e8',
       accentBorder: '#f8e6be',
@@ -72,10 +74,10 @@ export default function MissionVisionValuesPage() {
     <main className="mvv-page-view" id="main-content">
       {/* 1. Page Header Banner */}
       <PageBanner
-        badge="OUR FOUNDATIONAL PILLARS"
-        title="Mission, Vision & Values"
-        subtitle="Explore the core foundations that define why Urja Foods exists, where we are heading, and how we operate every day on separate dedicated pages."
-        breadcrumb="Mission, Vision & Values"
+        badge={t('purposePhilosophy') || "OUR FOUNDATIONAL PILLARS"}
+        title={t('navMissionVisionValues') || "Mission, Vision & Values"}
+        subtitle={t('purposeSub') || "Explore the core foundations that define why Urja Foods exists, where we are heading, and how we operate every day on separate dedicated pages."}
+        breadcrumb={t('navMissionVisionValues') || "Mission, Vision & Values"}
       />
 
       {/* 2. Main Three Gateway Cards Section */}

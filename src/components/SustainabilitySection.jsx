@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../hooks/LanguageContext';
 
 // ---------------------------------------------------------------------------
 // CONFIGURABLE SUSTAINABILITY TARGETS
@@ -9,17 +10,16 @@ const SUSTAINABILITY_TARGETS = {
   trees: 25000,         // 25,000+ Trees Planted & Survived
   farmers: 3000,        // 3,000+ Farmers Connected
   employees: 600,       // 600+ Employees
-  commitmentTrees: 100000, // 1,00,000 Trees by 2032
 };
 
 export default function SustainabilitySection() {
+  const { t } = useLanguage();
   const [hasAnimated, setHasAnimated] = useState(false);
   const [counts, setCounts] = useState({
-    solar: 0,
-    trees: 0,
-    farmers: 0,
-    employees: 0,
-    commitmentTrees: 0,
+    solar: SUSTAINABILITY_TARGETS.solar,
+    trees: SUSTAINABILITY_TARGETS.trees,
+    farmers: SUSTAINABILITY_TARGETS.farmers,
+    employees: SUSTAINABILITY_TARGETS.employees,
   });
 
   const sectionRef = useRef(null);
@@ -44,7 +44,6 @@ export default function SustainabilitySection() {
               trees: Math.floor(ease * SUSTAINABILITY_TARGETS.trees),
               farmers: Math.floor(ease * SUSTAINABILITY_TARGETS.farmers),
               employees: Math.floor(ease * SUSTAINABILITY_TARGETS.employees),
-              commitmentTrees: Math.floor(ease * SUSTAINABILITY_TARGETS.commitmentTrees),
             });
 
             if (progress < 1) {
@@ -55,7 +54,6 @@ export default function SustainabilitySection() {
                 trees: SUSTAINABILITY_TARGETS.trees,
                 farmers: SUSTAINABILITY_TARGETS.farmers,
                 employees: SUSTAINABILITY_TARGETS.employees,
-                commitmentTrees: SUSTAINABILITY_TARGETS.commitmentTrees,
               });
             }
           };
@@ -77,8 +75,8 @@ export default function SustainabilitySection() {
     {
       id: 'solar',
       number: `${counts.solar.toFixed(1)} MW`,
-      title: 'SOLAR POWER CAPACITY',
-      desc: 'Investing in renewable energy across our operations.',
+      title: t('csrSolarTitle'),
+      desc: t('csrSolarDesc'),
       icon: (
         <svg viewBox="0 0 44 44" width="32" height="32" fill="none" stroke="#173b24" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           {/* Sun with rays */}
@@ -98,8 +96,8 @@ export default function SustainabilitySection() {
     {
       id: 'trees',
       number: `${counts.trees.toLocaleString('en-IN')}+`,
-      title: 'TREES PLANTED & SURVIVED',
-      desc: 'Building a greener future, one plantation at a time.',
+      title: t('csrTreesPlantedTitle'),
+      desc: t('csrTreesPlantedDesc'),
       icon: (
         <svg viewBox="0 0 44 44" width="32" height="32" fill="none" stroke="#173b24" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           {/* Left Tree */}
@@ -118,8 +116,8 @@ export default function SustainabilitySection() {
     {
       id: 'farmers',
       number: `${counts.farmers.toLocaleString('en-IN')}+`,
-      title: 'FARMERS CONNECTED',
-      desc: 'Livelihoods supported through our agricultural ecosystem.',
+      title: t('csrFarmersConnectedTitle'),
+      desc: t('csrFarmersConnectedDesc'),
       icon: (
         <svg viewBox="0 0 44 44" width="32" height="32" fill="none" stroke="#173b24" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           {/* Conical hat / farmer straw hat */}
@@ -139,8 +137,8 @@ export default function SustainabilitySection() {
     {
       id: 'employees',
       number: `${counts.employees.toLocaleString('en-IN')}+`,
-      title: 'EMPLOYEES',
-      desc: 'Supporting 600+ families through employment.',
+      title: t('csrEmployeesTitle'),
+      desc: t('csrEmployeesDesc'),
       icon: (
         <svg viewBox="0 0 44 44" width="32" height="32" fill="none" stroke="#173b24" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           {/* Center Leader / Employee */}
@@ -164,22 +162,22 @@ export default function SustainabilitySection() {
         {/* Top Header Block: Headline on Left, Narrative & Script on Right */}
         <div className="urja-sus-topbar">
           <div className="urja-sus-title-col">
-            <span className="urja-sus-badge">SUSTAINABILITY &amp; CSR</span>
+            <span className="urja-sus-badge">{t('csrOverline')}</span>
             <h2 className="urja-sus-headline">
-              Growing Responsibly.<br />
-              Supporting Tomorrow.
+              {t('csrHeading1')}<br />
+              {t('csrHeading2')}
             </h2>
             <p className="urja-sus-tagline">
-              FOR A HEALTHIER PLANET. STRONGER COMMUNITIES.
+              {t('csrTagline')}
             </p>
           </div>
 
           <div className="urja-sus-narrative-col">
             <p className="urja-sus-statement">
-              Our responsibility goes beyond our business. We are committed to creating a positive and lasting impact across the environment, farming communities and the people who make Urja stronger.
+              {t('csrDesc')}
             </p>
             <div className="urja-sus-script-box">
-              <span className="urja-sus-script-text">A greener tomorrow, together.</span>
+              <span className="urja-sus-script-text">{t('csrScriptText')}</span>
               <svg width="180" height="20" viewBox="0 0 180 20" fill="none" stroke="#467853" strokeWidth="2.2" strokeLinecap="round" className="urja-sus-swoosh" aria-hidden="true">
                 <path d="M5 8 C45 15, 115 15, 165 6 C172 4.5, 175 8, 168 12 C154 17, 122 16, 95 15" />
               </svg>
@@ -194,7 +192,7 @@ export default function SustainabilitySection() {
               <div className="urja-sus-icon-ring">
                 {item.icon}
               </div>
-              <div className="urja-sus-metric-num">{item.number}</div>
+              <div className="urja-sus-metric-num notranslate">{item.number}</div>
               <div className="urja-sus-metric-title">{item.title}</div>
               <p className="urja-sus-metric-desc">{item.desc}</p>
             </div>
@@ -210,10 +208,10 @@ export default function SustainabilitySection() {
                 <path d="M7 21c5-5 11-9 19-15" />
               </svg>
             </div>
-            <div className="urja-sus-commitment-meta">
-              <span className="urja-sus-commitment-sub">OUR COMMITMENT</span>
-              <h3 className="urja-sus-commitment-heading">
-                {counts.commitmentTrees.toLocaleString('en-IN')} Trees by 2032
+            <div className="urja-sus-commitment-meta notranslate" translate="no">
+              <span className="urja-sus-commitment-sub notranslate" translate="no">{t('csrCommitmentSub')}</span>
+              <h3 className="urja-sus-commitment-heading notranslate" translate="no">
+                {t('csrCommitmentHeading')}
               </h3>
             </div>
           </div>
@@ -221,19 +219,19 @@ export default function SustainabilitySection() {
           <div className="urja-sus-commitment-divider" aria-hidden="true"></div>
 
           <p className="urja-sus-commitment-narrative">
-            From renewable energy to tree plantation and farmer development, we continue to build sustainability into the way we grow.
+            {t('csrCommitmentNarrative')}
           </p>
         </div>
 
         {/* Bottom Sub-brand Footer Ribbon */}
-        <div className="urja-sus-footer-ribbon">
-          <span className="urja-sus-company-tag">URJA FOODS &amp; AGRO PVT LTD</span>
-          <div className="urja-sus-pillars">
-            <span>PEOPLE</span>
+        <div className="urja-sus-footer-ribbon notranslate" translate="no">
+          <span className="urja-sus-company-tag notranslate" translate="no">{t('csrCompanyTag')}</span>
+          <div className="urja-sus-pillars notranslate" translate="no">
+            <span>{t('csrPillarPeople')}</span>
             <span className="pillar-sep">·</span>
-            <span>PLANET</span>
+            <span>{t('csrPillarPlanet')}</span>
             <span className="pillar-sep">·</span>
-            <span>PROGRESS</span>
+            <span>{t('csrPillarProgress')}</span>
           </div>
         </div>
 

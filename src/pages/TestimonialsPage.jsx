@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { MapPin, Quote, ArrowRight } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
 import Testimonials from '../components/Testimonials';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function TestimonialsPage() {
+  const { t } = useLanguage();
   const impactMetrics = [
     {
       value: '+0.8%',
@@ -74,10 +76,10 @@ export default function TestimonialsPage() {
     <div className="testimonials-page-view">
       {/* 1. Header Banner */}
       <PageBanner
-        badge="Farmer Stories & Verifiable Results"
-        title="Real Voices From the Field"
+        badge={t('testimonialsLabel') || "Farmer Stories & Verifiable Results"}
+        title={t('footerTestimonials') || "Real Voices From the Field"}
         subtitle="Discover how 10,000+ dairy milk producers and contract broiler growers across Maharashtra achieve higher profitability, healthier herds, and guaranteed buybacks with Urja Foods."
-        breadcrumb="Farmer Testimonials"
+        breadcrumb={t('footerTestimonials') || "Farmer Testimonials"}
       />
 
       {/* 2. Verifiable Impact Numbers */}

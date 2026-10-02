@@ -1,6 +1,6 @@
 /* ==========================================================================
-   URJA FOODS - LUXURY ANIMATED COMPANY LOGO PRELOADER
-   First-Time Website Loading Experience
+   URJA FOODS - LUXURY BRAND PRELOADER (DEEP FOREST & GOLD THEME)
+   Matches the cinematic hero video and corporate agribusiness palette
    ========================================================================== */
 
 /* Fullscreen Backdrop Overlay */
@@ -8,7 +8,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999999;
-  background: radial-gradient(ellipse at 50% 40%, #ffffff 0%, #f4fbf4 45%, #ebf7ec 75%, #e1f1e3 100%);
+  background: radial-gradient(ellipse at 50% 36%, #0d2818 0%, #091f13 45%, #05140b 78%, #030c06 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,8 +29,8 @@
 /* Cinematic Exit Dissolve */
 .urja-company-preloader-overlay.is-fading-out {
   opacity: 0;
-  transform: scale(1.08);
-  filter: blur(6px);
+  transform: scale(1.06);
+  filter: blur(8px);
   pointer-events: none;
   visibility: hidden;
 }
@@ -43,27 +43,27 @@
   top: 38%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 580px;
-  height: 580px;
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(74, 222, 128, 0.28) 0%, rgba(34, 197, 94, 0.12) 40%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.2) 0%, rgba(34, 197, 94, 0.08) 45%, transparent 70%);
   animation: preloaderAuraPulse 3.8s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 1;
-  filter: blur(20px);
+  filter: blur(28px);
 }
 
 .urja-preloader-ambient-glow.secondary {
-  top: 62%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(200, 157, 83, 0.18) 0%, rgba(74, 222, 128, 0.08) 45%, rgba(255, 255, 255, 0) 70%);
+  top: 60%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(212, 163, 115, 0.16) 0%, rgba(74, 222, 128, 0.05) 50%, transparent 70%);
   animation-delay: -1.9s;
 }
 
 @keyframes preloaderAuraPulse {
   0% {
-    transform: translate(-50%, -50%) scale(0.85);
+    transform: translate(-50%, -50%) scale(0.88);
     opacity: 0.6;
   }
   50% {
@@ -71,7 +71,7 @@
     opacity: 0.95;
   }
   100% {
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.22);
     opacity: 0.7;
   }
 }
@@ -82,27 +82,27 @@
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
-  box-shadow: 0 0 10px currentColor;
+  box-shadow: 0 0 12px currentColor;
   animation: particleFloat 4.5s ease-in-out infinite alternate;
 }
 
 .urja-preloader-particle.p1 {
   width: 8px;
   height: 8px;
-  top: 22%;
+  top: 20%;
   left: 24%;
   color: #4ade80;
-  background: rgba(74, 222, 128, 0.6);
+  background: rgba(74, 222, 128, 0.7);
   animation-duration: 3.6s;
 }
 
 .urja-preloader-particle.p2 {
   width: 6px;
   height: 6px;
-  top: 70%;
+  top: 72%;
   left: 28%;
-  color: #c89d53;
-  background: rgba(200, 157, 83, 0.6);
+  color: #d4a373;
+  background: rgba(212, 163, 115, 0.7);
   animation-duration: 5s;
   animation-delay: -1.2s;
 }
@@ -110,10 +110,10 @@
 .urja-preloader-particle.p3 {
   width: 9px;
   height: 9px;
-  top: 26%;
+  top: 24%;
   right: 22%;
   color: #22c55e;
-  background: rgba(34, 197, 94, 0.6);
+  background: rgba(34, 197, 94, 0.7);
   animation-duration: 4.2s;
   animation-delay: -2.4s;
 }
@@ -121,10 +121,10 @@
 .urja-preloader-particle.p4 {
   width: 7px;
   height: 7px;
-  top: 68%;
+  top: 70%;
   right: 25%;
-  color: #e5b86f;
-  background: rgba(229, 184, 111, 0.6);
+  color: #faedcd;
+  background: rgba(250, 237, 205, 0.65);
   animation-duration: 4.8s;
   animation-delay: -0.7s;
 }
@@ -135,7 +135,7 @@
   top: 48%;
   left: 15%;
   color: #86efac;
-  background: rgba(134, 239, 172, 0.5);
+  background: rgba(134, 239, 172, 0.6);
   animation-duration: 5.5s;
   animation-delay: -3.1s;
 }
@@ -146,7 +146,7 @@
   top: 52%;
   right: 16%;
   color: #4ade80;
-  background: rgba(74, 222, 128, 0.5);
+  background: rgba(74, 222, 128, 0.6);
   animation-duration: 5.2s;
   animation-delay: -1.8s;
 }
@@ -154,15 +154,15 @@
 @keyframes particleFloat {
   0% {
     transform: translateY(0) translateX(0) scale(0.85);
-    opacity: 0.3;
+    opacity: 0.35;
   }
   50% {
     transform: translateY(-16px) translateX(6px) scale(1.15);
-    opacity: 0.85;
+    opacity: 0.9;
   }
   100% {
     transform: translateY(-32px) translateX(-6px) scale(0.9);
-    opacity: 0.4;
+    opacity: 0.45;
   }
 }
 
@@ -214,14 +214,14 @@
 .urja-orbit-concentric-ring.outer-orbit {
   width: 330px;
   height: 170px;
-  border: 1.5px dashed rgba(46, 125, 50, 0.22);
+  border: 1.5px dashed rgba(139, 224, 157, 0.28);
   animation: orbitRingSpin 24s linear infinite;
 }
 
 .urja-orbit-concentric-ring.inner-pulse {
   width: 290px;
   height: 140px;
-  border: 1.5px solid rgba(74, 222, 128, 0.35);
+  border: 1.5px solid rgba(74, 222, 128, 0.4);
   animation: auraRingBreathe 3s ease-in-out infinite alternate;
 }
 
@@ -237,13 +237,13 @@
 @keyframes auraRingBreathe {
   0% {
     transform: scale(0.96);
-    border-color: rgba(74, 222, 128, 0.25);
-    box-shadow: 0 0 15px rgba(74, 222, 128, 0.05);
+    border-color: rgba(74, 222, 128, 0.3);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.1);
   }
   100% {
     transform: scale(1.08);
-    border-color: rgba(34, 197, 94, 0.6);
-    box-shadow: 0 0 25px rgba(74, 222, 128, 0.25);
+    border-color: rgba(74, 222, 128, 0.65);
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
   }
 }
 
@@ -253,7 +253,7 @@
   width: 260px;
   height: 120px;
   border-radius: 40px;
-  border: 1.5px solid rgba(34, 197, 94, 0.5);
+  border: 1.5px solid rgba(74, 222, 128, 0.45);
   pointer-events: none;
   animation: radarWaveExpand 2.6s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
 }
@@ -268,7 +268,7 @@
     opacity: 0.8;
   }
   60% {
-    opacity: 0.3;
+    opacity: 0.25;
   }
   100% {
     transform: scale(1.28);
@@ -282,13 +282,13 @@
 .urja-preloader-logo-ring {
   position: relative;
   background: #ffffff;
-  padding: 24px 38px;
-  border-radius: 24px;
-  border: 1.5px solid #d4ebd6;
+  padding: 24px 42px;
+  border-radius: 22px;
+  border: 1.5px solid rgba(139, 224, 157, 0.45);
   box-shadow: 
-    0 20px 50px rgba(20, 83, 45, 0.12),
-    0 8px 20px rgba(0, 0, 0, 0.03),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 28px 70px rgba(0, 0, 0, 0.55),
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(74, 222, 128, 0.2);
   z-index: 3;
   animation: logoPedestalFloat 3s ease-in-out infinite alternate;
   overflow: hidden;
@@ -299,14 +299,16 @@
   0% {
     transform: translateY(0) scale(1);
     box-shadow: 
-      0 18px 45px rgba(20, 83, 45, 0.1),
-      0 4px 14px rgba(0, 0, 0, 0.03);
+      0 24px 60px rgba(0, 0, 0, 0.5),
+      0 8px 20px rgba(0, 0, 0, 0.3),
+      0 0 30px rgba(74, 222, 128, 0.15);
   }
   100% {
-    transform: translateY(-6px) scale(1.015);
+    transform: translateY(-6px) scale(1.02);
     box-shadow: 
-      0 26px 60px rgba(20, 83, 45, 0.18),
-      0 8px 24px rgba(34, 197, 94, 0.12);
+      0 34px 80px rgba(0, 0, 0, 0.65),
+      0 14px 35px rgba(0, 0, 0, 0.4),
+      0 0 50px rgba(74, 222, 128, 0.35);
   }
 }
 
@@ -321,18 +323,16 @@
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 3px 8px rgba(20, 83, 45, 0.08));
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.06));
   animation: logoSubtlePulse 2.4s ease-in-out infinite alternate;
 }
 
 @keyframes logoSubtlePulse {
   0% {
     transform: scale(1);
-    filter: drop-shadow(0 2px 6px rgba(20, 83, 45, 0.08));
   }
   100% {
     transform: scale(1.03);
-    filter: drop-shadow(0 8px 20px rgba(34, 197, 94, 0.28));
   }
 }
 
@@ -346,7 +346,7 @@
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0.9) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: rotate(26deg);
@@ -382,27 +382,26 @@
   margin-bottom: 22px;
 }
 
-/* Shimmering Metallic Heading */
+/* Shimmering Metallic Gold & Emerald Heading */
 .urja-preloader-overline {
   display: inline-block;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 800;
   letter-spacing: 3.5px;
   text-transform: uppercase;
   background: linear-gradient(
     90deg, 
-    #14532D 0%, 
-    #2E7D32 25%, 
-    #c89d53 45%, 
-    #4ade80 65%, 
-    #2E7D32 85%, 
-    #14532D 100%
+    #d4a373 0%, 
+    #faedcd 25%, 
+    #8be09d 50%, 
+    #faedcd 75%, 
+    #d4a373 100%
   );
   background-size: 250% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: metallicTextFlow 3s linear infinite;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 @keyframes metallicTextFlow {
@@ -415,11 +414,11 @@
 }
 
 .urja-preloader-tagline {
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
   font-size: 13.5px;
-  color: #3b5a43;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+  color: rgba(226, 232, 240, 0.85);
+  font-weight: 500;
+  letter-spacing: 0.4px;
 }
 
 /* Dynamic Live Status Caption */
@@ -428,12 +427,14 @@
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #2e7d32;
+  color: #86efac;
   font-weight: 600;
-  background: rgba(220, 243, 222, 0.7);
-  border: 1px solid rgba(74, 222, 128, 0.4);
-  padding: 4px 14px;
+  background: rgba(16, 52, 29, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  padding: 5px 16px;
   border-radius: 9999px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.35s ease;
   min-height: 28px;
 }
@@ -457,23 +458,24 @@
    5. GLOWING PROGRESS BAR & LIVE PERCENTAGE BADGE
    -------------------------------------------------------------------------- */
 .urja-preloader-progress-track {
-  width: 260px;
+  width: 270px;
   height: 6px;
-  background: #deecdf;
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 9999px;
   overflow: visible;
   position: relative;
   margin-bottom: 12px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .urja-preloader-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #14532D 0%, #2E7D32 35%, #4ade80 75%, #c89d53 100%);
+  background: linear-gradient(90deg, #10b981 0%, #34d399 45%, #8be09d 75%, #e2c992 100%);
   border-radius: 9999px;
   transition: width 0.08s linear;
   position: relative;
-  box-shadow: 0 0 12px rgba(74, 222, 128, 0.8);
+  box-shadow: 0 0 16px rgba(74, 222, 128, 0.9);
 }
 
 /* Leading radiant spark at edge of progress */
@@ -489,7 +491,7 @@
   box-shadow: 
     0 0 12px 3px #4ade80,
     0 0 4px #ffffff,
-    0 0 18px 5px rgba(200, 157, 83, 0.6);
+    0 0 18px 5px rgba(226, 201, 146, 0.8);
   animation: sparkPulse 0.9s infinite alternate;
 }
 
@@ -511,10 +513,10 @@
 }
 
 .urja-preloader-percent-badge {
-  font-size: 13px;
-  font-weight: 800;
-  color: #14532D;
-  letter-spacing: 0.5px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #8be09d;
+  letter-spacing: 0.8px;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
 }
@@ -523,8 +525,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 8px #22c55e;
+  background: #4ade80;
+  box-shadow: 0 0 10px #4ade80;
   animation: preloaderLiveDot 1.2s infinite ease-in-out;
 }
 
@@ -574,6 +576,6 @@
   }
   .urja-preloader-status-caption {
     font-size: 11px;
-    padding: 3px 10px;
+    padding: 4px 12px;
   }
 }

@@ -39,31 +39,34 @@ export default function Topbar() {
       <div className="container topbar-content">
         {/* Left: Contact Info */}
         <div className="topbar-left">
-          <a href="tel:+917028939900" className="topbar-item" id="topbar-phone">
-            <Phone size={14} />
+          <a href="tel:+917028939900" className="topbar-item" id="topbar-phone" title="Call Urja Foods">
+            <Phone size={13} />
             <span>+91-7028939900</span>
           </a>
-          <a href="mailto:info@urjafoods.net" className="topbar-item" id="topbar-email">
-            <Mail size={14} />
+          <span className="topbar-divider" aria-hidden="true" />
+          <a href="mailto:info@urjafoods.net" className="topbar-item" id="topbar-email" title="Email Urja Foods">
+            <Mail size={13} />
             <span>info@urjafoods.net</span>
           </a>
+          <span className="topbar-divider" aria-hidden="true" />
           <a
             href="https://maps.app.goo.gl/HCsm2Bz2evDqz1JK9"
             target="_blank"
             rel="noopener noreferrer"
-            className="topbar-item"
+            className="topbar-item topbar-location-item"
             id="topbar-location"
-            title="Open Urja Foods in Google Maps"
+            title="HP House, Nirgudsar, Manchar - 410503 (Open Google Maps)"
             style={{ textDecoration: 'none' }}
           >
-            <MapPin size={14} />
-            <span>{t('topbarLocation')}</span>
+            <MapPin size={13} />
+            <span className="topbar-loc-full">{t('topbarLocation')}</span>
+            <span className="topbar-loc-short">Nirgudsar, Pune</span>
           </a>
         </div>
 
         {/* Right: Operational Hours, Certification Badge & Language Switcher */}
         <div className="topbar-right">
-          <div className="topbar-item" id="topbar-hours">
+          <div className="topbar-item topbar-hours-item" id="topbar-hours">
             <Clock size={13} />
             <span>{t('topbarHours')}</span>
           </div>

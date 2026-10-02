@@ -12,8 +12,11 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function MissionPage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -53,9 +56,9 @@ export default function MissionPage() {
       {/* 1. Page Header Banner */}
       <PageBanner
         badge="WHAT DRIVES US"
-        title="Our Mission"
+        title={t('navOurMission') || "Our Mission"}
         subtitle="Empowering Indian farmers and building a resilient, transparent agricultural value chain through continuous innovation, honesty, and teamwork."
-        breadcrumb="Our Mission"
+        breadcrumb={t('navOurMission') || "Our Mission"}
       />
 
       {/* 2. Central Mission Statement Showcase */}

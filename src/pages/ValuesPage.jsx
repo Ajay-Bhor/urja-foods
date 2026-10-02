@@ -11,8 +11,11 @@ import {
   Eye,
 } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function ValuesPage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -60,9 +63,9 @@ export default function ValuesPage() {
       {/* 1. Page Header Banner */}
       <PageBanner
         badge="WHAT GUIDES US"
-        title="Values That Move Us"
+        title={t('navCoreValues') || "Values That Move Us"}
         subtitle="Our five founding values shape how we think, work, partner, and grow together across every stage of our ecosystem."
-        breadcrumb="Values That Move Us"
+        breadcrumb={t('navCoreValues') || "Values That Move Us"}
       />
 
       {/* 2. Values Cards Showcase */}

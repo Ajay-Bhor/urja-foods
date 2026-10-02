@@ -1,10 +1,22 @@
 import { useEffect } from 'react';
 
 /**
+ * Global helper to immediately reveal all scroll-animated content
+ * Ensures zero blank or invisible elements during back/forward navigation.
+ */
+export function revealAllContent() {
+  if (typeof document !== 'undefined') {
+    document.querySelectorAll('.animate-on-scroll:not(.is-visible)').forEach((el) => {
+      el.classList.add('is-visible');
+    });
+  }
+}
+
+/**
  * useScrollReveal Hook
  * Automatically attaches an IntersectionObserver to elements with `.animate-on-scroll`
  * and applies `.is-visible` when they enter the viewport.
- * Includes safety timeout so NO element is ever stuck invisible.
+ * Resilient against history navigation: immediately reveals all content on popstate / restore.
  */
 export default function useScrollReveal(dependency) {
   useEffect(() => {
@@ -19,8 +31,8 @@ export default function useScrollReveal(dependency) {
 
     const observerOptions = {
       root: null,
-      rootMargin: '50px 0px 50px 0px',
-      threshold: 0.05,
+      rootMargin: '100px 0px 100px 0px',
+      threshold: 0.02,
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
@@ -30,24 +42,34 @@ export default function useScrollReveal(dependency) {
     const viewportHeight = window.innerHeight || 800;
     elements.forEach((el) => {
       const rect = el.getBoundingClientRect();
-      if (rect.top <= viewportHeight + 100 && rect.bottom >= -50) {
+      if (rect.top <= viewportHeight + 150 && rect.bottom >= -100) {
         el.classList.add('is-visible');
       } else {
         observer.observe(el);
       }
     });
 
-    // Safety timeout: ensure all content becomes visible quickly
+    // Rapid safety timeout: ensure all content becomes visible quickly
     const timer = setTimeout(() => {
-      document.querySelectorAll('.animate-on-scroll:not(.is-visible)').forEach((el) => {
-        el.classList.add('is-visible');
-      });
-    }, 250);
+      revealAllContent();
+    }, 100);
+
+    // Listen for history restore events
+    const handleRestore = () => {
+      revealAllContent();
+    };
+
+    window.addEventListener('popstate', handleRestore);
+    window.addEventListener('pageshow', handleRestore);
+    window.addEventListener('urja:route-restored', handleRestore);
 
     return () => {
       clearTimeout(timer);
       elements.forEach((el) => observer.unobserve(el));
       observer.disconnect();
+      window.removeEventListener('popstate', handleRestore);
+      window.removeEventListener('pageshow', handleRestore);
+      window.removeEventListener('urja:route-restored', handleRestore);
     };
   }, [dependency]);
 }

@@ -325,6 +325,13 @@
   will-change: opacity, transform;
 }
 
+/* Instant display on history back/forward navigation - Zero blank flash */
+.page-transition-container.no-fade-pop {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 @keyframes pageFadeSlide {
   0% {
     opacity: 0;

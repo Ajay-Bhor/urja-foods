@@ -18,7 +18,9 @@ import {
   Check,
 } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import UrjaFoodsShowcase from '../components/UrjaFoodsShowcase';
 import { BUSINESSES_DATA, BUSINESS_ALIASES } from '../data/businessesData';
+import { useLanguage } from '../hooks/LanguageContext';
 
 // Map IDs to specific Lucide icons
 const ICONS_MAP = {
@@ -38,6 +40,7 @@ const ICONS_MAP = {
 export default function BusinessDetailPage({ onQuickInquire }) {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const resolvedId = BUSINESS_ALIASES[id] || id;
   const business = BUSINESSES_DATA.find((b) => b.id === resolvedId);
@@ -78,7 +81,7 @@ export default function BusinessDetailPage({ onQuickInquire }) {
         subtitle={business.tagline}
         breadcrumb={business.shortTitle}
         parentLink="/businesses"
-        parentLabel="Our Businesses"
+        parentLabel={t('navBusinesses') || "Our Businesses"}
       />
 
       {/* 2. Main Narrative & Quick Stats */}
@@ -111,28 +114,30 @@ export default function BusinessDetailPage({ onQuickInquire }) {
               <p className="business-hero-desc">{business.overview}</p>
 
               {/* Farmer Benefits Checklist */}
-              <div className="business-hero-highlights">
-                <h4 style={{ fontSize: '1.05rem', color: '#0f172a', marginBottom: '0.85rem', fontWeight: 700 }}>
-                  Key Advantages for Our Partners:
-                </h4>
-                <ul className="business-highlights-list">
-                  {business.farmerBenefits.map((benefit, bIdx) => (
-                    <li key={bIdx}>
-                      <CheckCircle2 size={18} color={business.accentColor} style={{ minWidth: '18px', marginTop: '3px' }} />
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {business.farmerBenefits && business.farmerBenefits.length > 0 && (
+                <div className="business-hero-highlights">
+                  <h4 style={{ fontSize: '1.05rem', color: '#0f172a', marginBottom: '0.85rem', fontWeight: 700 }}>
+                    Key Advantages for Our Partners:
+                  </h4>
+                  <ul className="business-highlights-list">
+                    {business.farmerBenefits.map((benefit, bIdx) => (
+                      <li key={bIdx}>
+                        <CheckCircle2 size={18} color={business.accentColor || '#17432d'} style={{ minWidth: '18px', marginTop: '3px' }} />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <button
                   type="button"
                   onClick={handleCtaClick}
                   className="btn btn-primary"
-                  style={{ background: business.accentColor, borderColor: business.accentColor }}
+                  style={{ background: business.accentColor || '#17432d', borderColor: business.accentColor || '#17432d' }}
                 >
-                  <span>{business.ctaButton}</span>
+                  <span>{business.ctaButton || 'Inquire Now'}</span>
                   <ArrowRight size={18} />
                 </button>
                 <Link to="/contact" className="btn btn-secondary">
@@ -157,7 +162,7 @@ export default function BusinessDetailPage({ onQuickInquire }) {
                   />
                   <div
                     className="business-media-tag"
-                    style={{ backgroundColor: `${business.accentColor}ee` }}
+                    style={{ backgroundColor: `${business.accentColor || '#17432d'}ee` }}
                   >
                     Urja Operational Facility
                   </div>
@@ -165,9 +170,9 @@ export default function BusinessDetailPage({ onQuickInquire }) {
 
                 {/* 4 Quick Stat Metric Cards */}
                 <div className="business-stats-grid">
-                  {business.stats.map((stat, sIdx) => (
+                  {(business.stats || []).map((stat, sIdx) => (
                     <div className="business-stat-cell" key={sIdx}>
-                      <div className="business-stat-val" style={{ color: business.accentColor }}>
+                      <div className="business-stat-val" style={{ color: business.accentColor || '#17432d' }}>
                         {stat.value}
                       </div>
                       <div className="business-stat-lbl">{stat.label}</div>
@@ -180,112 +185,8 @@ export default function BusinessDetailPage({ onQuickInquire }) {
         </div>
       </section>
 
-      {/* Complete Poultry & Food Cycle (Specifically for Urja Foods) */}
-      {resolvedId === 'urja-foods' && (
-        <section className="section bg-subtle" id="urja-foods-cycle" style={{ padding: '80px 0' }}>
-          <div className="container">
-            <div className="section-header text-center" style={{ maxWidth: '820px', margin: '0 auto 50px' }}>
-              <div className="badge badge-green">COMPLETE INTEGRATED CYCLE</div>
-              <h2 style={{ color: '#0e2919', fontFamily: 'var(--font-serif, Georgia, serif)', fontSize: 'clamp(28px, 3.4vw, 42px)', margin: '0 0 16px' }}>
-                From Feed to Fork: The Complete Urja Foods Cycle
-              </h2>
-              <p className="section-subtitle" style={{ color: '#56635a', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
-                An interconnected 5-stage production and supply cycle ensuring total biosecurity, superior feed-conversion ratio, and pure farm-fresh poultry.
-              </p>
-            </div>
-
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                gap: '20px',
-              }}
-            >
-              {[
-                {
-                  step: '01',
-                  title: 'Feed Milling & Nutrition',
-                  desc: '800 TPD automated steam-pelleted feed formulated with bypass protein and essential amino acids.',
-                  img: '/company.jpg',
-                },
-                {
-                  step: '02',
-                  title: 'Breeder Farming & Hatchery',
-                  desc: 'Parent breeder flocks and robotic single-stage incubators delivering robust day-old chicks.',
-                  img: '/company-plant.jpg',
-                },
-                {
-                  step: '03',
-                  title: 'EC Shed Brooding & Growing',
-                  desc: 'European environment-controlled sheds with automated ventilation and strict biosecurity.',
-                  img: '/images/biz-poultry.jpg',
-                  fallback: '/company.jpg',
-                },
-                {
-                  step: '04',
-                  title: 'Contract Farming & Health',
-                  desc: '900+ partnered farmers receiving veterinary audits, guaranteed buybacks, and telemetry.',
-                  img: '/company-plant.jpg',
-                },
-                {
-                  step: '05',
-                  title: 'Processing & Cold Distribution',
-                  desc: 'Hygienic processing, fresh cold-chain logistics, and retail distribution across Maharashtra.',
-                  img: '/images/biz-chicken.jpg',
-                  fallback: '/company-plant.jpg',
-                },
-              ].map((cycle, cIdx) => (
-                <div
-                  key={cIdx}
-                  style={{
-                    background: '#ffffff',
-                    border: '1px solid #dce8d7',
-                    borderRadius: '12px',
-                    overflow: 'hidden',
-                    boxShadow: '0 6px 20px rgba(23, 59, 36, 0.05)',
-                  }}
-                >
-                  <div style={{ position: 'relative', height: '160px', background: '#0e2919' }}>
-                    <img
-                      src={cycle.img}
-                      alt={cycle.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = cycle.fallback || '/company-plant.jpg';
-                      }}
-                    />
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: '12px',
-                        left: '12px',
-                        background: '#0e2919',
-                        color: '#a8c58f',
-                        padding: '3px 8px',
-                        borderRadius: '4px',
-                        fontSize: '11px',
-                        fontWeight: 800,
-                        border: '1px solid rgba(168, 197, 143, 0.3)',
-                      }}
-                    >
-                      STAGE {cycle.step}
-                    </div>
-                  </div>
-                  <div style={{ padding: '18px 16px' }}>
-                    <h4 style={{ margin: '0 0 8px', fontSize: '16px', color: '#0e2919', fontWeight: 700 }}>
-                      {cycle.title}
-                    </h4>
-                    <p style={{ margin: 0, fontSize: '13px', lineHeight: 1.6, color: '#56635a' }}>
-                      {cycle.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Complete Dedicated Ecosystem Showcase (Specifically for Urja Foods) */}
+      {resolvedId === 'urja-foods' && <UrjaFoodsShowcase />}
 
       {/* 3. Core Capabilities & Technology Grid */}
       <section className="section bg-subtle">

@@ -52,7 +52,7 @@ export default function AboutSection() {
           </div>
 
           <h2 className="urja-welcome-title">
-            Welcome to <span>Urja Foods &amp; Agro <small>Pvt. Ltd.</small></span>
+            {t('welcomeHeading') || 'Welcome to Urja Foods & Agro Pvt. Ltd.'}
           </h2>
 
           <div className="urja-title-line"></div>
@@ -63,30 +63,16 @@ export default function AboutSection() {
 
           <div className="urja-welcome-text">
             <p>
-              Our integrated poultry business brings together{' '}
-              <strong>
-                feed manufacturing, breeder farming, hatcheries, brooding and growing farms, contract broiler farming and live bird supply
-              </strong>
-              , allowing us to manage multiple stages of the value chain within one operating ecosystem.
+              {t('welcomeP1')}
             </p>
-
             <p>
-              Alongside poultry, our businesses include{' '}
-              <strong>Urja Pashu Aahar</strong>, our animal nutrition division, and{' '}
-              <strong>soya processing</strong>. We are now extending this platform into consumer-facing businesses through{' '}
-              <span>Poushtik Chicken, Urja Organic, and value-added soya products.</span>
-            </p>
-
-            <p>
-              With a combination of{' '}
-              <strong>integrated operations, modern infrastructure and technical expertise</strong>, Urja continues to build capabilities across agriculture, nutrition and food—creating a connected business from{' '}
-              <span>feed and farm to protein and food products.</span>
+              {t('welcomeP2')}
             </p>
           </div>
 
           <div className="urja-welcome-footer">
             <Link to="/about" className="urja-welcome-button">
-              <span>EXPLORE OUR STORY</span>
+              <span>{t('welcomeBtnStory') || 'DISCOVER OUR STORY'}</span>
               <div className="button-arrow">→</div>
             </Link>
 

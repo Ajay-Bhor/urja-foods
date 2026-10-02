@@ -18,6 +18,22 @@ export default function CompanyPreloader() {
   const animFrameRef = useRef(null);
 
   useEffect(() => {
+    // History Back/Forward Navigation: never show preloader when returning
+    const handleHistoryNav = () => {
+      setIsMounted(false);
+      document.body.style.overflow = '';
+    };
+
+    window.addEventListener('popstate', handleHistoryNav);
+    window.addEventListener('pageshow', handleHistoryNav);
+
+    return () => {
+      window.removeEventListener('popstate', handleHistoryNav);
+      window.removeEventListener('pageshow', handleHistoryNav);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!isMounted) {
       document.body.style.overflow = '';
       return;

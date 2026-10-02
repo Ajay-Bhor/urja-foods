@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useLanguage } from '../hooks/LanguageContext';
 
@@ -8,7 +8,6 @@ export default function Navbar() {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const location = useLocation();
-  const navigate = useNavigate();
   const { t, language, setLanguage, supportedLanguages } = useLanguage();
 
   // Close mobile sidebar on route change
@@ -148,6 +147,22 @@ export default function Navbar() {
               </li>
             </ul>
           </nav>
+
+          {/* Quick Mobile Language Switcher (Visible on mobile/tablet screens) */}
+          <div className="urja-mobile-header-lang" aria-label="Language selector">
+            {supportedLanguages.map((lang) => (
+              <button
+                key={lang.code}
+                type="button"
+                className={`urja-mobile-header-lang-btn ${language === lang.code ? 'active' : ''}`}
+                onClick={() => setLanguage(lang.code)}
+                title={`Switch to ${lang.label}`}
+                aria-label={`Switch language to ${lang.label}`}
+              >
+                {lang.shortLabel}
+              </button>
+            ))}
+          </div>
 
           {/* Mobile Menu Button */}
           <button

@@ -1,5 +1,60 @@
 [
   {
+    "timestamp": "2026-10-01T06:35:33.860Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-533825",
+    "to": "bdbsdm@gmail.com",
+    "subject": "Application Acknowledgment: Quality Control & Lab Chemist (Feed Plant) (Ref: URJA-CAREER-533825) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-10-01T06:35:33.858Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-533825",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Quality Control & Lab Chemist (Feed Plant) - Ajay (Ref: URJA-CAREER-533825)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-10-01T05:42:50.448Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-370367",
+    "to": "candidate@example.com",
+    "subject": "Application Acknowledgment: Quality Control (Ref: URJA-CAREER-370367) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-10-01T05:42:50.446Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-370367",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Quality Control - Test Candidate (Ref: URJA-CAREER-370367)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-29T07:04:42.180Z",
+    "type": "CANDIDATE_AUTO_REPLY",
+    "applicationId": "URJA-CAREER-482172",
+    "to": "test.candidate@gmail.com",
+    "subject": "Application Acknowledgment: Bank Loans - Senior Associate (R-798533) (Ref: URJA-CAREER-482172) - Urja Foods & Agro",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "timestamp": "2026-09-29T07:04:42.178Z",
+    "type": "HR_CANDIDATE_NOTIFICATION",
+    "applicationId": "URJA-CAREER-482172",
+    "to": "careers@urjafoods.net",
+    "subject": "[New Candidate Application] Bank Loans - Senior Associate (R-798533) - Test Candidate (Ref: URJA-CAREER-482172)",
+    "status": "LOGGED_READY_FOR_DISPATCH"
+  },
+  {
+    "type": "CANDIDATE_AUTH",
+    "to": "ramesh.patil@gmail.com",
+    "subject": "Urja Foods Careers: Password Reset Code (798678)",
+    "status": "DISPATCHED",
+    "timestamp": "2026-09-29T07:04:42.157Z"
+  },
+  {
     "timestamp": "2026-09-28T11:04:35.502Z",
     "type": "CANDIDATE_AUTO_REPLY",
     "applicationId": "URJA-CAREER-475494",

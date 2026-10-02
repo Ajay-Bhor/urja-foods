@@ -11,8 +11,11 @@ import {
   Compass,
 } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import { useLanguage } from '../hooks/LanguageContext';
 
 export default function VisionPage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -49,9 +52,9 @@ export default function VisionPage() {
       {/* 1. Page Header Banner */}
       <PageBanner
         badge="WHERE WE ARE GOING"
-        title="Our Vision"
+        title={t('navOurVision') || "Our Vision"}
         subtitle="Creating an integrated agribusiness and nutrition ecosystem that touches the everyday lives of families across India."
-        breadcrumb="Our Vision"
+        breadcrumb={t('navOurVision') || "Our Vision"}
       />
 
       {/* 2. Central Vision Statement */}

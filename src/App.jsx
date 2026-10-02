@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { Routes, Route, Navigate, useNavigate, useLocation, useNavigationType } from 'react-router-dom';
 import Topbar from './components/Topbar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -7,6 +7,7 @@ import ProductModal from './components/ProductModal';
 import ScrollToTop from './components/ScrollToTop';
 import PageProgressBar from './components/PageProgressBar';
 import CompanyPreloader from './components/CompanyPreloader';
+import ContentProtection from './components/ContentProtection';
 
 // Dedicated Page Views
 import HomePage from './pages/HomePage';
@@ -22,8 +23,7 @@ import ValuesPage from './pages/ValuesPage';
 import MissionVisionValuesPage from './pages/MissionVisionValuesPage';
 import CareersPage from './pages/CareersPage';
 import CareerApplyPage from './pages/CareerApplyPage';
-import CandidateLoginPage from './pages/CandidateLoginPage';
-import OAuthCallbackPage from './pages/OAuthCallbackPage';
+import AdminTranslationsPage from './pages/AdminTranslationsPage';
 
 import useScrollReveal from './hooks/useScrollReveal';
 
@@ -32,9 +32,11 @@ export default function App() {
   const [preFillInquiry, setPreFillInquiry] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const navType = useNavigationType();
+  const isPopNav = navType === 'POP';
 
-  // Initialize IntersectionObserver scroll reveal on route change
-  useScrollReveal(location.pathname);
+  // Initialize IntersectionObserver scroll reveal on route change (including back/forward)
+  useScrollReveal(location.key || location.pathname);
 
   // When user clicks "Inquire Rate" on product card or modal
   const handleQuickInquire = (productName) => {
@@ -46,16 +48,13 @@ export default function App() {
     navigate('/contact');
   };
 
-  // Dedicated full-page ATS experience for Workday Job Portal & OAuth screens
-  const isWorkdayPortal =
-    location.pathname.startsWith('/careers/apply') ||
-    location.pathname.startsWith('/careers/login') ||
-    location.pathname.startsWith('/careers/auth/callback');
-
   return (
-    <div className={`app-layout ${isWorkdayPortal ? 'workday-portal-mode' : ''}`}>
+    <div className="app-layout">
+      {/* Global Anti-Screenshot & Content Protection System */}
+      <ContentProtection />
+
       {/* First-Time Company Logo Preloader Splash Screen */}
-      {!isWorkdayPortal && <CompanyPreloader />}
+      <CompanyPreloader />
 
       {/* Top Progress Bar on Every Page Load */}
       <PageProgressBar />
@@ -64,14 +63,17 @@ export default function App() {
       <ScrollToTop />
 
       {/* Top Header Contact Bar */}
-      {!isWorkdayPortal && <Topbar />}
+      <Topbar />
 
       {/* Main Glassmorphic Sticky Navbar with Multi-Page Routing */}
-      {!isWorkdayPortal && <Navbar />}
+      <Navbar />
 
       {/* Main Multi-Page Route Outlet with Smooth Page Load Transition */}
-      <main key={location.pathname} className={isWorkdayPortal ? 'workday-main-outlet' : 'page-transition-container'}>
-        <Routes>
+      <main
+        key={location.pathname}
+        className={`page-transition-container ${isPopNav ? 'no-fade-pop' : ''}`}
+      >
+        <Routes location={location}>
           <Route
             path="/"
             element={
@@ -95,6 +97,7 @@ export default function App() {
           <Route path="/values-that-move-us" element={<ValuesPage />} />
           <Route path="/businesses" element={<BusinessesPage />} />
           <Route path="/our-businesses" element={<BusinessesPage />} />
+          <Route path="/our-business" element={<BusinessesPage />} />
           <Route
             path="/businesses/:id"
             element={<BusinessDetailPage onQuickInquire={handleQuickInquire} />}
@@ -103,6 +106,11 @@ export default function App() {
             path="/business/:id"
             element={<BusinessDetailPage onQuickInquire={handleQuickInquire} />}
           />
+          <Route path="/urja-foods" element={<Navigate to="/businesses/urja-foods" replace />} />
+          <Route path="/urja-pashu-aahar" element={<Navigate to="/businesses/urja-pashu-aahar" replace />} />
+          <Route path="/poushtik-chicken" element={<Navigate to="/businesses/poushtik-chicken" replace />} />
+          <Route path="/urja-organic" element={<Navigate to="/businesses/urja-organic" replace />} />
+          <Route path="/urja-soya" element={<Navigate to="/businesses/urja-soya" replace />} />
           <Route
             path="/products"
             element={
@@ -121,15 +129,15 @@ export default function App() {
           <Route path="/career" element={<CareersPage />} />
           <Route path="/careers/apply" element={<CareerApplyPage />} />
           <Route path="/careers/apply/:jobId" element={<CareerApplyPage />} />
-          <Route path="/careers/login" element={<CandidateLoginPage />} />
-          <Route path="/careers/auth/callback" element={<OAuthCallbackPage />} />
+          <Route path="/admin/translations" element={<AdminTranslationsPage />} />
+          <Route path="/admin/multilingual" element={<AdminTranslationsPage />} />
           {/* Wildcard Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
 
       {/* Comprehensive Multi-Page Footer */}
-      {!isWorkdayPortal && <Footer />}
+      <Footer />
 
       {/* Global Product Detail Modal */}
       <ProductModal

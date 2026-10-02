@@ -1,0 +1,126 @@
+/* ==========================================================================
+   URJA FOODS - CONTENT & ANTI-SCREENSHOT PROTECTION STYLES
+   ========================================================================== */
+
+/* 1. Prevent image dragging across all browsers */
+img {
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+}
+
+/* 2. Prevent general text selection while preserving form fields */
+body {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Allow text selection inside legitimate inputs and form fields */
+input,
+textarea,
+select,
+[contenteditable="true"],
+.allow-select {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+/* 3. Anti-Snipping Tool & Loss-of-Focus Protection Overlay */
+.urja-screen-protect-shield {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(7, 31, 18, 0.96);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.urja-screen-protect-shield.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.urja-protect-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(23, 59, 36, 0.85);
+  border: 1.5px solid rgba(168, 197, 143, 0.45);
+  padding: 16px 32px;
+  border-radius: 9999px;
+  color: #a8c58f;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65);
+}
+
+.urja-protect-badge svg {
+  color: #4ade80;
+  flex-shrink: 0;
+}
+
+.urja-protect-sub {
+  margin-top: 14px;
+  color: #94a3b8;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-align: center;
+  max-width: 480px;
+  padding: 0 20px;
+}
+
+/* 4. Anti-Screenshot Toast Notification */
+.urja-screenshot-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  z-index: 1000000;
+  background: #0e2919;
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  color: #e8f0e5;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.urja-screenshot-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* 5. Complete Print & PDF Export Protection */
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+}

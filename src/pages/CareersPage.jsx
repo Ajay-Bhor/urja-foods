@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   Briefcase,
@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   GraduationCap,
   Utensils,
-  Send,
   ArrowRight,
   Sparkles,
   Phone,
@@ -27,7 +26,6 @@ import {
   ArrowLeft,
   ChevronRight,
   FileCheck,
-  Lock,
 } from 'lucide-react';
 
 export default function CareersPage() {
@@ -35,27 +33,9 @@ export default function CareersPage() {
   const [selectedDept, setSelectedDept] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedJob, setSelectedJob] = useState(null);
-  const [selectedJobForApply, setSelectedJobForApply] = useState('');
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [submissionResult, setSubmissionResult] = useState(null);
-  const [errorMessage, setErrorMessage] = useState('');
   const [toastMessage, setToastMessage] = useState('');
   const [openFaq, setOpenFaq] = useState(0);
 
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    position: '',
-    experience: '',
-    qualification: '',
-    city: '',
-    resumeUrl: '',
-    message: '',
-  });
-
-  const formRef = useRef(null);
   const jobsSectionRef = useRef(null);
 
   const parseList = (val) => {
@@ -416,96 +396,12 @@ export default function CareersPage() {
     },
   ];
 
-  const handleApplyClick = (jobOrTitle) => {
-    let targetJob = typeof jobOrTitle === 'object' ? jobOrTitle : jobsList.find((j) => j.title === jobOrTitle);
-    const targetId = targetJob ? targetJob.id : 'job-1';
-    const targetTitle = targetJob ? targetJob.title : jobOrTitle || 'General Application';
-    const applyUrl = `/careers/apply?jobId=${encodeURIComponent(targetId)}&title=${encodeURIComponent(targetTitle)}`;
-    window.open(applyUrl, '_blank', 'noopener,noreferrer');
-  };
-
   const handleShareJob = (job) => {
     const textToCopy = `${window.location.origin}/careers#${job.id}`;
     if (navigator.clipboard) {
       navigator.clipboard.writeText(textToCopy);
       setToastMessage(`Job link for "${job.title}" copied!`);
       setTimeout(() => setToastMessage(''), 3500);
-    }
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setErrorMessage('');
-
-    try {
-      const res = await fetch('/api/careers/apply', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          position: formData.position || selectedJobForApply || (selectedJob ? selectedJob.title : 'General Candidate Application'),
-        }),
-      });
-
-      const data = await res.json();
-      if (res.ok && data.success) {
-        setSubmissionResult(data);
-        setFormSubmitted(true);
-      } else {
-        setErrorMessage(data.message || 'Unable to submit application. Please check your details.');
-      }
-    } catch (err) {
-      console.warn('Network error reaching /api/careers/apply, generating client acknowledgment:', err);
-      const fallbackId = `URJA-CAREER-${Date.now().toString().slice(-6)}`;
-      const fallbackDate = new Date().toLocaleDateString('en-IN', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-      setSubmissionResult({
-        success: true,
-        applicationId: fallbackId,
-        hrTargetEmail: 'careers@urjafoods.net',
-        candidateEmail: formData.email,
-        hrReply: {
-          to: formData.email,
-          from: '"Urja Foods HR Desk" <careers@urjafoods.net>',
-          subject: `Application Acknowledgment: ${formData.position || 'Urja Foods Career'} (Ref: ${fallbackId})`,
-          greeting: `Dear ${formData.name || 'Applicant'},`,
-          mainMessage: `Thank you for your interest in joining Urja Foods & Agro Pvt. Ltd. We have successfully registered your application for ${formData.position || 'your selected role'}.`,
-          details: {
-            applicationId: fallbackId,
-            position: formData.position || 'General Candidate Application',
-            candidateName: formData.name,
-            contactPhone: formData.phone,
-            submissionDate: fallbackDate,
-            assignedOffice: 'Nirgudsar Complex, Ambegaon, Pune, Maharashtra',
-          },
-          nextSteps: [
-            'Our HR & Technical Assessment panel reviews applications in order of submission.',
-            'If your background and technical skills align with our operational needs, our recruitment officer will contact you within 48 to 72 business hours for a telephonic introduction.',
-            'Please keep your educational certificates and prior experience documents accessible.',
-          ],
-          signOff: {
-            name: 'Human Resources & Talent Acquisition Team',
-            company: 'Urja Foods & Agro Pvt. Ltd.',
-            hq: 'HP HOUSE, 35/1A, Jarkarwadi Phata, Nirgudsar, Manchar, Maharashtra 410503',
-            contact: '+91-7028939900 | careers@urjafoods.net',
-          },
-        },
-      });
-      setFormSubmitted(true);
-    } finally {
-      setSubmitting(false);
     }
   };
 
@@ -560,15 +456,6 @@ export default function CareersPage() {
                 <span>Explore Open Positions</span>
                 <ArrowRight size={16} />
               </button>
-              <a
-                href="/careers/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cr-btn-glass"
-              >
-                <Lock size={15} color="#a8c58f" />
-                <span>Candidate Portal &amp; Login</span>
-              </a>
               <a href="#culture" className="cr-btn-glass">
                 <Compass size={16} />
                 <span>Life &amp; Culture at Urja</span>
@@ -999,356 +886,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* 7. STREAMLINED ONLINE APPLICATION FORM */}
-      <section className="cr-apply-section" id="apply-now" ref={formRef}>
-        <div className="container">
-          <div className="cr-form-wrapper">
-            <div className="cr-form-topbar">
-              <div
-                className="cr-badge"
-                style={{ background: 'rgba(168,197,143,0.18)', color: '#c9e2b3', borderColor: 'rgba(168,197,143,0.4)' }}
-              >
-                Direct Recruitment Desk
-              </div>
-              <h2>Submit Your Candidacy</h2>
-              <p>
-                Complete the application form below. Your credentials will be delivered directly to our HR panel at{' '}
-                <strong>careers@urjafoods.net</strong>, and an automated acknowledgment dossier will be issued immediately.
-              </p>
-            </div>
-
-            <div className="cr-form-content">
-              {errorMessage && (
-                <div
-                  style={{
-                    marginBottom: '20px',
-                    padding: '12px 18px',
-                    background: '#fef2f2',
-                    border: '1px solid #fecaca',
-                    borderRadius: '12px',
-                    color: '#b91c1c',
-                    fontSize: '0.92rem',
-                  }}
-                  role="alert"
-                >
-                  {errorMessage}
-                </div>
-              )}
-
-              {formSubmitted && submissionResult ? (
-                <div className="cr-success-box">
-                  <div className="cr-success-check">
-                    <CheckCircle2 size={42} />
-                  </div>
-                  <h3 className="cr-success-title">Application Successfully Lodged!</h3>
-                  <p className="cr-success-desc">
-                    Your application dossier has been delivered to the Urja Foods HR Talent Acquisition Desk and logged into our recruitment database.
-                  </p>
-
-                  {/* Official HR Acknowledgment Slip */}
-                  <div className="cr-hr-slip">
-                    <div className="cr-hr-slip-header">
-                      <div className="cr-hr-slip-brand">
-                        <Building size={16} />
-                        <span>URJA FOODS &amp; AGRO · RECRUITMENT DESK</span>
-                      </div>
-                      <div className="cr-hr-slip-ref">
-                        Ref: <strong>{submissionResult.applicationId}</strong>
-                      </div>
-                    </div>
-
-                    <div className="cr-hr-slip-body">
-                      <div className="cr-hr-slip-meta-grid">
-                        <div className="cr-meta-item">
-                          <span className="lbl">Candidate Name</span>
-                          <span className="val">{formData.name}</span>
-                        </div>
-                        <div className="cr-meta-item">
-                          <span className="lbl">Target Position</span>
-                          <span className="val" style={{ color: '#2e7d32' }}>
-                            {submissionResult.hrReply?.details?.position || formData.position}
-                          </span>
-                        </div>
-                        <div className="cr-meta-item">
-                          <span className="lbl">Contact Mobile</span>
-                          <span className="val">{formData.phone}</span>
-                        </div>
-                        <div className="cr-meta-item">
-                          <span className="lbl">Submission Timestamp</span>
-                          <span className="val">
-                            {submissionResult.hrReply?.details?.submissionDate || 'Just now'}
-                          </span>
-                        </div>
-                      </div>
-
-                      <div style={{ marginBottom: '1.5rem', fontSize: '0.92rem', color: '#475569', lineHeight: 1.6 }}>
-                        <p style={{ margin: '0 0 8px', fontWeight: 600, color: '#0e2919' }}>
-                          Next Steps in the Hiring Process:
-                        </p>
-                        <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
-                          <li>Our HR &amp; Technical assessment panel reviews applications in sequence.</li>
-                          <li>Shortlisted candidates will receive a telephonic interview call within 48 to 72 business hours.</li>
-                          <li>Please keep your identity, qualification, and prior experience records handy.</li>
-                        </ul>
-                      </div>
-
-                      <div
-                        style={{
-                          borderTop: '1px solid #e2e8f0',
-                          paddingTop: '1rem',
-                          fontSize: '0.84rem',
-                          color: '#64748b',
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          flexWrap: 'wrap',
-                          gap: '0.5rem',
-                        }}
-                      >
-                        <span>Assigned Office: Nirgudsar Complex, Ambegaon, Pune</span>
-                        <span style={{ color: '#173b24', fontWeight: 600 }}>careers@urjafoods.net | +91-7028939900</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="cr-hr-slip-actions">
-                    <button
-                      type="button"
-                      className="cr-btn-glass"
-                      style={{ color: '#173b24', borderColor: '#cbd5e1' }}
-                      onClick={() => window.print()}
-                    >
-                      <FileCheck size={16} />
-                      <span>Print / Save Slip</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      className="cr-btn-primary"
-                      onClick={() => {
-                        setFormSubmitted(false);
-                        setSubmissionResult(null);
-                        setFormData({
-                          name: '',
-                          phone: '',
-                          email: '',
-                          position: '',
-                          experience: '',
-                          qualification: '',
-                          city: '',
-                          resumeUrl: '',
-                          message: '',
-                        });
-                        setSelectedJobForApply('');
-                      }}
-                    >
-                      <span>Submit Another Application</span>
-                      <ArrowRight size={16} />
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <form onSubmit={handleFormSubmit}>
-                  {formData.position && (
-                    <div className="cr-selected-role-callout">
-                      <div className="cr-callout-text">
-                        <span>Selected Opening: </span>
-                        <strong>{formData.position}</strong>
-                      </div>
-                      <button
-                        type="button"
-                        className="cr-callout-clear"
-                        onClick={() => {
-                          setFormData((prev) => ({ ...prev, position: '' }));
-                          setSelectedJobForApply('');
-                        }}
-                      >
-                        Change Position
-                      </button>
-                    </div>
-                  )}
-
-                  <div className="cr-form-grid">
-                    <div className="cr-form-group">
-                      <label className="cr-form-label" htmlFor="appName">
-                        Full Name <span className="req">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="appName"
-                        name="name"
-                        required
-                        placeholder="e.g. Ramesh Patil"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="cr-form-input"
-                      />
-                    </div>
-
-                    <div className="cr-form-group">
-                      <label className="cr-form-label" htmlFor="appPhone">
-                        Mobile Number <span className="req">*</span>
-                      </label>
-                      <input
-                        type="tel"
-                        id="appPhone"
-                        name="phone"
-                        required
-                        pattern="[0-9]{10}"
-                        title="10-digit mobile number"
-                        placeholder="10-digit mobile number"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="cr-form-input"
-                      />
-                    </div>
-
-                    <div className="cr-form-group">
-                      <label className="cr-form-label" htmlFor="appEmail">
-                        Email Address <span className="req">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        id="appEmail"
-                        name="email"
-                        required
-                        placeholder="e.g. ramesh.patil@gmail.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="cr-form-input"
-                      />
-                    </div>
-
-                    <div className="cr-form-group">
-                      <label className="cr-form-label" htmlFor="appPosition">
-                        Target Position <span className="req">*</span>
-                      </label>
-                      <select
-                        id="appPosition"
-                        name="position"
-                        required
-                        value={formData.position || selectedJobForApply}
-                        onChange={(e) => {
-                          handleChange(e);
-                          setSelectedJobForApply(e.target.value);
-                        }}
-                        className="cr-form-select"
-                      >
-                        <option value="">-- Choose Position --</option>
-                        {jobsList.map((j) => (
-                          <option key={j.id} value={j.title}>
-                            {j.title} ({j.dept})
-                          </option>
-                        ))}
-                        <option value="General Candidate Application">
-                          Other / General Candidate Pool
-                        </option>
-                      </select>
-                    </div>
-
-                    <div className="cr-form-group">
-                      <label className="cr-form-label" htmlFor="appExp">
-                        Total Experience <span className="req">*</span>
-                      </label>
-                      <select
-                        id="appExp"
-                        name="experience"
-                        required
-                        value={formData.experience}
-                        onChange={handleChange}
-                        className="cr-form-select"
-                      >
-                        <option value="">-- Select Total Experience --</option>
-                        <option value="Fresher (0 - 1 year)">Fresher (0 - 1 year)</option>
-                        <option value="1 – 3 Years">1 – 3 Years</option>
-                        <option value="3 – 5 Years">3 – 5 Years</option>
-                        <option value="5+ Years">5+ Years</option>
-                      </select>
-                    </div>
-
-                    <div className="cr-form-group">
-                      <label className="cr-form-label" htmlFor="appCity">
-                        Current City / Taluka <span className="req">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="appCity"
-                        name="city"
-                        required
-                        placeholder="e.g. Manchar, Pune, Ahmednagar"
-                        value={formData.city}
-                        onChange={handleChange}
-                        className="cr-form-input"
-                      />
-                    </div>
-
-                    <div className="cr-form-group">
-                      <label className="cr-form-label" htmlFor="appQual">
-                        Highest Qualification
-                      </label>
-                      <input
-                        type="text"
-                        id="appQual"
-                        name="qualification"
-                        placeholder="e.g. B.V.Sc, B.Sc Chemistry, Diploma Agri, B.Com"
-                        value={formData.qualification}
-                        onChange={handleChange}
-                        className="cr-form-input"
-                      />
-                    </div>
-
-                    <div className="cr-form-group">
-                      <label className="cr-form-label" htmlFor="appResume">
-                        Resume / Drive / LinkedIn Link
-                      </label>
-                      <input
-                        type="url"
-                        id="appResume"
-                        name="resumeUrl"
-                        placeholder="https://drive.google.com/... or linkedin.com/in/..."
-                        value={formData.resumeUrl}
-                        onChange={handleChange}
-                        className="cr-form-input"
-                      />
-                    </div>
-
-                    <div className="cr-form-group full-width">
-                      <label className="cr-form-label" htmlFor="appMsg">
-                        Cover Note or Key Skills for HR
-                      </label>
-                      <textarea
-                        id="appMsg"
-                        name="message"
-                        rows="3"
-                        placeholder="Briefly describe your background, technical skills, or reason for applying to Urja Foods..."
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="cr-form-textarea"
-                      ></textarea>
-                    </div>
-
-                    <button
-                      type="submit"
-                      disabled={submitting}
-                      className="cr-submit-btn"
-                    >
-                      {submitting ? (
-                        <span>Transmitting Dossier to HR Desk...</span>
-                      ) : (
-                        <>
-                          <Send size={18} />
-                          <span>Submit Candidacy to HR Desk</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. DIRECT HR HOTLINE & HIRING FAQ ACCORDION */}
+      {/* 7. DIRECT HR HOTLINE & HIRING FAQ ACCORDION */}
       <section className="cr-support-section">
         <div className="container">
           <div className="cr-support-grid">
