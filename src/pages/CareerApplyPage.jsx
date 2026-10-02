@@ -114,9 +114,9 @@ export default function CareerApplyPage() {
   const [willingToRelocate, setWillingToRelocate] = useState('Yes');
 
   // Step 4: VOLUNTARY DISCLOSURES
-  const [gender, setGender] = useState('Male');
-  const [farmingFamily, setFarmingFamily] = useState('Yes, active commercial farming family');
-  const [disabilityStatus, setDisabilityStatus] = useState('No');
+  const [gender, setGender] = useState('Prefer not to say');
+  const [veteranStatus, setVeteranStatus] = useState('I am not a protected veteran');
+  const [disabilityStatus, setDisabilityStatus] = useState('No, I do not have a disability');
   const [agreeDeclaration, setAgreeDeclaration] = useState(false);
   const [signatureName, setSignatureName] = useState('');
 
@@ -214,6 +214,10 @@ export default function CareerApplyPage() {
           if (prev.currentlyWorkingForUrja) setCurrentlyWorkingForUrja(prev.currentlyWorkingForUrja);
           if (prev.previouslyWorkedForUrja) setPreviouslyWorkedForUrja(prev.previouslyWorkedForUrja);
           if (prev.willingToRelocate) setWillingToRelocate(prev.willingToRelocate);
+          if (prev.gender) setGender(prev.gender);
+          if (prev.veteranStatus) setVeteranStatus(prev.veteranStatus);
+          if (prev.disabilityStatus) setDisabilityStatus(prev.disabilityStatus);
+          if (prev.agreeDeclaration) setAgreeDeclaration(prev.agreeDeclaration);
         } catch {
           // ignore
         }
@@ -359,12 +363,12 @@ export default function CareerApplyPage() {
     // Validate Step 4
     if (currentStep === 4) {
       if (!agreeDeclaration) {
-        setValidationError('You must certify and agree to the declaration statement to proceed.');
+        setValidationError('Please agree to the terms and conditions to proceed.');
         return;
       }
       if (!signatureName.trim()) {
-        setValidationError('Please enter your full name as your electronic signature.');
-        return;
+        const full = [firstName, middleName, lastName].filter(Boolean).join(' ');
+        setSignatureName(full || 'Applicant Signature');
       }
     }
 
@@ -491,6 +495,10 @@ export default function CareerApplyPage() {
           currentlyWorkingForUrja,
           previouslyWorkedForUrja,
           willingToRelocate,
+          gender,
+          veteranStatus,
+          disabilityStatus,
+          agreeDeclaration,
         })
       );
 
@@ -1962,30 +1970,45 @@ export default function CareerApplyPage() {
           <div className="career-form-card">
             <div className="career-section-title">
               <span className="step-number">4</span>
-              <span>Voluntary Disclosures &amp; Declarations</span>
+              <span>Voluntary Disclosures</span>
             </div>
 
+            <p style={{ color: '#64748b', fontSize: '0.92rem', marginBottom: '1.5rem', lineHeight: 1.5 }}>
+              Urja Foods is committed to equal opportunity employment. The completion of these voluntary self-identification
+              questions helps evaluate our outreach and does not affect your candidacy.
+            </p>
+
+            {/* Questions Section */}
             <div
               style={{
-                background: '#f8fafc',
+                background: '#ffffff',
                 border: '1px solid #e2e8f0',
                 borderRadius: '12px',
-                padding: '1.25rem',
+                padding: '1.5rem',
                 marginBottom: '1.75rem',
-                fontSize: '0.9rem',
-                color: '#475569',
-                lineHeight: 1.6,
+                boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
               }}
             >
-              <strong>Equal Opportunity Agribusiness Employer:</strong> Urja Foods &amp; Agro
-              Industries Pvt. Ltd. is committed to fostering an inclusive, fair workplace for all
-              agricultural professionals, veterinarians, technicians, and factory specialists regardless
-              of race, religion, gender, or regional background.
-            </div>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontSize: '1.05rem',
+                  fontWeight: 700,
+                  color: '#0f172a',
+                  marginBottom: '1.25rem',
+                  paddingBottom: '0.75rem',
+                  borderBottom: '1px solid #f1f5f9',
+                }}
+              >
+                <HelpCircle size={18} color="#173b24" />
+                <span>Questions</span>
+              </div>
 
-            <div className="career-form-row">
-              <div className="career-form-group">
-                <label>Gender Identity</label>
+              {/* Gender */}
+              <div className="career-form-group" style={{ marginBottom: '1.25rem' }}>
+                <label>Gender</label>
                 <select
                   className="career-input-field"
                   value={gender}
@@ -1993,62 +2016,73 @@ export default function CareerApplyPage() {
                 >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  <option value="Non-Binary / Other">Non-Binary / Other</option>
                   <option value="Prefer not to say">Prefer not to say</option>
                 </select>
               </div>
 
-              <div className="career-form-group">
-                <label>Farming Family Background</label>
+              {/* Veteran Status */}
+              <div className="career-form-group" style={{ marginBottom: '1.25rem' }}>
+                <label>Veteran Status</label>
                 <select
                   className="career-input-field"
-                  value={farmingFamily}
-                  onChange={(e) => setFarmingFamily(e.target.value)}
+                  value={veteranStatus}
+                  onChange={(e) => setVeteranStatus(e.target.value)}
                 >
-                  <option value="Yes, active commercial farming family">Yes, active commercial farming family</option>
-                  <option value="Yes, dairy or poultry rearing background">Yes, dairy or poultry rearing background</option>
-                  <option value="No, agricultural interest only">No, agricultural interest only</option>
+                  <option value="I am not a protected veteran">I am not a protected veteran</option>
+                  <option value="I identify as one or more classifications of protected veteran">
+                    I identify as one or more classifications of protected veteran
+                  </option>
+                  <option value="I decline to self-identify">I decline to self-identify</option>
+                </select>
+              </div>
+
+              {/* Disability Status */}
+              <div className="career-form-group">
+                <label>Disability Status</label>
+                <select
+                  className="career-input-field"
+                  value={disabilityStatus}
+                  onChange={(e) => setDisabilityStatus(e.target.value)}
+                >
+                  <option value="No, I do not have a disability">No, I do not have a disability</option>
+                  <option value="Yes, I have a disability (or have had one in the past)">
+                    Yes, I have a disability (or have had one in the past)
+                  </option>
                   <option value="Prefer not to disclose">Prefer not to disclose</option>
                 </select>
               </div>
             </div>
 
-            {/* Mandatory Declaration Checkbox */}
+            {/* Checkbox: I agree to the terms and conditions */}
             <div
               style={{
                 marginTop: '1.5rem',
                 padding: '1.25rem',
-                background: '#fdfbf7',
-                border: '1px solid #f6e0b5',
+                background: '#f8fafc',
+                border: '1px solid #cbd5e1',
                 borderRadius: '12px',
+                marginBottom: '1.75rem',
               }}
             >
-              <label style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', cursor: 'pointer' }}>
+              <label
+                className="career-checkbox-label"
+                style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', cursor: 'pointer' }}
+              >
                 <input
                   type="checkbox"
-                  style={{ marginTop: '0.25rem', width: '18px', height: '18px' }}
+                  className="career-checkbox-input"
+                  style={{ marginTop: '0.2rem' }}
                   checked={agreeDeclaration}
                   onChange={(e) => setAgreeDeclaration(e.target.checked)}
                 />
-                <span style={{ fontSize: '0.9rem', color: '#1e293b', lineHeight: 1.5 }}>
-                  <strong>Applicant Statement &amp; Consent:</strong> I certify that all information
-                  contained in this job application is true, complete, and verifiable. I authorize Urja
-                  Foods &amp; Agro to verify academic credentials, reference details, and previous employment
-                  records in accordance with corporate hiring guidelines.
+                <span style={{ fontSize: '0.95rem', color: '#0f172a', fontWeight: 600 }}>
+                  I agree to the terms and conditions
                 </span>
               </label>
-            </div>
-
-            <div className="career-form-group" style={{ marginTop: '1.5rem' }}>
-              <label>Applicant Electronic Signature (Enter Full Legal Name) *</label>
-              <input
-                type="text"
-                className="career-input-field"
-                placeholder="e.g. Ramesh Mohan Patil"
-                value={signatureName}
-                onChange={(e) => setSignatureName(e.target.value)}
-                required
-              />
+              <p style={{ margin: '0.5rem 0 0 1.95rem', fontSize: '0.84rem', color: '#64748b', lineHeight: 1.5 }}>
+                By checking this box, I certify that all information submitted is true, complete, and accurate, and I agree to Urja Foods candidate application terms and recruitment policies.
+              </p>
             </div>
 
             <div className="career-wizard-footer">
@@ -2065,7 +2099,7 @@ export default function CareerApplyPage() {
                 className="career-nav-btn btn-next"
                 onClick={() => goToNextStep(5)}
               >
-                <span>Save &amp; Continue to Review</span>
+                <span>Save &amp; Continue</span>
                 <ArrowRight size={16} />
               </button>
             </div>
@@ -2229,7 +2263,7 @@ export default function CareerApplyPage() {
             {/* 4. Review Disclosures */}
             <div className="career-review-section">
               <div className="career-review-header">
-                <h4>4. Disclosures &amp; Consent</h4>
+                <h4>4. Voluntary Disclosures</h4>
                 <button
                   type="button"
                   className="career-edit-jump-btn"
@@ -2239,16 +2273,22 @@ export default function CareerApplyPage() {
                 </button>
               </div>
               <div className="career-review-row">
-                <span className="label">Gender Identity:</span>
+                <span className="label">Gender:</span>
                 <span className="val">{gender}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Farming Family:</span>
-                <span className="val">{farmingFamily}</span>
+                <span className="label">Veteran Status:</span>
+                <span className="val">{veteranStatus}</span>
               </div>
               <div className="career-review-row">
-                <span className="label">Electronic Signature:</span>
-                <span className="val">{signatureName} (Consent Verified ✓)</span>
+                <span className="label">Disability Status:</span>
+                <span className="val">{disabilityStatus}</span>
+              </div>
+              <div className="career-review-row">
+                <span className="label">Terms and Conditions:</span>
+                <span className="val" style={{ color: agreeDeclaration ? '#15803d' : '#b91c1c', fontWeight: 600 }}>
+                  {agreeDeclaration ? 'Agreed & Accepted ✓' : 'Not agreed'}
+                </span>
               </div>
             </div>
 
