@@ -52,7 +52,6 @@ export default function Footer() {
           <Link to="/businesses">Our Businesses</Link>
           <Link to="/products">Product Range</Link>
           <Link to="/testimonials">Testimonials</Link>
-          <Link to="/careers">Careers &amp; Openings</Link>
           <Link to="/contact">Contact</Link>
         </div>
 
@@ -70,7 +69,6 @@ export default function Footer() {
         <div className="urja-footer-col">
           <h4>QUICK LINKS</h4>
           <a href="#sustainability">Sustainability &amp; CSR</a>
-          <Link to="/careers">Join Our Team</Link>
           <Link to="/products">Feed Formulations</Link>
           <Link to="/contact">Inquiry Desk</Link>
           <a href="tel:+917028939900">+91-7028939900</a>

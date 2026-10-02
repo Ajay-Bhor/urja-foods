@@ -3,7 +3,6 @@
 @import './animations.css';
 @import './about.css';
 @import './businesses.css';
-@import './careers.css';
 
 @theme {
   --color-primary: #173b24;

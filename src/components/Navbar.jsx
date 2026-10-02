@@ -121,14 +121,6 @@ export default function Navbar() {
                 </NavLink>
               </li>
 
-              <li>
-                <NavLink
-                  to="/careers"
-                  className={({ isActive }) => `urja-nav-link ${isActive ? 'active' : ''}`}
-                >
-                  {t('navCareers') || 'Careers'}
-                </NavLink>
-              </li>
 
               <li>
                 <NavLink
@@ -284,11 +276,6 @@ export default function Navbar() {
               </NavLink>
             </li>
 
-            <li>
-              <NavLink to="/careers" onClick={() => setMobileMenuOpen(false)}>
-                {t('navCareers') || 'Careers'}
-              </NavLink>
-            </li>
 
             <li>
               <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>
