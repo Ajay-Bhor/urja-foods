@@ -96,8 +96,11 @@ export default function CareerApplyPage() {
     {
       id: 1,
       name: 'HACCP & Feed Biosecurity Protocol Level-2',
-      issuer: 'Food Safety Standards Authority of India (FSSAI)',
-      issueYear: '2023',
+      certificationNumber: 'FSSAI-2023-QC-8849',
+      issuedDate: '03/2023',
+      expirationDate: '03/2026',
+      specialties: 'Feed Biosecurity, Quality Assurance',
+      attachment: null,
     },
   ]);
 
@@ -379,8 +382,11 @@ export default function CareerApplyPage() {
       {
         id: Date.now(),
         name: '',
-        issuer: '',
-        issueYear: '',
+        certificationNumber: '',
+        issuedDate: '',
+        expirationDate: '',
+        specialties: '',
+        attachment: null,
       },
     ]);
   };
@@ -1386,33 +1392,73 @@ export default function CareerApplyPage() {
 
             {/* 4. Certifications */}
             <div className="career-form-card">
-              <div className="career-section-title">
-                <span className="step-number">2.4</span>
-                <span>Certifications &amp; Licenses</span>
+              <div className="career-section-header-row">
+                <div className="career-section-title" style={{ margin: 0 }}>
+                  <span className="step-number">2.4</span>
+                  <span>Certifications</span>
+                </div>
+                <button
+                  type="button"
+                  className="career-add-btn-primary"
+                  onClick={addCertification}
+                  title="Add certification"
+                >
+                  <Plus size={16} />
+                  <span>+ Add</span>
+                </button>
               </div>
 
-              {certifications.map((cert, index) => (
-                <div className="career-repeatable-block" key={cert.id}>
-                  <div className="career-repeatable-header">
-                    <h4>Certification #{index + 1}</h4>
-                    {certifications.length > 1 && (
-                      <button
-                        type="button"
-                        className="career-remove-entry-btn"
-                        onClick={() => removeCertification(cert.id)}
-                      >
-                        Remove Certification
-                      </button>
-                    )}
-                  </div>
+              {certifications.length === 0 ? (
+                <div
+                  style={{
+                    textAlign: 'center',
+                    padding: '2.5rem 1rem',
+                    background: '#f8fafc',
+                    borderRadius: '14px',
+                    border: '1.5px dashed #cbd5e1',
+                    marginBottom: '1rem',
+                  }}
+                >
+                  <Award size={36} color="#94a3b8" style={{ margin: '0 auto 0.75rem' }} />
+                  <h4 style={{ color: '#334155', fontWeight: 700, marginBottom: '0.35rem' }}>
+                    No Certifications Added Yet
+                  </h4>
+                  <p style={{ color: '#64748b', fontSize: '0.88rem', marginBottom: '1.25rem' }}>
+                    Click "+ Add" to record professional licenses, quality certifications, or safety credentials.
+                  </p>
+                  <button
+                    type="button"
+                    className="career-add-btn-primary"
+                    onClick={addCertification}
+                  >
+                    <Plus size={16} />
+                    <span>+ Add</span>
+                  </button>
+                </div>
+              ) : (
+                certifications.map((cert, index) => (
+                  <div className="career-repeatable-block" key={cert.id}>
+                    <div className="career-repeatable-header">
+                      <h4>Certification #{index + 1}</h4>
+                      {certifications.length > 1 && (
+                        <button
+                          type="button"
+                          className="career-remove-entry-btn"
+                          onClick={() => removeCertification(cert.id)}
+                        >
+                          <Trash2 size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
+                          <span>Remove</span>
+                        </button>
+                      )}
+                    </div>
 
-                  <div className="career-form-row">
+                    {/* Certification Name */}
                     <div className="career-form-group">
-                      <label>Certification Name</label>
+                      <label>Certification <span style={{ color: '#dc2626' }}>*</span></label>
                       <input
                         type="text"
                         className="career-input-field"
-                        placeholder="e.g. HACCP / Quality Control Analyst / MSVC License"
+                        placeholder="e.g. HACCP & Feed Biosecurity Protocol Level-2 / FSSAI Food Safety"
                         value={cert.name}
                         onChange={(e) => {
                           const val = e.target.value;
@@ -1420,51 +1466,171 @@ export default function CareerApplyPage() {
                             prev.map((item) => (item.id === cert.id ? { ...item, name: val } : item))
                           );
                         }}
+                        required
                       />
                     </div>
 
-                    <div className="career-form-group">
-                      <label>Issuing Organization / Year</label>
-                      <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    {/* Certification Number & Specialties */}
+                    <div className="career-form-row">
+                      <div className="career-form-group">
+                        <label>Certification Number</label>
                         <input
                           type="text"
                           className="career-input-field"
-                          placeholder="e.g. FSSAI / Council"
-                          value={cert.issuer}
+                          placeholder="e.g. FSSAI-2023-QC-8849"
+                          value={cert.certificationNumber || ''}
                           onChange={(e) => {
                             const val = e.target.value;
                             setCertifications((prev) =>
-                              prev.map((item) => (item.id === cert.id ? { ...item, issuer: val } : item))
+                              prev.map((item) => (item.id === cert.id ? { ...item, certificationNumber: val } : item))
                             );
                           }}
                         />
+                      </div>
+
+                      <div className="career-form-group">
+                        <label>Specialties</label>
                         <input
                           type="text"
                           className="career-input-field"
-                          placeholder="2023"
-                          style={{ maxWidth: '100px' }}
-                          value={cert.issueYear}
+                          placeholder="e.g. Feed Biosecurity, HACCP, Poultry Nutrition"
+                          value={cert.specialties || ''}
                           onChange={(e) => {
                             const val = e.target.value;
                             setCertifications((prev) =>
-                              prev.map((item) => (item.id === cert.id ? { ...item, issueYear: val } : item))
+                              prev.map((item) => (item.id === cert.id ? { ...item, specialties: val } : item))
                             );
                           }}
                         />
                       </div>
                     </div>
-                  </div>
-                </div>
-              ))}
 
-              <button
-                type="button"
-                className="career-add-more-btn"
-                onClick={addCertification}
-              >
-                <Plus size={16} />
-                <span>+ Add Another Certification</span>
-              </button>
+                    {/* Issued Date & Expiration Date */}
+                    <div className="career-form-row">
+                      <div className="career-form-group">
+                        <label>Issued Date</label>
+                        <input
+                          type="text"
+                          className="career-input-field"
+                          placeholder="MM/YYYY (e.g. 03/2023)"
+                          value={cert.issuedDate || ''}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            setCertifications((prev) =>
+                              prev.map((item) => (item.id === cert.id ? { ...item, issuedDate: val } : item))
+                            );
+                          }}
+                        />
+                      </div>
+
+                      <div className="career-form-group">
+                        <label>Expiration Date</label>
+                        <input
+                          type="text"
+                          className="career-input-field"
+                          placeholder="MM/YYYY or Lifetime / No Expiration"
+                          value={cert.expirationDate || ''}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            setCertifications((prev) =>
+                              prev.map((item) => (item.id === cert.id ? { ...item, expirationDate: val } : item))
+                            );
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Attachments */}
+                    <div className="career-form-group">
+                      <label>Attachments</label>
+                      {cert.attachment ? (
+                        <div className="career-uploaded-file-chip" style={{ marginTop: '0.25rem' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <FileText size={18} color="#173b24" />
+                            <span style={{ fontSize: '0.88rem' }}>{cert.attachment.name}</span>
+                          </div>
+                          <button
+                            type="button"
+                            style={{
+                              background: 'transparent',
+                              border: 'none',
+                              color: '#dc2626',
+                              cursor: 'pointer',
+                              fontWeight: 600,
+                              fontSize: '0.82rem',
+                            }}
+                            onClick={() => {
+                              setCertifications((prev) =>
+                                prev.map((item) =>
+                                  item.id === cert.id ? { ...item, attachment: null } : item
+                                )
+                              );
+                            }}
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      ) : (
+                        <div
+                          style={{
+                            border: '1.5px dashed #cbd5e1',
+                            borderRadius: '10px',
+                            padding: '1rem',
+                            textAlign: 'center',
+                            background: '#ffffff',
+                            cursor: 'pointer',
+                            position: 'relative',
+                            transition: 'border-color 0.2s ease',
+                          }}
+                        >
+                          <input
+                            type="file"
+                            accept=".pdf,.png,.jpg,.jpeg,.doc,.docx"
+                            style={{
+                              position: 'absolute',
+                              inset: 0,
+                              opacity: 0,
+                              cursor: 'pointer',
+                              width: '100%',
+                              height: '100%',
+                            }}
+                            onChange={(e) => {
+                              if (e.target.files && e.target.files[0]) {
+                                const file = e.target.files[0];
+                                setCertifications((prev) =>
+                                  prev.map((item) =>
+                                    item.id === cert.id
+                                      ? { ...item, attachment: { name: file.name, size: file.size } }
+                                      : item
+                                  )
+                                );
+                              }
+                            }}
+                          />
+                          <UploadCloud size={24} color="#173b24" style={{ margin: '0 auto 0.25rem' }} />
+                          <div style={{ fontSize: '0.88rem', fontWeight: 600, color: '#173b24' }}>
+                            Upload Certificate Attachment
+                          </div>
+                          <div style={{ fontSize: '0.78rem', color: '#64748b' }}>
+                            PDF, JPG, PNG or DOCX (Max 10MB)
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))
+              )}
+
+              {certifications.length > 0 && (
+                <button
+                  type="button"
+                  className="career-add-more-btn"
+                  onClick={addCertification}
+                >
+                  <Plus size={16} />
+                  <span>+ Add</span>
+                </button>
+              )}
             </div>
 
             <div className="career-wizard-footer">
@@ -1833,9 +1999,29 @@ export default function CareerApplyPage() {
               </div>
               <div className="career-review-row">
                 <span className="label">Certifications:</span>
-                <span className="val">
-                  {certifications.map((c) => `${c.name} (${c.issuer})`).join('; ')}
-                </span>
+                <div style={{ flex: 1 }}>
+                  {certifications.length === 0 ? (
+                    <span className="val" style={{ color: '#94a3b8' }}>None Listed</span>
+                  ) : (
+                    certifications.map((c, idx) => (
+                      <div key={c.id || idx} style={{ marginBottom: idx < certifications.length - 1 ? '0.75rem' : 0, paddingBottom: idx < certifications.length - 1 ? '0.75rem' : 0, borderBottom: idx < certifications.length - 1 ? '1px dashed #e2e8f0' : 'none' }}>
+                        <div style={{ fontWeight: 700, color: '#0f172a' }}>
+                          {c.name || 'Untitled Certification'} {c.certificationNumber ? `(#${c.certificationNumber})` : ''}
+                        </div>
+                        <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                          {c.issuedDate ? `Issued: ${c.issuedDate}` : ''}{c.expirationDate ? ` • Expires: ${c.expirationDate}` : ''}
+                          {c.specialties ? ` • Specialties: ${c.specialties}` : ''}
+                        </div>
+                        {c.attachment && (
+                          <div style={{ fontSize: '0.82rem', color: '#173b24', marginTop: '0.2rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                            <FileText size={14} />
+                            <span>Attachment: {c.attachment.name}</span>
+                          </div>
+                        )}
+                      </div>
+                    ))
+                  )}
+                </div>
               </div>
             </div>
 
