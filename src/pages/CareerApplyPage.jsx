@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import {
   FileText,
   User,
@@ -23,7 +23,8 @@ import {
 import { JOB_OPENINGS } from '../data/careersData';
 
 export default function CareerApplyPage() {
-  const { jobId } = useParams();
+  const { jobId, routeMode } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
 
   // Authentication & Selected Job
@@ -142,29 +143,25 @@ export default function CareerApplyPage() {
     }
 
     // Set selected job
-    if (jobId) {
+    let resolvedJob = JOB_OPENINGS[0];
+    if (jobId && jobId !== 'applyManually' && jobId !== 'autofillWithResume' && jobId !== 'useMyLastApplication') {
       const matched = JOB_OPENINGS.find((j) => j.id === jobId);
-      if (matched) setSelectedJob(matched);
-      else setSelectedJob(JOB_OPENINGS[0]);
-    } else {
-      setSelectedJob(JOB_OPENINGS[0]);
+      if (matched) resolvedJob = matched;
     }
-  }, [jobId, navigate]);
+    setSelectedJob(resolvedJob);
 
-  const handleLogout = () => {
-    localStorage.removeItem('urja_candidate_user');
-    navigate('/careers/login');
-  };
+    // Detect Workday route mode from URL pathname or routeMode param
+    const activeRouteMode =
+      routeMode ||
+      (location.pathname.includes('applyManually') ? 'applyManually' : '') ||
+      (location.pathname.includes('autofillWithResume') ? 'autofillWithResume' : '') ||
+      (location.pathname.includes('useMyLastApplication') ? 'useMyLastApplication' : '');
 
-  // ==========================================
-  // CHOOSE HOW TO APPLY HANDLERS
-  // ==========================================
-  const handleSelectMode = (mode) => {
-    setApplyMode(mode);
-    setValidationError('');
-
-    if (mode === 'resume') {
-      // Prompt user or simulate resume parsing
+    if (activeRouteMode === 'applyManually') {
+      setApplyMode('manual');
+      setCurrentStep(1);
+    } else if (activeRouteMode === 'autofillWithResume') {
+      setApplyMode('resume');
       setIsParsingResume(true);
       setTimeout(() => {
         setIsParsingResume(false);
@@ -173,10 +170,9 @@ export default function CareerApplyPage() {
         setPostalCode('411004');
         setPhone('9822114455');
         setCurrentStep(1);
-        window.scrollTo(0, 0);
-      }, 900);
-    } else if (mode === 'last_app') {
-      // Load saved or previous application
+      }, 700);
+    } else if (activeRouteMode === 'useMyLastApplication') {
+      setApplyMode('last_app');
       const saved = localStorage.getItem('urja_last_application');
       if (saved) {
         try {
@@ -186,20 +182,35 @@ export default function CareerApplyPage() {
           if (prev.phone) setPhone(prev.phone);
           if (prev.city) setCity(prev.city);
         } catch {
-          // fallback
+          // ignore
         }
-      } else {
-        setPhone('9876543210');
-        setCity('Pune');
-        setAddressLine('Flat 402, Shivajinagar');
-        setPostalCode('411005');
       }
       setCurrentStep(1);
-      window.scrollTo(0, 0);
     } else {
-      // Manual blank mode
-      setCurrentStep(1);
-      window.scrollTo(0, 0);
+      // Default: Choose How to Apply selection screen
+      setCurrentStep('choose');
+    }
+  }, [jobId, routeMode, location.pathname, navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('urja_candidate_user');
+    navigate('/careers/login');
+  };
+
+  // ==========================================
+  // CHOOSE HOW TO APPLY HANDLERS
+  // ==========================================
+  const handleSelectMode = (chosenMode) => {
+    const targetJobId = selectedJob ? selectedJob.id : (jobId && !jobId.startsWith('apply') ? jobId : 'URJA-JOB-01');
+    setValidationError('');
+
+    if (chosenMode === 'resume') {
+      navigate(`/careers/apply/${targetJobId}/autofillWithResume`);
+    } else if (chosenMode === 'manual') {
+      // Official Workday Apply Manually route
+      navigate(`/careers/apply/${targetJobId}/applyManually`);
+    } else if (chosenMode === 'last_app') {
+      navigate(`/careers/apply/${targetJobId}/useMyLastApplication`);
     }
   };
 
@@ -500,7 +511,7 @@ export default function CareerApplyPage() {
             </div>
           )}
 
-          {/* 3 Choose How to Apply Cards */}
+          {/* 3 Choose How to Apply Cards (Official Workday Candidate Options) */}
           <div className="career-choose-how-grid">
             {/* 1. Autofill with Resume */}
             <div
@@ -513,12 +524,11 @@ export default function CareerApplyPage() {
                 </div>
                 <h3>Autofill with Resume</h3>
                 <p>
-                  Upload your CV or resume and our intelligent ATS will pre-populate your work
-                  experience, education, and contact details in seconds.
+                  Upload your resume and allow the system to populate application information.
                 </p>
               </div>
               <div>
-                <span className="career-choose-badge">⚡ Fastest (Recommended)</span>
+                <span className="career-choose-badge">⚡ Autofill</span>
               </div>
             </div>
 
@@ -533,8 +543,7 @@ export default function CareerApplyPage() {
                 </div>
                 <h3>Apply Manually</h3>
                 <p>
-                  Fill out your personal details, career history, qualifications, and references step-by-step
-                  through our guided application wizard.
+                  Enter all application information yourself.
                 </p>
               </div>
               <div>
@@ -553,8 +562,7 @@ export default function CareerApplyPage() {
                 </div>
                 <h3>Use My Last Application</h3>
                 <p>
-                  Instantly reuse your previously submitted candidate profile, certifications, and
-                  saved documents to apply for this new opening.
+                  Reuse information from a previous application.
                 </p>
               </div>
               <div>

@@ -115,6 +115,10 @@ export default function App() {
           <Route path="/careers/login" element={<CandidateLoginPage />} />
           <Route path="/careers/apply" element={<CareerApplyPage />} />
           <Route path="/careers/apply/:jobId" element={<CareerApplyPage />} />
+          <Route path="/careers/apply/:jobId/:routeMode" element={<CareerApplyPage />} />
+          <Route path="/careers/apply/applyManually" element={<CareerApplyPage />} />
+          <Route path="/careers/apply/autofillWithResume" element={<CareerApplyPage />} />
+          <Route path="/careers/apply/useMyLastApplication" element={<CareerApplyPage />} />
           {/* Wildcard Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
