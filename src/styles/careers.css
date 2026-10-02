@@ -1376,6 +1376,55 @@
 }
 
 /* Repeatable Dynamic Blocks (Work Experience, Education, Certifications) */
+.career-section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.career-add-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #173b24;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1.15rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(23, 59, 36, 0.2);
+}
+
+.career-add-btn-primary:hover {
+  background: #235836;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(23, 59, 36, 0.25);
+}
+
+.career-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #1e293b;
+  user-select: none;
+}
+
+.career-checkbox-input {
+  width: 18px;
+  height: 18px;
+  accent-color: #173b24;
+  cursor: pointer;
+}
+
 .career-repeatable-block {
   background: #f8fafc;
   border: 1px solid #e2e8f0;

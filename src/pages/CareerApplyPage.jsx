@@ -1017,68 +1017,112 @@ export default function CareerApplyPage() {
             </div>
 
             {/* 2. Work Experience */}
+            {/* 2. Work Experience */}
             <div className="career-form-card">
-              <div className="career-section-title">
-                <span className="step-number">2.2</span>
-                <span>Work Experience</span>
+              <div className="career-section-header-row">
+                <div className="career-section-title" style={{ margin: 0 }}>
+                  <span className="step-number">2.2</span>
+                  <span>Work Experience</span>
+                </div>
+                <button
+                  type="button"
+                  className="career-add-btn-primary"
+                  onClick={addWorkExperience}
+                  title="Add work experience"
+                >
+                  <Plus size={16} />
+                  <span>+ Add</span>
+                </button>
               </div>
 
-              {workExperiences.map((exp, index) => (
-                <div className="career-repeatable-block" key={exp.id}>
-                  <div className="career-repeatable-header">
-                    <h4>Experience #{index + 1}</h4>
-                    {workExperiences.length > 1 && (
-                      <button
-                        type="button"
-                        className="career-remove-entry-btn"
-                        onClick={() => removeWorkExperience(exp.id)}
-                      >
-                        Remove Position
-                      </button>
-                    )}
-                  </div>
-
-                  <div className="career-form-row">
-                    <div className="career-form-group">
-                      <label>Job Title</label>
-                      <input
-                        type="text"
-                        className="career-input-field"
-                        placeholder="e.g. Broiler Supervisor / Chemist"
-                        value={exp.title}
-                        onChange={(e) => {
-                          const val = e.target.value;
-                          setWorkExperiences((prev) =>
-                            prev.map((item) => (item.id === exp.id ? { ...item, title: val } : item))
-                          );
-                        }}
-                      />
+              {workExperiences.length === 0 ? (
+                <div
+                  style={{
+                    textAlign: 'center',
+                    padding: '2.5rem 1rem',
+                    background: '#f8fafc',
+                    borderRadius: '14px',
+                    border: '1.5px dashed #cbd5e1',
+                    marginBottom: '1rem',
+                  }}
+                >
+                  <Briefcase size={36} color="#94a3b8" style={{ margin: '0 auto 0.75rem' }} />
+                  <h4 style={{ color: '#334155', fontWeight: 700, marginBottom: '0.35rem' }}>
+                    No Work Experience Added Yet
+                  </h4>
+                  <p style={{ color: '#64748b', fontSize: '0.88rem', marginBottom: '1.25rem' }}>
+                    Click "+ Add" to record your previous jobs, internships, or agricultural experience.
+                  </p>
+                  <button
+                    type="button"
+                    className="career-add-btn-primary"
+                    onClick={addWorkExperience}
+                  >
+                    <Plus size={16} />
+                    <span>+ Add</span>
+                  </button>
+                </div>
+              ) : (
+                workExperiences.map((exp, index) => (
+                  <div className="career-repeatable-block" key={exp.id}>
+                    <div className="career-repeatable-header">
+                      <h4>Experience #{index + 1}</h4>
+                      {workExperiences.length > 1 && (
+                        <button
+                          type="button"
+                          className="career-remove-entry-btn"
+                          onClick={() => removeWorkExperience(exp.id)}
+                        >
+                          <Trash2 size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
+                          <span>Remove</span>
+                        </button>
+                      )}
                     </div>
 
-                    <div className="career-form-group">
-                      <label>Company / Organization</label>
-                      <input
-                        type="text"
-                        className="career-input-field"
-                        placeholder="e.g. Agro Feeds Ltd"
-                        value={exp.company}
-                        onChange={(e) => {
-                          const val = e.target.value;
-                          setWorkExperiences((prev) =>
-                            prev.map((item) => (item.id === exp.id ? { ...item, company: val } : item))
-                          );
-                        }}
-                      />
-                    </div>
-                  </div>
+                    {/* Job Title & Company */}
+                    <div className="career-form-row">
+                      <div className="career-form-group">
+                        <label>Job Title <span style={{ color: '#dc2626' }}>*</span></label>
+                        <input
+                          type="text"
+                          className="career-input-field"
+                          placeholder="e.g. Technical Supervisor / Feed Mill Operator"
+                          value={exp.title}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            setWorkExperiences((prev) =>
+                              prev.map((item) => (item.id === exp.id ? { ...item, title: val } : item))
+                            );
+                          }}
+                          required
+                        />
+                      </div>
 
-                  <div className="career-form-row">
+                      <div className="career-form-group">
+                        <label>Company <span style={{ color: '#dc2626' }}>*</span></label>
+                        <input
+                          type="text"
+                          className="career-input-field"
+                          placeholder="e.g. Western Agro Broilers / Urja Agro"
+                          value={exp.company}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            setWorkExperiences((prev) =>
+                              prev.map((item) => (item.id === exp.id ? { ...item, company: val } : item))
+                            );
+                          }}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    {/* Location */}
                     <div className="career-form-group">
                       <label>Location</label>
                       <input
                         type="text"
                         className="career-input-field"
-                        placeholder="e.g. Pune, Maharashtra"
+                        placeholder="e.g. Pune, Maharashtra / Sangamner"
                         value={exp.location}
                         onChange={(e) => {
                           const val = e.target.value;
@@ -1089,13 +1133,40 @@ export default function CareerApplyPage() {
                       />
                     </div>
 
-                    <div className="career-form-group">
-                      <label>Time Period</label>
-                      <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    {/* Checkbox: I currently work here */}
+                    <div className="career-form-group" style={{ margin: '0.75rem 0 1rem' }}>
+                      <label className="career-checkbox-label">
+                        <input
+                          type="checkbox"
+                          className="career-checkbox-input"
+                          checked={Boolean(exp.currentlyWorking)}
+                          onChange={(e) => {
+                            const isChecked = e.target.checked;
+                            setWorkExperiences((prev) =>
+                              prev.map((item) =>
+                                item.id === exp.id
+                                  ? {
+                                      ...item,
+                                      currentlyWorking: isChecked,
+                                      endDate: isChecked ? 'Present' : (item.endDate === 'Present' ? '' : item.endDate),
+                                    }
+                                  : item
+                              )
+                            );
+                          }}
+                        />
+                        <span>I currently work here</span>
+                      </label>
+                    </div>
+
+                    {/* From & To */}
+                    <div className="career-form-row">
+                      <div className="career-form-group">
+                        <label>From <span style={{ color: '#dc2626' }}>*</span></label>
                         <input
                           type="text"
                           className="career-input-field"
-                          placeholder="Start: 2022"
+                          placeholder="MM/YYYY (e.g. 01/2023)"
                           value={exp.startDate}
                           onChange={(e) => {
                             const val = e.target.value;
@@ -1103,12 +1174,19 @@ export default function CareerApplyPage() {
                               prev.map((item) => (item.id === exp.id ? { ...item, startDate: val } : item))
                             );
                           }}
+                          required
                         />
+                      </div>
+
+                      <div className="career-form-group">
+                        <label>To</label>
                         <input
                           type="text"
                           className="career-input-field"
-                          placeholder="End: Present"
-                          value={exp.endDate}
+                          placeholder={exp.currentlyWorking ? 'Present' : 'MM/YYYY (e.g. 12/2024)'}
+                          value={exp.currentlyWorking ? 'Present' : exp.endDate}
+                          disabled={Boolean(exp.currentlyWorking)}
+                          style={exp.currentlyWorking ? { background: '#f8fafc', color: '#156b37', fontWeight: 600 } : {}}
                           onChange={(e) => {
                             const val = e.target.value;
                             setWorkExperiences((prev) =>
@@ -1118,34 +1196,37 @@ export default function CareerApplyPage() {
                         />
                       </div>
                     </div>
-                  </div>
 
-                  <div className="career-form-group">
-                    <label>Role Summary &amp; Key Responsibilities</label>
-                    <textarea
-                      className="career-input-field"
-                      rows={2}
-                      placeholder="Outline key accomplishments, farmer network management, feed laboratory tests, etc..."
-                      value={exp.description}
-                      onChange={(e) => {
-                        const val = e.target.value;
-                        setWorkExperiences((prev) =>
-                          prev.map((item) => (item.id === exp.id ? { ...item, description: val } : item))
-                        );
-                      }}
-                    />
+                    {/* Role Description */}
+                    <div className="career-form-group">
+                      <label>Role Description</label>
+                      <textarea
+                        className="career-input-field"
+                        rows={3}
+                        placeholder="Describe your key responsibilities, farm network supervision, feed formulations, flock monitoring, or technical accomplishments..."
+                        value={exp.description}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setWorkExperiences((prev) =>
+                            prev.map((item) => (item.id === exp.id ? { ...item, description: val } : item))
+                          );
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))
+              )}
 
-              <button
-                type="button"
-                className="career-add-more-btn"
-                onClick={addWorkExperience}
-              >
-                <Plus size={16} />
-                <span>+ Add Another Work Experience</span>
-              </button>
+              {workExperiences.length > 0 && (
+                <button
+                  type="button"
+                  className="career-add-more-btn"
+                  onClick={addWorkExperience}
+                >
+                  <Plus size={16} />
+                  <span>+ Add</span>
+                </button>
+              )}
             </div>
 
             {/* 3. Education */}
