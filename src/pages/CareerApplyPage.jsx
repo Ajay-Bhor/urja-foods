@@ -40,6 +40,7 @@ export default function CareerApplyPage() {
   const [validationError, setValidationError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedReceipt, setSubmittedReceipt] = useState(null);
+  const [showViewModal, setShowViewModal] = useState(false);
 
   // ==========================================
   // FORM DATA STATES
@@ -482,8 +483,9 @@ export default function CareerApplyPage() {
 
     setTimeout(() => {
       const fullName = [firstName, middleName, lastName].filter(Boolean).join(' ');
+      const generatedAppId = `UF-${Math.floor(10000000 + Math.random() * 90000000)}`;
       const receipt = {
-        applicationId,
+        applicationId: generatedAppId,
         jobTitle: selectedJob ? selectedJob.title : 'General Position',
         jobDept: selectedJob ? selectedJob.dept : 'General Operations',
         fullName: fullName || 'Candidate',
@@ -538,70 +540,227 @@ export default function CareerApplyPage() {
   // ==========================================================================
   if (currentStep === 'confirmation' && submittedReceipt) {
     return (
-      <div className="career-portal-view" style={{ padding: '2.5rem 1rem' }}>
-        <div className="career-success-card">
-          <div className="career-success-icon">
-            <CheckCircle2 size={44} color="#173b24" />
+      <div className="career-portal-view" style={{ padding: '3.5rem 1rem' }}>
+        <div className="career-success-card" style={{ maxWidth: '640px' }}>
+          <div className="career-success-icon" style={{ marginBottom: '1.25rem' }}>
+            <CheckCircle2 size={46} color="#173b24" />
           </div>
 
-          <h2>Application Confirmation</h2>
-          <p>
-            Thank you, <strong>{submittedReceipt.fullName}</strong>. Your official candidate dossier
-            for <strong>{submittedReceipt.jobTitle}</strong> has been successfully submitted and
-            delivered to Urja Foods Talent Acquisition.
+          <h2 style={{ fontSize: '2.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.25rem' }}>
+            ✓ Application Submitted
+          </h2>
+
+          <p style={{ fontSize: '1.15rem', color: '#0f172a', fontWeight: 600, marginBottom: '0.4rem', lineHeight: 1.5 }}>
+            Thank you for applying to Urja Foods.
           </p>
 
-          <div className="career-tracking-box">
-            <span>Application Reference Tracking ID</span>
-            <strong>{submittedReceipt.applicationId}</strong>
+          <p style={{ fontSize: '1rem', color: '#64748b', marginBottom: '2rem', lineHeight: 1.5 }}>
+            Your application has been successfully submitted.
+          </p>
+
+          <div
+            className="career-tracking-box"
+            style={{
+              background: '#f8fafc',
+              border: '1px dashed #cbd5e1',
+              borderRadius: '12px',
+              padding: '1.1rem 2.25rem',
+              marginBottom: '2.25rem',
+              display: 'inline-block',
+            }}
+          >
+            <span style={{ fontSize: '0.85rem', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.35rem' }}>
+              Application ID
+            </span>
+            <strong style={{ fontSize: '1.5rem', color: '#173b24', fontFamily: 'monospace', letterSpacing: '0.08em' }}>
+              {submittedReceipt.applicationId}
+            </strong>
           </div>
 
-          {/* Timeline: What Happens Next */}
-          <div style={{ textAlign: 'left', margin: '1.5rem auto 2.5rem', maxWidth: '480px' }}>
-            <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#173b24', marginBottom: '1rem' }}>
-              What Happens Next:
-            </h4>
-            <div className="career-timeline-stepper">
-              <div className="career-timeline-item">
-                <div className="career-timeline-dot">1</div>
-                <div className="career-timeline-content">
-                  <h5>Dossier Verification &amp; Auto-Triage</h5>
-                  <p>Our ATS validates your qualifications against regional department criteria.</p>
-                </div>
-              </div>
-              <div className="career-timeline-item">
-                <div className="career-timeline-dot">2</div>
-                <div className="career-timeline-content">
-                  <h5>Hiring Manager &amp; HR Review</h5>
-                  <p>Qualified candidates are contacted within 48 to 72 business hours.</p>
-                </div>
-              </div>
-              <div className="career-timeline-item">
-                <div className="career-timeline-dot">3</div>
-                <div className="career-timeline-content">
-                  <h5>Interview &amp; Plant Tour</h5>
-                  <p>Technical dialogue and assessment at Nirgudsar Complex or regional center.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Actions */}
+          {/* Action Buttons */}
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/careers" className="careers-btn-primary" style={{ padding: '0.85rem 1.8rem' }}>
-              <span>View Other Career Opportunities</span>
-            </Link>
             <button
               type="button"
               className="careers-btn-secondary"
-              onClick={() => window.print()}
-              style={{ padding: '0.85rem 1.8rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+              onClick={() => setShowViewModal(true)}
+              style={{ padding: '0.85rem 2rem', fontSize: '0.95rem', fontWeight: 700 }}
             >
-              <Printer size={16} />
-              <span>Print Application Summary</span>
+              View Application
             </button>
+            <Link
+              to="/careers"
+              className="careers-btn-primary"
+              style={{ padding: '0.85rem 2rem', fontSize: '0.95rem', fontWeight: 700, textDecoration: 'none' }}
+            >
+              Back to Careers
+            </Link>
           </div>
         </div>
+
+        {/* View Application Dossier Modal */}
+        {showViewModal && (
+          <div className="careers-modal-overlay" onClick={() => setShowViewModal(false)}>
+            <div
+              className="careers-modal-box"
+              style={{ maxWidth: '780px', maxHeight: '90vh' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="careers-modal-header">
+                <div>
+                  <div style={{ fontSize: '0.82rem', color: '#173b24', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Application ID: {submittedReceipt.applicationId}
+                  </div>
+                  <h3 style={{ margin: '0.2rem 0 0', fontSize: '1.3rem', color: '#0f172a' }}>
+                    {submittedReceipt.jobTitle}
+                  </h3>
+                </div>
+                <button
+                  type="button"
+                  className="careers-modal-close"
+                  onClick={() => setShowViewModal(false)}
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="careers-modal-body" style={{ maxHeight: '65vh', overflowY: 'auto' }}>
+                {/* 1. Personal Information */}
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#173b24', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.4rem', marginBottom: '0.6rem' }}>
+                    Personal Information
+                  </h4>
+                  <div style={{ fontSize: '0.9rem', lineHeight: 1.6, color: '#334155' }}>
+                    <div><strong>Name:</strong> {[firstName, middleName, lastName].filter(Boolean).join(' ')}</div>
+                    <div><strong>Email:</strong> {email}</div>
+                    <div><strong>Phone:</strong> {countryCode} {phone}</div>
+                    <div><strong>Address:</strong> {[addressLine, city, state, postalCode, country].filter(Boolean).join(', ')}</div>
+                  </div>
+                </div>
+
+                {/* 2. Experience */}
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#173b24', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.4rem', marginBottom: '0.6rem' }}>
+                    Experience
+                  </h4>
+                  {workExperiences.length === 0 ? (
+                    <p style={{ color: '#94a3b8', fontSize: '0.88rem' }}>None Listed</p>
+                  ) : (
+                    workExperiences.map((w, idx) => (
+                      <div key={idx} style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
+                        <strong>{w.title}</strong> at {w.company} ({w.startDate} - {w.currentlyWorking ? 'Present' : (w.endDate || 'Present')})
+                        {w.description && <div style={{ fontSize: '0.85rem', color: '#64748b' }}>{w.description}</div>}
+                      </div>
+                    ))
+                  )}
+                </div>
+
+                {/* 3. Education */}
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#173b24', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.4rem', marginBottom: '0.6rem' }}>
+                    Education
+                  </h4>
+                  {educationList.length === 0 ? (
+                    <p style={{ color: '#94a3b8', fontSize: '0.88rem' }}>None Listed</p>
+                  ) : (
+                    educationList.map((e, idx) => (
+                      <div key={idx} style={{ marginBottom: '0.4rem', fontSize: '0.9rem' }}>
+                        <strong>{e.degree}</strong> — {e.institution} {e.fieldOfStudy ? `(${e.fieldOfStudy})` : ''}
+                      </div>
+                    ))
+                  )}
+                </div>
+
+                {/* 4. Certifications */}
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#173b24', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.4rem', marginBottom: '0.6rem' }}>
+                    Certifications
+                  </h4>
+                  {certifications.length === 0 ? (
+                    <p style={{ color: '#94a3b8', fontSize: '0.88rem' }}>None Listed</p>
+                  ) : (
+                    certifications.map((c, idx) => (
+                      <div key={idx} style={{ marginBottom: '0.4rem', fontSize: '0.9rem' }}>
+                        <strong>{c.name}</strong> {c.certificationNumber ? `(#${c.certificationNumber})` : ''}
+                        <span style={{ color: '#64748b', fontSize: '0.82rem' }}>
+                          {c.issuedDate ? ` • Issued: ${c.issuedDate}` : ''}
+                        </span>
+                      </div>
+                    ))
+                  )}
+                </div>
+
+                {/* 5. Skills */}
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#173b24', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.4rem', marginBottom: '0.6rem' }}>
+                    Skills
+                  </h4>
+                  <div className="career-skills-container">
+                    {skills.map((s) => (
+                      <span key={s} className="career-skill-chip career-skill-chip-review">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 6. Resume */}
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#173b24', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.4rem', marginBottom: '0.6rem' }}>
+                    Resume
+                  </h4>
+                  <div style={{ fontSize: '0.9rem', color: '#334155' }}>
+                    {resumeFile ? `${resumeFile.name} (${(resumeFile.size / (1024 * 1024)).toFixed(2)} MB)` : 'Not Attached'}
+                  </div>
+                </div>
+
+                {/* 7. Application Questions */}
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#173b24', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.4rem', marginBottom: '0.6rem' }}>
+                    Application Questions
+                  </h4>
+                  <div style={{ fontSize: '0.88rem', lineHeight: 1.6, color: '#334155' }}>
+                    <div>• Legally authorized to work in this country: <strong>{workAuth}</strong></div>
+                    <div>• Currently working for Urja Foods: <strong>{currentlyWorkingForUrja}</strong></div>
+                    <div>• Previously worked for Urja Foods: <strong>{previouslyWorkedForUrja}</strong></div>
+                    <div>• Willing to relocate: <strong>{willingToRelocate}</strong></div>
+                  </div>
+                </div>
+
+                {/* 8. Voluntary Disclosures */}
+                <div>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#173b24', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.4rem', marginBottom: '0.6rem' }}>
+                    Voluntary Disclosures
+                  </h4>
+                  <div style={{ fontSize: '0.88rem', lineHeight: 1.6, color: '#334155' }}>
+                    <div>• Gender: {gender}</div>
+                    <div>• Veteran Status: {veteranStatus}</div>
+                    <div>• Disability Status: {disabilityStatus}</div>
+                    <div>• Terms &amp; Conditions: <strong>{agreeDeclaration ? 'Agreed & Accepted ✓' : 'Pending'}</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="careers-modal-footer" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <button
+                  type="button"
+                  className="careers-btn-secondary"
+                  onClick={() => window.print()}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                >
+                  <Printer size={15} />
+                  <span>Print Dossier</span>
+                </button>
+                <button
+                  type="button"
+                  className="careers-btn-primary"
+                  onClick={() => setShowViewModal(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
